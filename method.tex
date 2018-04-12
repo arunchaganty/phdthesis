@@ -1,0 +1,146 @@
+\section{On-demand evaluation with importance sampling}
+\label{sec:method}
+
+Pooling bias is fundamentally a sampling bias problem where relation instances from new systems are underrepresented in the evaluation dataset.
+We could of course sidestep the problem by exhaustively annotating the entire document corpus, by annotating all mentions of entities and checking relations between all pairs of mentions. However, that would be a laborious and prohibitively expensive task:
+using the interfaces we've developed (\refsec{evaluation}), it costs about \$15 to annotate a single document by non-expert crowdworkers, resulting in an estimated cost of at least \$1,350,000 for a reasonably large corpus of 90,000 documents \citep{dang2016kbp}.
+The annotation effort would cost significantly more with expert annotators.
+% TODO: highlight contrast with pooling.
+In contrast, \textit{labeling} 
+%\pl{be consistent with terminology: labeling?} 
+relation instances from system predictions
+can be an order of magnitude cheaper than finding them in documents: using our interfaces, it costs only about \$0.18 to verify each relation instance compared to \$1.60 per instance extracted through exhaustive annotations.
+%\pl{why the diff between 0.18 and 1.60?  Isn't it the same problem of labeling an instance?}
+
+We propose a new paradigm called on-demand evaluation which takes a lazy approach to dataset construction by annotating predictions from systems \textit{only when they are underrepresented}, thus correcting for pooling bias as it arises.
+In this section, we'll formalize the problem solved by on-demand evaluation independent of KBP and describe a cost-effective solution that allows us to accurately estimate evaluation scores
+%metrics \pl{be consistent: scores} 
+without bias using importance sampling.
+We'll then instantiate the framework for KBP in \refsec{application}.
+
+\subsection{Problem statement}
+Let $\sX$ be the universe of %candidate predictions (e.g.\, relation instances),
+(relation) instances,
+  $\sY \subseteq \sX$ be the unknown subset of correct instances,
+  $X_1, \ldots X_m \subseteq \sX$ be the predictions for $m$ systems,
+  and let $Y_i = X_i \cap \sY$.
+Let $X = \Union_{i=1}^m X_i$ and $Y = \Union_{i=1}^m Y_i$.
+Let $f(x) \eqdef \I[x \in \sY]$ and $g_i(x) = \I[x \in X_i]$, then the precision, $\pi_i$, and recall, $\recall_i$, of the set of predictions $X_i$ is
+\begin{align*}
+  %\pi_i  &\eqdef \E_{x \sim X_i}[f(x)] &
+  %\recall_i &\eqdef \E_{x \sim \sY}[g_i(x)],
+  \pi_i  &\eqdef \E_{x \sim p_i}[f(x)] &
+  \recall_i &\eqdef \E_{x \sim p_0}[g_i(x)],
+\end{align*}
+where $p_i$ is a distribution over $X_i$ and $p_0$ is a distribution over $\sY$.
+We assume that $p_i$ is known, e.g.\, the uniform distribution over $X_i$
+and that we know $p_0$ up to normalization constant and can sample from it.
+
+In on-demand evaluation, we can query $f(x)$ (e.g.\, labeling an instance) or draw a sample from $p_0$;
+typically, querying $f(x)$ is significantly cheaper than sampling from $p_0$.
+We obtain prediction sets $X_1, \ldots, X_m$ sequentially as the systems are submitted for evaluation.
+Our goal is to estimate $\pi_i$ and $\recall_i$ for each system $i = 1, \dots, m$.
+
+\subsection{Simple estimators}
+We can estimate each $\pi_i$ and $\recall_i$ independently with simple Monte Carlo integration. % from $p_i$ and $p_0$ respectively.
+Let $\Xh_1, \ldots, \Xh_m$ be multi-sets of $n_1, \ldots, n_j$ i.i.d.~samples from $X_1, \ldots, X_m$ respectively, and let $\Yh_0$ be a multi-set of $n_0$ samples drawn from $\sY$.
+Then, the simple estimators for precision and recall are:
+\begin{align*}
+  \pih_i^{\text{(simple)}} &= \frac1{n_i}\! \sum_{x \in \Xh_i}\! f(x) & \recallh_i^{\text{(simple)}} &= \frac1{n_0}\! \sum_{x \in \Yh_0}\! g_i(x).
+\end{align*}
+
+\subsection{Joint estimators\footnote{Proofs for claims made in this section can be found in \refapp{sampling} of the supplementary material.}}
+\label{sec:joint}
+The simple estimators are unbiased but have wastefully large variance
+because evaluating a new system does not leverage labels acquired for previous
+systems.  %\paragraph{Estimation Algorithm}
+
+On-demand evaluation with the joint estimator works as follows:
+First $\Yh_0$ is randomly sampled from $\sY$ once when the evaluation framework is launched.
+For every new set of predictions $X_m$ submitted for evaluation, the minimum number of samples $n_m$ required to accurately evaluate $X_m$ is calculated based on the current evaluation data, $\Yh_0$ and $\Xh_1, \ldots, \Xh_{m-1}$.
+Then, the set $\Xh_m$ is added to the evaluation data by evaluating $f(x)$ on $n_m$ samples drawn from $X_m$.
+Finally, estimates $\pi_i$ and $\recall_i$ are updated for each system $i = 1,\ldots,m$ using the joint estimators that will be defined next.
+%requires us to spend money to collect data for every new system submitted.
+In the rest of this section, we will answer the following three questions:
+\begin{enumerate}
+    \itemsep0pt
+  \item How can we use all the samples $\Xh_1, \ldots \Xh_m$ when estimating the precision $\pi_i$ of system $i$?
+  \item How can we use all the samples $\Xh_1, \ldots, \Xh_m$ with $\Yh_0$ when estimating recall $\recall_i$?
+  \item Finally, to form $\Xh_m$, how many samples should we draw from $X_m$ given existing samples and $\Xh_1, \ldots, \Xh_{m-1}$ and $\Yh_0$?
+\end{enumerate}
+
+\paragraph{Estimating precision jointly.}
+Intuitively, if two systems have very similar predictions $X_i$ and $X_j$, we should be able to use samples from one to estimate precision on the other.
+However, it might also be the case that $X_i$ and $X_j$ only overlap on a small region, in which case the samples from $X_j$ do not accurately represent instances in $X_i$ and could lead to a biased estimate.
+We address this problem by using importance sampling \citep{owen2013monte}, a standard statistical technique for estimating properties of one distribution using samples from another distribution.
+
+In importance sampling, if $\Xh_i$ is sampled from $q_i$, then $\frac{1}{n_i} \sum_{x \in \Xh_i} \frac{p_i(x)}{q_i(x)} f(x)$ is an unbiased estimate of $\pi_i$.
+We would like the proposal distribution $q_i$ to both leverage samples from all $m$ systems and be tailored towards system $i$.
+To this end, we first define a distribution over systems $j$, represented by probabilities $w_{ij}$.
+Then, define $q_i$ as sampling a $j$ and drawing $x \sim p_j$;
+formally $q_i(x) = \sum_{j=1}^m w_{ij} p_j(x)$.
+
+We note that $q_i(x)$ not only significantly differs between systems, but also changes as new systems are added to the evaluation pool.
+Unfortunately, the standard importance sampling procedure requires us to draw and use samples from each distribution $q_i(x)$ independently and thus can not effectively reuse samples drawn from different distributions.
+To this end, we introduce a practical refinement to the importance sampling procedure:
+we independently draw $n_j$ samples according to $p_j(x)$ from each of the $m$ systems independently 
+and then numerically integrate over these samples using the weights $w_{ij}$ to ``mix'' them appropriately to produce and unbiased estimate of $\pi_i$ while reducing variance.
+Formally, we define the \emph{joint precision estimator}:
+\begin{align*}
+  \pih_i^{\text{(joint)}} &\eqdef \sum_{j=1}^m \frac{w_{ij}}{n_{j}} \sum_{x \in \Xh_j} \frac{p_i(x) f(x)}{q_i(x)},
+\end{align*}
+where each $\Xh_j$ consists of $n_j$ i.i.d.~samples drawn from $p_j$.
+
+It is a hard problem to determine what the optimal mixing weights $w_{ij}$ should be.
+However, we can formally verify that 
+  if $X_i$ and $X_j$ are disjoint, then $w_{ij} = 0$ minimizes the variance of $\pi_i$,
+  and if $X_i = X_j$, then $w_{ij} \propto n_{j}$ is optimal.
+%$\pih_i^{(j)}$ will have high variance if $q_i(x) \ll p_i(x)$
+%In particular, we can show that the ideal choice \pl{in what sense?} of $w_{ij}$ for
+This motivates the following heuristic choice which interpolates between these two extremes:
+$w_{ij} \propto n_{j} \sum_{x \in \sX} p_j(x) p_i(x)$.
+%=======
+%The variance depends on $f(x)$, but the general intuition is that $\pih_i^{(j)}$ will have high variance if 
+%$q_i$ does not have tails at least as heavy as $p_i$.
+% \pl{$q_i(x) \ll p_i(x)$ what does this mean? there exists an $x$ such this is true? you're comparing functions}.
+%In particular, we can show that the ideal choice \pl{in what sense?} of $w_{ij}$ for if $X_i$ and $X_j$ are disjoint is $0$, and if $X_i$ and $X_j$ are identical is $w_{ij} \propto n_{j}$.
+%This motivates the choice $w_{ij} \propto n_{j} \sum_{x \in \sX} p_j(x) p_i(x)$.
+
+\paragraph{Estimating recall jointly.}
+The recall of system $i$ can be expressed can be expressed as a product $\recall_i = \theta \nu_i$,
+where $\theta$ is the \emph{recall of the pool}, which measures the fraction of all positive instances predicted by the pool (any system),
+and $\nu_i$ is the \emph{pooled recall of system $i$}, which measures the fraction of the pool's positive instances predicted by system $i$.
+Letting $g(x) \eqdef \I[x \in X]$, we can define these as:
+\begin{align*}
+\nu_i &\eqdef \E_{x \sim p_0}[g_i(x) \mid x \in X] & \theta &\eqdef \E_{x \sim p_0}[g(x)].
+\end{align*}
+We can estimate $\theta$ analogous to the simple recall estimator $\recallh_i$,
+except we use the pool $g$ instead a system $g_i$.
+For $\nu_i$, the key is to leverage the work from estimating precision.
+We already evaluated $f(x)$ on $\Xh_i$, so we can compute $\Yh_i \eqdef \Xh_i \intersection \sY$
+and form the subset $\Yh = \Union_{i=1}^m \Yh_i$.
+$\Yh$ is an approximation of $\sY$ whose bias we can correct through importance reweighting.
+%is much cheaper to obtain than by sampling from $\sY$, but is clearly not representative.
+%We call the estimate on this incomplete set \emph{pooled recall}, $\nu_i$.
+%We call the estimate on this incomplete set \emph{pooled recall},
+%$\nu_i \eqdef \E_{x \sim X}[f(x) g_i(x)]$.
+%By considering how much of $\sY$ the pool $X$ covers, i.e.\ the pool recall: $\theta \eqdef \E_{x \sim \sY}[g(x)]$ where $g(x) \eqdef \I[x \in X]$, we can estimate recall as simply the product: $\recall_i = \theta \nu_i$.
+We then define estimators as follows:
+\begin{gather*}
+  \nuh_i \eqdef \frac{\sum_{j=1}^m \frac{w_{ij}}{n_j} \sum_{x \in \Yh_j} \frac{p_0(x) g_i(x)}{q_i(x)}}{\sum_{j=1}^m \frac{w_{ij}}{n_j} \sum_{x \in \Yh_j} \frac{p_0(x)}{q_i(x)}} \\
+  \recallh_i^{\text{(joint)}} \eqdef \thetah\nuh_i \quad \thetah \eqdef \frac{1}{n_0} \sum_{x \in \Yh_0} g(x).
+\end{gather*}
+where $q_i$ and $w_{ij}$ are the same as before.
+
+%The joint estimator for recall is then $\recallh_i^{\text{(joint)}} \eqdef \thetah\nuh_i$, where $\thetah$ is $\sum_{x \in \Yh_0} g(x)$ and $\nuh_i$ is a self-normalized importance-weighted estimator:
+%\begin{align*}
+%  \nuh_i &\eqdef \frac{\sum_{j=1}^m \frac{w_{ij}}{n_j} \sum_{x \in \Xh_j} \frac{p_0(x) g_i(x)}{q_i(x)}}{\sum_{j=1}^m \frac{w_{ij}}{n_j} \sum_{x \in \Xh_j} \frac{p_0(x)}{q_i(x)}},
+%\end{align*}
+%for $\pih_i^{\text{(joint)}}$.
+
+\paragraph{Adaptively choosing the number of samples.}
+Finally, a desired property for on-demand evaluation is to label new instances only when the current evaluation data is insufficient,
+e.g.\ when a new set of predictions $X_m$ contains many instances not covered by other systems.
+We can measure how well the current evaluation set covers the predictions $X_m$ by using a conservative estimate of the variance of $\pih_m^{\text{(joint)}}$.\footnote{Further details can be found in \refapp{sampling} of the supplementary material.}
+In particular, the variance of $\pih_m^{\text{(joint)}}$ is a monotonically decreasing function in $n_m$, the number of samples drawn from $X_m$.
+We can easily solve for the minimum number of samples required to estimate $\pih_m^{\text{(joint)}}$ within a confidence interval $\epsilon$ by using the bisection method \citep{burden1985bisection}.

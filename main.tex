@@ -1,0 +1,106 @@
+%
+% File emnlp2017.tex
+%
+\documentclass[11pt,letterpaper]{article}
+\usepackage{emnlp2017}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{ifthen}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{scabby-lite}
+\usepackage{multicol}
+
+\usepackage{tikz}
+\usepackage{booktabs}
+\usetikzlibrary{fit}
+\usetikzlibrary{patterns}
+
+\input std-macros
+\input macros
+
+% Uncomment this line for the final submission:
+\emnlpfinalcopy{}
+
+%  Enter the EMNLP Paper ID here:
+\def\emnlppaperid{1376}
+
+% To expand the titlebox for more authors, uncomment
+% below and set accordingly.
+% \addtolength\titlebox{.5in}    
+
+\title{Importance sampling for unbiased on-demand evaluation of knowledge base population}
+
+%\title{Learn something new every day: a continuous assessment platform for knowledge base population}
+% AC: This is a bit boring but accurate.
+%\title{Unbiased cost-effective online evaluation for knowledge base population}
+% AC: too long
+%\title{Breaking open the closed world assumption: lazy evaluation for knowledge base population}
+% AC: Will this get people to read?
+%\title{On-demand open-world evaluation for knowledge base population}
+
+\author{%
+  Arun Tejasvi Chaganty$^*$
+\and%
+Ashwin Pradeep Paranjape\thanks{\quad Authors contributed equally.} %$^*$
+\and%
+  Percy Liang
+  \\
+  Computer Science Department \\
+  Stanford University \\
+  {\tt \{chaganty,ashwinp,pliang\}@cs.stanford.edu}
+\AND%
+  Christopher D. Manning \\
+  Computer Science Department \\
+  Stanford University \\
+  {\tt \{manning\}@cs.stanford.edu}
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input abstract
+\end{abstract}
+
+\input intro
+\input setup
+\input analysis
+\input method
+\input application
+\input evaluation
+\input discussion
+
+%\paragraph{Reproducibility}
+%All code, data, and experiments for this
+%paper are available on the CodaLab platform at
+%{\small \url{}}.
+
+\section*{Acknowledgments}
+We would like to thank Yuhao Zhang, Hoa Deng, Eduard Hovy, and Jacob Steinhardt for discussions, William E.\ Webber for his excellent thesis that helped shape this project and the anonymous reviewers for their detailed and pertinent feedback.
+The first and second authors are supported under DARPA DEFT program under ARFL prime contract no. FA8750-13-2-0040.
+% Hoa Deng, folks at NIST.
+% Ed Hovy?
+
+\bibliographystyle{emnlp_natbib}
+\bibliography{refdb/all}
+
+\appendix
+\input appendix
+\input basic-lemmas
+
+\end{document}
