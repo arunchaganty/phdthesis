@@ -16,53 +16,20 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {chapter}{Preface}{iv}{chapter*.1}}
+\@writefile{toc}{\contentsline {chapter}{Acknowledgments}{v}{chapter*.2}}
 \citation{berant2013freebase,fader2014open,reddy2014large}
 \citation{kalyanpur2012structured}
 \citation{han2015exploiting}
 \citation{sparck1975report,harman1993trec}
 \citation{zobel1998reliable}
-\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:example}{{1}{1}{An example describing entities and relations in knowledge base population.\relax }{figure.caption.1}{}}
-\citation{ji2011kbp}
-\citation{ellis2012kbp}
-\newlabel{fig:pooling}{{2}{2}{In pooled evaluation, an evaluation dataset is constructed by labeling relation instances collected from the pooled systems (A and B) and from a team of human annotators (Humans). However, when a new system (C) is evaluated on this dataset, some of its predictions ($i_6$) are missing and can not be fairly evaluated. Here, the precision and recall for C should be $\frac {3}{3}$ and $\frac {3}{4}$ respectively, but its evaluation scores are estimated to be $\frac {2}{3}$ and $\frac {2}{3}$. The discrepancy between these two scores is called \textit {pooling bias}. \relax }{figure.caption.2}{}}
-\newlabel{sec:setup}{{2}{2}{Background}{section.2}{}}
-\citation{zobel1998reliable}
-\citation{dang2016kbp}
-\newlabel{sec:analysis}{{3}{3}{Measuring pooling bias}{section.3}{}}
-\newlabel{fig:pooling-bias}{{3}{3}{Median pooling bias (difference between pooled and unpooled scores) on the top 40 systems of TAC KBP 2015 evaluation using the official and \anydoc {} scores. The bias is much smaller for the lenient \anydoc {} metric, but even so, it is larger than the largest difference between adjacent systems (1.5\% \fone {}) and typical system improvements (around 1\% \fone {}). \relax }{figure.caption.4}{}}
-\citation{owen2013monte}
-\newlabel{sec:method}{{4}{4}{On-demand evaluation with importance sampling}{section.4}{}}
-\newlabel{sec:joint}{{4.3}{4}{Joint estimators\footnote {Proofs for claims made in this section can be found in \refapp {sampling} of the supplementary material.}}{subsection.4.3}{}}
-\citation{burden1985bisection}
-\newlabel{sec:application}{{5}{5}{On-demand evaluation for KBP}{section.5}{}}
-\citation{webber2010measurement}
-\newlabel{fig:relation-interface}{{4a}{7}{\relax }{figure.caption.10}{}}
-\newlabel{sub@fig:relation-interface}{{a}{7}{\relax }{figure.caption.10}{}}
-\newlabel{fig:entity-interface}{{4b}{7}{\relax }{figure.caption.10}{}}
-\newlabel{sub@fig:entity-interface}{{b}{7}{\relax }{figure.caption.10}{}}
-\newlabel{fig:evaluation-results}{{4f}{7}{\relax }{figure.caption.10}{}}
-\newlabel{sub@fig:evaluation-results}{{f}{7}{\relax }{figure.caption.10}{}}
-\newlabel{fig:simulation}{{4}{7}{\textbf {(a, b):} Interfaces for annotating relations and entities respectively. \textbf {(c, d):} A comparison of bias for the pooling, simple and joint estimators on the TAC KBP 2015 challenge. Each point in the figure is a mean of 500 repeated trials; dotted lines show the 90\% quartile. Both the simple and joint estimators are unbiased, and the joint estimator is able to significantly reduce variance. \textbf {(e):} A comparison of the number of samples used to estimate scores under the fixed and adaptive sample selection scheme. Each faint line shows the number of samples used during a single trial, while solid lines show the mean over 100 trials. The dashed line shows a square-root relationship between the number of systems evaluated and the number of samples required. Thus joint estimation combined with adaptive sample selection can reduce the number of labeled annotations required by an order of magnitude. \textbf {(f):} Precision ($P$), recall ($R$) and \fone {} scores from a pilot run of our evaluation service for ensembles of a rule-based system (R), a logistic classifier (L) and a neural network classifier (N) run on the TAC KBP 2016 document corpus. \relax }{figure.caption.10}{}}
-\citation{manning2014stanford}
-\citation{ratinov2011local}
-\newlabel{sec:evaluation}{{6}{8}{Evaluation}{section.6}{}}
-\citation{zobel1998reliable}
-\citation{buckley2007bias}
-\citation{webber2010measurement}
-\citation{zobel1998reliable,cormack1998efficient,aslam2006statistical}
-\citation{buckley2004incomplete,sakai2008information,aslam2006statistical}
-\citation{aslam2006statistical}
-\citation{yilmaz2008simple}
-\citation{vannella2014validating,angeli2014combining,he2015question,liu2016effective}
-\citation{pavlick2016gun}
-\citation{angeli2014combining,adel2016comparing}
-\bibstyle{emnlp_natbib}
-\bibdata{refdb/all}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:intro}{{1}{1}{Introduction}{chapter.1}{}}
+\bibstyle{plain}
+\bibdata{all}
 \bibcite{adel2016comparing}{{1}{2016}{{Adel et~al.}}{{Adel, Roth, and Sch\"{u}tze}}}
-\newlabel{sec:related}{{7}{9}{Related work}{section.7}{}}
-\newlabel{sec:discussion}{{8}{9}{Discussion}{section.8}{}}
 \bibcite{angeli2014combining}{{2}{2014}{{Angeli et~al.}}{{Angeli, Tibshirani, Wu, and Manning}}}
 \bibcite{aslam2006statistical}{{3}{2006}{{Aslam et~al.}}{{Aslam, Pavlu, and Yilmaz}}}
 \bibcite{berant2013freebase}{{4}{2013}{{Berant et~al.}}{{Berant, Chou, Frostig, and Liang}}}
@@ -90,14 +57,3 @@
 \bibcite{webber2010measurement}{{26}{2010}{{Webber}}{{}}}
 \bibcite{yilmaz2008simple}{{27}{2008}{{Yilmaz et~al.}}{{Yilmaz, Kanoulas, and Aslam}}}
 \bibcite{zobel1998reliable}{{28}{1998}{{Zobel}}{{}}}
-\newlabel{sec:implementation}{{A}{12}{Implementation details}{appendix.A}{}}
-\newlabel{sec:sampling}{{B}{12}{Theoretical proofs for the sampling procedures}{appendix.B}{}}
-\newlabel{thm:pih}{{1}{12}{Statistical properties of $\pih _i$}{theorem.1}{}}
-\newlabel{thm:nuh}{{2}{14}{Statistical properties of $\nuh _i$}{theorem.2}{}}
-\newlabel{thm:rhoh}{{3}{14}{Statistical properties of $\recallh _i$}{theorem.3}{}}
-\citation{burden1985bisection}
-\newlabel{sec:heuristic-wij}{{B.3}{15}{Picking heuristic $w_{ij}$}{subsection.B.3}{}}
-\newlabel{sec:optimal-samples}{{B.4}{15}{Picking optimal number of samples for a new system}{subsection.B.4}{}}
-\newlabel{sec:probability}{{C}{15}{Basic probability lemmas}{appendix.C}{}}
-\newlabel{lem:variance-product}{{1}{15}{Mean and variance of the product of two random variables}{lemma.1}{}}
-\newlabel{lem:variance-ratio}{{2}{15}{Mean and variance of the ratio of two random variables}{lemma.2}{}}
