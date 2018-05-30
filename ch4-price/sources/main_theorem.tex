@@ -1,0 +1,196 @@
+\subsection{Main Theorem}
+
+In this section, we prove the main theorem (\refthm{main}) in the paper about the minimax optimal variance for an unbiased estimator. \refthm{main} will follow from the two following lemmas (Lemmas~\ref{lem:variance_calc} and~\ref{lem:mvue}). First, we show in \reflem{variance_calc} that for all distributions with fixed $\sigma^2_f$, $\sigma^2_a$ and $\rho$, the variance of $\mucontrol$ is constant and equal to: $\frac{1}{n}(\sigma_f^2(1-\rho^2)+\sigma_a^2)$.
+Then we give an explicit distribution, a Gaussian distribution, where \emph{any} estimator yields at least this variance using the theory of sufficient statistics.
+Together, these show that the max variance of any estimator is at least the max variance of $\mucontrol$.
+
+As a reminder, the estimator is 
+
+\begin{align}
+\mucontrol = \frac{1}{n} \sum_i y^{(i)} - \alpha g(z^{(i)})
+\end{align}
+
+where $\alpha = \Cov(f(z),g(z))$.
+
+
+
+\begin{lemma}
+\label{lem:variance_calc}
+The variance of $\mucontrol$ is always
+
+\begin{align}
+\frac{1}{n}(\sigma^2_f (1-\rho^2) + \sigma^2_a)
+\end{align}
+
+\end{lemma}
+\begin{proof}
+By the law of total variance, with respect to the draws of $z^{(i)}$,
+
+\begin{align}
+\Var(\mucontrol) = \mathbb{E}_{z^{(i)}}[\Var(\mucontrol | z^{(i)})] + \Var_{z^{(i)}} ( \mathbb{E}[\mucontrol | z^{(i)} ] ) 
+\end{align}
+
+We will evaluate each of the two terms on the right hand side. 
+
+For the first term,
+
+\begin{align}
+\mathbb{E}_{z^{(i)}}[\Var(\mucontrol | z^{(i)})] = \mathbb{E}_{z^{(i)}} \left[ \Var \left( \frac{1}{n} \sum_i y^{(i)} | z^{(i)} \right) \right]
+\end{align}
+Because the human responses $Y(z^{(i)})$ are uncorrelated,
+
+\begin{align}
+\mathbb{E}_{z^{(i)}}[\Var(\mucontrol | z^{(i)})] &= \mathbb{E}_{z^{(i)}} \left[ \frac{1}{n^2} \sum_i \Var( Y(z^{(i)}) ) | z^{(i)} \right] \\
+&= \frac{1}{n} \mathbb{E}_z [\Var(Y(z))] \\
+&= \frac{1}{n} \sigma^2_a
+\end{align}
+
+For the second term,
+
+\begin{align}
+\Var_{z^{(i)}}( \mathbb{E}[\mucontrol | z^{(i)}]) = \Var_{z^{(i)}} \left( \frac{1}{n} \sum_i f(z^{(i)}) - \alpha g(z^{(i)}) \right)
+\end{align}
+
+Because the $z^{(i)}$ are sampled independently,
+
+\begin{align}
+\Var_{z^{(i)}}( \mathbb{E}[\mucontrol | z^{(i)}]) &= \frac{1}{n} \Var( f(z) - \alpha g(z)) \\
+&= \frac{1}{n} [\Var(f(z)) - 2 \alpha \Cov(f(z),g(z)) + \alpha^2 \Var(g(z))]
+\end{align}
+
+Note that $\Var(f(z))=\sigma^2_f$, $\Cov(f(z),g(z))=\alpha$, and $\Var(g(z))=1$ (since it is normalized). Thus,
+
+\begin{align}
+\Var_{z^{(i)}}( \mathbb{E}[\mucontrol | z^{(i)}]) &= \frac{1}{n} [\sigma^2_f - 2 \alpha^2 + \alpha^2] \\
+&=\frac{1}{n} [\sigma^2_f - \alpha^2]
+\end{align}
+
+Since the correlation $\rho = \frac{\alpha}{\sigma_f \sigma_g} = \frac{\alpha}{\sigma_f}$,
+
+\begin{align}
+\Var_{z^{(i)}}( \mathbb{E}[\mucontrol | z^{(i)}]) &= \frac{1}{n} [\sigma^2_f - \sigma^2_f \rho^2] \\
+&=\frac{1}{n} \sigma^2_f (1-\rho^2)
+\end{align}
+
+Putting these two terms together, we find that,
+
+\begin{align}
+\Var(\mucontrol) &= \frac{1}{n} \sigma^2_a + \frac{1}{n} \sigma^2_f (1-\rho^2) \\
+&= \frac{1}{n}(\sigma^2_f (1 - \rho^2) + \sigma^2_a)
+\end{align}
+\end{proof}
+
+For the next lemma, we show that the worst-case variance for any estimator is at least that of $\mucontrol$. For this, we will define a simple Gaussian distribution and use the theory of sufficient statistics. We explicitly define a distribution over $f(z)$, $g(z)$, and $Y(Z) - f(z)$. In particular, we assume these are all Gaussian distributions with respective means, $\mu, 0, 0$,  and variances, $\sigma^2_f, 1, \sigma^2_a$. Additionally, we assume that $f(z)$ and $g(z)$ have covariance $\alpha$ but $Y(z) - f(z)$ is independent.
+
+\begin{lemma}
+\label{lem:mvue}
+$\mucontrol$ is the minimal variance unbiased estimate (MVUE) for the Gaussian distribution above.
+\end{lemma}
+\begin{proof}
+The proof is straightforward: we first show that $\mucontrol$ is a sufficient statistic using the Fisher-Neyman factorization theorem, and then we apply the Lehman-Scheffe theorem.
+
+For ease of notation, define $g_i = g(z^{(i)})$ and $y_i = y^{(i)}$. For the purposes of statistics, only $\mu$ is a parameter; the other ``parameters'' are known constants. %Let $c_2 = \sigma^2_f + \sigma^2_a$ be a named constant. 
+Note that the pdf of the observed variables $g_i$ and $y_i$ is,
+
+\begin{align}
+\prod_i c_1 \exp(-\frac{1}{2} 
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix}^T
+\begin{bmatrix}
+\sigma^2_f + \sigma^2_a & \alpha \\
+\alpha & 1 \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix})
+\end{align}
+
+\begin{align}
+=c_2 \exp(-\frac{1}{2} \sum_i
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix}^T
+\begin{bmatrix}
+\sigma^2_f + \sigma^2_a & \alpha \\
+\alpha & 1 \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix})
+\end{align}
+
+Thus, with the Fisher-Neyman factorization theorem, it suffices to show that the exponetiated term $T$ decomposes as a sum of a function that only depends on the data and a function that only depends on $\mucontrol$ and $\mu$.
+
+\begin{align}
+  T &=
+\sum_i
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix}^T
+\begin{bmatrix}
+\sigma^2_f + \sigma^2_a & \alpha \\
+\alpha & 1 \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix}
+\end{align}
+
+Letting $c_3$ be the inverse determinant (which is constant),
+
+\begin{align}
+T &= c_3 \sum_i
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix}^T
+\begin{bmatrix}
+1 & -\alpha \\
+-\alpha & \sigma^2_f + \sigma^2_a \\
+\end{bmatrix}
+\begin{bmatrix}
+(y_i - \mu) \\
+g_i \\
+\end{bmatrix} \\
+&= c_3 \left[ \sum_i (y_i - \mu)^2 - 2 \alpha \sum_i (y_i - \mu) g_i + (\sigma^2_f + \sigma^2_a) \sum_i g_i^2 \right] \\
+&= c_3 \left[ \sum_i y_i^2 - 2 \mu \sum_i y_i + n \mu^2 - 2 \alpha \sum_i y_i g_i + 2 \alpha \mu \sum_i g_i  + (\sigma^2_f + \sigma^2_a) \sum_i g_i^2 \right] \\
+&=  -2c_3 \mu \left[\sum_i y_i -  \alpha \sum_i g_i \right]  + c_3n\mu^2 +  c_3 \left[ \sum_i y_i^2 - 2 \alpha \sum_i y_i g_i + (\sigma^2_f + \sigma^2_a) \sum_i g_i^2 \right] \\
+&=  -2 n c_3 \mu \mucontrol  +  c_3n\mu^2 + c_3\left[ \sum_i y_i^2 - 2 \alpha \sum_i y_i g_i + (\sigma^2_f + \sigma^2_a) \sum_i g_i^2 \right]
+\end{align}
+
+Thus, we see the decomposition into the function of only the data on the right and only $\mu$ and $\mucontrol$ on the left. Thus, $\mucontrol$ is a sufficient statistic.
+
+Further, $\mucontrol$ is an unbiased estimate of $\mu$ since $\mathbb{E}[g_i]=0$ and $\mathbb{E}[y_i] = \mu$. 
+
+Further, since $\mucontrol$ is normally distributed with mean dependent on $\mu$, it is complete. 
+
+Thus, by the Lehmann-Scheffe theorem, $\mucontrol$ is the minimal variance unbiased estimate (MVUE).
+
+\end{proof}
+
+\begin{thm} [\ref{thm:main}]
+Among all unbiased
+  estimators that are functions of $y^{(i)}$ and $g(z^{(i)})$, and for all distributions with a given $\sigma^2_f$, $\sigma^2_a$, and $\alpha$,
+\begin{align}
+  \Var(\mucontrol) = \frac{1}{n} (\sigma^2_f (1 - \rho^2) + \sigma^2_a),
+\end{align}
+and no other estimator has a lower worst-case variance.
+\end{thm}
+\begin{proof}
+From \reflem{variance_calc} we have that the max variance of $\mucontrol$ over all distributions with fixed variances, is exactly,
+
+\begin{align}
+\frac{1}{n} (\sigma^2_f (1 - \rho^2) + \sigma^2_a)
+\end{align}
+
+Further, from \reflem{mvue}, we know that $\mucontrol$ is the MVUE for a particular class of distributions, thus, any estimator has a larger max variance over all distributions. 
+
+Combining these two facts, we get that the minimax variance is the variance of $\mucontrol$.
+\end{proof}

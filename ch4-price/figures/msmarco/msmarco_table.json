@@ -1,0 +1,114 @@
+{
+  "gold": {
+    "AvgCorrect": {
+      "snet.ensemble": 1.5771539810549362,
+      "snet.single": 1.595492596395229,
+      "fastqa_ext": 1.847434333891186,
+      "fastqa": 1.8410897194844056
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 1.585047021486835,
+      "snet.single": 1.5431176853196908,
+      "fastqa_ext": 1.7659309390265217,
+      "fastqa": 1.7557138006652757
+    }
+  },
+  "rouge-1": {
+    "AvgCorrect": {
+      "snet.ensemble": 0.9548143319773587,
+      "snet.single": 0.9793050392923734,
+      "fastqa_ext": 1.053110875499288,
+      "fastqa": 1.0530862341268734
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 0.9643658869857199,
+      "snet.single": 0.9566379069580302,
+      "fastqa_ext": 1.0805941173845823,
+      "fastqa": 1.0671278334355114
+    }
+  },
+  "ter": {
+    "AvgCorrect": {
+      "snet.ensemble": 0.9887960597094905,
+      "snet.single": 1.0237524312089599,
+      "fastqa_ext": 0.9852001653949367,
+      "fastqa": 0.9886944883453639
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 0.989313578270995,
+      "snet.single": 1.0140014380218296,
+      "fastqa_ext": 0.9830530457683553,
+      "fastqa": 0.9862774444369927
+    }
+  },
+  "sim": {
+    "AvgCorrect": {
+      "snet.ensemble": 0.9736449135081297,
+      "snet.single": 0.9929256622013011,
+      "fastqa_ext": 1.0774422397186116,
+      "fastqa": 1.02503922308056
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 0.9722074633447431,
+      "snet.single": 0.9525750238208611,
+      "fastqa_ext": 1.018830828916785,
+      "fastqa": 1.032410687423232
+    }
+  },
+  "rouge-l": {
+    "AvgCorrect": {
+      "snet.ensemble": 0.9586830843319573,
+      "snet.single": 0.9892010613006424,
+      "fastqa_ext": 1.0435266556399199,
+      "fastqa": 1.0349780728322386
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 0.9504640488945504,
+      "snet.single": 0.966298915096215,
+      "fastqa_ext": 1.0519366424221477,
+      "fastqa": 1.02805946109971
+    }
+  },
+  "rouge-2": {
+    "AvgCorrect": {
+      "snet.ensemble": 1.0194249595172058,
+      "snet.single": 1.0072887925562544,
+      "fastqa_ext": 1.0413572021838173,
+      "fastqa": 1.0102196264974423
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 1.0052795477368657,
+      "snet.single": 1.0276988528840774,
+      "fastqa_ext": 1.0340724117580522,
+      "fastqa": 1.0233722272052923
+    }
+  },
+  "bleu": {
+    "AvgCorrect": {
+      "snet.ensemble": 0.9562786915571413,
+      "snet.single": 0.9651607580334514,
+      "fastqa_ext": 1.0413242815076489,
+      "fastqa": 1.0202343561322305
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 0.9572110936668233,
+      "snet.single": 0.9441838447628736,
+      "fastqa_ext": 1.0696932144051001,
+      "fastqa": 1.0441601877328444
+    }
+  },
+  "meteor": {
+    "AvgCorrect": {
+      "snet.ensemble": 1.0197465944435962,
+      "snet.single": 1.0275397219458857,
+      "fastqa_ext": 1.0251053892769586,
+      "fastqa": 1.0518874103465607
+    },
+    "AnyCorrect": {
+      "snet.ensemble": 1.0478087818829955,
+      "snet.single": 1.0365385653374477,
+      "fastqa_ext": 1.0409553585517743,
+      "fastqa": 1.0464029101505428
+    }
+  }
+}

@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: emnlp_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: refdb/all.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty publisher in owen2013monte
+You've used 28 entries,
+            3571 wiz_defined-function locations,
+            821 strings with 9892 characters,
+and the built_in function-call counts, 20183 in all, are:
+= -- 1721
+> -- 983
+< -- 18
++ -- 320
+- -- 282
+* -- 1263
+:= -- 2986
+add.period$ -- 111
+call.type$ -- 28
+change.case$ -- 267
+chr.to.int$ -- 28
+cite$ -- 29
+duplicate$ -- 1398
+empty$ -- 1473
+format.name$ -- 364
+if$ -- 4423
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 284
+newline$ -- 143
+num.names$ -- 112
+pop$ -- 709
+preamble$ -- 1
+purify$ -- 206
+quote$ -- 0
+skip$ -- 962
+stack$ -- 0
+substring$ -- 697
+swap$ -- 650
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 246
+warning$ -- 1
+while$ -- 117
+width$ -- 0
+write$ -- 350
+(There was 1 warning)

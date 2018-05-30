@@ -1,0 +1,368 @@
+% vim:ft=tex
+\begin{tabular}{p{0.42\textwidth} p{0.52\textwidth}}
+\toprule
+\textbf{Reference summary} & \textbf{System summary} \textbf{(System; \texttt{Edit} / VecSim)} \\
+\midrule
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $> 0.5$ ($53.9\%$ or 1078 of 2000 responses)}} \\
+\midrule
+  % Good good
+\small Bhullar is set to sign a $\blacksquare$-day contract with the Kings. The $\blacksquare$-year-old will become the NBA's first player of Indian descent. Bhullar will be on the roster when the Kings host New Orleans Pelicans. &
+\small \st{Bhullar and}\textbf{The} Kings are signing Bhullar to a $\blacksquare$-day contract. The $\blacksquare$-year-old will be on the roster on friday when David Wear's $\blacksquare$-season contract expires thursday. Bhullar is set to become the NBA's first player of Indian descent.
+    (\texttt{ml}; $0.13$ / $0.82$)
+    \\
+\midrule
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $> 0.5$ ($18.0\%$ or 360 of 2000 responses)}} \\
+\midrule
+  % Bad good
+\small The Direct Marketing Commission probing B2C Data and Data Bubble. Investigating whether they breached rules on the sale of private data. Chief commissioner described allegations made about firms as `serious'.  &
+\small \st{$\blacksquare$ Data obtained by the Mail's marketing commission said it would probe both companies over claims that they had breached the rules on the sale of private data.} The FSA said it would probe both companies over claims they had breached the rules on the sale of private data. (\texttt{se2seq}; $1.00$ / $0.72$)
+\\
+\midrule
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $< 0.5$ ($14.5\%$ or 290 of 2000 responses)}} \\
+\midrule
+  % Good bad (272 / 2000)
+\small Death toll rises to more than $\blacksquare$. Pemba Tamang, $\blacksquare$, shows no apparent signs of serious injury after rescue. Americans special forces helicopter $\blacksquare$, including $\blacksquare$ Americans, to safety. &
+\small \st{Six of} \textbf{Despite} Nepal's tragedy, life triumphed in Kathmandu's hard-hit neighborhoods. Rescuers pulled an 15-year-old from the rubble of a multistory residential building. He was wearing a New York shirt and a blue neck brace. (\texttt{pointer}; $0.04$ / $0.27$)
+\\
+\midrule
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $< 0.5$ ($13.6\%$ or 272 of 2000 responses)}} \\
+\midrule
+  % Bad Bad
+\small ``Mad Men's'' final seven episodes begin airing April $\blacksquare$. The show has never had high ratings but is considered one of the great TV series. It's unknown what will happen to characters, but we can always guess. &
+\small `\st{This's} ``Mad Men'' is the end of a series of an era', \st{This} \textbf{he} says. Stores have created fashion lines inspired by the show.\st{``The Sopranos''. The in $\blacksquare$ the Kent State shootings in may $\blacksquare$ or Richard Nixon\'s $\blacksquare$ re-election..} (\texttt{ml+rl}; $0.95$ / $0.24$)\\
+  \bottomrule
+\end{tabular}
+
+% % % ++: gold < 0.3, sim > 0.5 (1078/2000)
+%% {'corr': -0.4314226527083297,
+%%  'edits': ["Bhullar and Kings are signing Bhullar to a ▃-day contract. The ▃-year-old will be on the roster on friday when David Wear's ▃-season contract expires thursday. Bhullar is set to become the NBA's first player of Indian descent.",
+%%   "The Kings are signing Bhullar to a ▃-day contract. The ▃-year-old will be on the roster on Friday when David Wear's ▃-season contract. Bhullar is set to become the NBA's first player of Indian descent."],
+%%  'id': '005488',
+%%  'metrics': {'bleu': 0.5187513759338115,
+%%   'gold': 0.0625,
+%%   'human': [0.0, 0.125],
+%%   'meteor': 0.30799344806440404,
+%%   'rouge-1': 0.7076923027029587,
+%%   'rouge-2': 0.45569619755167445,
+%%   'rouge-l': 0.4126748591756473,
+%%   'sim': 0.819654413535639,
+%%   'ter': 0.6410256410256411},
+%%  'reference': "Bhullar is set to sign a 00-day contract with the Kings. The 00-year-old will become the NBA's first player of Indian descent. Bhullar will be on the roster when the Kings host New Orleans Pelicans.",
+%%  'systems': 'ml',
+%%  'text': "Bhullar and Kings are signing Bhullar to a ▃-day contract. The ▃-year-old will be on the roster on friday when David Wear's ▃-season contract expires thursday. Bhullar is set to become the NBA's first player of Indian descent."})
+
+% % % (185,
+% % %  {'corr': -0.1387760342665428,
+% % %   'edits': ['A man set a bouncer on fire, police in Port St Lucie in Miami, Florida said. Footage shows the man get into a dispute with bartenders on Sunday night. The bouncer is said to be tackling the man to the ground after he threw a cup of gasoline on him. He was kicked out of the bar on fire and fled in a truck. He had been paying with cash or a debit card.',
+% % %    'A man set a bouncer on fire, police in Port St Lucie in Miami, Florida, shows the man get into a dispute with bartenders on sunday night. The bouncer is said to be tackling the man to the ground after he threw a cup of gasoline on him. He was kicked out of the bar on and fled in a truck. He had been paying with cash or a debit card.'],
+% % %   'id': '002453',
+% % %   'metrics': {'bleu': 0.3151482240404846,
+% % %    'gold': 0.04368471035137701,
+% % %    'human': [0.06172839506172839, 0.02564102564102564],
+% % %    'meteor': 0.3573560901672038,
+% % %    'rouge-1': 0.5999999952,
+% % %    'rouge-2': 0.30508474113042233,
+% % %    'rouge-l': 0.22626564491490112,
+% % %    'sim': 0.7060703907993069,
+% % %    'ter': 1.2954545454545454},
+% % %   'reference': 'Man got into a dispute with bartenders at a bar in Port St Lucie in Miami. He was kicked out then returned with cup of gasoline, poured on bouncer. Bouncer chased the man, who then set him on fire.',
+% % %   'systems': 'ml+rl',
+% % %   'text': 'A man set a bouncer on fire, police in Port St Lucie in Miami, Florida, shows the man get into a dispute with bartenders on sunday night. The bouncer is said to be tackling the man to the ground after he threw a cup of gasoline on him. He was kicked out of a bar on fire and fled in a truck. He had been paying with cash or a debit card.'})
+% % 
+% % % -+: gold > 0.3, sim > 0.5 (360/2000)
+% % [{'corr': -2.1480651341086854,
+% %   'edits': ['Perth couple Sharon, 38, and Nick ▃, 38, have been trying to conceive since they were married, she told the Daily Mail.',
+% %    'Perth couple Sharon, 38, and Nick, 38, have been trying to conceive since they were married.'],
+% %   'id': '005666',
+% %   'metrics': {'bleu': 0.18198044707298394,
+% %    'gold': 1,
+% %    'human': [1.1071428571428572, 1.6666666666666667],
+% %    'meteor': 0.12341583610133167,
+% %    'rouge-1': 0.3529411718209342,
+% %    'rouge-2': 0.14634145871207632,
+% %    'rouge-l': 0.2585509006268347,
+% %    'sim': 0.5001675785885514,
+% %    'ter': 0.9423076923076923},
+% %   'reference': 'Nick and Sharon Chalwell have been trying to start a family for seven years. The Perth couple have gone through nine rounds of IVF treatment. Turned to crowdsourcing to find an egg donor due to long waiting lists. Found a mother-of-one called Shannon willing to help them conceive.',
+% %   'systems': 'seq2seq',
+% %   'text': 'Perth couple Sharon, 38, and Nick ▃, 38, have been trying to conceive since they were married. The couple have been trying to conceive since they were married. Mrs ▃, 38, told Daily Mail Australia she and Nick have been trying to conceive since they were married.'},
+% % 
+% % 
+% % [{'corr': -1.6971769271903319,
+% %   'edits': ['Liverpool have agreed a three-year kit sponsorship deal with Standard Chartered Club, said Standard Chartered chairman Sir John Peace on Tuesday.',
+% %    'Liverpool have agreed a three-year kit sponsorship deal with Standard Chartered club, said Standard Chartered chairman Sir John Peace on Tuesday.'],
+% %   'id': '006213',
+% %   'metrics': {'bleu': 0.19973386548424027,
+% %    'gold': 1,
+% %    'human': [1.3478260869565217, 1.3043478260869565],
+% %    'meteor': 0.19663370838744473,
+% %    'rouge-1': 0.44827585706896556,
+% %    'rouge-2': 0.11111110614583355,
+% %    'rouge-l': 0.32193240240503995,
+% %    'sim': 0.5337753621065616,
+% %    'ter': 1.0285714285714285},
+% %   'reference': "Liverpool have agreed to a contract extension with their shirt sponsors. Standard Chartered's logo has appeared on Liverpool shirts since 0000. During their sponsorship, Liverpool have only won one trophy.",
+% %   'systems': 'ml',
+% %   'text': "Liverpool have agreed a three-year kit sponsorship deal with Standard Chartered club. Standard Chartered chairman sir John Peace on tuesday. Liverpool's sponsorship deal has been been extended for three years. Liverpool have signed a new sponsorship contract with Standard Chartered chairman John Peace."}]
+% % 
+% % {'corr': -0.6003678152660921,
+% %  'edits': ["Manchester City midfielder Yaya Toure has called Manuel Pellegrini, 'a weak manager'. But his agent Dimitri Seluk has claimed the club is just trying to make Toure a scapegoat.",
+% %   "Yaya Toure called Manchester City boss Manuel Pellegrini a 'weak manager. But Agent Dimitri Seluk has claimed the club are trying to make toure a scapegoat."],
+% %  'id': '006959',
+% %  'metrics': {'bleu': 0.17389873980350193,
+% %   'gold': 0.487012987012987,
+% %   'human': [0.5454545454545454, 0.42857142857142855],
+% %   'meteor': 0.2169520773061657,
+% %   'rouge-1': 0.4109588993807468,
+% %   'rouge-2': 0.11235954574422442,
+% %   'rouge-l': 0.224307336632416,
+% %   'sim': 0.529587732766811,
+% %   'ter': 0.8148148148148148},
+% %  'reference': "City are willing to listen to offers for Yaya Toure this summer. His agent Dimitri Seluk has hit out and called Manuel Pellegrini ' weak '. He also criticised the City's chief executive and director of football. Ivorian midfielder has had a difficult season at the Premier League champions.",
+% %  'systems': 'pointer',
+% %  'text': "Yaya Toure called Manchester City boss Manuel Pellegrini a 'weak manager. Manchester City midfielder Yaya Toure has called Manuel Pellegrini, 'weak. But Agent Dimitri Seluk has claimed the club are trying to make toure a scapegoat."}
+% % 
+% %  {'corr': 0.25384734214610377,
+% %   'edits': ['More than two-thirds of people taking antidepressants did not meet criteria for major depressive disorder. Researchers found 38% of people taking antidepressants did not meet criteria for insomnia.',
+% %    'More than two-thirds of people taking antidepressants did not meet criteria for major depressive disorder. Researchers found 38% of people taking antidepressants did not meet criteria for insomnia.'],
+% %   'id': '005149',
+% %   'metrics': {'bleu': 0.19911729841020043,
+% %    'gold': 0.4838709677419355,
+% %    'human': [0.4838709677419355, 0.4838709677419355],
+% %    'meteor': 0.16816129193329227,
+% %    'rouge-1': 0.2950819626014513,
+% %    'rouge-2': 0.0895522342080644,
+% %    'rouge-l': 0.32815767847708954,
+% %    'sim': 0.7161935405590732,
+% %    'ter': 0.8235294117647058},
+% %   'reference': "Study analysed those taking selective serotonin reuptake inhibitors (SSRIs). Found 00 % did not meet the criteria for clinical depression. And 00 % did not meet the criteria for other mental conditions like anxiety. Experts: ' drugs are prescribed without an evidence-based diagnosis '.",
+% %   'systems': 'seq2seq',
+% %   'text': 'More than two-thirds of people taking antidepressants did not meet criteria for major depressive disorder. Researchers found 38% of people taking antidepressants did not meet criteria for insomnia. Study found 38% of people taking antidepressants did not meet criteria for insomnia.'
+% % 
+% % (74,
+% %  {'corr': 0.7450220497349421,
+% %   'edits': ["▃ Data obtained by the Mail's marketing commission said it would probe both companies over claims that they had breached the rules on the sale of private data.",
+% %    'The FSA said it would probe both companies over claims they had breached the rules on the sale of private data.'],
+% %   'id': '009153',
+% %   'metrics': {'bleu': 0.18523964340873714,
+% %    'gold': 1,
+% %    'human': [0.7333333333333333, 1.3636363636363635],
+% %    'meteor': 0.19697718021539198,
+% %    'rouge-1': 0.39344261795216345,
+% %    'rouge-2': 0.20895521888171098,
+% %    'rouge-l': 0.2569611353633478,
+% %    'sim': 0.7158091639781483,
+% %    'ter': 1.1714285714285715},
+% %   'reference': "The Direct Marketing Commission probing B2C Data and Data Bubble. Investigating whether they breached rules on the sale of private data. Chief commissioner described allegations made about firms as ' serious '.",
+% %   'systems': 'seq2seq',
+% %   'text': "▃ Data obtained by the Mail's marketing commission said it would probe both companies over claims that they had breached the rules on the sale of private data. The FSA said it would probe both companies over claims they had breached the rules on the sale of private data."})
+% % 
+% %   % +- (290/200)
+% % 
+% % (24,
+% %  {'corr': -0.10352153319410932,
+% %   'edits': ["Luke Sales and Anna Plunkett showcased a collection. It features a range of colorful leaves. One model sports a headpiece reminiscent of Ned Kelly's iconic helmet.",
+% %    "Luke Sales and Anna Plunkett showcased a display-out collection of the Sydney. The collection features a range of colorful leaves and one model sported a headpiece reminiscent of Ned Kelly's iconic helmet."],
+% %   'id': '007862',
+% %   'metrics': {'bleu': 0.16641187521238796,
+% %    'gold': 0.24047619047619045,
+% %    'human': [0.36666666666666664, 0.11428571428571428],
+% %    'meteor': 0.11344394643300129,
+% %    'rouge-1': 0.2769230719810652,
+% %    'rouge-2': 0.1249999950500002,
+% %    'rouge-l': 0.23549047564319875,
+% %    'sim': 0.36776029996786164,
+% %    'ter': 0.8695652173913043},
+% %   'reference': 'Romance was born show at Fashion Week was held on thursday morning at Art Gallery of NSW. Designers Luke Sales and Anna Plunkett presented a typically eccentric collection of bold prints and colour. Fashion Week wraps up thursday night with Johanna Johnson show.',
+% %   'systems': 'ml',
+% %   'text': "Luke Sales and Anna Plunkett showcased a display-out collection of the Sydney. The collection features a range of colourful and gum leaves and one model sports a headpiece reminiscent of Ned Kelly's iconic helmet."})
+% % 
+% % (3,
+% %  {'corr': 0.2209947896700711,
+% %   'edits': ['The Kurdish state of Iraq and Syria has reopened the University of Mosul. It was one of many institutions that were taken over and shut down by the Islamic state in Iraq and Syria.',
+% %    "The Kurdish state of Iraq and Syria has reopened the University of Mosul. It's one of many official institutions taken over and shut down by the state."],
+% %   'id': '000937',
+% %   'metrics': {'bleu': 0.4140393356054125,
+% %    'gold': 0.18611111111111112,
+% %    'human': [0.1388888888888889, 0.23333333333333334],
+% %    'meteor': 0.08541986328441067,
+% %    'rouge-1': 0.181818176833058,
+% %    'rouge-2': 0.0,
+% %    'rouge-l': 0.12164579606377317,
+% %    'sim': 0.27995460632376534,
+% %    'ter': 1.1},
+% %   'reference': 'ISIS is known for brutal takeovers and medieval justice, but it sees itself as a state. Official documents show just how far their rules affect daily life.',
+% %   'systems': 'seq2seq',
+% %   'text': "The Kurdish state of Iraq and Syria has reopened the University of Mosul. It's one of many official documents taken over and shut down, the Islamic state in Iraq and Syria."})
+% % 
+% % (16,
+% %  {'corr': 1.2121797666355154,
+% %   'edits': ["Despite Nepal's tragedy, life triumphed in Kathmandu's hard-hit neighborhoods. Rescuers pulled an 15-year-old from the rubble of a multistory residential building. He was wearing a New York shirt and a blue neck brace.",
+% %    "Six survivors of Nepal's tragedy, life triumphed in Kathmandu's hard-hit neighborhoods. Rescuers pulled an 15-year-old from the rubble of a multistory residential building. He was wearing a New York shirt and a blue neck brace."],
+% %   'id': '000188',
+% %   'metrics': {'bleu': 0.3535533905932738,
+% %    'gold': 0.037836147592245156,
+% %    'human': [0.05128205128205128, 0.024390243902439025],
+% %    'meteor': 0.0363859864781807,
+% %    'rouge-1': 0.09677418859521357,
+% %    'rouge-2': 0.0,
+% %    'rouge-l': 0.10468478889472152,
+% %    'sim': 0.27313613762154065,
+% %    'ter': 1.0277777777777777},
+% %   'reference': 'Death toll rises to more than 0,000. Pemba Tamang, 00, shows no apparent signs of serious injury after rescue. Americans special forces helicopter 00, including 0 Americans, to safety.',
+% %   'systems': 'pointer',
+% %   'text': "Six of Nepal's tragedy, life triumphed in Kathmandu's hard-hit neighborhoods. Rescuers pulled an 15-year-old from the rubble of a multistory residential building. He was wearing a New York shirt and a blue neck brace."})
+% % 
+% % -- (272/2000)
+% % (26,
+% %  {'corr': -4.727102467893621,
+% %   'edits': ["Harry Redknapp resigned as QPR manager at the club in February. Former QPR boss says he is 'a bit of a soap opera.'",
+% %    "Harry Redknapp resigned as QPR manager at the club in February. The former QPR boss says he is' a bit of a soap opera '."],
+% %   'id': '006354',
+% %   'metrics': {'bleu': 0.10846522890932807,
+% %    'gold': 0.9642857142857143,
+% %    'human': [1.0, 0.9285714285714286],
+% %    'meteor': 0.12235873115842823,
+% %    'rouge-1': 0.24561403027393053,
+% %    'rouge-2': 0.09090908598255307,
+% %    'rouge-l': 0.2157068732895244,
+% %    'sim': 0.29102952018823114,
+% %    'ter': 1.1578947368421053},
+% %   'reference': 'Redknapp quit as QPR manager in february due to knee surgery. Redknapp will manage Men United XI vs Leyton Orient Legends on may 00. Charity match is to raise funds and awareness for prostate cancer.',
+% %   'systems': 'seq2seq',
+% %   'text': "Harry Redknapp resigned as QPR manager at the club in February. Former QPR boss says he is' a bit of a soap opera '. Redknapp says he is a bit of a soap opera '. Redknapp says he is a bit of a soap opera '."})
+% % (4,
+% %  {'corr': -6.363824835911583,
+% %   'edits': ['Sarah Vine says the BBC need to look further than just men.',
+% %    'Sarah Vine says the BBC needs to look further than just men.'],
+% %   'id': '007394',
+% %   'metrics': {'bleu': 0.08683315837836825,
+% %    'gold': 1,
+% %    'human': [2.0, 2.076923076923077],
+% %    'meteor': 0.07457951978414544,
+% %    'rouge-1': 0.1785714238839287,
+% %    'rouge-2': 0.051282046400394944,
+% %    'rouge-l': 0.11608311257189291,
+% %    'sim': 0.1859381593041419,
+% %    'ter': 0.9130434782608695},
+% %   'reference': 'Sue Perkins received abuse on Twitter when her name was mentioned. The general opinion being stated was â\x80\x98 men do cars, women do cake. Â\x80\x99. Here, Sarah Vine states why women are often just as keen on cars as men.',
+% %   'systems': 'ml',
+% %   'text': "Sarah Vine says the BBC need to look further than just men. She says it's a to to the the of the. . . He says it is a to the to of the world."})
+% % 
+% % (2,
+% %  {'corr': -5.183901852482957,
+% %   'edits': ['""Mad Men" is the end of a series of an era, " he says. Stores have created fashion lines inspired by the show. "The Sopranos".',
+% %    '"Mad Men" is the end of a series of an era. Stores have created fashion lines inspired by the show.'],
+% %   'id': '000348',
+% %   'metrics': {'bleu': 0.1295047816476352,
+% %    'gold': 0.9485294117647058,
+% %    'human': [0.6470588235294118, 1.25],
+% %    'meteor': 0.13566922616523996,
+% %    'rouge-1': 0.33333332834648266,
+% %    'rouge-2': 0.06185566514613707,
+% %    'rouge-l': 0.19876181166439352,
+% %    'sim': 0.24659114048149058,
+% %    'ter': 1.0444444444444445},
+% %   'reference': '"Mad Men\'s" final seven episodes begin airing april 0. The show has never had high ratings but is considered one of the great tv series. It\'s unknown what will happen to characters, but we can always guess.',
+% %   'systems': 'ml+rl',
+% %   'text': 'This\'s "Mad Men" is the end of a series of an era, " This says. Stores have created fashion lines inspired by the show. "The Sopranos". The in ▃, the Kent State shootings in may ▃ or Richard Nixon\'s ▃ re-election. .'})
+% % 
+% % 
+% % 
+% % 
+% %  % Observation: # of instances where ROUGE-L > 0.5 but edit-rate > 0.3 is very very small, just 3/2000
+% % 
+% %  % Observation: # of instances where ROUGE-L < 0.5 but edit-rate < 0.3 is very very large, just 1345/2000
+% % (958,
+% %  {'corr': 0.2767051430131377,
+% %   'edits': ['Novak Djokovic beat John Isner in straight sets to reach the final of the Miami Open on Friday night. The no 1-seeded, Djokovic closed to within one win of his fifth key Biscayne title. Djokovic became the first player in the tournament to break Isner.',
+% %    'Novak Djokovic beat John Isner in straight sets to reach the finalof the Miami Open on Friday night. The no 1-seeded Djokovic closed to within one win of his fifth key Biscayne title. Djokovic became the first player in the tournament to Break Isner.'],
+% %   'id': '006586',
+% %   'metrics': {'bleu': 0.23559321469900382,
+% %    'gold': 0.04081632653061224,
+% %    'human': [0.08163265306122448, 0.0],
+% %    'meteor': 0.2083806220916235,
+% %    'rouge-1': 0.4705882303114187,
+% %    'rouge-2': 0.1445783083118016,
+% %    'rouge-l': 0.36830397933076303,
+% %    'sim': 0.5704338663502933,
+% %    'ter': 0.9736842105263158},
+% %   'reference': "Djokovic beat John Isner 0-0. 0-0 in their Miami semi-final. The world no 0 will take on Andy Murray in sunday's final. Djokovic is bidding to win his fifth title at Key Biscayne.",
+% %   'systems': 'pointer',
+% %   'text': 'Novak Djokovic beat John Isner in straight sets to reach the finalof the Miami Open on Friday night. The no 1-seeded Djokovic closed to within one win of his fifth key Biscayne title. Djokovic became the first player in the tournament to Break Isner.'})
+% % 
+% % % Examples where edit rate < 0.3, but sim < 0.5 (290/2000)
+% %  {'corr': 0.5504184605943235,
+% %   'edits': ['Aldo and Conor McGregor take the spotlight over the past two weeks. Mendes and Lamas face off in Fairfax, Virginia. Irishman McGregor, Virginia and Lamas also dropped a decision to the UFC. The UFC event will take place at the Patriot Center on saturday night.',
+% %    'Aldo and Conor McGregor have taken the spotlight over the past two weeks. Mendes and Lamas face off in Fairfax, Virginia. McGregor, Virginia and Lamas also dropped a decision to the UFC, which will take place at the Patriot Center on saturday night.'],
+% %   'id': '002244',
+% %   'metrics': {'bleu': 0.08735133136756063,
+% %    'gold': 0.09063625450180071,
+% %    'human': [0.058823529411764705, 0.12244897959183673],
+% %    'meteor': 0.09663475177316277,
+% %    'rouge-1': 0.3124999952625868,
+% %    'rouge-2': 0.045801522034846935,
+% %    'rouge-l': 0.1447121034855876,
+% %    'sim': 0.41268119242736884,
+% %    'ter': 0.9058823529411765},
+% %   'reference': "Mendes expects war with Lamas in saturday's main event. Having both fallen to featherweight champion Aldo in the past, both men feel a win could put them back in title contention. Lamas thinks that both he and Mendes will drag the best out of each other. Mendes sees Aldo taking july 00's title fight with Conor McGregor. Two of the lightweight division's best strikers, Al Iaquinta and Jorge Masvidal, meet in the co-main event.",
+% %   'systems': 'ml',
+% %   'text': 'Aldo and Conor McGregor have to take the spotlight over the past two weeks. Mendes and Lamas face off in Fairfax, Virginia. Irishman McGregor, Virginia and Lamas also dropped a decision to the UFC. The UFC will take place at the Patriot Center on saturday night.'})
+% % 
+% % (259,
+% %  {'corr': 0.9300398990272531,
+% %   'edits': ['The New Orleans City Council passed its ban against smoking in most places across the city -- including bars, casinos, restaurants and restaurants. The ban, and a hearing is scheduled in state court in a month.',
+% %    'The New Orleans City Council passed its ban against smoking in most places across the city -- including bars, casinos, restaurants and restaurants. The ban, and a hearing is scheduled in state court in a month.'],
+% %   'id': '000434',
+% %   'metrics': {'bleu': 0.06984302957695782,
+% %    'gold': 0.0,
+% %    'human': [0.0, 0.0],
+% %    'meteor': 0.13049301458314475,
+% %    'rouge-1': 0.25925925436899866,
+% %    'rouge-2': 0.031746027110103985,
+% %    'rouge-l': 0.1636594356147844,
+% %    'sim': 0.4143529603477591,
+% %    'ter': 1.5},
+% %   'reference': "New Orleans bars are smoke-free as of wednesday morning. A lawsuit by Harrah's and bar owners seeks to overturn the ban.",
+% %   'systems': 'ml',
+% %   'text': 'The New Orleans City Council passed its ban against smoking in most places across the city -- including bars, casinos, restaurants and restaurants. The ban, and a hearing is scheduled in state court in a month.'})
+% % 
+% % (247,
+% %  {'corr': 0.8543597602861778,
+% %   'edits': ["Mark Vanhoenacker is a senior first officer with British Airways. He admires the 747 like a sculptor might a perfect human torso. He recalls a wildlife writer once describing Virginia's great blue heron as' the 747 of the swamp '.",
+% %    "Mark Vanhoenacker is a senior first officer with British Airways. He admires the 747 like a sculptor might a perfect human torso. He recalls a wildlife writer once describing Virginia's great blue heron as' the 747 of the swamp '."],
+% %   'id': '007473',
+% %   'metrics': {'bleu': 0.2659080117391552,
+% %    'gold': 0.0,
+% %    'human': [0.0, 0.0],
+% %    'meteor': 0.1717544940171841,
+% %    'rouge-1': 0.35294117147491355,
+% %    'rouge-2': 0.25974025478158214,
+% %    'rouge-l': 0.31334509112220543,
+% %    'sim': 0.43436458434131736,
+% %    'ter': 0.9444444444444444},
+% %   'reference': 'The Germanwings tragedy has ignited debate about depression in pilots. Author, Vanhoenacker is a senior first officer with British Airways. He wants the reader to simply understand his passion for his job.',
+% %   'systems': 'pointer',
+% %   'text': "Mark Vanhoenacker is a senior first officer with British Airways. He admires the 747 like a sculptor might a perfect human torso. He recalls a wildlife writer once describing Virginia's great blue heron as' the 747 of the swamp '."})
+% % 
+% % % Examples where edit rate < 0.3, but sim > 0.5 (1078/2000)
+% % (401,
+% %  {'corr': -0.02250262588420785,
+% %   'edits': ["Patrick Randall held a knife to his friend and shot him in the head. Patrick Randall, 17, was convicted of conspiring with her Teen Lover, William 'Mitch Flynn, to kill her husband, Gregory. The trial was a media circus and one of the first high-profile cases about a sexual affair between a school staff and a friend.",
+% %    "Patrick Randall was 16 in May 1990 when he held a gun to his lover's husband and shot him in the head. He was convicted of conspiring with teen lover, William Mitch Flynn, to kill her husband, Gregory Smart. The trial was a media circus and one of the first high profile cases about a sexual affair between a school teacher and a student."],
+% %   'id': '005880',
+% %   'metrics': {'bleu': 0.22645540682891913,
+% %    'gold': 0.27670639219934995,
+% %    'human': [0.2153846153846154, 0.3380281690140845],
+% %    'meteor': 0.17149534387530643,
+% %    'rouge-1': 0.4117647008842753,
+% %    'rouge-2': 0.16541352886878868,
+% %    'rouge-l': 0.30139833711198744,
+% %    'sim': 0.6372448631264164,
+% %    'ter': 0.9090909090909091},
+% %   'reference': "Randall was 00 in may 0000 when he held a knife to Pamela Smart's throat as Flynn shot him in the head. Flynn was Pamela Smart's then-00-year-old lover. Flynn was paroled last month ; smart is serving life without parole after being convicted of plotting the murder. Now 00, Randall won parole at his first hearing-released after june 0.",
+% %   'systems': 'seq2seq',
+% %   'text': "Patrick Randall, who was 16 in May 1990 when he held a knife to his friend, shot him in the head. Patrick Randall, 17, was convicted of conspiring with her Teen Lover, William 'Mitch Flynn, to kill her husband, Gregory smart in the head. The trial was a media circus and one of the first high-profile cases about a sexual affair between a school staff and a friend."})
+% % 
+% % 
+% % 

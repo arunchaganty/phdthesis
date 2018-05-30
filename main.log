@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2018 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  30 MAY 2018 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,6 +307,9 @@ Package caption Info: hyperref package is loaded.
 \c@subfigure=\count117
 \c@subtable=\count118
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen138
 )
@@ -328,27 +331,352 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks28
 \c@algorithm=\count120
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count121
-\c@ALC@line=\count122
-\c@ALC@rem=\count123
-\c@ALC@depth=\count124
-\ALC@tlm=\skip53
-\algorithmicindent=\skip54
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count121
+\c@ALG@rem=\count122
+\c@ALG@nested=\count123
+\ALG@tlm=\skip53
+\ALG@thistlm=\skip54
+\c@ALG@Lnr=\count124
+\c@ALG@blocknr=\count125
+\c@ALG@storecount=\count126
+\c@ALG@tmpcounter=\count127
+\ALG@tmplength=\skip55
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tablefootnote/tablefootnote.sty
+Package: tablefootnote 2014/01/26 v1.1c Table foot notes (HMM)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2009/04/17 v1.3 Extended ifthen features
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
+\et@xins=\count128
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count129
+\calc@Bcount=\count130
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count131
+\calc@Cskip=\skip58
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count132
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen141
+\pgfutil@tempdimb=\dimen142
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+))
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen143
+\pgf@y=\dimen144
+\pgf@xa=\dimen145
+\pgf@ya=\dimen146
+\pgf@xb=\dimen147
+\pgf@yb=\dimen148
+\pgf@xc=\dimen149
+\pgf@yc=\dimen150
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count133
+\c@pgf@countb=\count134
+\c@pgf@countc=\count135
+\c@pgf@countd=\count136
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count137
+\pgfsyssoftpath@bigbuffer@items=\count138
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 142.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen151
+\pgfmath@count=\count139
+\pgfmath@box=\box31
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count140
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen152
+\pgf@picmaxx=\dimen153
+\pgf@picminy=\dimen154
+\pgf@picmaxy=\dimen155
+\pgf@pathminx=\dimen156
+\pgf@pathmaxx=\dimen157
+\pgf@pathminy=\dimen158
+\pgf@pathmaxy=\dimen159
+\pgf@xx=\dimen160
+\pgf@xy=\dimen161
+\pgf@yx=\dimen162
+\pgf@yy=\dimen163
+\pgf@zx=\dimen164
+\pgf@zy=\dimen165
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen166
+\pgf@path@lasty=\dimen167
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen168
+\pgf@shorten@start@additional=\dimen169
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count141
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen170
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen171
+\pgf@pt@y=\dimen172
+\pgf@pt@temp=\dimen173
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen174
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen175
+\pgf@sys@shading@range@num=\count142
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+\pgfexternal@startupbox=\box35
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+\pgfnodeparttextbox=\box36
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen176
+\pgf@nodesepend=\dimen177
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen178
+\pgffor@skip=\dimen179
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count143
+\pgfplotmarksize=\dimen180
+)
+\tikz@lastx=\dimen181
+\tikz@lasty=\dimen182
+\tikz@lastxsaved=\dimen183
+\tikz@lastysaved=\dimen184
+\tikzleveldistance=\dimen185
+\tikzsiblingdistance=\dimen186
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count144
+\tikznumberofchildren=\count145
+\tikznumberofcurrentchild=\count146
+\tikz@fig@count=\count147
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count148
+\pgfmatrixcurrentcolumn=\count149
+\pgf@matrix@numberofcolumns=\count150
+)
+\tikz@expandcount=\count151
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip59
+\afterepigraphskip=\skip60
+\epigraphwidth=\skip61
+\epigraphrule=\skip62
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks29
-\inpenc@posthook=\toks30
+\inpenc@prehook=\toks41
+\inpenc@posthook=\toks42
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
@@ -565,39 +893,63 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2423 (decimal 9251)
 ))
 (./std-macros.tex
-\c@definition=\count125
-\c@assumption=\count126
-\c@hypothesis=\count127
-\c@proposition=\count128
-\c@theorem=\count129
-\c@lemma=\count130
-\c@corollary=\count131
-\c@alg=\count132
-\c@example=\count133
-) (./macros.tex) (./main.aux)
+\c@definition=\count152
+\c@assumption=\count153
+\c@hypothesis=\count154
+\c@proposition=\count155
+\c@theorem=\count156
+\c@lemma=\count157
+\c@corollary=\count158
+\c@alg=\count159
+\c@example=\count160
+) (./macros.tex) (./main.aux
+
+LaTeX Warning: Label `sec:intro' multiply defined.
+
+
+LaTeX Warning: Label `sec:method' multiply defined.
+
+
+LaTeX Warning: Label `sec:evaluation' multiply defined.
+
+
+LaTeX Warning: Label `sec:setup' multiply defined.
+
+
+LaTeX Warning: Label `sec:discussion' multiply defined.
+
+
+LaTeX Warning: Label `sec:intro' multiply defined.
+
+
+LaTeX Warning: Label `sec:model' multiply defined.
+
+
+LaTeX Warning: Label `sec:related' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 33.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 33.
+\AtBeginShipoutBox=\box41
+Package hyperref Info: Link coloring OFF on input line 38.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -605,30 +957,30 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count134
+\c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 38.
+LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \nameref on input line 38.
 
 (./main.out) (./main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen139
-\scratchbox=\box31
-\nofMPsegments=\count136
-\nofMParguments=\count137
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen140
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count162
+\scratchdimen=\dimen187
+\scratchbox=\box42
+\nofMPsegments=\count163
+\nofMParguments=\count164
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count165
+\MPscratchDim=\dimen188
+\MPnumerator=\count166
+\makeMPintoPDFobject=\count167
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -648,245 +1000,810 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-[1
+ABD: EveryShipout initializing macros [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 45.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
  [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
 
 (./abstract.tex) [4
 
 
 ] (./acknowledgments.tex) [5
 
-]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
-[6
-
-]
-
-Package hyperref Warning: old lot file detected, not used; run LaTeX again.
-
-\tf@lot=\write5
-\openout5 = `main.lot'.
-
-[7
-
-]
-
-Package hyperref Warning: old lof file detected, not used; run LaTeX again.
-
-\tf@lof=\write6
-\openout6 = `main.lof'.
-
-[8
-
-] (./intro.tex
-Chapter 1.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+] (./main.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [6
 
-Package natbib Warning: Citation `berant2013freebase' on page 1 undefined on in
-put line 8.
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
-
-Package natbib Warning: Citation `fader2014open' on page 1 undefined on input l
-ine 8.
-
-
-Package natbib Warning: Citation `reddy2014large' on page 1 undefined on input 
-line 8.
-
-
-Package natbib Warning: Citation `kalyanpur2012structured' on page 1 undefined 
-on input line 8.
-
-
-Package natbib Warning: Citation `han2015exploiting' on page 1 undefined on inp
-ut line 8.
-
-
-Package natbib Warning: Citation `sparck1975report' on page 1 undefined on inpu
-t line 12.
-
-
-Package natbib Warning: Citation `harman1993trec' on page 1 undefined on input 
-line 12.
-
-
-Package natbib Warning: Citation `zobel1998reliable' on page 1 undefined on inp
-ut line 15.
-
-
-LaTeX Warning: Reference `sec:analysis' on page 1 undefined on input line 18.
-
-
-LaTeX Warning: Reference `sec:method' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Reference `sec:application' on page 1 undefined on input line 42
-.
-
-[1
-
-
-]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
+ [7]
+(./main.lot
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 6.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ))
-(./main.bbl [2] [3
+\tf@lot=\write6
+\openout6 = `main.lot'.
 
-] [4])
+
+[8
+
+] (./main.lof [9
+
+])
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+ [10] (./ch1-intro/main.tex
+Chapter 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+) (./ch2-setup/main.tex [1
+
+
+]
+Chapter 2.
+) (./ch3-kbpo/main.tex [2
+
+]
+Chapter 3.
+(./ch3-kbpo/macros.tex) (./ch3-kbpo/abstract.tex) (./ch3-kbpo/intro.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+
+<ch3-kbpo/figures/entities-example.pdf, id=379, 450.60454pt x 382.96785pt>
+File: ch3-kbpo/figures/entities-example.pdf Graphic file (type pdf)
+
+<use ch3-kbpo/figures/entities-example.pdf>
+Package pdftex.def Info: ch3-kbpo/figures/entities-example.pdf used on input li
+ne 6.
+(pdftex.def)             Requested size: 390.25534pt x 331.68336pt.
+ [3
+
+]
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 4
+ []
+
+[4 <./ch3-kbpo/figures/entities-example.pdf>]) (./ch3-kbpo/setup.tex
+<ch3-kbpo/figures/pooling.pdf, id=469, 174.35538pt x 106.09035pt>
+File: ch3-kbpo/figures/pooling.pdf Graphic file (type pdf)
+
+<use ch3-kbpo/figures/pooling.pdf>
+Package pdftex.def Info: ch3-kbpo/figures/pooling.pdf used on input line 6.
+(pdftex.def)             Requested size: 390.25534pt x 237.47398pt.
+
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 5
+ []
+
+[5]) (./ch3-kbpo/analysis.tex
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 6
+ []
+
+[6 <./ch3-kbpo/figures/pooling.pdf>]
+<ch3-kbpo/figures/pooling_bias_f1/pooling_bias/pooling_bias.png, id=518, 462.52
+8pt x 346.896pt>
+File: ch3-kbpo/figures/pooling_bias_f1/pooling_bias/pooling_bias.png Graphic fi
+le (type png)
+
+<use ch3-kbpo/figures/pooling_bias_f1/pooling_bias/pooling_bias.png>
+Package pdftex.def Info: ch3-kbpo/figures/pooling_bias_f1/pooling_bias/pooling_
+bias.png used on input line 15.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+)
+(./ch3-kbpo/method.tex
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 7
+ []
+
+[7]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
+
+Overfull \hbox (4.08498pt too wide) in paragraph at lines 22--29
+\OT1/ptm/m/n/10 Let $\OMS/cmsy/m/n/10 X$ \OT1/ptm/m/n/10 be the uni-verse of (r
+e-la-tion) in-stances, $\OMS/cmsy/m/n/10 Y ^^R X$ \OT1/ptm/m/n/10 be the un-kno
+wn sub-set of cor-rect in-stances, $\OML/cmm/m/it/10 X[]; [] X[] \OMS/cmsy/m/n/
+10 ^^R
+ []
+
+
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 8
+ []
+
+[8]
+Overfull \hbox (23.66911pt too wide) in paragraph at lines 70--71
+[]\OT1/ptm/m/n/10 Finally, to form $[]$, how many sam-ples should we draw from 
+$\OML/cmm/m/it/10 X[]$ \OT1/ptm/m/n/10 given ex-ist-ing sam-ples and $[]\OML/cm
+m/m/it/10 ; [] ; []$
+ []
+
+
+Overfull \hbox (119.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 9
+ []
+
+[9]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 145.
+
+
+LaTeX Warning: Reference `sec:sampling' on page 10 undefined on input line 145.
+
+
+) (./ch3-kbpo/application.tex
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 10
+ []
+
+[10]
+<ch3-kbpo/figures/interface/relation-interface.png, id=581, 786.94pt x 512.9162
+4pt>
+File: ch3-kbpo/figures/interface/relation-interface.png Graphic file (type png)
+
+ <use ch3-kbpo/figures/interface/relation-interface.png>
+Package pdftex.def Info: ch3-kbpo/figures/interface/relation-interface.png used
+ on input line 62.
+(pdftex.def)             Requested size: 212.47617pt x 138.4814pt.
+
+<ch3-kbpo/figures/interface/extraction-interface.png, id=582, 786.94pt x 482.80
+376pt>
+File: ch3-kbpo/figures/interface/extraction-interface.png Graphic file (type pn
+g)
+ <use ch3-kbpo/figures/interface/extraction-interface.png>
+Package pdftex.def Info: ch3-kbpo/figures/interface/extraction-interface.png us
+ed on input line 68.
+(pdftex.def)             Requested size: 212.47617pt x 130.35138pt.
+
+<ch3-kbpo/figures/simulation/simulation-p.png, id=583, 462.528pt x 346.896pt>
+File: ch3-kbpo/figures/simulation/simulation-p.png Graphic file (type png)
+
+<use ch3-kbpo/figures/simulation/simulation-p.png>
+Package pdftex.def Info: ch3-kbpo/figures/simulation/simulation-p.png used on i
+nput line 74.
+(pdftex.def)             Requested size: 212.47617pt x 159.35707pt.
+
+<ch3-kbpo/figures/simulation/simulation-r.png, id=584, 462.528pt x 346.896pt>
+File: ch3-kbpo/figures/simulation/simulation-r.png Graphic file (type png)
+
+<use ch3-kbpo/figures/simulation/simulation-r.png>
+Package pdftex.def Info: ch3-kbpo/figures/simulation/simulation-r.png used on i
+nput line 80.
+(pdftex.def)             Requested size: 212.47617pt x 159.35707pt.
+
+<ch3-kbpo/figures/simulation/simulation-n.png, id=585, 462.528pt x 346.896pt>
+File: ch3-kbpo/figures/simulation/simulation-n.png Graphic file (type png)
+
+<use ch3-kbpo/figures/simulation/simulation-n.png>
+Package pdftex.def Info: ch3-kbpo/figures/simulation/simulation-n.png used on i
+nput line 86.
+(pdftex.def)             Requested size: 212.47617pt x 159.35707pt.
+ (./ch3-kbpo/evaluation.table)
+
+LaTeX Warning: Float too large for page by 66.8081pt on input line 118.
+
+
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 11
+ []
+
+[11]) (./ch3-kbpo/evaluation.tex
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 12
+ []
+
+[12]) (./ch3-kbpo/discussion.tex
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 13
+ []
+
+[13])) (./ch4-price/main.tex
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 14
+ []
+
+[14]
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 15
+ []
+
+[15 <./ch3-kbpo/figures/pooling_bias_f1/pooling_bias/pooling_bias.png>]
+Overfull \hbox (124.75195pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 3.  IMPORTANCE SAMPLING FOR UNBIASED ON-DEMAND EVALUAT
+ION OF KNOWLEDGE BASE POPULATION \OT1/ptm/m/n/10 16
+ []
+
+[16 <./ch3-kbpo/figures/interface/relation-interface.png (PNG copy)> <./ch3-kbp
+o/figures/interface/extraction-interface.png> <./ch3-kbpo/figures/simulation/si
+mulation-p.png> <./ch3-kbpo/figures/simulation/simulation-r.png> <./ch3-kbpo/fi
+gures/simulation/simulation-n.png>]
+Chapter 4.
+(./ch4-price/macros.tex) (./ch4-price/abstract.tex [17
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 \end{abstract}
+                    [1]) (./ch4-price/intro.tex
+<ch4-price/figures/msmarco_bias.pdf, id=713, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/msmarco_bias.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/msmarco_bias.pdf>
+Package pdftex.def Info: ch4-price/figures/msmarco_bias.pdf used on input line 
+30.
+(pdftex.def)             Requested size: 212.47617pt x 159.35707pt.
+
+<ch4-price/figures/msmarco_instance_correlation.pdf, id=714, 462.52798pt x 346.
+89601pt>
+File: ch4-price/figures/msmarco_instance_correlation.pdf Graphic file (type pdf
+)
+ <use ch4-price/figures/msmarco_instance_correlation.pdf>
+Package pdftex.def Info: ch4-price/figures/msmarco_instance_correlation.pdf use
+d on input line 35.
+(pdftex.def)             Requested size: 212.47617pt x 159.35707pt.
+
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 1
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 
+      [1 <./ch4-price/figures/msmarco_bias.pdf> <./ch4-price/figures/msmarco_in
+stance_correlation.pdf
+
+pdfTeX warning: pdflatex (file ./ch4-price/figures/msmarco_instance_correlation
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 5771) in paragraph at lines 84--84
+[][][]\OT1/ptm/m/n/8 An anonymized ver-sion of this data and the an-no-ta-tion 
+in-ter-faces used can be found at []$\OT1/pcr/m/n/8 https : / / bit . ly /
+ []
+
+) (./ch4-price/bias.tex (./ch4-price/examples-1.table
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+)
+(./ch4-price/examples-2.table
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 6.
+)
+
+LaTeX Warning: Float too large for page by 125.18666pt on input line 38.
+
+
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 2
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.77 
+      [2]
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 3
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.77 
+      [3]) (./ch4-price/method.tex
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 4
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.68 
+      [4]
+
+pdfTeX warning: pdflatex (file ./ch4-price/figures/variance_reduction_extreme.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+<ch4-price/figures/variance_reduction_extreme.pdf, id=827, 963.6pt x 542.025pt>
+File: ch4-price/figures/variance_reduction_extreme.pdf Graphic file (type pdf)
+<use ch4-price/figures/variance_reduction_extreme.pdf>
+Package pdftex.def Info: ch4-price/figures/variance_reduction_extreme.pdf used 
+on input line 95.
+(pdftex.def)             Requested size: 433.62pt x 243.90898pt.
+
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 5
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.133 
+       [5] <ch4-price/figures/savings.pdf, id=840, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/savings.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/savings.pdf>
+Package pdftex.def Info: ch4-price/figures/savings.pdf used on input line 136.
+(pdftex.def)             Requested size: 433.62pt x 325.23009pt.
+
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 6
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.183 
+       [6 <./ch4-price/figures/variance_reduction_extreme.pdf>]
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 7
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.183 
+       [7 <./ch4-price/figures/savings.pdf>]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 190.
+) (./ch4-price/tasks.tex
+<ch4-price/figures/edit.png, id=885, 894.34125pt x 496.85625pt>
+File: ch4-price/figures/edit.png Graphic file (type png)
+
+<use ch4-price/figures/edit.png>
+Package pdftex.def Info: ch4-price/figures/edit.png used on input line 5.
+(pdftex.def)             Requested size: 203.80193pt x 113.2207pt.
+
+<ch4-price/figures/qa.png, id=886, 937.5025pt x 426.59375pt>
+File: ch4-price/figures/qa.png Graphic file (type png)
+
+<use ch4-price/figures/qa.png>
+Package pdftex.def Info: ch4-price/figures/qa.png used on input line 8.
+(pdftex.def)             Requested size: 203.80193pt x 92.73131pt.
+
+Underfull \hbox (badness 3417) in paragraph at lines 8--8
+[]\OT1/ptm/m/n/9 (b) |[][]In-ter-face to judge an-swer cor-rect-ness on MS
+ []
+
+(./ch4-price/tasks.table)
+
+LaTeX Warning: Reference `sec:interfaces' on page 8 undefined on input line 28.
+
+
+
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 8
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.44 F
+      or each summary, we collected human judgments on a scale from 1--3 (\r...
+[8]
+Overfull \hbox (37.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 9
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72 
+      [9 <./ch4-price/figures/edit.png (PNG copy)> <./ch4-price/figures/qa.png 
+(PNG copy)>]) (./ch4-price/evaluation.tex
+<ch4-price/figures/msmarco_correlation.pdf, id=927, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/msmarco_correlation.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/msmarco_correlation.pdf>
+Package pdftex.def Info: ch4-price/figures/msmarco_correlation.pdf used on inpu
+t line 4.
+(pdftex.def)             Requested size: 195.12767pt x 146.34639pt.
+
+<ch4-price/figures/lqual_correlation.pdf, id=928, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/lqual_correlation.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/lqual_correlation.pdf>
+Package pdftex.def Info: ch4-price/figures/lqual_correlation.pdf used on input 
+line 9.
+(pdftex.def)             Requested size: 195.12767pt x 146.34639pt.
+
+Overfull \hbox (42.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 10
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 \section
+             {\label{sec:evaluation}Experimental results} [10 <./ch4-price/figu
+res/msmarco_correlation.pdf> <./ch4-price/figures/lqual_correlation.pdf
+
+pdfTeX warning: pdflatex (file ./ch4-price/figures/lqual_correlation.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>]
+<ch4-price/figures/lqual_trajectory_foil.pdf, id=982, 462.52798pt x 346.89601pt
+>
+File: ch4-price/figures/lqual_trajectory_foil.pdf Graphic file (type pdf)
+ <use ch4-price/figures/lqual_trajectory_foil.pdf>
+Package pdftex.def Info: ch4-price/figures/lqual_trajectory_foil.pdf used on in
+put line 61.
+(pdftex.def)             Requested size: 138.76157pt x 104.0696pt.
+
+<ch4-price/figures/lqual_trajectory.pdf, id=983, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/lqual_trajectory.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/lqual_trajectory.pdf>
+Package pdftex.def Info: ch4-price/figures/lqual_trajectory.pdf used on input l
+ine 66.
+(pdftex.def)             Requested size: 138.76157pt x 104.0696pt.
+
+<ch4-price/figures/msmarco_trajectory.pdf, id=984, 462.52798pt x 346.89601pt>
+File: ch4-price/figures/msmarco_trajectory.pdf Graphic file (type pdf)
+
+<use ch4-price/figures/msmarco_trajectory.pdf>
+Package pdftex.def Info: ch4-price/figures/msmarco_trajectory.pdf used on input
+ line 71.
+(pdftex.def)             Requested size: 138.76157pt x 104.0696pt.
+
+Overfull \hbox (42.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 11
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 
+      [11 <./ch4-price/figures/lqual_trajectory_foil.pdf> <./ch4-price/figures/
+lqual_trajectory.pdf
+
+pdfTeX warning: pdflatex (file ./ch4-price/figures/lqual_trajectory.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+> <./ch4-price/figures/msmarco_trajectory.pdf
+
+pdfTeX warning: pdflatex (file ./ch4-price/figures/msmarco_trajectory.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>]) (./ch4-price/related-work.tex
+Overfull \hbox (42.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 12
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 
+      [12]) (./ch4-price/discussion.tex)) (./ch5-otj/main.tex
+(./ch5-otj/macros.tex)
+Overfull \hbox (42.88268pt too wide) has occurred while \output is active
+\OT1/ptm/m/sl/10 CHAPTER 4.  THE PRICE OF DEBIASING AUTOMATIC METRICS IN NATURA
+L LANGUAGE EVALUATION \OT1/ptm/m/n/10 13
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2 \chapter
+            {On-the-Job Learning with Bayesian Decision Theory} [13]
+Chapter 5.
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
+) (./ch5-otj/abstract.tex)
+(./ch5-otj/intro.texpdfTeX warning (ext4): destination with the same identifier
+ (name{page.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 
+      [14
+
+]
+
+Package natbib Warning: Citation `lasecki2013real' on page 15 undefined on inpu
+t line 20.
+
+) (./ch5-otj/problem.tex
+<ch5-otj/figures/intro-banner.pdf, id=1099, 690.58pt x 265.99374pt>
+File: ch5-otj/figures/intro-banner.pdf Graphic file (type pdf)
+
+<use ch5-otj/figures/intro-banner.pdf>
+Package pdftex.def Info: ch5-otj/figures/intro-banner.pdf used on input line 6.
+
+(pdftex.def)             Requested size: 433.62pt x 167.02089pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--15
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.64 
+      [15]) (./ch5-otj/model.tex
+<ch5-otj/figures/behavior.pdf, id=1116, 279.75917pt x 180.2474pt>
+File: ch5-otj/figures/behavior.pdf Graphic file (type pdf)
+
+<use ch5-otj/figures/behavior.pdf>
+Package pdftex.def Info: ch5-otj/figures/behavior.pdf used on input line 8.
+(pdftex.def)             Requested size: 251.50038pt x 162.04512pt.
+
+<ch5-otj/figures/mcts_simple.pdf, id=1119, 187.1271pt x 157.15211pt>
+File: ch5-otj/figures/mcts_simple.pdf Graphic file (type pdf)
+
+<use ch5-otj/figures/mcts_simple.pdf>
+Package pdftex.def Info: ch5-otj/figures/mcts_simple.pdf used on input line 21.
+
+(pdftex.def)             Requested size: 160.32654pt x 134.64459pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--24
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.65 
+      [16 <./ch5-otj/figures/intro-banner.pdf>]
+Overfull \hbox (18.66422pt too wide) in paragraph at lines 79--90
+[]\OT1/ptm/m/n/10 During the sys-tem's turn, when the sys-tem chooses an ac-tio
+n $\OML/cmm/m/it/10 q[]$\OT1/ptm/m/n/10 , the state is up-dated to $\OML/cmm/m/
+it/10 ^^[[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 t[]; \OT1/cmr/bx/n/10 q[]\OML/c
+mm/m/it/10 ; \OT1/cmr/bx/n/10 s[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 r[]\OML/cm
+m/m/it/10 ; \OT1/cmr/bx/n/10 t[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.93 
+      [17 <./ch5-otj/figures/behavior.pdf> <./ch5-otj/figures/mcts_simple.pdf>]
+[18]) (./ch5-otj/async.tex
+
+LaTeX Warning: Reference `alg:mcvts' on page 19 undefined on input line 135.
+
+) (./ch5-otj/experiments.tex [19]
+Underfull \hbox (badness 3271) in paragraph at lines 36--39
+[]\OT1/ptm/m/n/10 We eval-u-ate on the CoNLL-2003
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 40--41
+\OT1/ptm/m/n/10 ([]2005[]): the cur-rent word, cur-rent
+ []
+
+
+Package natbib Warning: Citation `maas2011learning' on page 20 undefined on inp
+ut line 42.
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 44--46
+\OT1/ptm/m/n/10 (\OT1/ptm/m/sc/10 unigrams\OT1/ptm/m/n/10 ) con-tain-ing only w
+ord
+ []
+
+
+Package natbib Warning: Citation `attribute_classifiers' on page 20 undefined o
+n input line 47.
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 47--48
+\OT1/ptm/m/n/10 choices: An-der-sen Cooper, Daniel
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 47--48
+\OT1/ptm/m/n/10 Craig, Scar-let Jo-hans-son or Mi-ley
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 49--50
+\OT1/ptm/m/n/10 AlexNet []Krizhevsky et al.[] ([]2012[])
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 49--50
+\OT1/ptm/m/n/10 propagating into the net to fu-ture
+ []
+
+[20]
+<ch5-otj/figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.pdf, i
+d=1281, 216.81pt x 144.54pt>
+File: ch5-otj/figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.p
+df Graphic file (type pdf)
+
+<use ch5-otj/figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.pd
+f>
+Package pdftex.def Info: ch5-otj/figures/sentiment_cost_per_token_vs_time/cost_
+per_token_vs_time.pdf used on input line 105.
+(pdftex.def)             Requested size: 212.47617pt x 141.65703pt.
+ (./ch5-otj/table-sentiment.tex)
+Overfull \hbox (13.23236pt too wide) in paragraph at lines 104--116
+[][]  [] 
+ []
+
+
+LaTeX Warning: Reference `tab:results' on page 21 undefined on input line 132.
+
+
+LaTeX Warning: Reference `tab:sentiment-results' on page 21 undefined on input 
+line 132.
+
+[21]
+<ch5-otj/figures/ner_2_class/f1_plot/f1_vs_time.pdf, id=1291, 216.81pt x 144.54
+pt>
+File: ch5-otj/figures/ner_2_class/f1_plot/f1_vs_time.pdf Graphic file (type pdf
+)
+ <use ch5-otj/figures/ner_2_class/f1_plot/f1_vs_time.pdf>
+Package pdftex.def Info: ch5-otj/figures/ner_2_class/f1_plot/f1_vs_time.pdf use
+d on input line 147.
+(pdftex.def)             Requested size: 212.47617pt x 141.65703pt.
+
+<ch5-otj/figures/ner_2_class/cost_plot/cost_vs_time.pdf, id=1292, 216.81pt x 14
+4.54pt>
+File: ch5-otj/figures/ner_2_class/cost_plot/cost_vs_time.pdf Graphic file (type
+ pdf)
+ <use ch5-otj/figures/ner_2_class/cost_plot/cost_vs_time.pdf>
+Package pdftex.def Info: ch5-otj/figures/ner_2_class/cost_plot/cost_vs_time.pdf
+ used on input line 150.
+(pdftex.def)             Requested size: 212.47617pt x 141.65703pt.
+)
+(./ch5-otj/related-0.2.tex [22 <./ch5-otj/figures/sentiment_cost_per_token_vs_t
+ime/cost_per_token_vs_time.pdf>]
+
+Package natbib Warning: Citation `lasecki2013real' on page 23 undefined on inpu
+t line 47.
+
+
+Overfull \hbox (2.78548pt too wide) in paragraph at lines 38--55
+[]\OT1/ptm/b/n/10 Active clas-si-fi-ca-tion. \OT1/ptm/m/n/10 Ac-tive clas-si-fi
+-ca-tion []Greiner et al.[] ([]2002[]); []Chai et al.[] ([]2004[]); []Es-meir a
+nd Markovitch[]
+ []
+
+[23 <./ch5-otj/figures/ner_2_class/f1_plot/f1_vs_time.pdf> <./ch5-otj/figures/n
+er_2_class/cost_plot/cost_vs_time.pdf
+
+pdfTeX warning: pdflatex (file ./ch5-otj/figures/ner_2_class/cost_plot/cost_vs_
+time.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
+ge
+>]) (./ch5-otj/conclusion.tex)) (./ch6-conclusions/main.tex [24]
+Chapter 6.
+) (./main.bbl [25
+
+] [26
+
+] [27] [28] [29] [30])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
-[5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
- (./main.aux
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 64.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 64.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 243D3F42B52A6BC7EF796DEBB47AF620;3036.
 
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: E96C09F8DEF02CE9049702AE871C90A9;1865
-(rerunfilecheck)             After:  537F89C8D6055680925FC325ADF33D17;141.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 8638 strings out of 493089
- 124176 string characters out of 6134842
- 213953 words of memory out of 5000000
- 11908 multiletter control sequences out of 15000+600000
- 18499 words of font info for 41 fonts, out of 8000000 for 9000
+ 20145 strings out of 493089
+ 363488 string characters out of 6134842
+ 451973 words of memory out of 5000000
+ 22820 multiletter control sequences out of 15000+600000
+ 47306 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,40p,513b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.Alph0.3} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.Alph0.2.4} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.Alph0.2.3} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.Alph0.2.2} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.Alph0.2.1} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.Alph0.2} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.Alph0.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.6.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.6.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.6.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.5.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.5.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.5.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.4.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.0.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.0.1} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on main.pdf (13 pages, 102357 bytes).
+ 55i,19n,54p,1332b,572s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/urw/courier/ucrb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/uc
+rro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (59 pages, 2307376 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1537 PDF objects out of 1728 (max. 8388607)
+ 1357 compressed objects within 14 object streams
+ 250 named destinations out of 1000 (max. 500000)
+ 482 words of extra memory for PDF output out of 10000 (max. 10000000)
 

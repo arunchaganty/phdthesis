@@ -1,0 +1,228 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Chaganty et~al.(2017)Chaganty, Paranjape, Liang, and
+  Manning}]{chaganty2017unbiased}
+A.~Chaganty, A.~Paranjape, P.~Liang, and C.~Manning. 2017.
+\newblock Importance sampling for unbiased on-demand evaluation of knowledge
+  base population.
+\newblock In {\em Empirical Methods in Natural Language Processing (EMNLP)\/}.
+
+\bibitem[{Chang et~al.(2017)Chang, Yang, Chen, Zhou, and
+  Yu}]{chang2017affordable}
+C.~Chang, R.~Yang, L.~Chen, X.~Zhou, and K.~Yu. 2017.
+\newblock Affordable on-line dialogue policy learning.
+\newblock In {\em Empirical Methods in Natural Language Processing (EMNLP)\/}.
+  pages 223--231.
+
+\bibitem[{Conroy and Dang(2008)}]{conroy2008mind}
+J.~M. Conroy and H.~T. Dang. 2008.
+\newblock Mind the gap : Dangers of divorcing evaluations of summary content
+  from linguistic quality.
+\newblock In {\em International Conference on Computational Linguistics
+  (COLING)\/}. pages 145--152.
+
+\bibitem[{Dang(2006)}]{dang2006overview}
+H.~T. Dang. 2006.
+\newblock Overview of {DUC} 2006.
+\newblock In {\em Document Understanding Conference\/}.
+
+\bibitem[{Denkowski and Lavie(2014)}]{denkowski2014meteor}
+M.~Denkowski and A.~Lavie. 2014.
+\newblock Meteor universal: Language specific translation evaluation for any
+  target language.
+\newblock In {\em Workshop on Statistical Machine Translation\/}.
+
+\bibitem[{Dusek et~al.(2017)Dusek, Novikova, and
+  Rieser}]{dusek2017referenceless}
+O.~Dusek, J.~Novikova, and V.~Rieser. 2017.
+\newblock Referenceless quality estimation for natural language generation.
+\newblock {\em arXiv\/} .
+
+\bibitem[{Greensmith et~al.(2004)Greensmith, Bartlett, and
+  Baxter}]{greensmith2004variance}
+E.~Greensmith, P.~L. Bartlett, and J.~Baxter. 2004.
+\newblock Variance reduction techniques for gradient estimates in reinforcement
+  learning.
+\newblock {\em Journal of Machine Learning Research (JMLR)\/} 5:1471--1530.
+
+\bibitem[{Hermann et~al.(2015)Hermann, Kočiský, Grefenstette, Espeholt, Kay,
+  Suleyman, and Blunsom}]{hermann2015read}
+K.~M. Hermann, T.~Kočiský, E.~Grefenstette, L.~Espeholt, W.~Kay, M.~Suleyman,
+  and P.~Blunsom. 2015.
+\newblock Teaching machines to read and comprehend.
+\newblock In {\em Advances in Neural Information Processing Systems (NIPS)\/}.
+
+\bibitem[{Ko{\v{c}}isky et~al.(2017)Ko{\v{c}}isky, Schwarz, Blunsom, Dyer,
+  Hermann, Melis, and Grefenstette}]{kovcisky2017narrativeqa}
+T.~Ko{\v{c}}isky, J.~Schwarz, P.~Blunsom, C.~Dyer, K.~M. Hermann, G.~Melis, and
+  E.~Grefenstette. 2017.
+\newblock The {NarrativeQA} reading comprehension challenge.
+\newblock {\em arXiv preprint arXiv:1712.07040\/} .
+
+\bibitem[{Lavie and Denkowski(2009)}]{lavie2009meteor}
+A.~Lavie and M.~Denkowski. 2009.
+\newblock The meteor metric for automatic evaluation of machine translation.
+\newblock {\em Machine Translation\/} 23.
+
+\bibitem[{Lin and Rey(2004)}]{lin2004rouge}
+C.~Lin and M.~Rey. 2004.
+\newblock Looking for a few good metrics: {ROUGE} and its evaluation.
+\newblock In {\em NTCIR Workshop\/}.
+
+\bibitem[{Lin et~al.(2014)Lin, Maire, Belongie, Hays, Perona, Ramanan,
+  Doll{'a}r, and Zitnick}]{lin2014microsoft}
+T.~Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan, P.~Doll{'a}r,
+  and C.~L. Zitnick. 2014.
+\newblock Microsoft {COCO}: Common objects in context.
+\newblock In {\em European Conference on Computer Vision (ECCV)\/}. pages
+  740--755.
+
+\bibitem[{Liu et~al.(2016{\natexlab{a}})Liu, Soderland, Bragg, Lin, Ling, and
+  Weld}]{liu2016effective}
+A.~Liu, S.~Soderland, J.~Bragg, C.~H. Lin, X.~Ling, and D.~S. Weld.
+  2016{\natexlab{a}}.
+\newblock Effective crowd annotation for relation extraction.
+\newblock In {\em North American Association for Computational Linguistics
+  (NAACL)\/}. pages 897--906.
+
+\bibitem[{Liu et~al.(2016{\natexlab{b}})Liu, Lowe, Serban, Noseworthy, Charlin,
+  and Pineau}]{liu2016evaluate}
+C.~Liu, R.~Lowe, I.~V. Serban, M.~Noseworthy, L.~Charlin, and J.~Pineau.
+  2016{\natexlab{b}}.
+\newblock How {NOT} to evaluate your dialogue system: An empirical study of
+  unsupervised evaluation metrics for dialogue response generation.
+\newblock In {\em Empirical Methods in Natural Language Processing (EMNLP)\/}.
+
+\bibitem[{Lowe et~al.(2017{\natexlab{a}})Lowe, Noseworthy, Serban,
+  Angelard-Gontier, Bengio, and Pineau}]{lowe2017towards}
+R.~Lowe, M.~Noseworthy, I.~V. Serban, N.~Angelard-Gontier, Y.~Bengio, and
+  J.~Pineau. 2017{\natexlab{a}}.
+\newblock Towards an automatic turing test: Learning to evaluate dialogue
+  responses.
+\newblock In {\em Association for Computational Linguistics (ACL)\/}.
+
+\bibitem[{Lowe et~al.(2017{\natexlab{b}})Lowe, Pow, Serban, Charlin, Liu, and
+  Pineau}]{lowe2017ubuntu}
+R.~T. Lowe, N.~Pow, I.~Serban, L.~Charlin, C.~Liu, and J.~Pineau.
+  2017{\natexlab{b}}.
+\newblock Training end-to-end dialogue systems with the ubuntu dialogue corpus.
+\newblock {\em Dialogue and Discourse\/} 8.
+
+\bibitem[{Manning et~al.(2014)Manning, Surdeanu, Bauer, Finkel, Bethard, and
+  McClosky}]{manning2014stanford}
+C.~D. Manning, M.~Surdeanu, J.~Bauer, J.~Finkel, S.~J. Bethard, and
+  D.~McClosky. 2014.
+\newblock The stanford core{NLP} natural language processing toolkit.
+\newblock In {\em ACL system demonstrations\/}.
+
+\bibitem[{Mnih et~al.(2008)Mnih, Szepesv{'{a}}ri, and
+  Audibert}]{mnih2008empirical}
+V.~Mnih, C.~Szepesv{'{a}}ri, and J.~Audibert. 2008.
+\newblock Empirical berstein stopping.
+\newblock In {\em International Conference on Machine Learning (ICML)\/}.
+
+\bibitem[{Nallapati et~al.(2016)Nallapati, Zhou, Gulcehre, Xiang
+  et~al.}]{nallapati2016abstractive}
+R.~Nallapati, B.~Zhou, C.~Gulcehre, B.~Xiang, et~al. 2016.
+\newblock Abstractive text summarization using sequence-to-sequence rnns and
+  beyond.
+\newblock {\em arXiv preprint arXiv:1602.06023\/} .
+
+\bibitem[{Nguyen et~al.(2016)Nguyen, Rosenberg, Song, Gao, Tiwary, Majumder,
+  and Deng}]{nguyen2016ms}
+T.~Nguyen, M.~Rosenberg, X.~Song, J.~Gao, S.~Tiwary, R.~Majumder, and L.~Deng.
+  2016.
+\newblock {MS MARCO}: A human generated machine reading comprehension dataset.
+\newblock In {\em Workshop on Cognitive Computing at NIPS\/}.
+
+\bibitem[{Novikova et~al.(2017)Novikova, Dušek, Curry, and
+  Rieser}]{novikova2017why}
+J.~Novikova, O.~Dušek, A.~C. Curry, and V.~Rieser. 2017.
+\newblock Why we need new evaluation metrics for {NLG}.
+\newblock In {\em Empirical Methods in Natural Language Processing (EMNLP)\/}.
+
+\bibitem[{Pagliardini et~al.(2017)Pagliardini, Gupta, and
+  Jaggi}]{pagliardini2017unsupervised}
+M.~Pagliardini, P.~Gupta, and M.~Jaggi. 2017.
+\newblock Unsupervised learning of sentence embeddings using compositional
+  n-gram features.
+\newblock {\em arXiv\/} .
+
+\bibitem[{Paisley et~al.(2012)Paisley, Blei, and
+  Jordan}]{paisley2012variational}
+J.~Paisley, D.~M. Blei, and M.~I. Jordan. 2012.
+\newblock Variational {B}ayesian inference with stochastic search.
+\newblock In {\em International Conference on Machine Learning (ICML)\/}. pages
+  1363--1370.
+
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and
+  Zhu}]{papineni02bleu}
+K.~Papineni, S.~Roukos, T.~Ward, and W.~Zhu. 2002.
+\newblock {BLEU}: A method for automatic evaluation of machine translation.
+\newblock In {\em Association for Computational Linguistics (ACL)\/}.
+
+\bibitem[{Passonneau and Carpenter(2014)}]{passonneau2014benefits}
+R.~J. Passonneau and B.~Carpenter. 2014.
+\newblock The benefits of a model of annotation.
+\newblock In {\em Association for Computational Linguistics (ACL)\/}.
+
+\bibitem[{Paulus et~al.(2018)Paulus, Xiong, and Socher}]{paulus2018deep}
+R.~Paulus, C.~Xiong, and R.~Socher. 2018.
+\newblock A deep reinforced model for abstractive summarization.
+\newblock In {\em International Conference on Learning Representations
+  (ICLR)\/}.
+
+\bibitem[{Ranganath et~al.(2014)Ranganath, Gerrish, and
+  Blei}]{ranganath2014black}
+R.~Ranganath, S.~Gerrish, and D.~Blei. 2014.
+\newblock Black box variational inference.
+\newblock In {\em Artificial Intelligence and Statistics (AISTATS)\/}. pages
+  814--822.
+
+\bibitem[{Ripley(2009)}]{ripley2009stochastic}
+B.~D. Ripley. 2009.
+\newblock {\em Stochastic simulation\/}.
+\newblock John Wiley \& Sons.
+
+\bibitem[{See et~al.(2017)See, Liu, and Manning}]{see2017point}
+A.~See, P.~J. Liu, and C.~D. Manning. 2017.
+\newblock Get to the point: Summarization with pointer-generator networks.
+\newblock In {\em Association for Computational Linguistics (ACL)\/}.
+
+\bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
+  Makhoul}]{snover2006ter}
+M.~Snover, B.~Dorr, R.~Schwartz, L.~Micciulla, and J.~Makhoul. 2006.
+\newblock A study of translation edit rate with targeted human annotation.
+\newblock In {\em Association for Machine Translation in the Americas\/}. pages
+  223--231.
+
+\bibitem[{Tan et~al.(2018)Tan, Wei, Yang, Lv, and Zhou}]{tan2018s}
+C.~Tan, F.~Wei, N.~Yang, W.~Lv, and M.~Zhou. 2018.
+\newblock {S}-{N}et: From answer extraction to answer generation for machine
+  reading comprehension.
+\newblock In {\em Association for the Advancement of Artificial Intelligence
+  (AAAI)\/}.
+
+\bibitem[{Vedantam et~al.(2015)Vedantam, Zitnick, and
+  Parikh}]{vedantam2015cider}
+R.~Vedantam, C.~L. Zitnick, and D.~Parikh. 2015.
+\newblock {CIDEr}: Consensus-based image description evaluation.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR)\/}. pages
+  4566--4575.
+
+\bibitem[{Weissenborn et~al.(2017)Weissenborn, Wiese, and
+  Seiffe}]{weissenborn2017fastqa}
+D.~Weissenborn, G.~Wiese, and L.~Seiffe. 2017.
+\newblock Making neural {QA} as simple as possible but not simpler.
+\newblock In {\em Computational Natural Language Learning (CoNLL)\/}.
+
+\bibitem[{Wu et~al.(2016)Wu, Schuster, Chen, Le, Norouzi, Macherey, Krikun,
+  Cao, Gao, Macherey et~al.}]{wu2016google}
+Y.~Wu, M.~Schuster, Z.~Chen, Q.~V. Le, M.~Norouzi, W.~Macherey, M.~Krikun,
+  Y.~Cao, Q.~Gao, K.~Macherey, et~al. 2016.
+\newblock Google's neural machine translation system: Bridging the gap between
+  human and machine translation.
+\newblock {\em arXiv preprint arXiv:1609.08144\/} .
+
+\end{thebibliography}

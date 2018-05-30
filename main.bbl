@@ -1,3 +1,540 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{84}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
+H.~Adel, B.~Roth, and H.~Sch\"{u}tze. 2016.
+\newblock Comparing convolutional neural networks to traditional models for
+  slot filling.
+\newblock In \emph{Human Language Technology and North American Association for
+  Computational Linguistics (HLT/NAACL)}.
+
+\bibitem[{Angeli et~al.(2014)Angeli, Tibshirani, Wu, and
+  Manning}]{angeli2014combining}
+G.~Angeli, J.~Tibshirani, J.~Y. Wu, and C.~D. Manning. 2014.
+\newblock Combining distant and partial supervision for relation extraction.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Aslam et~al.(2006)Aslam, Pavlu, and Yilmaz}]{aslam2006statistical}
+J.~A. Aslam, V.~Pavlu, and E.~Yilmaz. 2006.
+\newblock A statistical method for system evaluation using incomplete
+  judgments.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}, pages 541--548.
+
+\bibitem[{Berant et~al.(2013)Berant, Chou, Frostig, and
+  Liang}]{berant2013freebase}
+J.~Berant, A.~Chou, R.~Frostig, and P.~Liang. 2013.
+\newblock Semantic parsing on {F}reebase from question-answer pairs.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Bernstein et~al.(2011)Bernstein, Brandt, Miller, and
+  Karger}]{bernstein2011crowds}
+M.~S. Bernstein, J.~Brandt, R.~C. Miller, and D.~R. Karger. 2011.
+\newblock Crowds in two seconds: Enabling realtime crowd-powered interfaces.
+\newblock In \emph{User Interface Software and Technology}, pages 33--42.
+
+\bibitem[{Bernstein et~al.(2010)Bernstein, Little, Miller, Hartmann, Ackerman,
+  Karger, Crowell, and Panovich}]{bernstein2010soylent}
+M.~S. Bernstein, G.~Little, R.~C. Miller, B.~Hartmann, M.~S. Ackerman, D.~R.
+  Karger, D.~Crowell, and K.~Panovich. 2010.
+\newblock Soylent: a word processor with a crowd inside.
+\newblock In \emph{Symposium on User Interface Software and Technology}, pages
+  313--322.
+
+\bibitem[{Buckley et~al.(2007)Buckley, Dimmick, Soboroff, and
+  Voorhees}]{buckley2007bias}
+C.~Buckley, D.~Dimmick, I.~Soboroff, and E.~Voorhees. 2007.
+\newblock Bias and the limits of pooling for large collections.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}.
+
+\bibitem[{Buckley and Voorhees(2004)}]{buckley2004incomplete}
+C.~Buckley and E.~M. Voorhees. 2004.
+\newblock Retrieval evaluation with incomplete information.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}, pages 25--32.
+
+\bibitem[{Burden and Faires(1985)}]{burden1985bisection}
+R.~L. Burden and J.~D. Faires. 1985.
+\newblock \emph{Numerical Analysis (3rd ed.)}.
+\newblock PWS Publishers.
+
+\bibitem[{Cesa-Bianchi and Lugosi(2006)}]{cesabianchi06prediction}
+N.~Cesa-Bianchi and G.~Lugosi. 2006.
+\newblock \emph{Prediction, learning, and games}.
+\newblock Cambridge University Press.
+
+\bibitem[{Chaganty et~al.(2017)Chaganty, Paranjape, Liang, and
+  Manning}]{chaganty2017unbiased}
+A.~Chaganty, A.~Paranjape, P.~Liang, and C.~Manning. 2017.
+\newblock Importance sampling for unbiased on-demand evaluation of knowledge
+  base population.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Chai et~al.(2004)Chai, Deng, Yang, and Ling}]{chai2004test}
+X.~Chai, L.~Deng, Q.~Yang, and C.~X. Ling. 2004.
+\newblock Test-cost sensitive naive {B}ayes classification.
+\newblock In \emph{International Conference on Data Mining}, pages 51--58.
+
+\bibitem[{Chang et~al.(2017)Chang, Yang, Chen, Zhou, and
+  Yu}]{chang2017affordable}
+C.~Chang, R.~Yang, L.~Chen, X.~Zhou, and K.~Yu. 2017.
+\newblock Affordable on-line dialogue policy learning.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)},
+  pages 223--231.
+
+\bibitem[{Cheng and Bernstein(2015)}]{cheng2015flock}
+J.~Cheng and M.~S. Bernstein. 2015.
+\newblock Flock: Hybrid {Crowd-Machine} learning classifiers.
+\newblock In \emph{Proceedings of the 18th {ACM} Conference on Computer
+  Supported Cooperative Work \& Social Computing}, pages 600--611.
+
+\bibitem[{Chu et~al.(2011)Chu, Zinkevich, Li, Thomas, and
+  Tseng}]{chu2011unbiased}
+W.~Chu, M.~Zinkevich, L.~Li, A.~Thomas, and B.~Tseng. 2011.
+\newblock Unbiased online active learning in data streams.
+\newblock In \emph{International Conference on Knowledge Discovery and Data
+  Mining (KDD)}, pages 195--203.
+
+\bibitem[{Conroy and Dang(2008)}]{conroy2008mind}
+J.~M. Conroy and H.~T. Dang. 2008.
+\newblock Mind the gap : Dangers of divorcing evaluations of summary content
+  from linguistic quality.
+\newblock In \emph{International Conference on Computational Linguistics
+  (COLING)}, pages 145--152.
+
+\bibitem[{Cormack et~al.(1998)Cormack, Palmer, and
+  Clarke}]{cormack1998efficient}
+G.~V. Cormack, C.~R. Palmer, and C.~L.~A. Clarke. 1998.
+\newblock Efficient construction of large test collections.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}.
+
+\bibitem[{Coulom(2007)}]{coulom2007computing}
+R.~Coulom. 2007.
+\newblock Computing elo ratings of move patterns in the game of go.
+\newblock \emph{Computer Games Workshop}.
+
+\bibitem[{Dai et~al.(2010)Dai, Mausam, and Weld}]{dai2010decision}
+P.~Dai, Mausam, and D.~S. Weld. 2010.
+\newblock Decision-theoretic control of crowd-sourced workflows.
+\newblock In \emph{Association for the Advancement of Artificial Intelligence
+  (AAAI)}.
+
+\bibitem[{Dang(2006)}]{dang2006overview}
+H.~T. Dang. 2006.
+\newblock Overview of {DUC} 2006.
+\newblock In \emph{Document Understanding Conference}.
+
+\bibitem[{Dang(2016)}]{dang2016kbp}
+H.~T. Dang. 2016.
+\newblock Cold start knowledge base population at {TAC} {KBP} 2016.
+\newblock \emph{Text Analytics Conference}.
+
+\bibitem[{Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
+  Fei-Fei}]{deng2009imagenet}
+J.~Deng, W.~Dong, R.~Socher, L.~Li, K.~Li, and L.~Fei-Fei. 2009.
+\newblock {I}mage{N}et: A large-scale hierarchical image database.
+\newblock In \emph{Computer Vision and Pattern Recognition (CVPR)}, pages
+  248--255.
+
+\bibitem[{Denkowski and Lavie(2014)}]{denkowski2014meteor}
+M.~Denkowski and A.~Lavie. 2014.
+\newblock Meteor universal: Language specific translation evaluation for any
+  target language.
+\newblock In \emph{Workshop on Statistical Machine Translation}.
+
+\bibitem[{Donmez and Carbonell(2008)}]{donmez2008proactive}
+P.~Donmez and J.~G. Carbonell. 2008.
+\newblock Proactive learning: cost-sensitive active learning with multiple
+  imperfect oracles.
+\newblock In \emph{Conference on Information and Knowledge Management (CIKM)},
+  pages 619--628.
+
+\bibitem[{Dusek et~al.(2017)Dusek, Novikova, and
+  Rieser}]{dusek2017referenceless}
+O.~Dusek, J.~Novikova, and V.~Rieser. 2017.
+\newblock Referenceless quality estimation for natural language generation.
+\newblock \emph{arXiv}.
+
+\bibitem[{Ellis et~al.(2012)Ellis, Li, Griffitt, and Strassel}]{ellis2012kbp}
+J.~Ellis, X.~Li, K.~Griffitt, and S.~M. Strassel. 2012.
+\newblock Linguistic resources for 2012 knowledge base population evaluations.
+\newblock \emph{Text Analytics Conference}.
+
+\bibitem[{Esmeir and Markovitch(2007)}]{esmeir2007anytime}
+S.~Esmeir and S.~Markovitch. 2007.
+\newblock Anytime induction of cost-sensitive trees.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
+  pages 425--432.
+
+\bibitem[{Fader et~al.(2014)Fader, Zettlemoyer, and Etzioni}]{fader2014open}
+A.~Fader, L.~Zettlemoyer, and O.~Etzioni. 2014.
+\newblock Open question answering over curated and extracted knowledge bases.
+\newblock In \emph{International Conference on Knowledge Discovery and Data
+  Mining (KDD)}, pages 1156--1165.
+
+\bibitem[{Finkel et~al.(2005)Finkel, Grenager, and
+  Manning}]{finkel2005incorporating}
+J.~R. Finkel, T.~Grenager, and C.~Manning. 2005.
+\newblock Incorporating non-local information into information extraction
+  systems by {G}ibbs sampling.
+\newblock In \emph{Association for Computational Linguistics (ACL)}, pages
+  363--370.
+
+\bibitem[{Gao and Koller(2011)}]{gao2011active}
+T.~Gao and D.~Koller. 2011.
+\newblock Active classification based on value of classifier.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
+  pages 1062--1070.
+
+\bibitem[{Golovin et~al.(2010)Golovin, Krause, and Ray}]{golovin2010near}
+D.~Golovin, A.~Krause, and D.~Ray. 2010.
+\newblock Near-optimal {B}ayesian active learning with noisy observations.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
+  pages 766--774.
+
+\bibitem[{Greensmith et~al.(2004)Greensmith, Bartlett, and
+  Baxter}]{greensmith2004variance}
+E.~Greensmith, P.~L. Bartlett, and J.~Baxter. 2004.
+\newblock Variance reduction techniques for gradient estimates in reinforcement
+  learning.
+\newblock \emph{Journal of Machine Learning Research (JMLR)}, 5:1471--1530.
+
+\bibitem[{Greiner et~al.(2002)Greiner, Grove, and Roth}]{greiner2002learning}
+R.~Greiner, A.~J. Grove, and D.~Roth. 2002.
+\newblock Learning cost-sensitive active classifiers.
+\newblock \emph{Artificial Intelligence}, 139(2):137--174.
+
+\bibitem[{Han et~al.(2015)Han, Bang, Ryu, and Lee}]{han2015exploiting}
+S.~Han, J.~Bang, S.~Ryu, and G.~G. Lee. 2015.
+\newblock Exploiting knowledge base to generate responses for natural language
+  dialog listening agents.
+\newblock \emph{16th Annual Meeting of the Special Interest Group on Discourse
+  and Dialogue}, pages 129--133.
+
+\bibitem[{Harman(1993)}]{harman1993trec}
+D.~K. Harman. 1993.
+\newblock The first text retrieval conference (trec-1) rockville, md, u.s.a.,
+  4-6 november, 1992.
+\newblock \emph{Information Processing and Management}, 29:411--414.
+
+\bibitem[{He et~al.(2015)He, Lewis, and Zettlemoyer}]{he2015question}
+L.~He, M.~Lewis, and L.~Zettlemoyer. 2015.
+\newblock Question-answer driven semantic role labeling: Using natural language
+  to annotate natural language.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Helmbold and Panizza(1997)}]{helmbold1997some}
+D.~Helmbold and S.~Panizza. 1997.
+\newblock Some label efficient learning results.
+\newblock In \emph{Conference on Learning Theory (COLT)}, pages 218--230.
+
+\bibitem[{Hermann et~al.(2015)Hermann, Kočiský, Grefenstette, Espeholt, Kay,
+  Suleyman, and Blunsom}]{hermann2015read}
+K.~M. Hermann, T.~Kočiský, E.~Grefenstette, L.~Espeholt, W.~Kay, M.~Suleyman,
+  and P.~Blunsom. 2015.
+\newblock Teaching machines to read and comprehend.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)}.
+
+\bibitem[{Ji et~al.(2011)Ji, Grishman, and {Trang Dang}}]{ji2011kbp}
+H.~Ji, R.~Grishman, and H.~{Trang Dang}. 2011.
+\newblock Overview of the {TAC} 2011 knowledge base population track.
+\newblock In \emph{Text Analytics Conference}.
+
+\bibitem[{Jones and Rijsbergen(1975)}]{sparck1975report}
+K.~S. Jones and C.~V. Rijsbergen. 1975.
+\newblock Report on the need for and provision of an ``ideal test collection.
+\newblock \emph{Information Retrieval Test Collection}.
+
+\bibitem[{Kalyanpur et~al.(2012)Kalyanpur, Boguraev, Patwardhan, Murdock,
+  Lally, Welty, Prager, Coppola, Fokoue-Nkoutche, Zhang, Pan, and
+  Qui}]{kalyanpur2012structured}
+A.~Kalyanpur, B.~K. Boguraev, S.~Patwardhan, J.~W. Murdock, A.~Lally, C.~A.
+  Welty, J.~M. Prager, B.~Coppola, A.~Fokoue-Nkoutche, L.~Zhang, Y.~Pan, and
+  Z.~M. Qui. 2012.
+\newblock Structured data and inference in deepqa.
+\newblock \emph{{IBM} Journal of Research and Development}, 56:351--364.
+
+\bibitem[{Ko{\v{c}}isky et~al.(2017)Ko{\v{c}}isky, Schwarz, Blunsom, Dyer,
+  Hermann, Melis, and Grefenstette}]{kovcisky2017narrativeqa}
+T.~Ko{\v{c}}isky, J.~Schwarz, P.~Blunsom, C.~Dyer, K.~M. Hermann, G.~Melis, and
+  E.~Grefenstette. 2017.
+\newblock The {NarrativeQA} reading comprehension challenge.
+\newblock \emph{arXiv preprint arXiv:1712.07040}.
+
+\bibitem[{Kocsis and Szepesv{\'a}ri(2006)}]{kocsis2006bandit}
+L.~Kocsis and C.~Szepesv{\'a}ri. 2006.
+\newblock Bandit based {M}onte-{C}arlo planning.
+\newblock In \emph{European Conference on Machine Learning (ECML)}, pages
+  282--293.
+
+\bibitem[{Kokkalis et~al.(2013)Kokkalis, K{\"o}hn, Pfeiffer, Chornyi,
+  Bernstein, and Klemmer}]{kokkalis2013emailvalet}
+N.~Kokkalis, T.~K{\"o}hn, C.~Pfeiffer, D.~Chornyi, M.~S. Bernstein, and S.~R.
+  Klemmer. 2013.
+\newblock Emailvalet: Managing email overload through private, accountable
+  crowdsourcing.
+\newblock In \emph{Conference on Computer Supported Cooperative Work}, pages
+  1291--1300.
+
+\bibitem[{Krizhevsky et~al.(2012)Krizhevsky, Sutskever, and
+  Hinton}]{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton. 2012.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
+  pages 1097--1105.
+
+\bibitem[{Lavie and Denkowski(2009)}]{lavie2009meteor}
+A.~Lavie and M.~Denkowski. 2009.
+\newblock The meteor metric for automatic evaluation of machine translation.
+\newblock \emph{Machine Translation}, 23.
+
+\bibitem[{Li et~al.(2012)Li, Weng, He, Yao, Datta, Sun, and Lee}]{li2012twiner}
+C.~Li, J.~Weng, Q.~He, Y.~Yao, A.~Datta, A.~Sun, and B.~Lee. 2012.
+\newblock Twiner: named entity recognition in targeted twitter stream.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}, pages 721--730.
+
+\bibitem[{Liang et~al.(2009)Liang, Jordan, and Klein}]{liang09measurements}
+P.~Liang, M.~I. Jordan, and D.~Klein. 2009.
+\newblock Learning from measurements in exponential families.
+\newblock In \emph{International Conference on Machine Learning (ICML)}.
+
+\bibitem[{Lin and Rey(2004)}]{lin2004rouge}
+C.~Lin and M.~Rey. 2004.
+\newblock Looking for a few good metrics: {ROUGE} and its evaluation.
+\newblock In \emph{NTCIR Workshop}.
+
+\bibitem[{Lin et~al.(2014)Lin, Maire, Belongie, Hays, Perona, Ramanan,
+  Doll{'a}r, and Zitnick}]{lin2014microsoft}
+T.~Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan, P.~Doll{'a}r,
+  and C.~L. Zitnick. 2014.
+\newblock Microsoft {COCO}: Common objects in context.
+\newblock In \emph{European Conference on Computer Vision (ECCV)}, pages
+  740--755.
+
+\bibitem[{Liu et~al.(2016{\natexlab{a}})Liu, Soderland, Bragg, Lin, Ling, and
+  Weld}]{liu2016effective}
+A.~Liu, S.~Soderland, J.~Bragg, C.~H. Lin, X.~Ling, and D.~S. Weld.
+  2016{\natexlab{a}}.
+\newblock Effective crowd annotation for relation extraction.
+\newblock In \emph{North American Association for Computational Linguistics
+  (NAACL)}, pages 897--906.
+
+\bibitem[{Liu et~al.(2016{\natexlab{b}})Liu, Lowe, Serban, Noseworthy, Charlin,
+  and Pineau}]{liu2016evaluate}
+C.~Liu, R.~Lowe, I.~V. Serban, M.~Noseworthy, L.~Charlin, and J.~Pineau.
+  2016{\natexlab{b}}.
+\newblock How {NOT} to evaluate your dialogue system: An empirical study of
+  unsupervised evaluation metrics for dialogue response generation.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Lowe et~al.(2017{\natexlab{a}})Lowe, Noseworthy, Serban,
+  Angelard-Gontier, Bengio, and Pineau}]{lowe2017towards}
+R.~Lowe, M.~Noseworthy, I.~V. Serban, N.~Angelard-Gontier, Y.~Bengio, and
+  J.~Pineau. 2017{\natexlab{a}}.
+\newblock Towards an automatic turing test: Learning to evaluate dialogue
+  responses.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Lowe et~al.(2017{\natexlab{b}})Lowe, Pow, Serban, Charlin, Liu, and
+  Pineau}]{lowe2017ubuntu}
+R.~T. Lowe, N.~Pow, I.~Serban, L.~Charlin, C.~Liu, and J.~Pineau.
+  2017{\natexlab{b}}.
+\newblock Training end-to-end dialogue systems with the ubuntu dialogue corpus.
+\newblock \emph{Dialogue and Discourse}, 8.
+
+\bibitem[{Manning et~al.(2014)Manning, Surdeanu, Bauer, Finkel, Bethard, and
+  McClosky}]{manning2014stanford}
+C.~D. Manning, M.~Surdeanu, J.~Bauer, J.~Finkel, S.~J. Bethard, and
+  D.~McClosky. 2014.
+\newblock The stanford core{NLP} natural language processing toolkit.
+\newblock In \emph{ACL system demonstrations}.
+
+\bibitem[{Mnih et~al.(2008)Mnih, Szepesv{'{a}}ri, and
+  Audibert}]{mnih2008empirical}
+V.~Mnih, C.~Szepesv{'{a}}ri, and J.~Audibert. 2008.
+\newblock Empirical berstein stopping.
+\newblock In \emph{International Conference on Machine Learning (ICML)}.
+
+\bibitem[{Nallapati et~al.(2016)Nallapati, Zhou, Gulcehre, Xiang
+  et~al.}]{nallapati2016abstractive}
+R.~Nallapati, B.~Zhou, C.~Gulcehre, B.~Xiang, et~al. 2016.
+\newblock Abstractive text summarization using sequence-to-sequence rnns and
+  beyond.
+\newblock \emph{arXiv preprint arXiv:1602.06023}.
+
+\bibitem[{Nguyen et~al.(2016)Nguyen, Rosenberg, Song, Gao, Tiwary, Majumder,
+  and Deng}]{nguyen2016ms}
+T.~Nguyen, M.~Rosenberg, X.~Song, J.~Gao, S.~Tiwary, R.~Majumder, and L.~Deng.
+  2016.
+\newblock {MS MARCO}: A human generated machine reading comprehension dataset.
+\newblock In \emph{Workshop on Cognitive Computing at NIPS}.
+
+\bibitem[{Novikova et~al.(2017)Novikova, Du\v{s}ek, Curry, and
+  Rieser}]{novikova2017why}
+J.~Novikova, O.~Du\v{s}ek, A.~C. Curry, and V.~Rieser. 2017.
+\newblock Why we need new evaluation metrics for {NLG}.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Owen(2013)}]{owen2013monte}
+A.~B. Owen. 2013.
+\newblock \emph{Monte Carlo theory, methods and examples}.
+
+\bibitem[{Pagliardini et~al.(2017)Pagliardini, Gupta, and
+  Jaggi}]{pagliardini2017unsupervised}
+M.~Pagliardini, P.~Gupta, and M.~Jaggi. 2017.
+\newblock Unsupervised learning of sentence embeddings using compositional
+  n-gram features.
+\newblock \emph{arXiv}.
+
+\bibitem[{Paisley et~al.(2012)Paisley, Blei, and
+  Jordan}]{paisley2012variational}
+J.~Paisley, D.~M. Blei, and M.~I. Jordan. 2012.
+\newblock Variational {B}ayesian inference with stochastic search.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, pages
+  1363--1370.
+
+\bibitem[{Papineni et~al.(2002)Papineni, Roukos, Ward, and
+  Zhu}]{papineni02bleu}
+K.~Papineni, S.~Roukos, T.~Ward, and W.~Zhu. 2002.
+\newblock {BLEU}: A method for automatic evaluation of machine translation.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Passonneau and Carpenter(2014)}]{passonneau2014benefits}
+R.~J. Passonneau and B.~Carpenter. 2014.
+\newblock The benefits of a model of annotation.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Paulus et~al.(2018)Paulus, Xiong, and Socher}]{paulus2018deep}
+R.~Paulus, C.~Xiong, and R.~Socher. 2018.
+\newblock A deep reinforced model for abstractive summarization.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Pavlick et~al.(2016)Pavlick, Ji, Pan, and
+  Callison-Burch}]{pavlick2016gun}
+E.~Pavlick, H.~Ji, X.~Pan, and C.~Callison-Burch. 2016.
+\newblock The gun violence database: A new task and data set for {NLP}.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)},
+  pages 1018--1024.
+
+\bibitem[{Ranganath et~al.(2014)Ranganath, Gerrish, and
+  Blei}]{ranganath2014black}
+R.~Ranganath, S.~Gerrish, and D.~Blei. 2014.
+\newblock Black box variational inference.
+\newblock In \emph{Artificial Intelligence and Statistics (AISTATS)}, pages
+  814--822.
+
+\bibitem[{Ratinov et~al.(2011)Ratinov, Roth, Downey, and
+  Anderson}]{ratinov2011local}
+L.~Ratinov, D.~Roth, D.~Downey, and M.~Anderson. 2011.
+\newblock Local and global algorithms for disambiguation to {W}ikipedia.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Reddy et~al.(2014)Reddy, Lapata, and Steedman}]{reddy2014large}
+S.~Reddy, M.~Lapata, and M.~Steedman. 2014.
+\newblock Large-scale semantic parsing without question-answer pairs.
+\newblock \emph{Transactions of the Association for Computational Linguistics
+  (TACL)}, 2(10):377--392.
+
+\bibitem[{Ripley(2009)}]{ripley2009stochastic}
+B.~D. Ripley. 2009.
+\newblock \emph{Stochastic simulation}.
+\newblock John Wiley \& Sons.
+
+\bibitem[{Sakai and Kando(2008)}]{sakai2008information}
+T.~Sakai and N.~Kando. 2008.
+\newblock On information retrieval metrics designed for evaluation with
+  incomplete relevance assessments.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}, pages 447--470.
+
+\bibitem[{Sculley(2007)}]{sculley2007online}
+D.~Sculley. 2007.
+\newblock Online active learning methods for fast label-efficient spam
+  filtering.
+\newblock In \emph{Conference on Email and Anti-spam (CEAS)}.
+
+\bibitem[{See et~al.(2017)See, Liu, and Manning}]{see2017point}
+A.~See, P.~J. Liu, and C.~D. Manning. 2017.
+\newblock Get to the point: Summarization with pointer-generator networks.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Settles(2010)}]{settles2010active}
+B.~Settles. 2010.
+\newblock Active learning literature survey.
+\newblock Technical report, University of Wisconsin, Madison.
+
+\bibitem[{Snover et~al.(2006)Snover, Dorr, Schwartz, Micciulla, and
+  Makhoul}]{snover2006ter}
+M.~Snover, B.~Dorr, R.~Schwartz, L.~Micciulla, and J.~Makhoul. 2006.
+\newblock A study of translation edit rate with targeted human annotation.
+\newblock In \emph{Association for Machine Translation in the Americas}, pages
+  223--231.
+
+\bibitem[{Socher et~al.(2013)Socher, Perelygin, Wu, Chuang, Manning, Ng, and
+  Potts}]{socher2013recursive}
+R.~Socher, A.~Perelygin, J.~Y. Wu, J.~Chuang, C.~D. Manning, A.~Y. Ng, and
+  C.~Potts. 2013.
+\newblock Recursive deep models for semantic compositionality over a sentiment
+  treebank.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Tan et~al.(2018)Tan, Wei, Yang, Lv, and Zhou}]{tan2018s}
+C.~Tan, F.~Wei, N.~Yang, W.~Lv, and M.~Zhou. 2018.
+\newblock {S}-{N}et: From answer extraction to answer generation for machine
+  reading comprehension.
+\newblock In \emph{Association for the Advancement of Artificial Intelligence
+  (AAAI)}.
+
+\bibitem[{Vannella et~al.(2014)Vannella, Jurgens, Scarfini, Toscani, and
+  Navigli}]{vannella2014validating}
+D.~Vannella, D.~Jurgens, D.~Scarfini, D.~Toscani, and R.~Navigli. 2014.
+\newblock Validating and extending semantic knowledge bases using video games
+  with a purpose.
+\newblock In \emph{Association for Computational Linguistics (ACL)}, pages
+  1294--1304.
+
+\bibitem[{Vedantam et~al.(2015)Vedantam, Zitnick, and
+  Parikh}]{vedantam2015cider}
+R.~Vedantam, C.~L. Zitnick, and D.~Parikh. 2015.
+\newblock {CIDEr}: Consensus-based image description evaluation.
+\newblock In \emph{Computer Vision and Pattern Recognition (CVPR)}, pages
+  4566--4575.
+
+\bibitem[{Webber(2010)}]{webber2010measurement}
+W.~E. Webber. 2010.
+\newblock \emph{Measurement in Information Retrieval Evaluation}.
+\newblock Ph.D. thesis, University of Melbourne.
+
+\bibitem[{Weissenborn et~al.(2017)Weissenborn, Wiese, and
+  Seiffe}]{weissenborn2017fastqa}
+D.~Weissenborn, G.~Wiese, and L.~Seiffe. 2017.
+\newblock Making neural {QA} as simple as possible but not simpler.
+\newblock In \emph{Computational Natural Language Learning (CoNLL)}.
+
+\bibitem[{Wu et~al.(2016)Wu, Schuster, Chen, Le, Norouzi, Macherey, Krikun,
+  Cao, Gao, Macherey et~al.}]{wu2016google}
+Y.~Wu, M.~Schuster, Z.~Chen, Q.~V. Le, M.~Norouzi, W.~Macherey, M.~Krikun,
+  Y.~Cao, Q.~Gao, K.~Macherey, et~al. 2016.
+\newblock Google's neural machine translation system: Bridging the gap between
+  human and machine translation.
+\newblock \emph{arXiv preprint arXiv:1609.08144}.
+
+\bibitem[{Yilmaz et~al.(2008)Yilmaz, Kanoulas, and Aslam}]{yilmaz2008simple}
+E.~Yilmaz, E.~Kanoulas, and J.~A. Aslam. 2008.
+\newblock A simple and efficient sampling method for estimating {AP} and
+  {NDCG}.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}, pages 603--610.
+
+\bibitem[{Zobel(1998)}]{zobel1998reliable}
+J.~Zobel. 1998.
+\newblock How reliable are the results of large-scale information retrieval
+  experiments?
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}.
 
 \end{thebibliography}

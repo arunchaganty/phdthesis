@@ -1,0 +1,11 @@
+At this point, it seems like we are at about 6-7 pages:
+Abstract+Intro = 1page
+Estimators = 1 page
+Model = 1 page
+Data = 1-1.5 page.
+Evaluation = 1.5-2 pages
+Related work = 1/2 page
+Discussion = 1/2 page
+
+# Measuring bias? = 1.5 pages -- (basically critique what's out there.)
+# Might be a little harder.

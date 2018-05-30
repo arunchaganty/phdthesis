@@ -1,0 +1,34 @@
+\section{\label{sec:setup} Related work}
+
+% Key points:
+% - our work is motivated by extensive work in analyzing and improving evaluation with automatic metrics.
+% - our technical tools are control variates and crowdsourcing
+In this work, we focus on using existing automatic metrics to decrease the cost of human evaluations.
+There has been much work on improving the quality of automatic metrics.
+In particular, there is interest in learning models~\citep{lowe2017towards,dusek2017referenceless} that are able to optimize for improved correlations with human judgment.
+However, in our experience, we have found that these learned automatic metrics have trouble generalizing to different systems.
+The framework we provide allows us to safely incorporate such models into evaluation, exploiting them when their correlation is high but also not introducing bias when it is low.
+
+Our key technical tool is control variates, a standard statistical technique used to reduce the variance of Monte Carlo estimates~\citep{ripley2009stochastic}.
+%In particular, we use established automatic metrics that are correlated with human annotators as our control variate.
+The technique has also been used in machine learning and reinforcement learning to lower variance estimates of gradients~\citep{greensmith2004variance, paisley2012variational, ranganath2014black}.
+To the best of our knowledge, we are the first to apply this technique in the context of language evaluation.
+
+Our work also highlights the importance of human evaluation.
+\citet{chaganty2017unbiased} identified a similar problem of systematic bias in evaluation metrics in the setting of knowledge base population and also propose statistical estimators that relies on human evaluation to correct bias.
+Unfortunately, their technique relies on having a structured output (relation triples) that are shared between systems and does not apply to evaluating natural language generation.
+In a similar vein, \citet{chang2017affordable} dynamically collect human feedback to learn better dialog policies.
+%
+%Key to improving human-in-the-loop evaluation is also improving the evaluation prompts used to get human judgments. 
+%In this work, we found that using post-editing can significantly reduce human judgment variance. 
+%Similarly, \citet{novikova2016crowd} found that presenting humans with iamges 
+
+
+
+% Literature on improving the quality of crowdsourced evaluation as that's our takeaway.
+% Point out that these approaches add bias.
+%% Snow, R., Connor, B. O., Jurafsky, D., Ng, A. Y., Labs, D., & St, C. (2008). Cheap and Fast — But is it Good ? Evaluating Non-Expert Annotations for Natural Language Tasks, (October), 254–263.
+%% Passonneau, R. J., & Carpenter, B. (2013). The Benefits of a Model of Annotation. Proceedings of the 7th Linguistic Annotation Workshop & Interoperability with Discourse, 2, 187–195. Retrieved from http://www.aclweb.org/anthology/W13-2323
+%% Gibson, E., Piantadosi, S., & Fedorenko, K. (2011). Using mechanical turk to obtain and analyze English acceptability judgments. Linguistics and Language Compass, 5(8), 509–524. http://doi.org/10.1111/j.1749-818X.2011.00295.x 
+%% Ipeirotis, P. G., Provost, F., & Wang, J. (2010). Quality Management on Amazon Mechanical Turk, 0–3. 
+%* Gillick and Liu 2010 -- crowdworkers aren't able to recover gold annotations.

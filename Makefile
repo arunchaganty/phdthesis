@@ -17,6 +17,7 @@ refdb:
 
 refdb-update: 
 	make -C refdb
+	cp refdb/all.bib .
 
 run:
 	go main.pdf

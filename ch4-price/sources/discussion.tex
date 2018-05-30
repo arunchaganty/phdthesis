@@ -1,0 +1,23 @@
+\section{Discussion}
+\label{sec:discussion}
+
+Prior work has shown that existing automatic metrics have poor instance-level correlation with mean human judgment and that they score many good quality responses poorly.
+As a result, the evaluation is systematically biased against genuine system improvements that would lead to higher human evaluation scores but not improve automatic metrics.
+In this paper, we have explored using an automatic metric to decrease the cost of human evaluation without introducing bias.
+In practice, we find that with current automatic metrics and evaluation prompts data efficiencies are only 1.08--1.15 (7--13\% cost reduction).
+Our theory shows that further improvements are only possible by improving the correlation of the automatic metric and reducing the annotator variance of the evaluation prompt.
+As an example of how evaluation prompts could be improved, we found that using post-edits of summarizes decreased normalized annotator variance by a factor of three relative to using a Likert scale survey.
+It should be noted that changing the evaluation prompt also changes the underlying ground truth $f(z)$: it is up to us to find a prompt that still captures the essence of what we want to measure.
+
+
+Without making stronger assumptions, the control variates estimator we proposed outlines the limitations of unbiased estimation.
+Where do we go from here?
+Certainly, we can try to improve the automatic metric (which is potentially as difficult as solving the task) and brainstorming alternative ways of soliciting evaluation (which has been less explored).
+Alternatively, we could give up on measuring absolute scores, and seek instead to find techniques stably rank methods and thus improve them.
+As the NLP community tackles increasingly difficult tasks, human evaluation will only become more important.
+We hope our work provides some clarity on to how to make it more cost effective.
+
+
+
+
+

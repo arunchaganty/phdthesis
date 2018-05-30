@@ -17,17 +17,22 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{import}
 \usepackage{multirow}
 \usepackage{algorithm}
-\usepackage{algorithmic}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{tablefootnote}
+\usepackage{tikz}
+\usepackage{epigraph}
 \usepackage{ifthen}
 \usepackage{color}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{booktabs}
 
-\input std-macros
-\input macros
+\input{std-macros}
+\input{macros}
 
 \dept{Computer Science}
 \begin{document}
@@ -36,8 +41,6 @@
 \principaladviser{Percy S. Liang}
 \firstreader{Christopher D. Manning}
 \secondreader{Michael S. Bernstein}
-%\thirdreader{Jane Supernumerary} %if needed
-%\fourthreader{Severus Snape} %if needed
  
 \beforepreface{}
 \prefacesection{Preface}
@@ -46,10 +49,16 @@
 \input{acknowledgments}
 \afterpreface{}
 
-\input{intro}
+\import*{ch1-intro/}{main}
+\import*{ch2-setup/}{main}
+\import*{ch3-kbpo/}{main}
+\import*{ch4-price/}{main}
+\import*{ch5-otj/}{main}
+\import*{ch6-conclusions/}{main}
 
 \appendix
 
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
+\bibliographystyle{emnlp_natbib}
 \bibliography{all}
 \end{document}

@@ -1,0 +1,61 @@
+\contentsline {chapter}{Preface}{iv}{chapter*.1}
+\contentsline {chapter}{Acknowledgments}{v}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Setup}{2}{chapter.2}
+\contentsline {chapter}{\numberline {3}Importance sampling for unbiased on-demand evaluation of knowledge base population}{3}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{3}{section.3.1}
+\contentsline {section}{\numberline {3.2}Background}{5}{section.3.2}
+\contentsline {paragraph}{Pooled evaluation.}{5}{section*.8}
+\contentsline {section}{\numberline {3.3}Measuring pooling bias}{7}{section.3.3}
+\contentsline {paragraph}{Measuring bias.}{7}{section*.10}
+\contentsline {paragraph}{Results.}{7}{section*.11}
+\contentsline {section}{\numberline {3.4}On-demand evaluation with importance sampling}{7}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Problem statement}{8}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Simple estimators}{8}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Joint estimators}{8}{subsection.3.4.3}
+\contentsline {paragraph}{Estimating precision jointly.}{9}{section*.12}
+\contentsline {paragraph}{Estimating recall jointly.}{9}{section*.13}
+\contentsline {paragraph}{Adaptively choosing the number of samples.}{10}{section*.14}
+\contentsline {section}{\numberline {3.5}On-demand evaluation for KBP}{10}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Sampling from system predictions}{10}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Labeling predicted instances}{11}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Sampling true instances}{11}{subsection.3.5.3}
+\contentsline {section}{\numberline {3.6}Evaluation}{12}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Bias and variance of the on-demand evaluation.}{12}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Number of samples required by on-demand evaluation}{13}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}A mock evaluation for TAC KBP 2016}{13}{subsection.3.6.3}
+\contentsline {section}{\numberline {3.7}Related work}{13}{section.3.7}
+\contentsline {section}{\numberline {3.8}Discussion}{14}{section.3.8}
+\contentsline {chapter}{\numberline {4}The price of debiasing automatic metrics in natural language evaluation}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{1}{section.4.1}
+\contentsline {section}{\numberline {4.2} Bias in automatic evaluation}{2}{section.4.2}
+\contentsline {section}{\numberline {4.3}Statistical estimation for unbiased evaluation}{4}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Sample mean}{4}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Control variates estimator}{5}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Using the control variates estimator}{6}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Discussion of assumptions}{8}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4} Tasks and datasets}{8}{section.4.4}
+\contentsline {paragraph}{Evaluating language quality in automatic summarization.}{8}{section*.22}
+\contentsline {paragraph}{Evaluating answer correctness.}{10}{section*.23}
+\contentsline {section}{\numberline {4.5}Experimental results}{11}{section.4.5}
+\contentsline {paragraph}{Automatic metrics.}{11}{section*.25}
+\contentsline {paragraph}{Results.}{11}{section*.27}
+\contentsline {section}{\numberline {4.6} Related work}{12}{section.4.6}
+\contentsline {section}{\numberline {4.7}Discussion}{13}{section.4.7}
+\contentsline {chapter}{\numberline {5}On-the-Job Learning with Bayesian Decision Theory}{14}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{14}{section.5.1}
+\contentsline {section}{\numberline {5.2}Problem formulation}{15}{section.5.2}
+\contentsline {section}{\numberline {5.3}Model}{16}{section.5.3}
+\contentsline {paragraph}{Game tree.}{17}{section*.30}
+\contentsline {paragraph}{Utility.}{18}{section*.31}
+\contentsline {paragraph}{Environment model.}{18}{section*.32}
+\contentsline {paragraph}{Behavior.}{18}{section*.33}
+\contentsline {section}{\numberline {5.4}Game playing}{19}{section.5.4}
+\contentsline {section}{\numberline {5.5}Experiments}{19}{section.5.5}
+\contentsline {paragraph}{Baselines.}{19}{section*.34}
+\contentsline {paragraph}{Implementation and crowdsourcing setup.}{20}{section*.36}
+\contentsline {paragraph}{Summary of results.}{21}{section*.39}
+\contentsline {paragraph}{Reproducibility.}{22}{section*.41}
+\contentsline {section}{\numberline {5.6}Related Work}{22}{section.5.6}
+\contentsline {section}{\numberline {5.7}Conclusion}{24}{section.5.7}
+\contentsline {chapter}{\numberline {6}Conclusions: where do we go from here?}{25}{chapter.6}

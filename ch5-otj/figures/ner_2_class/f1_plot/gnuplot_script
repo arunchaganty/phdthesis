@@ -1,0 +1,7 @@
+set terminal pdf enhanced linewidth 3 font "Times New Roman,8" size 3in,2in
+set key right bottom
+set output "f1_vs_time.pdf"
+set xlabel 'Time'
+set ylabel 'F1'
+plot 'lense.dat' with lines title 'LENSE', \
+'online.dat' with lines title 'online learning'

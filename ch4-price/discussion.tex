@@ -1,0 +1,68 @@
+\section{Discussion}
+\label{sec:discussion}
+
+% Setting: shown how low correlations == bad
+Prior work has shown that existing automatic metrics have poor instance-level correlation with mean human judgment and that they score many good quality responses poorly.
+As a result, the evaluation is systematically biased against genuine system improvements that would lead to higher human evaluation scores but not improve automatic metrics.
+% Key point: how do we make human evaluation more practical by decreasing the cost of doing 
+In this paper, we have explored using an automatic metric to decrease the cost of human evaluation without introducing bias.
+In practice, we find that with current automatic metrics and evaluation prompts data efficiencies are only 1.08--1.15 (7--13\% cost reduction).
+Our theory shows that further improvements are only possible by improving the correlation of the automatic metric and reducing the annotator variance of the evaluation prompt.
+As an example of how evaluation prompts could be improved, we found that using post-edits of summarizes decreased normalized annotator variance by a factor of three relative to using a Likert scale survey.
+It should be noted that changing the evaluation prompt also changes the underlying ground truth $f(z)$: it is up to us to find a prompt that still captures the essence of what we want to measure.
+
+% What other avenues are there to improve data efficiency?
+%In conducting this work, we also explored several avenues to exploit automatic metrics to decrease estimation variance (costs).
+% While key intuition for improving data efficiency lies in exploiting the automatic metric when it is reliable and falling back on human evaluation when it isn't, the challenges lies in knowing when the metric is reliable or not.
+%Unfortunately, using a technique like importance sampling that is able to integrate uncertainties without introducing bias, but can significantly increase variance if the uncertainty estimates are not properly calibrated, as we found in preliminary experiments.
+
+Without making stronger assumptions, the control variates estimator we proposed outlines the limitations of unbiased estimation.
+Where do we go from here?
+Certainly, we can try to improve the automatic metric (which is potentially as difficult as solving the task) and brainstorming alternative ways of soliciting evaluation (which has been less explored).
+Alternatively, we could give up on measuring absolute scores, and seek instead to find techniques stably rank methods and thus improve them.
+As the NLP community tackles increasingly difficult tasks, human evaluation will only become more important.
+We hope our work provides some clarity on to how to make it more cost effective.
+
+%However, as we discussed in \refsec{method}, there are some opportunities for us to go beyond the framework proposed in this paper.  
+%For example, we might be able to mitigate the effects of noise in human judgments by explicitly modeling annotators as in \citet{passonneau2014benefits}.
+%Alternatively, if we are able to make assumptions the automatic metric (e.g.\ access to calibrated uncertainty estimates), or on the annotation process (e.g.\ some locality property that allows us to reuse annotations obtained from one system in another), we may be able to further amortize costs.
+%\pl{I'm personally kind of pessimistic about getting gains in these ways and would cut this paragraph to not point people in that direction;
+%I think that evaluation prompts are the most promising thing to give improvements, improving correlation is too hard, and we should just give up on unbiasedness;
+%what do you think?  we should agree on the message of this paper and put it here
+%}
+%
+%Regarding the final message, I don't think we need to make a strong statement; I'd frame it in terms of questions: something like: 
+%Finally, we might be able to exploit structure in the human evaluation, for example by using edits, to be able to share annotations between examples.
+
+
+%For instance, here, we assumed that the human judgment noise for each task were independent, which is not the case when we know that multiple $z$ had the same human annotator. A more nuanced model of human annotators may attain gains. Additionally, our estimator is the minimax optimal over distributions with a fixed correlation between $f(z)$ and $g(z)$ and no further assumptions. With more assumptions on $g(z)$, such as confidence estimates, it may be possible to devise lower variance estimators.
+%
+%\stm{I think this paragraph could be cut. Doesn't really say anything key or new. We already discussed the theorem assumptions in method, and it's clear that decreasing $\gamma$ and increasing $\rho$ is good.}
+%We believe that there are a few promising directions to improve data efficiency.
+%Firstly, we can improve the quality of the automatic metric by learning task-specific evaluation models such as ~\citet{}.
+%Secondly, we might be able to mitigate the effects of annotator noise by appropriately modeling annotators, such as ~\citet{}.
+%Finally, we might be able to exploit structure in the human evaluation, for example by using edits, to be able to share annotations between examples.
+
+%In preliminary experiments, we found that correcting for the bias in these estimates 
+% We considered some alternatives to using control variates, 
+
+% Straightforward extension to multiple cvs.
+%
+%\stm{Talk about multiple references to improve automatic metrics?}
+%
+%% Incorporate other metrics
+%Another way to incorporate an automatic metric into human evaluation
+%is using importance sampling, where \pl{explain why this doesn't work}
+%One might want to use uncertainty sampling from actively learning,
+%where you use human evaluation for only the tricky cases,
+%but this technique inevitably introduces bias,
+%unless we make strong assumptions about the accuracy of the automatic metric.
+%
+%% Learned metrics don't work
+%ADEM
+%
+%What do we want from an evaluation metric?
+%Is it possible to get low variance on something subjective? Maybe we should ask different questions?
+%
+%Talk about HTER and its high correlation and how we could collect that as a source of data.
+%

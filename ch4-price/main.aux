@@ -1,0 +1,147 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{nallapati2016abstractive}
+\citation{nguyen2016ms,kovcisky2017narrativeqa}
+\citation{lin2014microsoft}
+\citation{lowe2017ubuntu}
+\citation{papineni02bleu}
+\citation{lin2004rouge}
+\citation{lavie2009meteor,denkowski2014meteor}
+\citation{vedantam2015cider}
+\citation{liu2016evaluate,novikova2017why}
+\citation{ripley2009stochastic}
+\citation{hermann2015read,nallapati2016abstractive}
+\citation{nguyen2016ms}
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\citation{novikova2017why}
+\citation{liu2016evaluate}
+\citation{novikova2017why}
+\citation{nguyen2016ms}
+\citation{novikova2017why}
+\citation{conroy2008mind}
+\citation{dang2006overview}
+\citation{wu2016google}
+\citation{chaganty2017unbiased}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:bias-msmarco-system}{{1a}{2}{System-level correlation on the MS MARCO task\relax }{figure.caption.1}{}}
+\newlabel{sub@fig:bias-msmarco-system}{{a}{2}{System-level correlation on the MS MARCO task\relax }{figure.caption.1}{}}
+\newlabel{fig:bias-msmarco-instance}{{1b}{2}{Instance-level correlation for the \texttt {fastqa} system\relax }{figure.caption.1}{}}
+\newlabel{sub@fig:bias-msmarco-instance}{{b}{2}{Instance-level correlation for the \texttt {fastqa} system\relax }{figure.caption.1}{}}
+\newlabel{fig:bias-msmarco}{{1}{2}{(a) At a system-level, automatic metrics (ROUGE-L) and human judgment correlate well, but (b) the instance-level correlation plot (where each point is a system prediction) shows that the instance-level correlation is quite low ($\rho = 0.31$). As a consequence, if we try to locally improve systems to produce better answers ($\triangleright $ in (a)), they do not significantly improve ROUGE scores and vice versa ($\vartriangle $). \relax }{figure.caption.1}{}}
+\newlabel{sec:bias}{{2}{2}{Bias in automatic evaluation}{section.2}{}}
+\newlabel{tab:examples}{{1}{3}{Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree. On the MS MARCO task, a majority of responses from systems were actually correct but poorly scored according to ROUGE-L. On the CNN/Daily Mail task, a significant number of examples which are scored highly by VecSim are poorly rated by humans, and likewise many examples scored poorly by VecSim are highly rated by humans. \relax }{table.caption.2}{}}
+\citation{ripley2009stochastic}
+\newlabel{sec:method}{{3}{4}{Statistical estimation for unbiased evaluation}{section.3}{}}
+\newlabel{eqn:varsimple}{{2}{4}{Sample mean}{equation.3.2}{}}
+\newlabel{thm:main}{{3.1}{4}{}{theorem.3.1}{}}
+\newlabel{eqn:varcontrol}{{6}{4}{}{equation.3.6}{}}
+\citation{mnih2008empirical}
+\citation{passonneau2014benefits}
+\newlabel{fig:variance_reduction}{{2}{5}{The samples from $f(z)$ have a higher variance than the samples from $f(z)-g(z)$ but the same mean. This is the key idea behind using control variates to reduce variance.\relax }{figure.caption.3}{}}
+\newlabel{fig:savings}{{3}{5}{Inverse data efficiency for various values of $\gamma $ and $\rho $. We need both low $\gamma $ and high $\rho $ to obtain significant gains. \relax }{figure.caption.4}{}}
+\newlabel{prop:added_bias}{{3.1}{5}{}{proposition.3.1}{}}
+\newlabel{alg:estimate}{{1}{5}{Control variates estimator\relax }{algorithm.1}{}}
+\citation{hermann2015read,nallapati2016abstractive}
+\citation{dang2006overview}
+\citation{snover2006ter}
+\citation{see2017point}
+\citation{paulus2018deep}
+\citation{manning2014stanford}
+\citation{nguyen2016ms}
+\newlabel{tab:dataset}{{2}{6}{A summary of the key statistics, human metric variance ($\sigma ^2_f$) and annotator variance ($\sigma ^2_a$) for different datasets, CNN/Daily Mail (CDM) and MS MARCO in our evaluation benchmark. We observe that the relative variance ($\gamma $) is fairly high for most evaluation prompts, upper bounding the data efficiency on these tasks. A notable exception is the \texttt {Edit} prompt wherein systems are compared on the number of post-edits required to improve their quality. \relax }{table.caption.6}{}}
+\newlabel{sec:tasks}{{4}{6}{Tasks and datasets}{section.4}{}}
+\citation{weissenborn2017fastqa}
+\citation{tan2018s}
+\citation{papineni02bleu}
+\citation{lin2004rouge}
+\citation{lavie2009meteor}
+\citation{novikova2017why}
+\citation{liu2016evaluate}
+\citation{pagliardini2017unsupervised}
+\newlabel{fig:interfaces-edit}{{4a}{7}{Interface to evaluate language quality on CNN/Daily Mail\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:interfaces-edit}{{a}{7}{Interface to evaluate language quality on CNN/Daily Mail\relax }{figure.caption.5}{}}
+\newlabel{fig:interfaces-qa}{{4b}{7}{Interface to judge answer correctness on MS MARCO\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:interfaces-qa}{{b}{7}{Interface to judge answer correctness on MS MARCO\relax }{figure.caption.5}{}}
+\newlabel{fig:tasks}{{4}{7}{Screenshots of the annotation interfaces we used to measure (a) summary language quality on CNN/Daily Mail and (b) answer correctness on MS MARCO tasks. \relax }{figure.caption.5}{}}
+\newlabel{sec:evaluation}{{5}{7}{Experimental results}{section.5}{}}
+\citation{lowe2017towards,dusek2017referenceless}
+\citation{ripley2009stochastic}
+\citation{greensmith2004variance,paisley2012variational,ranganath2014black}
+\citation{chaganty2017unbiased}
+\citation{chang2017affordable}
+\newlabel{fig:correlation}{{5}{8}{Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks. Certain systems are more correlated with certain automatic metrics than others, but overall the correlation is low to moderate for most systems and metrics. \relax }{figure.caption.9}{}}
+\newlabel{sec:setup}{{6}{8}{Related work}{section.6}{}}
+\bibdata{all}
+\bibcite{chaganty2017unbiased}{{1}{2017}{{Chaganty et~al.}}{{Chaganty, Paranjape, Liang, and Manning}}}
+\newlabel{fig:trajectory-a}{{6a}{9}{\texttt {seq2seq} on CNN/Daily Mail using the \texttt {Overall}\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:trajectory-a}{{a}{9}{\texttt {seq2seq} on CNN/Daily Mail using the \texttt {Overall}\relax }{figure.caption.11}{}}
+\newlabel{fig:trajectory-b}{{6b}{9}{\texttt {seq2seq} on CNN/Daily Mail using \texttt {Edit} \relax }{figure.caption.11}{}}
+\newlabel{sub@fig:trajectory-b}{{b}{9}{\texttt {seq2seq} on CNN/Daily Mail using \texttt {Edit} \relax }{figure.caption.11}{}}
+\newlabel{fig:trajectory-c}{{6c}{9}{\texttt {fastqa\_ext} on MS MARCO using \texttt {AnyCorrect}\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:trajectory-c}{{c}{9}{\texttt {fastqa\_ext} on MS MARCO using \texttt {AnyCorrect}\relax }{figure.caption.11}{}}
+\newlabel{fig:trajectory}{{6}{9}{80\% bootstrap confidence interval length as a function of the number of human judgments used when evaluating the indicated systems on their respective datasets and prompts. (a) We see a modest reduction in variance (and hence cost) relative to human evaluation by using the VecSim automatic metric with the proposed control variates estimator to estimate \texttt {Overall} scores on the CNN/Daily Mail task; the data efficiency (DE) is $1.06$. (b) By improving the evaluation prompt to use \texttt {Edit}s instead, it is possible to further reduce variance relative to humans (DE is $1.15$). (c) Another way to reduce variance relative to humans is to improve the automatic metric evaluation; here using ROUGE-1 instead of VecSim improves the DE from $1.03$ to $1.16$. \relax }{figure.caption.11}{}}
+\newlabel{sec:discussion}{{7}{9}{Discussion}{section.7}{}}
+\bibcite{chang2017affordable}{{2}{2017}{{Chang et~al.}}{{Chang, Yang, Chen, Zhou, and Yu}}}
+\bibcite{conroy2008mind}{{3}{2008}{{Conroy and Dang}}{{}}}
+\bibcite{dang2006overview}{{4}{2006}{{Dang}}{{}}}
+\bibcite{denkowski2014meteor}{{5}{2014}{{Denkowski and Lavie}}{{}}}
+\bibcite{dusek2017referenceless}{{6}{2017}{{Dusek et~al.}}{{Dusek, Novikova, and Rieser}}}
+\bibcite{greensmith2004variance}{{7}{2004}{{Greensmith et~al.}}{{Greensmith, Bartlett, and Baxter}}}
+\bibcite{hermann2015read}{{8}{2015}{{Hermann et~al.}}{{Hermann, Kočiský, Grefenstette, Espeholt, Kay, Suleyman, and Blunsom}}}
+\bibcite{kovcisky2017narrativeqa}{{9}{2017}{{Ko{\v {c}}isky et~al.}}{{Ko{\v {c}}isky, Schwarz, Blunsom, Dyer, Hermann, Melis, and Grefenstette}}}
+\bibcite{lavie2009meteor}{{10}{2009}{{Lavie and Denkowski}}{{}}}
+\bibcite{lin2004rouge}{{11}{2004}{{Lin and Rey}}{{}}}
+\bibcite{lin2014microsoft}{{12}{2014}{{Lin et~al.}}{{Lin, Maire, Belongie, Hays, Perona, Ramanan, Doll{'a}r, and Zitnick}}}
+\bibcite{liu2016effective}{{13}{2016{a}}{{Liu et~al.}}{{Liu, Soderland, Bragg, Lin, Ling, and Weld}}}
+\bibcite{liu2016evaluate}{{14}{2016{b}}{{Liu et~al.}}{{Liu, Lowe, Serban, Noseworthy, Charlin, and Pineau}}}
+\bibcite{lowe2017towards}{{15}{2017{a}}{{Lowe et~al.}}{{Lowe, Noseworthy, Serban, Angelard-Gontier, Bengio, and Pineau}}}
+\bibcite{lowe2017ubuntu}{{16}{2017{b}}{{Lowe et~al.}}{{Lowe, Pow, Serban, Charlin, Liu, and Pineau}}}
+\bibcite{manning2014stanford}{{17}{2014}{{Manning et~al.}}{{Manning, Surdeanu, Bauer, Finkel, Bethard, and McClosky}}}
+\bibcite{mnih2008empirical}{{18}{2008}{{Mnih et~al.}}{{Mnih, Szepesv{'{a}}ri, and Audibert}}}
+\bibcite{nallapati2016abstractive}{{19}{2016}{{Nallapati et~al.}}{{Nallapati, Zhou, Gulcehre, Xiang et~al.}}}
+\bibcite{nguyen2016ms}{{20}{2016}{{Nguyen et~al.}}{{Nguyen, Rosenberg, Song, Gao, Tiwary, Majumder, and Deng}}}
+\bibcite{novikova2017why}{{21}{2017}{{Novikova et~al.}}{{Novikova, Dušek, Curry, and Rieser}}}
+\bibcite{pagliardini2017unsupervised}{{22}{2017}{{Pagliardini et~al.}}{{Pagliardini, Gupta, and Jaggi}}}
+\bibcite{paisley2012variational}{{23}{2012}{{Paisley et~al.}}{{Paisley, Blei, and Jordan}}}
+\bibcite{papineni02bleu}{{24}{2002}{{Papineni et~al.}}{{Papineni, Roukos, Ward, and Zhu}}}
+\bibcite{passonneau2014benefits}{{25}{2014}{{Passonneau and Carpenter}}{{}}}
+\bibcite{paulus2018deep}{{26}{2018}{{Paulus et~al.}}{{Paulus, Xiong, and Socher}}}
+\bibcite{ranganath2014black}{{27}{2014}{{Ranganath et~al.}}{{Ranganath, Gerrish, and Blei}}}
+\bibcite{ripley2009stochastic}{{28}{2009}{{Ripley}}{{}}}
+\bibcite{see2017point}{{29}{2017}{{See et~al.}}{{See, Liu, and Manning}}}
+\bibcite{snover2006ter}{{30}{2006}{{Snover et~al.}}{{Snover, Dorr, Schwartz, Micciulla, and Makhoul}}}
+\bibcite{tan2018s}{{31}{2018}{{Tan et~al.}}{{Tan, Wei, Yang, Lv, and Zhou}}}
+\bibcite{vedantam2015cider}{{32}{2015}{{Vedantam et~al.}}{{Vedantam, Zitnick, and Parikh}}}
+\bibcite{weissenborn2017fastqa}{{33}{2017}{{Weissenborn et~al.}}{{Weissenborn, Wiese, and Seiffe}}}
+\bibcite{wu2016google}{{34}{2016}{{Wu et~al.}}{{Wu, Schuster, Chen, Le, Norouzi, Macherey, Krikun, Cao, Gao, Macherey et~al.}}}
+\bibstyle{acl_natbib}
+\citation{liu2016effective}
+\citation{dang2006overview}
+\newlabel{sec:interfaces}{{A}{12}{Crowdsourcing data collection}{appendix.A}{}}
+\newlabel{fig:lqual-interface}{{7a}{13}{\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:lqual-interface}{{a}{13}{\relax }{figure.caption.17}{}}
+\newlabel{fig:lqual-tutorial}{{7b}{13}{\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:lqual-tutorial}{{b}{13}{\relax }{figure.caption.17}{}}
+\newlabel{fig:msmarco-interface}{{8a}{14}{\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:msmarco-interface}{{a}{14}{\relax }{figure.caption.18}{}}
+\newlabel{fig:msmarco-tutorial}{{8b}{14}{\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:msmarco-tutorial}{{b}{14}{\relax }{figure.caption.18}{}}
+\newlabel{sec:proofs}{{B}{15}{Proofs}{appendix.B}{}}
+\newlabel{lem:variance_calc}{{B.1}{15}{}{lemma.B.1}{}}
+\newlabel{lem:mvue}{{B.2}{16}{}{lemma.B.2}{}}

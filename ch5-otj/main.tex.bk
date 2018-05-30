@@ -1,0 +1,18 @@
+\input{macros}
+\chapter{On-the-Job Learning with Bayesian Decision Theory}
+\usetikzlibrary{positioning}
+
+\input{abstract}
+
+%\input{todos}
+%\input{intro-0.2}
+\input{intro}
+\input{problem}
+\input{model}
+%\input{bounds}
+\input{async}
+%\input{human-error}
+%\input{partial-monitoring}
+\input{experiments}
+\input{related-0.2}
+\input{conclusion}
