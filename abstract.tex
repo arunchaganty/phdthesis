@@ -1,86 +1,22 @@
-Knowledge base population (KBP) systems take in a large document corpus and extract entities and their relations.
-Thus far, KBP evaluation has relied on judgements on the pooled predictions of existing systems.
-We show that this evaluation is problematic:
-when a new system predicts a previously unseen relation, it is penalized even if it is correct.
-This leads to significant bias against new systems, which counterproductively discourages innovation in the field.
-Our first contribution is a new importance-sampling based evaluation which corrects for this bias by annotating a new system's predictions on-demand via crowdsourcing.
-We show this eliminates bias and reduces variance using data from the 2015 TAC KBP task. % as compared to standard evaluation.
-Our second contribution is an implementation of our method made publicly available as an online KBP evaluation service.
-We pilot the service by testing diverse state-of-the-art systems on the TAC KBP 2016 corpus and obtain accurate scores in a cost effective manner. 
+In natural language tasks such as knowledge base population, text summarization or open-response question answering, a significant challenge is simply evaluating the performance of automated systems because of the large diversity of possible outputs.
+% ^^ Include the fact that the domain has shifted?
+Existing fully-automatic methods for evaluating these systems rely on an incomplete set of annotated references which lead to systematic biases against certain system improvements: in other words, genuinely good ideas are systematically discarded simply because of limitations in our evaluation methodology.
+As a result, human evaluation, which can be prohibitively expensive, has remained the de-facto mode of evaluation for these tasks.
+In this work, we show how one can decrease the costs of incorporating human feedback through the design of appropriate statistical estimators. 
 
-%understanding of system performance 
-%\pl{can we make this less vague but not longer?}.
-%We hope that the service will allow the community to get accurate and timely feedback on exciting new directions in KBP.\@
+First, we consider the setting where the output produced by systems is ``dense'', in that we expect significant overlap between the output of different systems. 
+Naively combining annotations from different systems leads to a representation bias.
+Here, we show that cost of obtaining human feedback can be significantly amortized by using a novel importance-reweighted estimator.  
+We apply this estimator to design a new evaluation methodology for knowledge base population and show that cost of evaluating precision and recall within this framework can be reduced by a factor of 4.
 
-% Large-scale information extraction systems for knowledge base population (KBP) predict true relations from an unenumerable set of candidate relations within a large document corpus.
-% Due to the prohibitive cost of annotating the entire corpus, KBP evaluation has relied on datasets constructed by judging predictions pooled together from existing systems.
-% However, when a newly developed system predicts a relation not previously seen, it can not be accurately evaluated.
-% We show that this results in an evaluation score that is significantly biased against novel system predictions.
-% To address this bias,
-%   we introduce on-demand open-world evaluation which continuously expands the evaluation dataset by annotating new system's predictions when necessary through crowdsourcing, while still ensuring that score estimates are unbiased.
-% We demonstrate a significant cost savings on simulated experiments from the 2015 TAC-KBP evaluation, and conduct a mock evaluation on the TAC-KBP 2016 document corpus.
+Next, we consider the ``sparse'' setting wherein few, if any, systems ever produce identical output.
+Traditionally, the community has relied on similarity-based automatic metrics such as BLEU or ROUGE to compare the outputs produced by different systems.
+Unfortunately, these metrics have been shown to poorly correlate with human judgment and thus introduce bias in evaluation.
+We derive an unbiased estimator that optimally combines these automatic metrics with human feedback.
+Our theoretical results allow us to characterize potential cost reductions only in terms of the tasks' subjectivity, measured by inter-annotator variance, and the automatic metrics' quality, measured by correlation with human judgments.
+On two popular natural language generation tasks, question answering and summarization, we empirically show that currently we can achieve at most a 7--13\% reduction in cost on two tasks, exposing fundamental limitations in debiasing current automatic metrics.
 
-%% OLD  vvv
-%%\pl{don't like facts since that implies truth - changed to relation, since that's also used later in the paper;
-%%be consistent}
-%%\pl{added 'pooling bias' to abstract, since that's important!}
-%Large-scale information extraction systems for knowledge base population (KBP)
-%predict true relations from an unenumerable set of candidate relations from a large document corpus.
-%%These predictions have traditionally been evaluated under a closed-world assumption,
-%%wherein only a small annotated set of facts are considered to be true and all others false,
-%Due to the prohibitive cost of annotating the entire corpus,
-%KBP evaluation has been traditionally closed-world,
-%wherein only a subset of candidates are annotated, % to be positive or negative,
-%and candidates outside this subset are automatically marked negative.
-%In the annual TAC-KBP challenge, the subset is constructed from the pooled predictions of previous systems.
-%We show that this closed-world evaluation significantly penalizes new system improvements.
-%%that make correct predictions outside the reach of previous systems.
-%% Using lazy than online evaluation.
-%%We break from this paradigm by evaluating newly predicted facts on-demand through crowdsourcing, lazily simulating an open-world.
-%To address this bias,
-%we introduce a new on-demand evaluation in which a system's predictions are immediately evaluated through crowdsourcing,
-%thus lazily simulating an open-world.
-%% TODO: Should we mention exhaustive annotation?
-%%Moreover, we debias estimates of recall by exhaustively annotating a few randomly sampled documents.
-%With additional careful sampling and reweighting,
-%%to reduce the cost of evaluation and variance of precision and recall decreases with each additional system evaluated.
-%% PL: don't need to talk about variance, since can convert variance reduction into cost reduction
-%we are able to produce scores at a fraction of the cost on a mock evaluation of the 2016 TAC-KBP challenge.
-%
-%%\plg{this is a sentence more for the conclusion}
-%%We hope that the combination of a cost-effective automated evaluation with a quick turnaround time along with diverse exhaustive annotations will drive progress in knowledge base population and information extraction as a whole.
-%
-%%Unfortunately, we find that fixing these problems by constructing a larger ``gold-standard'' dataset is infeasible, costing at least \todo{US\$1,000,000} by our estimates.
-%%Instead, we propose and implement a new online evaluation methodology that removes the problem of pooling bias and is able to provide statistically valid results cost effectively through judicious sampling of system submissions and crowdsourcing.
-%%A mock evaluation conducted on the 2015 KBP submissions confirms that we are able to provide statistically significant results at about \$100/system.
-%%% ARUN: This is getting really wordy.
-%%The methodology will be made available as an online evaluation platform that is easy to submit to.
-%%%We have implemented this methodology through an online evaluation platform
-%%%\todo{sell the benefits of submitting to this challenge?}.
-%%We hope this new platform will enable quick progress in the field.
-%%\pl{too long}
-%
-%%We propose opening the closed world for knowledge base populatoin by introducing an online evaluation platform that immediately assesses newly predicted facts through crowdsourcing.
-%
-%%
-%%Large-scale information extraction systems, like knowledge base population, try to predict true facts from a indefinitely large set of candidates in a document corpus.
-%%These predictions are typically evaluated under a closed-world assumption, wherein only a small annotated set of facts are considered to be true and all others false, largely due to the prohibitive cost of exhaustively annotating a sufficiently large corpus.
-%%%
-%%% TODO(DONE?): want to hint that this is a serious problem -- not about "oh, you just have to try harder to get an improvement".
-%%% NOTE: I hope that this gets to the point -- new ideas are biased against!
-%%We empirically show that the closed world assumption can significantly penalize novel improvements in systems because new predictions are falsely marked negative.
-%%% NOTE: The fact that this is TAC-KBP isn't all that important.
-%%%using data from the TAC-KBP challenge, an annual competition for knowledge base population.
-%%%
-%%% TODO: This line is too complex.
-%%We break from this paradigm by combining pre-annotated facts with an on-demand sampled evaluation of newly predicted facts through crowdsourcing to provide unbiased estimates of performance in an open-world setting.
-%%% TODO: Should we mention exhaustive annotation? (Soln ^^)
-%%%NOTE: Eh, both of these are second order points.
-%%%Moreover, we debias estimates of recall by exhaustively annotating a few randomly sampled documents.
-%%%Through careful sampling, the cost of evaluation and variance of precision and recall decreases with each additional system evaluated.
-%%% WHAT ABOUT CHALLENGES?
-%%%
-%%We are able to obtain scores at a fraction of the cost of and with half the variance of official scores on the 2016 TAC-KBP corpus in a mock evaluation.
-%%%
-%%% TODO: This line is a bit self-gloaty?
-%%We hope that our quick and cost-effective on-demand open world evaluation platform will drive progress in knowledge base population and information extraction as a whole.
+Finally, we show how human feedback can be incorporated into systems in real-time to deploy high-accuracy systems starting with zero training examples.
+We build systems that learn ``on-the-job'' by using human feedback to resolve uncertainty until it is confident in its predictions.
+Our key statistical idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
+When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification--- we obtained an order of magnitude reduction in cost compared to full human annotation, while also boosting performance relative to the expert provided labels.
