@@ -1,0 +1,26 @@
+# TeX
+*.log
+*.aux
+*.out
+*.nav
+*.toc
+*.bbl
+*.blg
+*.snm
+*.pdf
+*.dvi
+*_tmp.*
+
+#refdb
+main.aux
+main.log
+main.bbl
+main.blg
+main.pdf
+refdb
+
+figures/archive
+
+
+sources
+sources.zip
