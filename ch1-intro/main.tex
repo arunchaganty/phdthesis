@@ -60,7 +60,8 @@ Either way, our evaluation data is fundamentally \textit{incomplete} and is unab
 \end{figure}
 
 Let's look at some examples of how this manifests in practice:
-\reffig{intro:example-kbp} shows how the incomplete KBP reference data for Carrie Fisher, the late actress who played Princess Leia in the Star Wars movie franchise, is unable to judge when a system identifies her as an author (which is correct) or a princess (which is incorrect).
+\reffig{intro:example-kbp} shows the candidate output of two KBP systems for Carrie Fisher, the late actress who played Princess Leia in the Star Wars movie franchise.
+The incomplete KBP reference data only specifies that Carrie is an actress and thus the evaluation is unable to judge whether the system that identifies her to also be an author (which is correct) is better or worse than one that identifies her to also be a princess (which is incorrect).
 Next, consider an example in question answering: there are many ways to express the same answer as shown in \reffig{intro:example-qa}. Unfortunately, our evaluation dataset contains only one of them, and the system is marked incorrect.
 Finally, consider the evaluation of summarization: a system generated summary will never exactly match the one in the gold dataset.
 A common practice in the community is to use a word-overlap based similarity score such as BLEU or ROUGE\@.
@@ -68,18 +69,30 @@ This has its dangers as there are many bad summaries that have a high word overl
 
 A common theme across all these examples is that we have an ``incomplete'' evaluation dataset that makes it hard to compare two systems.
 Naively using the dataset may lead to statistically invalid conclusions.
+Even worse, we will show that many accepted methods to construct evaluation datasets are biased towards certain types of systems and thus negatively penalize valuable research directions that do not conform to the implicit assumptions of the evaluation.
+For example, in knowledge base population, we show that the current evaluation is heavily biased against novel systems that identify true facts (e.g. Carrie Fisher being an author) that no other system has.
+In summarization, the evaluation is biased towards systems that are lexically similar to the reference summary even if it is grammatically nonsensical.
+\citet{connor2010mind} show that similar bias towards lexical similarity led over time to the development of systems that do better at the ROUGE metric without significantly improving on human evaluation.
 Just as a sturdy ladder makes it easy to climb higher, a good evaluation methodology would allow us to improve our systems one small step at a time.
 
 As a consequence of these observations, the only reliable way to evaluate systems for these tasks at present is to do a human evaluation.
 Unfortunately, human evaluation can be quite expensive and impractical.
 
 The key question this thesis tries to answer then is: ``can we reliably reduce the cost of human annotation in evaluation''?
-To describe our solution, we split the problem into two scenarios: ``dense'' and ``sparse''.
-In this paper, we describe statistical estimation procedures that work broadly in both regimes.
+We find that we can classify problems in two categories based on how often two different systems may produce the same output (\reffig{dense-sparse}).
+When it is likely that two systems produce an overlapping set of output (``dense''), we may can leverage any human annotations we obtain on one system on another.
+The key challenge then is how to guard against a representation bias: if all the systems predict in an ``easy'' region, we may expect the evaluation to be tilted in favor of easy examples and lose its ability to discriminate between systems.
+We tackle this problem by using a novel importance-reweighted estimator in \refchap{kbpo} and show how it can be applied to evaluate knowledge base population systems to reduce the cost of obtaining human annotations by a factor of 4.
 
-Summary of dense method.
+On the other end of the spectrum, in tasks like text summarization, it is extremely unlikely that two systems exactly agree on any output they produce.
+Here, it seems natural to rely on some ``similarity'' measure that may allow us to match two similar, but non-identical responses.
+Indeed, this is the role of automatic metrics such as BLEU or ROUGE.
+Unfortunately, automatic metrics have been reported to have poor correlations with human judgment and thus 
+In \refchap{price}, we look at bias introduced through such metrics and ...
 
-Summary of sparse method.
+Equally important to comparing systems is understanding their failings in order to improve them.
+How we can use human feedback here.
+
 Find limitations of unbiasedness.
 
 Thus far, we have focused on the use of human feedback during evaluation.
