@@ -1,4 +1,4 @@
-\begin{thebibliography}{84}
+\begin{thebibliography}{89}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -40,6 +40,12 @@ M.~S. Bernstein, G.~Little, R.~C. Miller, B.~Hartmann, M.~S. Ackerman, D.~R.
 \newblock Soylent: a word processor with a crowd inside.
 \newblock In \emph{Symposium on User Interface Software and Technology}, pages
   313--322.
+
+\bibitem[{Brandow et~al.(1995)Brandow, Mitze, and Rau}]{brandow1995automatic}
+R.~Brandow, K.~Mitze, and L.~F. Rau. 1995.
+\newblock Automatic condensation of electronic publications by sentence
+  selection.
+\newblock \emph{Information Processing and Management}, 31:675--685.
 
 \bibitem[{Buckley et~al.(2007)Buckley, Dimmick, Soboroff, and
   Voorhees}]{buckley2007bias}
@@ -345,12 +351,31 @@ R.~T. Lowe, N.~Pow, I.~Serban, L.~Charlin, C.~Liu, and J.~Pineau.
 \newblock Training end-to-end dialogue systems with the ubuntu dialogue corpus.
 \newblock \emph{Dialogue and Discourse}, 8.
 
+\bibitem[{Luhn(1958)}]{luhn1958automatic}
+H.~P. Luhn. 1958.
+\newblock The automatic creation of literature abstracts.
+\newblock \emph{{IBM} Journal of Research and Development}, 2:159--165.
+
+\bibitem[{Mani et~al.(1999)Mani, Klein, Hirschman, Firmin, House, and
+  Sundheim}]{mani1999tipster}
+I.~Mani, G.~Klein, L.~Hirschman, T.~Firmin, D.~House, and B.~Sundheim. 1999.
+\newblock The {TIPSTER} {SUMMAC} text summarization evaluation.
+\newblock In \emph{European Association for Computational Linguistics (EACL)}.
+
 \bibitem[{Manning et~al.(2014)Manning, Surdeanu, Bauer, Finkel, Bethard, and
   McClosky}]{manning2014stanford}
 C.~D. Manning, M.~Surdeanu, J.~Bauer, J.~Finkel, S.~J. Bethard, and
   D.~McClosky. 2014.
 \newblock The stanford core{NLP} natural language processing toolkit.
 \newblock In \emph{ACL system demonstrations}.
+
+\bibitem[{Mckeown et~al.(2005)Mckeown, Passonneau, Elson, and
+  Hirschberg}]{mckeown2005summaries}
+K.~Mckeown, R.~J. Passonneau, D.~K. Elson, and J.~Hirschberg. 2005.
+\newblock Do summaries help? a task-based evaluation of multi-document
+  summarization.
+\newblock In \emph{ACM Special Interest Group on Information Retreival
+  (SIGIR)}.
 
 \bibitem[{Mnih et~al.(2008)Mnih, Szepesv{'{a}}ri, and
   Audibert}]{mnih2008empirical}
@@ -406,6 +431,12 @@ K.~Papineni, S.~Roukos, T.~Ward, and W.~Zhu. 2002.
 R.~J. Passonneau and B.~Carpenter. 2014.
 \newblock The benefits of a model of annotation.
 \newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Passonneau et~al.(2005)Passonneau, Nenkova, McKeown, and
+  Sigelman}]{passonneau2005applying}
+R.~J. Passonneau, A.~Nenkova, K.~McKeown, and S.~Sigelman. 2005.
+\newblock Applying the pyramid method in {DUC} 2005.
+\newblock In \emph{Document Understanding Conference}.
 
 \bibitem[{Paulus et~al.(2018)Paulus, Xiong, and Socher}]{paulus2018deep}
 R.~Paulus, C.~Xiong, and R.~Socher. 2018.
