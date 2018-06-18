@@ -23,14 +23,14 @@
   % Text summarization
   \point{ts}{(0,0)};
   \tikzrect{box-ts}{gray, thick}{($(ts) + (0, 2.5cm)$)}{6.5cm}{-5.5cm};
-  \node[left] at ($(box-ts.north east) + (6.5cm, 0.25cm)$) {\textbf{(a) text summarization (TS)}};
+  \node[right] at ($(box-ts.north west) + (0cm, 0.25cm)$) {\textbf{(a) text summarization (TS)}};
 
   \node[above right] (question) at (ts) {\textbf{Q.} \includegraphics[width=4cm]{SummarizationExamples.png}};
   \node[right] (answer) at ($(question.south west) - (0cm, 1.25cm)$) {\objw{6cm}{\textbf{A.} Danish scientists studied huge glaciers of ice hidden under dust on the surface of Mars. The researchers say there is more water-ice than anticipated: if spread out, it would cover the surface in 3.6ft of ice.}};
 
   \point{oqa}{(6.75cm, 0)};
   \tikzrect{box-oqa}{gray, thick}{($(oqa) + (0, 2.5cm)$)}{6.5cm}{-5.5cm};
-  \node[left] at ($(box-oqa.north east) + (6.5cm, 0.25cm)$) {\textbf{(b) open question answering (OQA)}};
+  \node[right] at ($(box-oqa.north west) + (0cm, 0.25cm)$) {\textbf{(b) open question answering (OQA)}};
   \node[above right] (question-oqa) at (oqa) {\textbf{Q.}
       Why are fossil fuels are bad?
     };
@@ -38,7 +38,7 @@
 
   \point{kbp}{(13.5cm, 0)};
   \tikzrect{box-kbp}{gray, thick}{($(kbp) + (0, 2.5cm)$)}{6.75cm}{-5.5cm};
-  \node[left] at ($(box-kbp.north east) + (6.75cm, 0.25cm)$) {\textbf{(c) knowledge base population (KBP)}};
+  \node[right] at ($(box-kbp.north west) + (0cm, 0.25cm)$) {\textbf{(c) knowledge base population (KBP)}};
   \node[above right] (question-kbp) at (kbp) {\textbf{Q.}
       Who is Carrie Fisher?
     };

@@ -39,11 +39,17 @@ We posit that collecting on-demand human feedback is fundamental to obtaining me
 Our key technical contribution is applying techniques from statistical estimation to reliably integrate human feedback in a cost-effective manner.
 
 \begin{figure}
+  \centering
+  \begin{subfigure}{0.25\textwidth}
+  \includegraphics[width=\textwidth]{figures/incompleteness-classification}
+  \end{subfigure} 
+  \begin{subfigure}{0.25\textwidth}
+  \includegraphics[width=\textwidth]{figures/incompleteness-generation}
+  \end{subfigure}
   \caption[Complete and incomplete evaluation sets]{\label{fig:intro:evaluation-data} 
   Much of our evaluation methodology relies on a representative evaluation dataset that contains paired inputs and outputs.
-  In this work, we argue that this evaluation methodology relies on the outputs belonging to a small closed class of labels (e.g. positive or negative sentiment) to be able to easily judge output of system.
-  In the summarization tasks we are interested in, this assumption does not hold.
-  We consider the data to be \textit{incomplete}: .
+  (a) When the outputs belong to a closed class, such as in classification tasks, it is easy to judge the output of a system and evaluate its performance.
+  (b) On the other hand, in the summarization tasks we are interested in, there are many possible correct answers that are not represented in the evaluation data. In this sense, the evaluation data is \textit{incomplete}.
   }
 \end{figure}
 \section{The incompleteness of static evaluation sets}
