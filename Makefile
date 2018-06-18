@@ -8,6 +8,7 @@ submission: default
 
 figures:
 	make -C figures
+	make -C ch1-intro/figures
 
 clean:
 	rm main.aux main.log main.out main.bbl main.blg
