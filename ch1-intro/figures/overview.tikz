@@ -1,0 +1,91 @@
+% vim:ft=tex
+% Diagram depciting how mention-level and entity-level scores are
+% computed.
+\documentclass[tikz]{standalone}
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usepackage{scabby-diag}
+\usepackage{svg}
+\usepackage{booktabs}
+\usetikzlibrary{fit}
+\usetikzlibrary{patterns}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\begin{document}
+
+\newcommand\encircle[1]{%
+\raisebox{.5pt}{\textcircled{\raisebox{-.9pt} {#1}}}}
+
+\begin{tikzpicture}[]
+  
+  % Text summarization
+  \point{ts}{(0,0)};
+  \tikzrect{box-ts}{gray, thick}{($(ts) + (0, 2.5cm)$)}{6.5cm}{-5.5cm};
+  \node[left] at ($(box-ts.north east) + (6.5cm, 0.25cm)$) {\textbf{(a) text summarization (TS)}};
+
+  \node[above right] (question) at (ts) {\textbf{Q.} \includegraphics[width=4cm]{SummarizationExamples.png}};
+  \node[right] (answer) at ($(question.south west) - (0cm, 1.25cm)$) {\objw{6cm}{\textbf{A.} Danish scientists studied huge glaciers of ice hidden under dust on the surface of Mars. The researchers say there is more water-ice than anticipated: if spread out, it would cover the surface in 3.6ft of ice.}};
+
+  \point{oqa}{(6.75cm, 0)};
+  \tikzrect{box-oqa}{gray, thick}{($(oqa) + (0, 2.5cm)$)}{6.5cm}{-5.5cm};
+  \node[left] at ($(box-oqa.north east) + (6.5cm, 0.25cm)$) {\textbf{(b) open question answering (OQA)}};
+  \node[above right] (question-oqa) at (oqa) {\textbf{Q.}
+      Why are fossil fuels are bad?
+    };
+  \node[right] (answer-oqa) at ($(question-oqa.south west) - (0cm, 1cm)$) {\objw{6cm}{\textbf{A.} Because burning them releases a number of extremely harmful gasses, such as carbon dioxide and monoxide, sulfur oxides, nitrogen oxides and hydrocarbons.}};
+
+  \point{kbp}{(13.5cm, 0)};
+  \tikzrect{box-kbp}{gray, thick}{($(kbp) + (0, 2.5cm)$)}{6.75cm}{-5.5cm};
+  \node[left] at ($(box-kbp.north east) + (6.75cm, 0.25cm)$) {\textbf{(c) knowledge base population (KBP)}};
+  \node[above right] (question-kbp) at (kbp) {\textbf{Q.}
+      Who is Carrie Fisher?
+    };
+  \node[right] (answer-kbp) at ($(question-kbp.south west) - (0cm, 1cm)$) {\objw{6cm}{\textbf{A.} 
+  \begin{tabular}{l p{3cm}}
+    \toprule
+    \textbf{Occupation} & actress \\
+    \textbf{Born} & October 21, 1956 in Burbank, CA \\
+    \textbf{Parents} & Debbie Reynolds \\
+    \bottomrule
+  \end{tabular}
+  }
+  };
+
+  \draw[-latex] (0, -3.75cm) -- node[above]{specificity} (20.25cm, -3.75cm);
+%  \draw[-latex] (20.25cm, -4.25cm) -- node[above]{scale} (0cm, -4.25cm);
+
+%
+%  \node[draw, right] (question) at (0,0) {\textbf{Q.} can use a deactivated sim card again};
+%  \node[draw, right] (s2ans) at ($(question.west) - (0,1)$) {\textbf{A.} Once a SIM card retires, it can not be used again.};
+%
+%  \node[scale=0.4, right] (annotator) at (0, -2.5) {}; %\includesvg{worker}};
+%  \node[scale=0.35, left] (model) at (6, -2.5) {}; %\includesvg{network}};
+%
+%  \node[draw, left] (ref)   at ($(model.east) + (2.5, 0)$) {\textbf{R.} no \cmark};
+%%  \node[draw, left] (s1ans) at (8.75, -3.5) {\textbf{S1.} yes \xmark};
+%
+%  \node (estimator) at ($(s2ans.south) - (1,2.75)$) {\textsc{evaluation score}};
+%
+%  \draw[-latex] (s2ans.south) -- ($(s2ans.south) + (0,-0.25)$) -| (annotator.north);
+%  \draw[-latex] (s2ans.south) -- ($(s2ans.south) + (0,-0.25)$) -| (model.north);
+%
+%  \draw[-latex] (ref.west)   -| ($(model.east) + (0.5, 0)$) -- (model.east);
+%%  \draw[-latex] (s1ans.west) -| ($(model.east) + (0.5, 0)$) -- (model.east);
+%
+%
+%  \draw[-latex] (annotator.south) |- ($(estimator.north) + (0,0.5)$) -- (estimator.north);
+%  \draw[-latex] (model.south)     |- ($(estimator.north) + (0,0.5)$) -- (estimator.north);
+%
+%  % labels
+%  \node[color=black!60, right] (question-label) at ($(question.north west) + (0,0.2)$) {\textsc{context}};
+%  \node[color=black!60, right] (response-label) at ($(s2ans.north west) + (0,0.2)$) {\textsc{system reponse}};
+%  \node[color=black!60] (annotator-label) at ($(annotator.south) + (0,0.2)$) {\textsc{humans}};
+%  \node[color=black!60] (model-label) at ($(model.south) + (0,0.2)$) {\textsc{automatic metric}};
+%
+%  \node[color=black!60, left] (question-label) at ($(ref.north east) + (0,0.2)$) {\textsc{reference}};
+
+\end{tikzpicture}
+
+\end{document}
