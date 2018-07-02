@@ -140,12 +140,12 @@ Our theoretical analysis allows us to characterize when it is possible to reduce
 We show that for both text summarization and open-ended question answering current cost savings are modest, about 10--15\%, owing to both the poor quality of existing automatic metrics and the inherent annotator variance for these subjective tasks.
 
 \paragraph{Beyond evaluation.}
-Thus far, we have focused on the use of human feedback during evaluation.
-In the \refchap{otj}, we show how human feedback can be effectively integrated \textit{at test-time}.
-We consider an ``on-the-job'' setting, where our model learns as inputs arrive: we use real-time crowdsourcing to resolve uncertainty where needed and output our prediction once the model is confident.
-As the model improves over time, the reliance on crowdsourcing queries decreases. 
-We cast our setting as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way. 
-Computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search.
+Thus far, we have focused on the use of human feedback during evaluation and not on how that evaluation can be used to improve the original system.
+We turn to this problem in the \refchap{otj}, where we show how human feedback can be effectively integrated \textit{at test-time} to continuously improve on the performance of the original system.
+We call this setting  ``on-the-job learning'' because our model learns as inputs arrive: we use real-time crowdsourcing to resolve uncertainty where needed and output our prediction once the model is confident.
+The human feedback is used to train the model and as the model improves over time, the reliance on crowdsourcing queries decreases. 
+We cast the problem as a stochastic game and use Bayesian decision theory to balance latency, cost, and accuracy objectives in a principled way. 
+Unfortunately, computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search.
 We tested our approach on three datasets---named-entity recognition, sentiment classification, and image classification.
 On the NER task we obtained more than an order of magnitude reduction in cost compared to full human annotation, while boosting performance relative to the expert provided labels.
 %We also achieve a $8\%$ \fone{} improvement over having a single human label the whole set, and a $28\%$ \fone{} improvement over online learning.

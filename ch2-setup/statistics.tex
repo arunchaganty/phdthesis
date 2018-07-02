@@ -1,0 +1,37 @@
+\section{\label{sec:setup:statistical} Statistical analysis}
+
+The central theme of this thesis is that we may be able to accurately \textit{measure} deeper concepts of understanding by querying humans.
+Some natural questions that arise are: how many people should we ask, how much can we trust the quantitative measurements we obtain and does it matter whom we ask or when we ask for feedback?
+In this section, we'll cover the basic statistics necessary to answer these questions.
+
+\subsection{Estimation, bias and variance}
+
+Estimating some quantitative metric $f$.
+We can measure this on a subset of data, test collection.
+Observe $y$ estimate $\E[y]$.
+But what we really want to know is the measurement in practice, $\E[f]$.
+Key idea of statistics is that with reasonable assumptions, the measurement on $\hat\E$ is similar $\E$.
+
+There are two core concepts we wish to connect, bias and variance.
+An unbiased estimator $\E[\hat\E[f(x)]] = \E[f(x)]$.
+
+This is certainly useful, but if the value keeps changing, not any good.
+Measuring the variance helps us:.
+Under the central limit theorem, we know that variance truly bounds the uncertainty.
+
+\subsection{Determining test collection size}
+
+Key takeaway is that one simply needs to observe $n$ measurements for $\frac{1}{\sqrt{n}}$ error bounds: to estimate within $10\%$, $100$ samples suffice, but to estimate within $1\%$, we simply need $10,000$ samples!
+
+\subsection{Unbiased and consistent estimation}
+
+Unbiased estimation.
+
+Bias vs bias: staistically, unbiased estimators are known to be suboptimal, particularly if we do have a prior.
+Cover basic result.
+
+That said, we should distinguish between unbiased estimation and consistent estimation.
+
+\subsection{Statistical testing}
+
+

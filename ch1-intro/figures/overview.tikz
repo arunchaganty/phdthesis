@@ -28,6 +28,7 @@
   \node[above right] (question) at (ts) {\textbf{Q.} \includegraphics[width=4cm]{SummarizationExamples.png}};
   \node[right] (answer) at ($(question.south west) - (0cm, 1.25cm)$) {\objw{6cm}{\textbf{A.} Danish scientists studied huge glaciers of ice hidden under dust on the surface of Mars. The researchers say there is more water-ice than anticipated: if spread out, it would cover the surface in 3.6ft of ice.}};
 
+  % Open Question Answering
   \point{oqa}{(6.75cm, 0)};
   \tikzrect{box-oqa}{gray, thick}{($(oqa) + (0, 2.5cm)$)}{6.5cm}{-5.5cm};
   \node[right] at ($(box-oqa.north west) + (0cm, 0.25cm)$) {\textbf{(b) open question answering (OQA)}};
@@ -42,6 +43,7 @@
   \node[above right] (question-kbp) at (kbp) {\textbf{Q.}
       Who is Carrie Fisher?
     };
+  \node[above right] at ($(question-kbp) + (2.25cm, -0.5cm)$) {\includegraphics[width=2cm]{network}};
   \node[right] (answer-kbp) at ($(question-kbp.south west) - (0cm, 1cm)$) {\objw{6cm}{\textbf{A.} 
   \begin{tabular}{l p{3cm}}
     \toprule
@@ -53,7 +55,7 @@
   }
   };
 
-  \draw[-latex] (0, -3.75cm) -- node[above]{specificity} (20.25cm, -3.75cm);
+  \draw[-latex] (0, -3.75cm) -- node[below]{task specificity} (20.25cm, -3.75cm);
 %  \draw[-latex] (20.25cm, -4.25cm) -- node[above]{scale} (0cm, -4.25cm);
 
 %
