@@ -8,12 +8,12 @@ In this work, we show how one can decrease the costs of incorporating human feed
 % Some tasks are very clear cut: classification, parsing, question answering.
 % others we really don't know what we're doing.
 
-First, we consider the setting where the output produced by systems is ``dense'', in that we expect significant overlap between the output of different systems. 
+First, we consider the ``finite incompleteness'' setting where the output space is too large to exhaustively annotate, but we may still expect significant overlap between the output of different systems. 
 Naively combining annotations from different systems leads to a representation bias.
 Here, we show that cost of obtaining human feedback can be significantly amortized by using a novel importance-reweighted estimator.  
 We apply this estimator to design a new evaluation methodology for knowledge base population and show that cost of evaluating precision and recall within this framework can be reduced by a factor of 4.
 
-Next, we consider the ``sparse'' setting wherein few, if any, systems ever produce identical output.
+Next, we consider the ``infinite incompleteness'' setting wherein few, if any, systems ever produce identical output.
 Traditionally, the community has relied on similarity-based automatic metrics such as BLEU or ROUGE to compare the outputs produced by different systems.
 Unfortunately, these metrics have been shown to poorly correlate with human judgment and thus introduce bias in evaluation.
 We derive an unbiased estimator that optimally combines these automatic metrics with human feedback.

@@ -26,11 +26,11 @@ Building these systems, however, remains a challenge.
 Today, we are seeing a resurgence in interest in automatic summarization systems, with over 150 papers published at top NLP conferences in just the last year (2017--18).
 
 % Motivation.3: Measurement is broken
-Still, despite years of effort, it is unclear whether we are actually making forward progress on these tasks.
+Despite years of effort, it is unclear whether we are actually making forward progress on these tasks.
 \citet{brandow1995automatic} conducted a large scale human evaluation of different summarization systems and found that the baseline of simply taking the lead-paragraph significantly outperformed automatic systems. 
 Ten years later, \citet{passonneau2005applying} report that half of the systems participating in the DUC-2005 summarization challenge did worse than the baseline.
 Even today, we find that recent ``state-of-the-art'' neural network based summarization systems fare poorly on human evaluations of language quality relative to simpler extractive systems.
-While there are many reasons for thsi slow progress, we believe that the lack of an effective evaluation methodology remains one of the most important ones.
+While there are many reasons for this slow progress, we believe that the lack of an effective evaluation methodology remains one of the most important ones.
 
 % Our contribution.
 The ultimate goal of this thesis is to enable the development of better information summarization systems by addressing systemic problems in how we evaluate them.
@@ -59,9 +59,9 @@ When a system also predicts an output belonging to this closed class, it is very
 Thus, in these settings, we can measure the quality of different systems on the classification task by simply collecting a sufficiently large evaluation dataset.\footnote{%
 Of course, care must be taken to ensure the evaluation dataset collected is reflective of the end-goal for the task.}
 
-Unfortunately, in the summarization tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ for TS and OQA) or an arbitrarily large collection of facts (e.g.\ for KBP).
+Unfortunately, in the summarization tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ in TS and OQA) or an arbitrarily large collection of facts (e.g.\ for KBP).
 The assumption that there exists a unique knowable correct output simply does not hold.
-In this sense, the dataset is \textit{incomplete}: it either does not contain every possible correct answer or element.
+In this sense, the dataset is \textit{incomplete}: it does not contain every possible correct answer.
 Let's look at some examples of how incompleteness manifests in practice and what its consequences on evaluation could be.
 
 \begin{figure}
@@ -89,12 +89,14 @@ Let's look at some examples of how incompleteness manifests in practice and what
 \reffig{intro:example-kbp} shows the candidate output of two KBP systems for Carrie Fisher, the late actress who played Princess Leia in the Star Wars movie franchise.
 The incomplete KBP reference data only specifies that Ms.\ Fisher is an actress and thus the evaluation is unable to judge whether the system that identifies her to also be an author (which is correct) is better or worse than one that identifies her to also be a princess (which is incorrect): by default, the evaluation penalizes both decisions equally.
 As a consequence, using this evaluation as an empirical guide leads researchers to avoid improvements that would identify Ms.\ Fisher as an actress.
+In \refsec{kbpo:analysis} we'll empirically estimate the bias caused by this incompleteness and show that it is often larger than most model improvements.
 
 %\paragraph{Question answering.}
 Next, consider an example in question answering:
   here, the fundamental problem is that there are many ways to express the same answer (\reffig{intro:example-qa}).
 It is not yet easy to automatically identify whether two phrases mean the same thing and hence fairly judge the output systems produce.
-More subtly, we show that this evaluation is biased towards easier questions with short answers that are more likely to be reproduced by a system.
+More subtly, we show that this evaluation is biased towards easier questions with short answers that are more likely to be reproduced by a system:
+  model improvements that improve answers for harder questions will be ignored by the evaluation.
 
 %\paragraph{Text summarization.}
 Finally, consider the evaluation of text summarization: a system generated summary will never exactly match the one in the evaluation dataset.
@@ -105,17 +107,21 @@ Unfortunately, these automatic metrics have been shown to correlate extremely po
 \section{Addressing incompleteness with human feedback}
 We've just seen how the incompleteness of our evaluation sets can introduce bias.
 How fundamental is incompleteness?
-In the setting of knowledge base population, it is possible to minimize the impact of incompleteness by exhaustively annotating a sufficiently large document collection.
-We estimate that this would cost at least \$1 million; of course, any adjustment in the task definition (e.g.\ the relation schema) would require a fresh batch of annotations.
-In this sense, handling incompleteness in KBP evaluation can be viewed as a prudent cost-saving measure.
+Broadly, we consider two ends of the spectrum: when the incompleteness is large but ``finite'' and when the incompleteness is truly ``infinite''.
+
+In the finite setting, it is possible, though perhaps not economical, to exhaustively annotate the output space.
+Consider knowledge base population as an example: here it is possible to minimize the impact of incompleteness by exhaustively annotating a sufficiently large document collection, an effort that we estimate would cost at least \$1 million.
+Of course, any adjustment in the task definition (e.g.\ the relation schema) would require a fresh batch of annotations.
+In this sense, handling finite incompleteness can be viewed as a prudent cost-saving measure.
 On the other hand, the number of correct wordings for an answer in text summarization or open-ended question answering are nearly endless; we doubt that any amount of money would be sufficient to ameliorate the problem here.
+We consider the incompleteness ins such settings to be infinite. 
 
 The crux of the problem is estimating the impact of instances that are unknown to the automatic evaluation that relies on a static dataset.
-We exploit the fact that the answers to these instances are obvious to humans and propose asking people for feedback \textit{on-demand} using advances in crowdsourcing. %, which has led to a number of high quality datasets~\citep{}.
+We exploit the fact that the answers to these instances are obvious to humans and propose asking people for feedback \textit{on-demand} using advances in crowdsourcing.
 In this work, we advocate moving from annotating data in batches to annotating data \textit{on-demand}.
 
 Apart from fixing the problem of incompleteness, incorporating human feedback has several ancillary benefits.
-First, it ensures that our evaluation does not diverge from the end goal.
+First, it ensures that our evaluation does not diverge from the end goals of the task.
 Second, it provides \textit{qualitative} guidance to help us identify opportunities for improvements.
 As an example of this latter point, in \refchap{kbpo} we show how combining human labels with statistical estimators can be used to conduct fine-grained error analysis for KBP, and in \refchap{price} we show how collecting human edits as feedback can be used for error analysis in text generation.
 
@@ -148,170 +154,17 @@ We cast the problem as a stochastic game and use Bayesian decision theory to bal
 Unfortunately, computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search.
 We tested our approach on three datasets---named-entity recognition, sentiment classification, and image classification.
 On the NER task we obtained more than an order of magnitude reduction in cost compared to full human annotation, while boosting performance relative to the expert provided labels.
-%We also achieve a $8\%$ \fone{} improvement over having a single human label the whole set, and a $28\%$ \fone{} improvement over online learning.
 
-%\section{Conclusions}
-%Finally, in \refchap{discussion} we conclude this thesis with a discussion on the further uses of human feedback in building natural language systems.
-%Our discussion touches upon possible opportunities to improve upon human evaluation as a methodology for natural language generation tasks and how human feedback provides us with a more holistic view of evaluation.
-%
-
-
-
-
-
-
-% In other situations, such as performing information extraction on the web, the collection of inputs that express a particular concept may itself be so varied that it is unrealistic to expect that we may cover them in a static training dataset.
-% Finally, in the context of automatic text generation, the assumption that there exists a single well-defined ``correct'' output is broken.
-% 
-% % What happens when the data we need for learning systems is not collectible?
-% 
-% % We explore using human feedback in these settings.
-% 
-
-
-
-
-% In natural language tasks such as knowledge base population, text summarization or open-response question answering, a significant challenge is simply evaluating the performance of automated systems because of the large diversity of possible outputs.
-% % ^^ Include the fact that the domain has shifted?
-% Existing fully-automatic methods for evaluating these systems rely on an incomplete set of annotated references which lead to systematic biases against certain system improvements: in other words, genuinely good ideas are systematically discarded simply because of limitations in our evaluation methodology.
-% As a result, human evaluation, which can be prohibitively expensive, has remained the de-facto mode of evaluation for these tasks.
-% In this work, we show how one can decrease the costs of incorporating human feedback through the design of appropriate statistical estimators. 
-% 
-% First, we consider the setting where the output produced by systems is ``dense'', in that we expect significant overlap between the output of different systems. 
-% Naively combining annotations from different systems leads to a representation bias.
-% Here, we show that cost of obtaining human feedback can be significantly amortized by using a novel importance-reweighted estimator.  
-% We apply this estimator to design a new evaluation methodology for knowledge base population and show that cost of evaluating precision and recall within this framework can be reduced by a factor of 4.
-% 
-% Next, we consider the ``sparse'' setting wherein few, if any, systems ever produce identical output.
-% Traditionally, the community has relied on similarity-based automatic metrics such as BLEU or ROUGE to compare the outputs produced by different systems.
-% Unfortunately, these metrics have been shown to poorly correlate with human judgment and thus introduce bias in evaluation.
-% We derive an unbiased estimator that optimally combines these automatic metrics with human feedback.
-% Our theoretical results allow us to characterize potential cost reductions only in terms of the tasks' subjectivity, measured by inter-annotator variance, and the automatic metrics' quality, measured by correlation with human judgments.
-% On two popular natural language generation tasks, question answering and summarization, we empirically show that currently we can achieve at most a 7--13\% reduction in cost on two tasks, exposing fundamental limitations in debiasing current automatic metrics.
-% 
-% Finally, we show how human feedback can be incorporated into systems in real-time to deploy high-accuracy systems starting with zero training examples.
-% We build systems that learn ``on-the-job'' by using human feedback to resolve uncertainty until it is confident in its predictions.
-% Our key statistical idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
-% When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification--- we obtained an order of magnitude reduction in cost compared to full human annotation, while also boosting performance relative to the expert provided labels.
-% 
-
-% 
-% 
-% % We are used to supervised data specifying tasks, but this is a limiting perspective.
-% One of the key insights of modern machine learning is that data provides a specification for otherwise fuzzy concepts like ``What is the sentiment expressed by this sentence?'', ``Is this sentence an example of hate-speech?'' or ``What semantic role does this word play in the sentence?''.
-% Given a sufficiently large dataset of inputs paired with class labels, we have found models that are expressive enough to learn good definitions for these concepts.
-% % TODO: Examples?
-% % Sentiment (and other text) classification
-% % Semantic role labeling and dependency parsing
-% 
-% Of course, there are many applications where this perspective of learning is insufficient.
-% In many situations, one wishes to build a new system --- e.g., to do Twitter information extraction
-% \citep{li2012twiner} to aid in disaster relief efforts or monitor public
-% opinion --- but one does not have the luxury of time or resources to collect a ``sufficiently large'' dataset before deploying the system.
-% In other situations, such as performing information extraction on the web, the collection of inputs that express a particular concept may itself be so varied that it is unrealistic to expect that we may cover them in a static training dataset.
-% Finally, in the context of automatic text generation, the assumption that there exists a single well-defined ``correct'' output is broken.
-% 
-% % What happens when the data we need for learning systems is not collectible?
-% 
-% % We explore using human feedback in these settings.
-% 
-% % 1. What are the metaphors: vision of the future -- enabling applications -- needing to climb the ladder -- human feedback is the ladder -- how do we make it cheaper?
-% % how do we effectively use 
-% What tools must exist in the future in order to make effective use of the ever-expanding corpus of information available at our fingertips?
-% Given that the working set memory of the average human being is only <>,
-%   it is natural to expect that tools that 
-% Here, information retrieval has already helped, but not enough.
-% 
-% Consider, for example, tools that allow us to summarize entire document troves to learn key information about the people mentioned within, tools that allow us to ask questions that synthesize information across these entire collections, and tools that can summarize articles.
-% All of these applications have been actively pursued by the NLP community for many years and remain incredibly challenging.
-% 
-% No doubt, this is because of many many reasons, but one that we wish to explore here is the lack of a reliable evaluation methodology.
-% Evaluation is the key ingredient that establishes a science and engineering.
-% By establishing a ladder, we allow ourselves to climb up one step at a time to soaring heights.
-% 
-% In this metaphor, existing evaluation methodologies are broken ladders -- one step up indeed leads us two steps down.
-% 
-% 
-% 
-% Our goal is simple: to enable the development of systems that can effectively summarize information for us.
-% 
-% 
-% 
-% 
-% Let us peer into a vision of the future for natural language processing:
-%   all of the world's information is made available to us and we are able to ask systems 
-% 
-% % Where is it most cost-effective?
-% 
-% % Story 
-% % 1. Picture of the future. Systems that can do X, Y, Z. 
-% Let us 
-% 
-% % 2. Where we are now.
-% % 3. What is holding us back?
-% 
-% 
-% % 1. Field setup
-% 
-% For a long time, the natural language processing (NLP) community has striven to build a foundation to process language at the lexical, syntactic and semantic level.
-% We have seen tremendous progress at identifying such low-level information as parts-of-speech and syntactic parses: today's systems certainly rival human performance on these tasks.
-% 
-% At the same time, we continue to struggle to understand basic semantics: transferring labels across domains,
-% 
-% We believe that a key challenge to solving these tasks is the absence of a ladder that will allow us to climb. 
-% Hard to bootstrap -- here is where humans should come in.
-% 
-% Closing the loop: increase interaction, having machines synthesize responses for people.
-% 
-% [synthesis evaluation] --- [adaptation (also in tandem)]
-% 
-% what are the classification problems?
-% - sentiment classification
-% - abuse classification
-% - intent classification
-% - 
-% 
-%   We
-% A common pattern for most of these problems is that they are classification problems.
-% 
-% By no means have all the key problems of natural LP -- the challenges of deep text understanding truly remain.
-% As we solve these problems, 
-% 
-% 
-% 
-% In some sense, we have followed a Turin model of artificial intelligence: we set up tests and compare ourselves with a human == can we do as well as a person?
-% In the world of generation this is b no means as easy to define.
-% Indeed the past is littered with attempts and waves of progress.
-% 
-% What new tool do we have for this now?
-% Crowdsourcing is thy name.
-% 
-% 
-% The field of natural language processing has advanced to the degre
-% 
-% How do systems co-evolve with humans?
-% People get to train on the job to learn what to do.
-% We can enable this for machines too with OTJ.
-% 
-% % Over the last X years, we've basically solved classification.
-% % The new frontier is generation, with new interest in many different tasks.
-% 
-% % 2. The problem: evaluation
-% % A dogged problem for this field is evaluation.
-% % Evaluation has been studied extensively for a long time.
-% % Some of the limitations.
-% 
-% % 3. The enabler: crowdsourcing
-% % Recent past, crowdsourcing has really enabled us to change the way we collect data and annotations.
-% % At no earlier point could we interactively collect annotations.
-% % But expensive.
-% 
-% % 4. The solution: statistical estimation.
-% % Revisit evaluation, we find that there are problems with cost
-% % Different settings require different solutions.
-% % Sparse vs Dense.
-% 
-% % 5. More problems: on-the-job.
-% 
-% Placeholder.
-% 
+\section{Thesis outline}
+The rest of the thesis is structured as follows:
+In refchap{setup}, we'll cover the necessary statistical prerequisites to understand what bias means and how different evaluation methodologies can be quantitatively compared.
+We will also review some background in the different evaluation strategies that have been adopted in natural language processing and the goals that each seeks to meet.
+In \refchap{kbpo}, we will study finite incompleteness using knowledge base population as our motivating example.
+We'll see how incompleteness can be measured and how we can correct for it by combining on-demand human annotations with a novel statistical estimator.
+In \refchap{price}, we move over to study infinite incompleteness using open-response question answering and text summarization as motivating examples.
+We'll see how automatic metrics can be optimally combined with human feedback to reduce the costs of human evaluation.
+Unfortunately, we'll show that in practice cost savings are modest: 
+However, our optimality result lets us step back and observe that our empirical results actually highlight fundamental limitations in using automatic metrics for unbiased evaluation. 
+In \refchap{otj}, we change gears and look at how we can use evaluation while learning: we propose a new learning paradigm, ``on-the-job learning'', that allows the model to query for human feedback when it is not confident in its predictions.
+Finally, in \refchap{discussion}, we conclude this thesis with a discussion on the further uses of human feedback in building natural language systems.
+Our discussion touches upon possible opportunities to improve upon human evaluation as a methodology for natural language generation tasks and how human feedback provides us with a more holistic view of evaluation.
