@@ -10,7 +10,22 @@ Finally, knowledge base population (KBP) systems  will be able to read large doc
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/overview}
+  \hfill
+  \begin{subfigure}[b]{.32\textwidth}
+    \includegraphics[width=\textwidth]{figures/task_ts}
+    \caption{Text summarization}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{.32\textwidth}
+    \includegraphics[width=\textwidth]{figures/task_oqa}
+    \caption{Open question answering}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{.32\textwidth}
+    \includegraphics[width=\textwidth]{figures/task_kbp}
+    \caption{Knowledge base population}
+  \end{subfigure}
+  \hfill
 
   \caption[Overview of some information summarization tasks]{\label{fig:intro:overview} An overview of some information summarization tasks, listed in increasing specificity:
   (a) Text summarization: seeks to identify the most salient information contained within one (or more) article(s) and describe this information in as few words as necessary.
@@ -161,7 +176,7 @@ In refchap{setup}, we'll cover the necessary statistical prerequisites to unders
 We will also review some background in the different evaluation strategies that have been adopted in natural language processing and the goals that each seeks to meet.
 In \refchap{kbpo}, we will study finite incompleteness using knowledge base population as our motivating example.
 We'll see how incompleteness can be measured and how we can correct for it by combining on-demand human annotations with a novel statistical estimator.
-In \refchap{price}, we move over to study infinite incompleteness using open-response question answering and text summarization as motivating examples.
+In \refchap{price}, we move over to study infinite incompleteness using open question answering and text summarization as motivating examples.
 We'll see how automatic metrics can be optimally combined with human feedback to reduce the costs of human evaluation.
 Unfortunately, we'll show that in practice cost savings are modest: 
 However, our optimality result lets us step back and observe that our empirical results actually highlight fundamental limitations in using automatic metrics for unbiased evaluation. 
