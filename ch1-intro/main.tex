@@ -54,17 +54,22 @@ We posit that collecting on-demand human feedback is fundamental to obtaining me
 Our key technical contribution is applying techniques from statistical estimation to reliably integrate human feedback in a cost-effective manner.
 
 \begin{figure}
-  \centering
-  \begin{subfigure}{0.25\textwidth}
-  \includegraphics[width=\textwidth]{figures/incompleteness-classification}
+  \hfill
+  \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=\textwidth]{figures/classification}
+  \caption{Classification}
   \end{subfigure} 
-  \begin{subfigure}{0.25\textwidth}
-  \includegraphics[width=\textwidth]{figures/incompleteness-generation}
+  \hfill
+  \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=\textwidth]{figures/generation}
+  \caption{Open-response}
   \end{subfigure}
+  \hfill
+
   \caption[Complete and incomplete evaluation sets]{\label{fig:intro:evaluation-data} 
-  Much of our evaluation methodology relies on a representative evaluation dataset that contains paired inputs and outputs.
-  (a) When the outputs belong to a closed class, such as in classification tasks, it is easy to judge the output of a system and evaluate its performance.
-  (b) On the other hand, in the summarization tasks we are interested in, there are many possible correct answers that are not represented in the evaluation data. In this sense, the evaluation data is \textit{incomplete}.
+  Much of our evaluation methodology relies on an evaluation dataset that contains paired inputs (represented by blue boxes) and outputs (green boxes).
+  (a) When the outputs belong to a closed class, e.g.\ in sentiment classification, it is easy to compare the output of a system (orange boxes) with the reference answer and hence evaluate its performance.
+  (b) On the other hand, in the summarization tasks we are interested in, there are many possible correct answers. As a result, a system that produces a response that does not match the reference answer is not necessarily incorrect; we simply don't know how to evaluate it. In this sense, the evaluation data is \textit{incomplete}.
   }
 \end{figure}
 \section{The incompleteness of static evaluation sets}
@@ -80,19 +85,27 @@ In this sense, the dataset is \textit{incomplete}: it does not contain every pos
 Let's look at some examples of how incompleteness manifests in practice and what its consequences on evaluation could be.
 
 \begin{figure}
-  \centering
-  \begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{figures/example-kbp}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{figures/err-kbp}
     \caption{\label{fig:intro:example-kbp} Knowledge base population.}
-  \end{subfigure} \\
-  \begin{subfigure}{0.65\textwidth}%
-    \includegraphics[width=\textwidth]{figures/example-qa}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}%
+    \includegraphics[width=\textwidth]{figures/err-oqa}
     \caption{\label{fig:intro:example-qa} Open-response question answering.}
-  \end{subfigure} \\
-  \begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{figures/example-summarization}
+  \end{subfigure}
+  \hfill
+
+  \hfill
+  \begin{subfigure}[t]{0.95\textwidth}
+    \includegraphics[width=0.45\textwidth]{figures/err-summ1}
+    \hfill
+    \includegraphics[width=0.45\textwidth]{figures/err-summ2}
     \caption{\label{fig:intro:example-summarization} Text summarization. }
   \end{subfigure}
+  \hfill
+
   \caption[Examples highlighting the limitations of incomplete evaluation sets]{\label{fig:intro:examples} Examples where the reference data is unable to evaluate a system's response:
   (a) Knowledge base population: here, the incomplete reference data is unable to identify that it is a true that Carrie Fisher was also an author, but not that she is a `princess'.
   (b) Open-response question answering: it is common for systems to output a paraphrase of the reference answer and thus to be judged incorrect despite reporting the right answer.
