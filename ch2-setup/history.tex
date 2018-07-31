@@ -4,47 +4,37 @@ Defining an evaluation methodology provides a necessary framework for systematic
 Unsurprisingly, this has led to an ongoing debate in the field of artificial intelligence on how to balance philosophical ideals, like genuine language understanding, with pragmatism, like having a single quantitative indicator.
 In this section, we revisit some of these discussions within the natural language processing field to provide some context for how the future of evaluation should look like.
 
-\subsection{Early ideas}
-Key papers dotting NLP evaluation thought.
+\subsection{Early ideas.}
 
-PTB, language modeling.
+Even as far back as 1956, before the development of many automated natural language processing systems, the future evaluation of these techniques was discussed.
+\citet{miller1956psychological} is perhaps one of the first such papers to explore what modes of evaluation exist for machine translation, beyond asking humans for subjective input.
+On the automated metric front, the paper introduces lexical overlap based scores that still underpin the most popular evaluation metrics today.
+The authors recognized that the automatic metric were effective ``at the lower end of the scale'', but were unsure if it would remain differentiating between better systems.
+As a result, they also looked at including humans in more objective evaluations, such as computing information gain by asking people to perform the Shannon test after reading the system generated summary, but concluded this might be far too laborious.
+Finally, the authors also proposed using reading comprehension tests as an objective evaluation of whether the summary was able to correctly convey information: an exciting idea that is seeing recent interest, but with the challenge that picking the right questions can also be quite hard.
 
+\subsection{An era of shared tasks.}
 
-\subsection{Shared tasks and test collections}
-A history of tasks.
-ACE, DUC, KBP
+Fast forwarding through 40 years, a number of high-profile shared tasks were set up by the National Institute for Standards and Technology (NIST) in the 1990s for a variety of natural language understanding tasks through the TIPSTER program.
+For example, the Text REtrieval Conference (TREC) was set up in 1992 to evaluate information retrieval systems and the Message Understanding Conference (MUC) was set up in the same period to evaluate information extraction systems.
+Later, the SUMMAC extended the set of tasks to summarization.
 
-summarization tasks.
+Early on, a central question was how to evaluate these systems.
+While the MUC tasks had more objective evaluation criteria like precision and recall, there has been a long debate about evaluation TREC.\@
+\citet{webber2010measurement} provides an excellent summary of this work.
+Perhaps the most interesting line of work on evaluation was in the TIPSTER summarization program~\citep{mani1999tipster}:
+  systems were compared on an end-task based metric of how much they could speed up decision-making for analysts.
+Later iterations of the summarization task in the Document Understanding Conference (DUC) used more general quality metrics like the quality and coverage of the generated summaries.
 
+At the same time, the machine translation community also developed its own evaluation methodologies through the APRA MT program~\cite{white1994arpa}.
+Initially, systems were compared by asking people to complete a reading comprehension task using human generated and system generated translations: unfortunately the evaluation procedure depended heavily on the quality of the intermediate translations and this approach was abandoned.
+Soon after, human panels were used to rate the adequacy and fluency of generated translations.
 
-
-ROUGE and other metrics.
-
-
-Newsblaster
-Even with these simple systems, \citet{mckeown2005summaries} showed that providing users such multi-document summaries help.
-
-Only recently have abstractive systems based on.
-Multi-document summarization SUMMONS, NewsBlaster
-
-Topic driven summarization
-
-Information extraction based summarization.
-
-
-Macro-rule systems.
-
-\paragraph{Automatic metrics and their limitations.} 
-There is been a long history of trying to find automatic metrics to evaluate the quality of system-generated output.
-\citet{miller1956psychological}, for example, studied this question in the context of machine translation even before such systems were built, and proposed using comparisons of word orderings between (simulated) system and reference translations.
-% 1. BLEU and ROUGE
-That said, two early automatic metrics have been particularly popular in NLG literature: BLEU~\citep{papineni02bleu} and ROUGE~\citep{lin2004rouge}.
-When used with a single reference, both these metrics are based on token n-gram co-occurrence statistics.
-\footnote{In the case of ROUGE-L and ROUGE-W, co-occurrence statistics are computed over the longest common subsequence (LCS) instead of a fixed n-gram length, and ROUGE-S allows for skip-n-grams.}
-%With multiple references, BLEU uses a special \textit{brevity penalty} to prefer translations that are closer to a reference length, while ROUGE simply takes the micro-average of the statistics.
-When first reported, it was observed that both the BLEU and ROUGE metrics had had high correlation with human ratings when measured at the system level.\footnote{%
-We note that while BLEU was used to measure overall translation quality, ROUGE was developed only to correlate with the mean \textit{coverage} of the generated summary and not language quality.
-}
+Unfortunately, the extensive human evaluations made it laborious to compare systems, particularly during development.
+This motivated the development of automatic metrics, starting with BLEU~\citep{papineni02bleu}.
+The automatic metric was proposed as a way to evaluate systems in the aggregate, with the hope that individual errors made by using a simple lexical overlap would be washed out as many different summaries were combined.
+In the summarization community, ROUGE~\citep{lin2004rouge} was proposed as an efficient way to compute \textit{coverage} of the generated summary.
+When first reported, it was observed that both the BLEU and ROUGE metrics had had high correlation with human ratings when measured at the system level.
 Unfortunately, over time, it was found that these metrics were inadequate when systems began use a more diverse vocabulary~\cite{lavie2009meteor,cohan2016revisiting}.
 
 % 2. adding linguistic information with CiDER, METEOR, etc.
@@ -55,43 +45,15 @@ Despite these developments, \citet{liu2016evaluate} and \citet{novikova2017why} 
 
 % ==NOTE(chaganty): Too much detail, not enough space.
 %% 4. another approach has been use use multiple references
-%Another approach has been to use multiple references, which tends to improve correlation with humans.
-%Indeed, \citet{toutanova2016dataset} report that multiple reference variants of metrics significantly score higher than others, though this can also be low.
-%Unfortunately, there is no clear understanding on how many references are sufficient: 
-%  \citet{culy2003limits} report needing atleast 4 reference translations to effectively employ BLEU to a given correlation.
-%  \citet{lavie2009meteor} find that more references helped correlation for METEOR but only marginally.
-%\citet{vanhalteren2003factoid} required up to 40-50 reference factoid summaries for stable consensus.
+Another approach has been to use multiple references, which tends to improve correlation with humans.
+Indeed, \citet{toutanova2016dataset} report that multiple reference variants of metrics significantly score higher than others, though this can also be low.
+Unfortunately, there is no clear understanding on how many references are sufficient: 
+  \citet{culy2003limits} report needing atleast 4 reference translations to effectively employ BLEU to a given correlation.
+  \citet{lavie2009meteor} find that more references helped correlation for METEOR but only marginally.
+\citet{vanhalteren2003factoid} required up to 40--50 reference factoid summaries for stable consensus.
 %\ac{I'm probably going to omit the above for lack of space.}
 
 % 3. include learning-based approaches for metrics
-The community has also tried to tuning evaluation metrics to optimize for human correlation~\citep{lavie2009meteor,denkowski2014meteor,lowe2017towards}.
+Finally, The community has also tried to tuning evaluation metrics to optimize for human correlation~\citep{lavie2009meteor,denkowski2014meteor,lowe2017towards}.
 While these approaches do increase the correlation for systems in the tune set, their correlations with new systems can be substantially smaller: \citet{lowe2017towards}, for example, find that correlations for held-out systems have an average Pearson correlation of $0.13$, almost a third of the average correlation of systems that were part of the tune set ($0.37$).
-
-% conclusion: effectiveness in improving system scores and differences in correlation => bias.
-Finally, an argument often used to support automatic metrics is that as long as the metric is correlated with ground truth, training systems on this metric will also lead to better systems.
-Unfortunately, when \citet{conroy2008mind} conducted a retrospective analysis of a number of systems in the DUC summarization challenges between 2004 and 2007, they found that as systems tuned using the ROUGE metric, they successively improved on said metric until they were indistinguishable from human performance while hardly budging on human evaluations.
-As another example of the limitations of automatic metrics for system development, Google Translate~\citep{wu2016google} reported that they found that some approaches that increased BLEU significantly did not translate to improvements in an accompanied human evaluation.
-Another cause for concern is that the differences between correlations for different systems can lead to a systematic bias: for example, it is well known that abstractive generation systems are systematically downweighted by word-overlap metrics over extractive systems. 
-
-% == NOTE (chaganty): we don't have space for this task specific stuff -- maybe move to related work.
-%Finally, we note that some tasks allow for more objective metrics like task completion which completion.
-%While such metrics play a role in assessing the usability of a generated system, they often mask recoverable system errors and as model developers, we'd like to have more specific metrics for subjective properties like language quality, etc. \ac{Also need to find a way to axe this.}
-% Always been a balance between intrinsic and extrinsic (task-based) evaluations.
-% History for task based metrics.
-%Hand, T. F. (1995). A Proposal for Task-based Evaluation of Text Summarization Systems. Focus.
-% Try to make the point that task based metrics like completion, etc. can be made objective.
-% The challenge is still to evaluate subjective equality.
-%Nenkova, a, & Passonneau, R. (2004). Evaluating content selection in summarization: The pyramid method. Proceedings of HLT-NAACL, 2004, 145–152. Retrieved from papers2://publication/uuid/DC675E84-0A45-48B7-A26C-F08B4B9398D3
-
-%Rankel, P. A., Conroy, J. M., Dang, H. T., & Nenkova, A. (2013). A decade of automatic content evaluation of news summaries: Reassessing the state of the art. ACL 2013 - 51st Annual Meeting of the Association for Computational Linguistics, Proceedings of the Conference, 2, 131–136. Retrieved from http://www.scopus.com/inward/record.url?eid=2-s2.0-84907356594&partnerID=tZOtx3y1
-%
-%Paek, T. (2007). Toward evaluation that leads to best practices: reconciling dialog evaluation in research and industry. North American Chapter Of The Association For Computational Linguistics, (April), 7. http://doi.org/10.3115/1556328.1556334
-%
-%Louis, A., & Nenkova, A. (2012). Automatically Assessing Machine Summary Content Without a Gold Standard. COLI, (March 2012). http://doi.org/10.1162/COLI
-
-\pl{I think we'll want to slim this all down in the interest of space;
-should we move this to the end?
-the details of the evaluation metrics aren't that important for this paper;
-certainly don't want people to think we're creating a new metric
-}
 

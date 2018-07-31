@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{99}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -65,6 +65,11 @@ R.~L. Burden and J.~D. Faires. 1985.
 \newblock \emph{Numerical Analysis (3rd ed.)}.
 \newblock PWS Publishers.
 
+\bibitem[{Casella and Berger(1990)}]{casella1990statistical}
+G.~Casella and R.~L. Berger. 1990.
+\newblock \emph{Statistical Inference}.
+\newblock Wadsworth and Brooks.
+
 \bibitem[{Cesa-Bianchi and Lugosi(2006)}]{cesabianchi06prediction}
 N.~Cesa-Bianchi and G.~Lugosi. 2006.
 \newblock \emph{Prediction, learning, and games}.
@@ -125,6 +130,11 @@ G.~V. Cormack, C.~R. Palmer, and C.~L.~A. Clarke. 1998.
 R.~Coulom. 2007.
 \newblock Computing elo ratings of move patterns in the game of go.
 \newblock \emph{Computer Games Workshop}.
+
+\bibitem[{Culy and Riehemann(2003)}]{culy2003limits}
+C.~Culy and S.~Z. Riehemann. 2003.
+\newblock The limits of n-gram translation evaluation metrics.
+\newblock In \emph{MT Summit IX}, pages 71--78.
 
 \bibitem[{Dai et~al.(2010)Dai, Mausam, and Weld}]{dai2010decision}
 P.~Dai, Mausam, and D.~S. Weld. 2010.
@@ -217,6 +227,13 @@ R.~Greiner, A.~J. Grove, and D.~Roth. 2002.
 \newblock Learning cost-sensitive active classifiers.
 \newblock \emph{Artificial Intelligence}, 139(2):137--174.
 
+\bibitem[{Halteren and Teufel(2003)}]{vanhalteren2003factoid}
+H.~V. Halteren and S.~Teufel. 2003.
+\newblock Examining the consensus between human summaries: initial experiments
+  with factoid analysis.
+\newblock In \emph{Human Language Technology and North American Association for
+  Computational Linguistics (HLT/NAACL)}, pages 57--64.
+
 \bibitem[{Han et~al.(2015)Han, Bang, Ryu, and Lee}]{han2015exploiting}
 S.~Han, J.~Bang, S.~Ryu, and G.~G. Lee. 2015.
 \newblock Exploiting knowledge base to generate responses for natural language
@@ -296,6 +313,20 @@ A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton. 2012.
 \newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
   pages 1097--1105.
 
+\bibitem[{Kumar et~al.(2009)Kumar, Berg, Belhumeur, and
+  Nayar}]{kumar2009attribute}
+N.~Kumar, A.~C. Berg, P.~N. Belhumeur, and S.~K. Nayar. 2009.
+\newblock Attribute and simile classifiers for face verification.
+\newblock In \emph{International Conference on Computer Vision (ICCV)}, pages
+  365--372.
+
+\bibitem[{Lasecki et~al.(2013 2013)Lasecki, Song, Kautz, and
+  Bigham}]{lasecki2013realtime}
+W.~S. Lasecki, Y.~C. Song, H.~Kautz, and J.~P. Bigham. 2013 2013.
+\newblock Real-time crowd labeling for deployable activity recognition.
+\newblock In \emph{Conference on Computer Supported Cooperative Work}, pages
+  1203--1212.
+
 \bibitem[{Lavie and Denkowski(2009)}]{lavie2009meteor}
 A.~Lavie and M.~Denkowski. 2009.
 \newblock The meteor metric for automatic evaluation of machine translation.
@@ -360,6 +391,12 @@ R.~T. Lowe, N.~Pow, I.~Serban, L.~Charlin, C.~Liu, and J.~Pineau.
 H.~P. Luhn. 1958.
 \newblock The automatic creation of literature abstracts.
 \newblock \emph{{IBM} Journal of Research and Development}, 2:159--165.
+
+\bibitem[{Maas et~al.(2011)Maas, Daly, Pham, Huang, Ng, and
+  Potts}]{maas2011imdb}
+A.~L. Maas, R.~E. Daly, P.~T. Pham, D.~Huang, A.~Y. Ng, and C.~Potts. 2011.
+\newblock Learning word vectors for sentiment analysis.
+\newblock In \emph{Association for Computational Linguistics (ACL)}.
 
 \bibitem[{Mani et~al.(1999)Mani, Klein, Hirschman, Firmin, House, and
   Sundheim}]{mani1999tipster}
@@ -531,6 +568,13 @@ C.~Tan, F.~Wei, N.~Yang, W.~Lv, and M.~Zhou. 2018.
 \newblock In \emph{Association for the Advancement of Artificial Intelligence
   (AAAI)}.
 
+\bibitem[{Toutanova and Brockett(2016)}]{toutanova2016dataset}
+K.~Toutanova and C.~Brockett. 2016.
+\newblock A dataset and evaluation metrics for abstractive compression of
+  sentences and short paragraphs.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)},
+  pages 340--350.
+
 \bibitem[{Vannella et~al.(2014)Vannella, Jurgens, Scarfini, Toscani, and
   Navigli}]{vannella2014validating}
 D.~Vannella, D.~Jurgens, D.~Scarfini, D.~Toscani, and R.~Navigli. 2014.
@@ -556,6 +600,13 @@ W.~E. Webber. 2010.
 D.~Weissenborn, G.~Wiese, and L.~Seiffe. 2017.
 \newblock Making neural {QA} as simple as possible but not simpler.
 \newblock In \emph{Computational Natural Language Learning (CoNLL)}.
+
+\bibitem[{White et~al.(1994)White, O'Connell, and O'Mara}]{white1994arpa}
+J.~White, T.~O'Connell, and F.~O'Mara. 1994.
+\newblock The {ARPA} {MT} evaluation methodologies: evaluation, lessons, and
+  future approaches.
+\newblock In \emph{First Conference of the Association for Machine Translation
+  in the Americas}.
 
 \bibitem[{Wu et~al.(2016)Wu, Schuster, Chen, Le, Norouzi, Macherey, Krikun,
   Cao, Gao, Macherey et~al.}]{wu2016google}

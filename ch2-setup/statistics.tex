@@ -69,7 +69,7 @@ We would like our estimate to be indicative of the true performance of our syste
 This brings us to the second question we must answer: ``how big should our test collection be in order to \textit{reliably} use our evaluation procedure''?
 
 Suppose that the variance of $f(z)$ when using a \textit{single point} is $\sigma^2_f$, then
-elementary statistics~\cite{} tells us that given test collection with $n$ \textit{independently} drawn samples, the variance of $\muh$, $\Var[\muh] = \frac{\sigma^2_f}{n}$.
+elementary statistics~\citep{casella1990statistical} tells us that given test collection with $n$ \textit{independently} drawn samples, the variance of $\muh$, $\Var[\muh] = \frac{\sigma^2_f}{n}$.
 Furthermore, if we have sufficiently many examples, then the central limit theorem applies and we can say that with high probability that the true performance estimate $\mu$ will be fairly close to our observed estimate $\muh$
 Formally, we have that with probability at least $1 - \delta$,
 \begin{align*}
