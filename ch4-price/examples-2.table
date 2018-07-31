@@ -3,7 +3,8 @@
 \toprule
 \textbf{Reference summary} & \textbf{System summary} \textbf{(System; \texttt{Edit} / VecSim)} \\
 \midrule
-\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $> 0.5$ ($53.9\%$ or 1078 of 2000 responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $> 0.5$}} \\
+\multicolumn{2}{l}{\textit{($53.9\%$ or 1078 of 2000 responses)}} \\
 \midrule
   % Good good
 \small Bhullar is set to sign a $\blacksquare$-day contract with the Kings. The $\blacksquare$-year-old will become the NBA's first player of Indian descent. Bhullar will be on the roster when the Kings host New Orleans Pelicans. &
@@ -11,21 +12,24 @@
     (\texttt{ml}; $0.13$ / $0.82$)
     \\
 \midrule
-\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $> 0.5$ ($18.0\%$ or 360 of 2000 responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $> 0.5$}} \\
+\multicolumn{2}{l}{\textit{($18.0\%$ or 360 of 2000 responses)}} \\
 \midrule
   % Bad good
 \small The Direct Marketing Commission probing B2C Data and Data Bubble. Investigating whether they breached rules on the sale of private data. Chief commissioner described allegations made about firms as `serious'.  &
 \small \st{$\blacksquare$ Data obtained by the Mail's marketing commission said it would probe both companies over claims that they had breached the rules on the sale of private data.} The FSA said it would probe both companies over claims they had breached the rules on the sale of private data. (\texttt{se2seq}; $1.00$ / $0.72$)
 \\
 \midrule
-\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $< 0.5$ ($14.5\%$ or 290 of 2000 responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $< 0.3$ and VecSim $< 0.5$}} \\
+\multicolumn{2}{l}{\textit{($14.5\%$ or 290 of 2000 responses)}} \\
 \midrule
   % Good bad (272 / 2000)
 \small Death toll rises to more than $\blacksquare$. Pemba Tamang, $\blacksquare$, shows no apparent signs of serious injury after rescue. Americans special forces helicopter $\blacksquare$, including $\blacksquare$ Americans, to safety. &
 \small \st{Six of} \textbf{Despite} Nepal's tragedy, life triumphed in Kathmandu's hard-hit neighborhoods. Rescuers pulled an 15-year-old from the rubble of a multistory residential building. He was wearing a New York shirt and a blue neck brace. (\texttt{pointer}; $0.04$ / $0.27$)
 \\
 \midrule
-\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $< 0.5$ ($13.6\%$ or 272 of 2000 responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system \texttt{Edit} $> 0.3$ and VecSim $< 0.5$}} \\
+\multicolumn{2}{l}{\textit{($13.6\%$ or 272 of 2000 responses)}} \\
 \midrule
   % Bad Bad
 \small ``Mad Men's'' final seven episodes begin airing April $\blacksquare$. The show has never had high ratings but is considered one of the great TV series. It's unknown what will happen to characters, but we can always guess. &

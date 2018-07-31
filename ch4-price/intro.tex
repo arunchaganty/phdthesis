@@ -24,31 +24,6 @@ However, these have shown to be biased, correlating poorly with human metrics ac
 % PL: this is fine
 %\ac{I'm worried this might be too strong a statement: no one has made explicit studies about bias, just that the correlation is low.}
 
-% NOTE: Figure is here because LaTeX refuses to place is with section 2 on its own.
-\begin{figure*}[ht]
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/msmarco_bias}
-    \caption{\label{fig:bias-msmarco-system} System-level correlation on the MS MARCO task}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/msmarco_instance_correlation}
-    \caption{\label{fig:bias-msmarco-instance} Instance-level correlation for the \texttt{fastqa} system}
-  \end{subfigure}
-  \caption{\label{fig:bias-msmarco}
-  %We compare system-level and instance-level correlations between the ROUGE-L automatic metric and some human metric.
-  (a) At a system-level, automatic metrics (ROUGE-L) and human judgment correlate well, but (b) the instance-level correlation plot
-  (where each point is a system prediction) shows that the instance-level correlation is quite low ($\rho = 0.31$).
-  %The instance-level correlation plot (where each point is an example) reveals that there is a large proportion of good answers that scored poorly by ROUGE, effectively ``hiding'' them from evaluation.
-  As a consequence, if we try to locally improve systems to produce better answers ($\triangleright$ in (a)),
-  they do not significantly improve ROUGE scores and vice versa ($\vartriangle$).
-  %\pl{can we get rid of the left arrows to simplify / save space?}
-  %At the same time, system changes that hurt human evaluation scores are not reflected by the automatic metric either (left arrows).
-  %\ac{I don't know how to properly reference the fact that circles are systems and.} 
-  }
-\end{figure*}
-
-
 % == 2. Key contribution: asking question and general intuition
 Can we combine automatic metrics and human evaluation to obtain
 an \emph{unbiased} estimate at \emph{lower cost} than human evaluation alone?

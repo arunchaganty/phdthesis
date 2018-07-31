@@ -92,8 +92,8 @@ is the correlation between $f(z)$ and $g(z)$ (recall that $g$ has unit variance)
 
 \begin{figure}
 \centering
-  \includegraphics[width=\columnwidth]{figures/variance_reduction_extreme}
-  \caption{\label{fig:variance_reduction}
+  \includegraphics[width=0.8\columnwidth]{figures/variance_reduction_extreme}
+  \caption[Intuition for control variates]{\label{fig:variance_reduction}
   The samples from $f(z)$ have a higher variance than the samples
   from $f(z)-g(z)$ but the same mean. This is the key idea behind using control variates to reduce variance.}
 \end{figure}
@@ -133,8 +133,8 @@ and $\gamma$.
 
 \begin{figure}
 \centering
-  \includegraphics[width=\columnwidth]{figures/savings}
-  \caption{\label{fig:savings} Inverse data efficiency for various values of
+  \includegraphics[width=0.8\columnwidth]{figures/savings}
+  \caption[Inverse data efficiency with the control variates estimator]  {\label{fig:savings} Inverse data efficiency for various values of
   $\gamma$ and $\rho$.  We need both low $\gamma$ and high $\rho$ to obtain
   significant gains.
   %Note that we do not even get a data efficiency of $2$ for
@@ -216,205 +216,4 @@ we would be able to sample more adaptively.
 Of course the most direct routes to improvement involve increasing the correlation of $g$ with human judgments and reducing annotator variance,
 which we will discuss more later.
 
-%our estimator is the minimax optimal over distributions with a fixed correlation between $f(z)$ and $g(z)$ and no further assumptions. 
-%\ac{Reword.}
 
-%\stm{The following sections will most likely be dropped, or briefly mentioned and moved to the appendix}
-
-%\subsection{Arbitrary Annotators}
-%\stm{Here we lay out the rigorous theoretical framework and prove optimality which suffices to prove the propositions above. We also find that the optimal experimental design is unique tasks and unique annotators, which matches our ``surrogate with noise'' section.}
-%\subsubsection{Discrepancy with Algorithm}
-%\stm{Here we talk about the sub-optimal variance introduced by not taking account of the annotators. It is small in practice.}
-
-%\iffalse
-%\subsection{Automatic metric without noise}
-%
-%Let us use the estimator
-%
-%$$\hat{\mu_f} = \frac{1}{n} \sum_i f(z^{(i)}) - \alpha g(z^{(i)})$$
-%
-%which has mean $\mu_f$ (unbiased) and variance,
-%
-%$$Var(\hat{\mu_f}) = \frac{1}{n}[ Var(f(z) - \alpha g(z))]$$
-%$$ = \frac{1}{n}[\sigma^2_f - 2 \alpha Cov(f(z),g(z)) + \alpha^2]$$
-%
-%which is minimized when ${\alpha = Cov(f(z),g(z)) = \rho \sigma_f}$, for a final variance of
-%
-%$$Var(\hat{\mu_f}) = \frac{1}{n} \sigma^2_f (1 - \rho^2)$$
-%
-%In fact, this is the minimax optimal variance for an unbiased estimator.
-%
-%\begin{proposition}
-%\label{prop:noiseless}
-%In the noiseless setting where $Y_z = f(z)$, among all unbiased estimators, and among all distributions with fixed $\sigma^2_f$ and $Cov(f(z),g(z))$, the minimax variance is
-%
-%$$\frac{1}{n} \sigma^2_f (1 - \rho^2)$$
-%
-%\end{proposition}
-%
-%\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\iffalse
-%
-%\paragraph{Problem definition.}
-%Let us now formalize evaluation as an estimation problem:
-%Let $S$ be the system we wish to evaluate on some defined \textit{metric} $f$ (e.g.\ accuracy, grammaticality, etc.) up to a given \textit{resolution} $\epsilon$ using a sufficiently large dataset of \textit{inputs} $X$.\footnote{%
-%  A sufficiently large dataset is one that is big enough to evaluate any system to the target resolution $\epsilon$.}
-%Let $z = (x, S(x))$ denote an input-output pair and let $Z$ be the set of \textit{input-output pairs} produced by $S$ on $X$: $Z \eqdef \{(x, S(x)) | x \in X \}$.
-%Formally, our goal is to estimate $F \eqdef \E_{z \sim Z}[f(z)]$ to within $\epsilon$.
-%
-%In this paper, we look at ways to estimate $F$ given:
-%\renewcommand{\labelenumi}{(\alph{enumi})}
-%\begin{enumerate}
-%  \item the ability to query a \textit{surrogate metric} (e.g.\ BLEU, ROUGE, a learned model, etc.) $g(z)$, and
-%  \item the ability to query a human annotator $h(z)$ on a given example.
-%\end{enumerate}
-%Stated more formally, let $Z_A \subseteq Z$ be the subset of responses for which we have human annotations,
-%$G = \{g(z) : z \in Z\}$ be the set of surrogate measurements \pl{notation is technically wrong because you don't want the image of $g$} and $H = \{h(z): z\in Z_A\}$ be the set of annotations obtained,
-%then an estimator of $F$ is any function $\delta(G, H)$ such that $\E[\delta(G, H)] = F$, where the expectation is taken over the test set $X$ and the annotations $H$.
-%
-%\paragraph{Assumptions and constraints.}
-%We make three key assumptions.
-%\begin{enumerate}
-%    \item Firstly, we assume that elements of the test set $X$ are independently drawn.
-%    \item Secondly, we assume that annotators are independently assigned to examples.
-%    \item Finally, we assume that the human responses $h(z)$ other than the fact that their mean accurately measures the ground truth, i.e.\ $\E[h(z)] = f(z)$. Alternatively, we consider that the metric $f(z)$ is \textit{defined} by the average human rating.
-%      As a regularity condition, we assume that annotator noise: $\epsilon(z) \eqdef h(z) - f(z)$ has finite variance $\sigma^2_a < \infty$.
-%    \pl{I think it's better to just \emph{define} the goal as measuring expectations over $h$;
-%    removes a layer of indirection and an assumption
-%    }
-%\end{enumerate}
-%We make no assumptions on the nature of interaction between annotator noise on different examples, as the noise might be correlated between two responses from the same annotator \pl{really? that seems like it would throw a wrench into variance calculations}.
-%Likewise, we make no assumptions about $g(z)$ at all, and in particular, having seen the history of such automatic metrics in \refsec{setup}, we can expect that the correlation of $g(z)$ with $f(z)$ differs for across different systems. 
-%
-%Irrespective of the nature of the annotation noise and variation in surrogate correlation, we would like to ensure that $\E[\delta(G, H)] = F$ for any distribution of system outputs $Z$ and annotation noise $H$.
-%In other words we would like the estimator to be \textit{unbiased}.
-%For example, the constant estimator $\delta(G,H) = F_0$ will predict the correct result only when $F = F_0$ and be biased for every other possible $F$.
-%\pl{what's $F_0$?}
-%
-%\pl{I'd defer as much of the above as possible to after you define the estimators;
-%introduce only enough notation so that you can define the estimators;
-%the analysis of variance should be a separate concern
-%}
-%
-%\paragraph{Minimax optimal unbiased estimators.}
-%
-%Within the constraint of unbiased estimators, we would like to be able to find the one that has the least variance, ideally for any distribution of tests and annotators. 
-%Unfortunately, for any particular distribution of tests and annotators its possible to construct an estimator $\delta$ that performs particularly well.
-%In other words, except in certain circumstances (for example under the assumption that annotator noise is Gaussian), there is no uniformly minimum variance unbiased (UMVU) estimator. 
-%Instead, we look for a minimax estimator: on that is guaranteed to have the least worst case variance:
-%$\delta^* = \argmin_{\delta} \max_{X, H} \Var(\delta; X, H)$.
-%
-%\pl{I think the first thing you have to give is the naive estimator and the incorporating the model;
-%'minimax' is going to scare people away
-%}
-%
-%\paragraph{Model-free estimator.}
-%
-%As a baseline, let us first consider the case where we are trying to estimate $F$ without a model.
-%In this case, because $h(z)$ is an unbiased predictor of $f(z)$, the estimator $\delta = \frac{1}{|Z_A|}\sum_{z \in Z_A} h(z)$ with a variance of at least $\frac{\sigma^2_f + \sigma^2_a}{n}$.
-%
-%\begin{figure}
-%  \includegraphics[width=\columnwidth]{figures/data_efficiency}
-%  \caption{\label{fig:data-efficiency} The relative quantity of data that can be saved when using a model during evaluation, or data efficiency, depends on two fundamental quantities: normalized annotator variance $\nu = \sigma_a^2/\sigma_f^2$ and the model's correlation with the ground truth, $\rho$.
-%  The plot above visualizes the dependence of data efficiency on $\nu$ and $\rho$.
-%  The values of $\nu$ measured on our natural language evaluation benchmark is also highlighted: given the high levels of inter-annotator disagreement we find that the data efficiency is upper-bounded by 2 even on the most objective task in the benchmark, answer correctness on MSMarco. (TODO: make figure better)}
-%\end{figure}
-%
-%\paragraph{Incorporating a model.}
-%Let $g(z)$ be the evaluation model's estimate of $f(z)$. We study the following unbiased estimator:
-%\[
-%\Fh_g \eqdef \E_{Z}[g(z)] + \frac{1}{n}\sum_{i=1}^n f(z_i) - g(z_i).
-%\]
-%It is easy to verify that $\Fh_g$ is indeed an unbiased estimate of $F_S$.
-%The variance of $\Fh_g$ is characterized as:
-%\[
-%\Var[\Fh_g] = \frac{\sigma_a^2 + (1-\rho^2)\sigma_f^2}{n},
-%\]
-%where $\rho$ is the Pearson correlation coefficient of $f$ and $g$, $\rho \eqdef \frac{\Cov[f(z)g(z)]}{\sigma_f \sigma_g}$.
-%
-%This analysis tells us two things, first that the variance of $\Fh_g$ is always less than that of $\Fh_a$ if $\rho > 0$ and secondly that the variance of $\Fh_a$ is bottlenecked by annotator variance $\sigma_a^2$: i.e. even a perfect model will incur some variance because of the annotator variance.
-%
-%\pl{In some sense, this is the core point, whereas currently, this is just another nested bullet}
-%\pl{what happened to $h$?; do we need both $f$ and $h$?}
-%
-%\pl{talk about control variates and cite}
-%
-%\paragraph{Incorporating information about annotator identities}
-%
-%\pl{I think it might be better if we could defer this to another section;
-%you want to quickly just get in, define the basic estimator, do a simple
-%analysis, make your point; then do the annotator stuff as an extension;
-%people are not going to have the patience to read the entire paper,
-%so it should have a prefix property (news style): they should get the main point
-%from begin to end on the basic version
-%}
-%
-%First, we must define how the annotator labels $\fh_a(z)$ describe the ground truth.
-%The most basic approach is to assume that each annotator produces an unbiased estimate of $f(z)$ with some i.i.d. noise:.
-%Unfortunately, this model typically does not bear out in practice \pl{not worth even mentioning this as it's obvious that annotators have bias?}, as annotators often introduce some bias in their interpretation of the question. Instead, we assume that the set of all annotators as a whole do not introduce any bias to the task (even if any individual might). Such an approach leads us to define the following linear model:
-%\[
-%	\fh_a(z) = F_S + \delta f(z) + a + \epsilon,
-%\]
-%for some $z \in Z$.
-%
-%The variance of our estimate is characterized by 
-%	the \textit{task variance} $\sigma^2_f \eqdef \sum_{z}[\delta f(z)^2]$,
-%	\textit{annotator variance} $\sigma^2_a \eqdef \sum_{a}[a^2]$ and 
-%	\textit{measurement variance} $\sigma^2_m \eqdef \sum[\epsilon^2]$.
-%While task variance depends on the system at hand, the latter two quantities are more reflective of the evaluation setup.
-%Of course, we would like there to be as little measurement variance $\sigma^2_m = 0$ as possible.
-%
-%Note that this formulation strictly subsumes the earlier model, where in $a = 0$ for every annotator and thus does not introduce any bias of its own.
-%In this simpler model, we find that $\sigma^2_m \gets \sigma^2_a + \sigma^2_m$, increasing our measurement variance.
-%
-%In the sequel, we will find that the number of samples we need to estimate $F_S$ is dependent only on $\sigma_f^2$ and $\sigma_m^2$, and we can bound it using the latter.
-%
-%\paragraph{Incorporating surrogate confidences}
-%
-%\pl{same comment as above about deferring to later}
-%
-%Finally, we consider the scenario wherein we use the model's uncertainty to help guide which examples to annotate: presumably we will need fewer such annotations where the model is confident.
-%Let $\epsilon_g(z)$ be the uncertainty reported by the model and let $\lambda_g$ be the degree of calibration of the model:
-%\[
-%\lambda_g \eqdef \E\left[ \left| |f(z) - g(z)| - \epsilon_g(z) \right| \right].
-%\]
-%
-%In this setting, we use the following importance sampling estimator:
-%\[
-%	\Fh_c \eqdef \E[g(z)] + \sum_{i}^n \frac{p(z_i)}{q(z_i)} (f(z_i) - g(z_i)),
-%\]
-%where $z_i$ is drawn according to $q(z_i)$ and $p(z)$ is the uniform probability over $Z$.
-%The variance of the estimator $\Fh_c$ depends on the distribution $q(z)$, but is minimized when $q(z) \propto p(z) |f(z) - g(z)|$.
-%Assuming that our model's estimates are normally distributed around the true value $f(z)$, the expected value of $|f(z) - g(z)|$ is simply $\sqrt{\frac{2}{\pi}} \sigma_g(z)$.
-%From this, we can estimate:
-%\[
-%\Var(\Fh_c) = \frac{\E[\sqrt{\sigma^2_a + \sigma^2_g(z)}]^2}{n}.
-%\]
-%Note that if the confidence estimates $\sigma^2_g(z)$ are uniform throughout, the expression for $\Var(\Fh_c)$ reduces to $\Var(\Fh_g)$, as expected. However, given a skew, we expect some gains.
-%\fi
-%
-%% Formally define f(x) as what we want,
-%%First, let $S$ be a system that produces some output $y \eqdef S(x)$ for a given input $x$.
-%%Next, let $f(x, y)$ be the \textit{performance metric} we care about, e.g.\ correctness, grammaticality, etc.
-%%Our goal is to estimate $F_S \eqdef \E_{\sX}[f(x, S(x))]$, where $x$ is sampled from set of possible inputs $\sX$.
-%
-%%In a typical classification setting, there is a single correct answer or label, $y^*$, for an input and $f(x,y)$ can be simply defined as accuracy: $f(x,y) = \I[y == y*]$.
-%%When this is the case, $F_S$ is easy to estimate: we simply take the mean performance on a \textit{test set} $X$: $\Fh_S = \frac{1}{|X|} \sum_{x \in X} f(x, S(x))$.
-%
-%% g(x) as an automatic metric.
-%%Unfortunately, in most generation contexts we do not have a single correct answer and we can not directly evaluate $f(x,y)$.
-%%In our framework, we consider surrogate metrics (e.g.\ BLEU, ROUGE, ADEM, etc.) as an independent function $g(z)$ that is correlated with $f(z)$.
-%%As we have seen in \refsec{setup}, in practice, $g(z)$ is only (weakly) correlated with $f(z)$ and its correlation varies depending on the system being evaluated.
-%%% h(x) as annotation.
-%%To correct for the biases introduced by the correlated metric, we also consider access to human annotations $h(z)$ which are related to $f(z)$ as follows: $h(z) \eqdef f(z) + \epsilon$, where $\epsilon$ is arbitrary zero-mean noise: in other words, $f(z) \eqdef \E[h(z)]$.
-%%We make no assumptions on Gaussianity or independence.
-%
-%%For brevity, we will use $z = (x,y)$ to denote the input-output pair and $Z_S = \{(x, S(x)) : x \in X\}$ to be the set of input-output pairs generated by $S$.
-%
-%%Of course, because of inherent variation in the difficulty of task instances and performance of the system, we can only estimate the quality of the system up to a degree of \textit{precision} $\epsilon$ that primarily depends on the size of the dataset being evaluated.
-%
-%%\textbf{IMPORTANT: HOW DO WE ADDRESS THE FACT THAT OFTEN HUMAN judgmentS ARE REPORTED WITH SUPER HIGH VARIANCE! -- see \citet{snover2006ter} for example: they find HTER to have higher correlation than with 2 people!?!}
-%

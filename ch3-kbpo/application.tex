@@ -40,6 +40,26 @@ As a result, we propose a distribution that is inversely proportional to the fre
 %\end{align*}
 %where $\operatorname{\#preds}$, $\operatorname{\#nsubjs}$ specifies the number of predicates, subject entities in $X_i$ respectively and $\operatorname{\#insts}$ the number of instances with the given predicate or subject entity.
 %See \refapp{implementation} for more details.
+\begin{figure}[!th]
+  \centering
+
+  \begin{subfigure}{0.45\textwidth}
+  \centering
+    \includegraphics[width=\textwidth]{figures/interface/relation-interface}
+    \caption{\label{fig:relation-interface}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.45\textwidth}
+  \centering
+    \includegraphics[width=\textwidth]{figures/interface/extraction-interface}
+    \caption{\label{fig:entity-interface}}
+  \end{subfigure}
+
+  \caption[Annotation interfaces for KBP]{\label{fig:interfaces}
+  \textbf{(a, b):} Interfaces for annotating relations and entities respectively.
+  }
+\end{figure}
+
 
 \subsection{Labeling predicted instances}
 We label predicted relation instances by presenting the instance's provenance to crowdworkers
@@ -54,69 +74,6 @@ Consequently, we take a majority vote over 3 workers in subsequent experiments.
 %leading to a total cost of \$0.15 per relation instance.
 
 %\pl{what does it mean to annotate a relation - get all the relation instances for that relation or just one?}.
-\begin{figure*}
-  \centering
-
-  \begin{subfigure}{0.49\textwidth}
-  \centering
-    \includegraphics[width=\textwidth]{figures/interface/relation-interface}
-    \caption{\label{fig:relation-interface}}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-  \centering
-    \includegraphics[width=\textwidth]{figures/interface/extraction-interface}
-    \caption{\label{fig:entity-interface}}
-  \end{subfigure} \\
-
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-p}
-    \caption{}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-r}
-    \caption{}
-  \end{subfigure} \\
-
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-n}
-    \caption{}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \input{evaluation.table}
-    %\includegraphics[width=\columnwidth]{figures/kbp2016/kbp2016_f1}
-    \vfill
-    \caption{\label{fig:evaluation-results}}
-  \end{subfigure}
-
-  \caption{\label{fig:simulation}
-  \textbf{(a, b):} Interfaces for annotating relations and entities respectively.
-  \textbf{(c, d):}
-  A comparison of bias for the pooling, simple and joint estimators on the TAC KBP 2015 challenge.
-  Each point in the figure is a mean of 500 repeated trials; dotted lines show the 90\% quartile.
-  %The pooling based method uses between 5,000 and 6,000 labeled instances, while the sampling based methods use 
-  %approximately 150 samples from each system.
-  %Dashed trend lines indicate the mean bias of the estimation method: 
-  %Unbiased estimates lie on the $y = x$ line.
-  Both the simple and joint estimators are unbiased, and the joint estimator is able to significantly reduce variance.
-  \textbf{(e):} 
-  A comparison of the number of samples used to estimate scores under the fixed and adaptive sample selection scheme.
-  %In the simulation, the top 40 systems were evaluated in randomized order to achieve a target variance equal to that obtained with 500 samples for a single system.
-  Each faint line shows the number of samples used during a single trial, while solid lines show the mean over 100 trials.
-  The dashed line shows a square-root relationship between the number of systems evaluated and the number of samples required.
-  %\ac{Note: fitting with a cubic gives $x = 0.01 y^3 -0.1y^2 + 1.8 y - 1.1$ with $R=1.0$.}
-  Thus joint estimation combined with adaptive sample selection can reduce the number of labeled annotations required by an order of magnitude.
-  \textbf{(f):} 
-Precision ($P$), recall ($R$) and \fone{} scores from a pilot run of our evaluation service for ensembles of a rule-based system (R), a logistic classifier (L) and a neural network classifier (N) run on the TAC KBP 2016 document corpus. 
-  }
-\end{figure*}
-
 \subsection{Sampling true instances}
 Sampling from the set of true instances $\sY$ is difficult because we can't even enumerate the elements of $\sY$.
 As a proxy, we assume that relations are identically distributed across documents and have crowdworkers annotate a random subset of documents for relations using an interface we developed (\reffig{entity-interface}).

@@ -1,3 +1,28 @@
+% NOTE: Figure is here because LaTeX refuses to place is with section 2 on its own.
+\begin{figure}[t]
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/msmarco_bias}
+    \caption{\label{fig:bias-msmarco-system} System-level correlation on the MS MARCO task}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{figures/msmarco_instance_correlation}
+    \caption{\label{fig:bias-msmarco-instance} Instance-level correlation for the \texttt{fastqa} system}
+  \end{subfigure}
+  \caption[System-level vs instance-level correlation on MS MARCO]{\label{fig:bias-msmarco}
+  %We compare system-level and instance-level correlations between the ROUGE-L automatic metric and some human metric.
+  (a) At a system-level, automatic metrics (ROUGE-L) and human judgment correlate well, but (b) the instance-level correlation plot
+  (where each point is a system prediction) shows that the instance-level correlation is quite low ($\rho = 0.31$).
+  %The instance-level correlation plot (where each point is an example) reveals that there is a large proportion of good answers that scored poorly by ROUGE, effectively ``hiding'' them from evaluation.
+  As a consequence, if we try to locally improve systems to produce better answers ($\triangleright$ in (a)),
+  they do not significantly improve ROUGE scores and vice versa ($\vartriangle$).
+  %\pl{can we get rid of the left arrows to simplify / save space?}
+  %At the same time, system changes that hurt human evaluation scores are not reflected by the automatic metric either (left arrows).
+  %\ac{I don't know how to properly reference the fact that circles are systems and.} 
+  }
+\end{figure}
+
+
 \section{\label{sec:bias} Bias in automatic evaluation}
 
 % What does bias mean in natural language evaluation.
@@ -19,23 +44,25 @@
 %  due to multiple correct answers.}
 %\end{table*}
 
-\begin{table*}
-  \begin{subtable}{\textwidth}
+\begin{table}[!p]
   \centering
   \input{examples-1.table}
-  \caption{\textbf{MS MARCO.} Human annotators rated answer correctness (\texttt{AnyCorrect}) and the automatic metric used is ROUGE-L (higher is better).}
-  \end{subtable} \vspace{1em} \\
-  \begin{subtable}{\textwidth}
+  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on MS MARCO.]{\label{tab:examples-msmarco}
+    Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree on the MS MARCO task.
+    Human annotators rated answer correctness (\texttt{AnyCorrect}) and the automatic metric used is ROUGE-L (higher is better).
+    A majority of responses from systems were actually correct but poorly scored according to ROUGE-L.
+  }
+\end{table}
+
+\begin{table}[!p]
   \centering
   \input{examples-2.table}
-  \caption{\textbf{CNN/Daily Mail.} Human judgment scores used are post-edit distance (\texttt{Edit}) (lower is better) and the automatic metric used is sentence vector similarity with the reference (higher is better).}
-  \end{subtable}
-  \caption{\label{tab:examples}
-    Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree.
-    On the MS MARCO task, a majority of responses from systems were actually correct but poorly scored according to ROUGE-L.
-    On the CNN/Daily Mail task, a significant number of examples which are scored highly by VecSim are poorly rated by humans, and likewise many examples scored poorly by VecSim are highly rated by humans.
+  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on CNN/Daily Mail.]{\label{tab:examples-cdm}
+    Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree on the CNN/Daily Mail task.
+    Human judgment scores used are post-edit distance (\texttt{Edit}) (lower is better) and the automatic metric used is sentence vector similarity with the reference (higher is better).
+    A significant number of examples which are scored highly by VecSim are poorly rated by humans, and likewise many examples scored poorly by VecSim are highly rated by humans.
   }
-\end{table*}
+\end{table}
 
 It is well understood that current automatic metrics tend to correlate poorly with human judgment at the instance-level.
 % Example 1: novikova 

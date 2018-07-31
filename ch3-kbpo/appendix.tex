@@ -1,6 +1,5 @@
-\onecolumn
-\section{Implementation details}
-\label{sec:implementation}
+\chapter{Supplementary material for \refchap{kbpo}} 
+\label{chap:kbpo-appendix}
 
 \section{Theoretical proofs for the sampling procedures}
 \label{sec:sampling}
@@ -188,3 +187,5 @@ where the first $m-1$ terms are an empirical estimate of variance and the last t
 We note that the actual output of each system, $X_j$, and the samples drawn from previous systems, $\Xh_{j}$, is known.
 Thus, the only variable in computing $\widehat{\Var}{\pih_m}$ is $n_m$.
 Furthermore, $\widehat{\Var}{\pih_m}$ is a monotonically decreasing in $n_m$, so we can easily solve for the minimum number of samples required to estimate $\pih_m^{\text{(joint)}}$ within a confidence interval $\epsilon$ by using the bisection method \citep{burden1985bisection}.
+
+\input{./basic-lemmas}

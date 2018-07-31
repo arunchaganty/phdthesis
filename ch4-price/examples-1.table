@@ -3,7 +3,8 @@
 \toprule
 \textbf{Question and reference answer} & \textbf{System answer} \textbf{(System; \texttt{Corr} / ROUGE-L)} \\
 \midrule
-\multicolumn{2}{l}{\textit{Examples where system is correct and ROUGE-L $> 0.5$ ($19.6\%$ or 285 of 1455 unique responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system is correct and ROUGE-L $> 0.5$}} \\
+\multicolumn{2}{l}{\textit{($19.6\%$ or 285 of 1455 unique responses)}} \\
 \midrule
   % Good good
  \small \textbf{Q.} what is anti-mullerian hormone \par
@@ -14,7 +15,8 @@
 \\
 \midrule
 % Bad good
-\multicolumn{2}{l}{\textit{Examples where system is incorrect and ROUGE-L $> 0.5$ ($1.3\%$ or 19 of 1455 unique responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system is incorrect and ROUGE-L $> 0.5$}} \\
+\multicolumn{2}{l}{\textit{($1.3\%$ or 19 of 1455 unique responses)}} \\
 \midrule
 \small   \textbf{Q.} at what gestational age can you feel a fetus move \par
   \textbf{A.} 37 to 41 weeks \textit{(incorrect reference answer)} &
@@ -23,7 +25,8 @@
 \\
 \midrule
 % Good bad (525 / 2000)
-\multicolumn{2}{l}{\textit{Examples where system is correct and ROUGE-L $< 0.5$ ($56.0\%$ or 815 of 1455 unique responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system is correct and ROUGE-L $< 0.5$}} \\
+\multicolumn{2}{l}{\textit{($56.0\%$ or 815 of 1455 unique responses)}} \\
 \midrule
 \small   \textbf{Q.} what is the definition of onomatopoeia \par
   \textbf{A.} It is defined as a word, which imitates the natural sounds of a thing. &
@@ -32,7 +35,8 @@
   \\
 \midrule
 % Bad Bad
-\multicolumn{2}{l}{\textit{Examples where system is incorrect and ROUGE-L $< 0.5$ ($23.1\%$ or 336 of 1455 unique responses)}} \\
+\multicolumn{2}{l}{\textit{Examples where system is incorrect and ROUGE-L $< 0.5$}} \\
+\multicolumn{2}{l}{\textit{($23.1\%$ or 336 of 1455 unique responses)}} \\
 \midrule
 \small   \textbf{Q.} what kind root stem does a dandelion have \par
   \textbf{A.} Fibrous roots and hollow stem. &

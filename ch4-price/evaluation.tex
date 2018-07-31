@@ -9,7 +9,8 @@
   \includegraphics[width=\textwidth]{figures/lqual_correlation}
   \caption{CNN/Daily Mail with the \texttt{Edit} prompt}
   \end{subfigure}
-  \caption{\label{fig:correlation} Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.
+  \caption[Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.]
+{\label{fig:correlation} Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.
   Certain systems are more correlated with certain automatic metrics than others, but overall the correlation is low to moderate for most systems and metrics.
   }
 \end{figure*}
@@ -71,7 +72,7 @@ Unsurprisingly, the correlation varies considerably across systems, with token-b
   \includegraphics[width=\textwidth]{figures/msmarco_trajectory}
   \caption{\label{fig:trajectory-c}\texttt{fastqa\_ext} on MS MARCO using \texttt{AnyCorrect}}
   \end{subfigure}
-  \caption{\label{fig:trajectory} 80\% bootstrap confidence interval length as a function of the number of human judgments used when evaluating the indicated systems on their respective datasets and prompts.
+  \caption[Confidence intervals as a function of the number of human judgments used when evaluating systems]{\label{fig:trajectory} 80\% bootstrap confidence interval length as a function of the number of human judgments used when evaluating the indicated systems on their respective datasets and prompts.
   (a) We see a modest reduction in variance (and hence cost) relative to human evaluation by using the VecSim automatic metric with the proposed control variates estimator to estimate \texttt{Overall} scores on the CNN/Daily Mail task; the data efficiency (DE) is $1.06$.
   (b) By improving the evaluation prompt to use \texttt{Edit}s instead, it is possible to further reduce variance relative to humans (DE is $1.15$).
   (c) Another way to reduce variance relative to humans is to improve the automatic metric evaluation; here using ROUGE-1 instead of VecSim improves the DE from $1.03$ to $1.16$.

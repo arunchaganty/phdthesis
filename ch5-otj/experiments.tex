@@ -48,7 +48,7 @@ We evaluated the following four methods on each dataset:
     &
     We used the last layer of a 11-layer AlexNet~\cite{krizhevsky2012imagenet} trained on ImageNet as input feature embeddings, though we leave back-propagating into the net to future work.
 \end{tabular}
-  \caption{Datasets used in this paper and number of examples we evaluate on.}
+  \caption{Datasets used in this chapter and number of examples we evaluate on.}
 \label{tbl:dataset}
 \end{table}
 
@@ -67,52 +67,52 @@ To control for variance in worker quality across our evaluations of the differen
 During simulation we sample the worker responses and delays without replacement from this frozen pool of worker responses.
 
 \begin{table}[t]
-  {\small
 %% NER 
-\begin{tabular}{l r r r r r r | r r r r r}
-  \multicolumn{7}{c|}{Named Entity Recognition} & 
-      \multicolumn{3}{c}{Face Identification} \\
+\centering
+\begin{tabular}{l r r r r r r}
+  \toprule
       \textbf{System} & \textbf{Delay/tok} & \textbf{Qs/tok} & \textbf{PER F$_1$} & \textbf{LOC F$_1$} & \textbf{ORG F$_1$} & \textbf{F$_1$}
-          & \textbf{Latency} & \textbf{Qs/ex} & \textbf{Acc.} 
-    \\ \hline
-    1-vote & 467 ms & 1.0 & 90.2 & 78.8 & 71.5 & 80.2
-      & %1-vote & 
-      1216 ms & 1.0 & 93.6 \\ %\hline
-    3-vote & 750 ms & 3.0 & 93.6 & 85.1 & 74.5 & 85.4
-        & %3-vote &
-        1782 ms & 3.0 & 99.1 \\ %\hline
-    5-vote & 1350 ms & 5.0 & \textbf{95.5} & 87.7 & 78.7 & 87.3 
-        & 
-        2103 ms & 5.0 & 99.8 \\ \hline
-    Online & n/a & n/a & 56.9 & 74.6 & 51.4 & 60.9
-        % Online 
-        & n/a & n/a & 79.9 \\    %\hline
-    Threshold & 414 ms & 0.61 & 95.2 & \textbf{89.8} & 79.8 & 88.3
-        % threshold 
-        & 1680 ms & 2.66 & 93.5 \\ %\hline
-    \textbf{LENSE} & \textbf{267 ms} & \textbf{0.45} & 95.2 & 89.7 & \textbf{81.7} & \textbf{88.8} 
-    %\textbf{LENSE} 
-    & 1590 ms & 2.37 & 99.2 \\   %\hline
+    \\ \midrule
+    1-vote & 467 ms & 1.0 & 90.2 & 78.8 & 71.5 & 80.2 \\
+    3-vote & 750 ms & 3.0 & 93.6 & 85.1 & 74.5 & 85.4 \\
+    5-vote & 1350 ms & 5.0 & \textbf{95.5} & 87.7 & 78.7 & 87.3  \\ \midrule
+    Online & n/a & n/a & 56.9 & 74.6 & 51.4 & 60.9 \\
+    Threshold & 414 ms & 0.61 & 95.2 & \textbf{89.8} & 79.8 & 88.3 \\
+    \textbf{LENSE} & \textbf{267 ms} & \textbf{0.45} & 95.2 & 89.7 & \textbf{81.7} & \textbf{88.8}  \\
+    \bottomrule
 \end{tabular}
-}
-\caption{Results on NER and Face tasks comparing latencies, queries per token (Qs/tok)
-and performance metrics (\fone{} for NER and accuracy for Face).}
-\label{tbl:results}
+\caption[Results on NER]{\label{tbl:results-ner} Results on the NER task comparing latencies, queries per token (Qs/tok)
+and \fone{}.}
 \end{table}
 
 \begin{table}[t]
-    \begin{minipage}[t]{.49\textwidth}
-  \includegraphics[width=\textwidth]{figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.pdf}
-  \captionof{figure}{Queries per example for LENSE on Sentiment. With simple \textsc{unigram} features, the model quickly learns it does not have the capacity to answer confidently and must query the crowd. With more complex \textsc{rnn} features, the model learns to be more confident and queries the crowd less over time.}
-        \label{fig:sentiment-tradeoff}
-    \end{minipage}
-    \qquad
-    \begin{minipage}[t]{.49\textwidth }
-        \input{table-sentiment}
-        \caption{Results on the Sentiment task comparing latency, queries per example and accuracy.}
-        \label{tbl:sentiment-results}
-        \vfill
-    \end{minipage}%
+  \centering
+\begin{tabular}{l r r r}
+  \toprule
+      \textbf{System} & \textbf{Latency} & \textbf{Qs/ex} & \textbf{Acc.} 
+    \\ \midrule
+    1-vote & 1216 ms & 1.0 & 93.6 \\ %\hline
+    3-vote & 1782 ms & 3.0 & 99.1 \\ %\hline
+    5-vote & 2103 ms & 5.0 & 99.8 \\ \midrule
+    Online & n/a & n/a & 79.9 \\    %\hline
+    Threshold & 1680 ms & 2.66 & 93.5 \\ %\hline
+    \textbf{LENSE} & 1590 ms & 2.37 & 99.2 \\   %\hline
+    \bottomrule
+\end{tabular}
+\caption[Results on Face]{\label{tbl:results-face} Results on the Face task comparing latencies, queries per token (Qs/tok)
+and accuracy.}
+\end{table}
+
+\begin{figure}[t]
+\centering
+  \includegraphics[width=0.6\textwidth]{figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.pdf}
+  \caption[Queries per example for LENSE on Sentiment.]{\label{fig:sentiment-tradeoff}Queries per example for LENSE on Sentiment. With simple \textsc{unigram} features, the model quickly learns it does not have the capacity to answer confidently and must query the crowd. With more complex \textsc{rnn} features, the model learns to be more confident and queries the crowd less over time.}
+\end{figure}
+
+\begin{table}[t]
+\centering
+  \input{table-sentiment}
+  \caption[Results on the Sentiment task]{\label{tbl:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.}
 \end{table}
 
 % DETAILS
@@ -129,14 +129,15 @@ and performance metrics (\fone{} for NER and accuracy for Face).}
 %Filtering workers while running, or inferring separate error models for each worker, would clearly deliver substantial gains in reliability over a system that assumes uniform quality. We leave this to future work.
 
 \paragraph{Summary of results.}
-\reftab{results} and \reftab{sentiment-results} summarize the performance of the methods on the three tasks.
+\reftab{results-ner}, \reftab{results-face} and \reftab{sentiment-results} summarize the performance of the methods on the three tasks.
 On all three datasets, we found that on-the-job learning outperforms machine and human-only comparisons on both quality and cost. 
 On NER, we achieve an \fone{} of $88.4\%$ at more than an order of magnitude
 reduction on the cost of achieving comporable quality result using the 5-vote
 approach. On Sentiment and Faces, we reduce costs for a comparable accuracy by
 a factor of around 2.
 For the latter two tasks, both on-the-job learning methods perform less well
-than in NER. We suspect this is due to the presence of a dominant class
+than in NER.\@
+We suspect this is due to the presence of a dominant class
 (``none'') in NER that the model can very quickly learn to expend almost no
 effort on.  LENSE outperforms the threshold baseline, supporting the importance
 of Bayesian decision theory.
@@ -149,9 +150,8 @@ of Bayesian decision theory.
   \begin{subfigure}[b]{0.49\textwidth}
   \includegraphics[width=\textwidth]{figures/ner_2_class/cost_plot/cost_vs_time.pdf}
   \end{subfigure}
-  \caption{Comparing \fone{} and queries per token on the NER task over time. The left graph compares LENSE to online learning (which cannot query humans at test time). This highlights that LENSE maintains high \fone{} scores even with very small training set sizes, by falling back the crowd when it is unsure. The right graph compares query rate over time to 1-vote. This clearly shows that as the model learns, it needs to query the crowd less.}
-\label{fig:ner-f1}
-\vspace{-2em}
+  \caption[Comparing \fone{} and queries per token on the NER task over time.]{\label{fig:ner-f1} Comparing \fone{} and queries per token on the NER task over time. The left graph compares LENSE to online learning (which cannot query humans at test time). This highlights that LENSE maintains high \fone{} scores even with very small training set sizes, by falling back the crowd when it is unsure. The right graph compares query rate over time to 1-vote. This clearly shows that as the model learns, it needs to query the crowd less.}
+
 \end{figure}
 
 %\paragraph{Does the model respect accuracy preferences?} 
