@@ -1,4 +1,4 @@
-\begin{thebibliography}{89}
+\begin{thebibliography}{91}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -101,6 +101,11 @@ W.~Chu, M.~Zinkevich, L.~Li, A.~Thomas, and B.~Tseng. 2011.
 \newblock Unbiased online active learning in data streams.
 \newblock In \emph{International Conference on Knowledge Discovery and Data
   Mining (KDD)}, pages 195--203.
+
+\bibitem[{Cohan and Goharian(2016)}]{cohan2016revisiting}
+A.~Cohan and N.~Goharian. 2016.
+\newblock Revisiting summarization evaluation for scientific articles.
+\newblock In \emph{Language Resources and Evaluation Conference (LREC)}.
 
 \bibitem[{Conroy and Dang(2008)}]{conroy2008mind}
 J.~M. Conroy and H.~T. Dang. 2008.
@@ -376,6 +381,12 @@ K.~Mckeown, R.~J. Passonneau, D.~K. Elson, and J.~Hirschberg. 2005.
   summarization.
 \newblock In \emph{ACM Special Interest Group on Information Retreival
   (SIGIR)}.
+
+\bibitem[{Miller and Beebe-Center(1956)}]{miller1956psychological}
+G.~A. Miller and J.~G. Beebe-Center. 1956.
+\newblock Some psychological methods for evaluating the quality of
+  translations.
+\newblock \emph{Mechanical Translation}, 3:73--80.
 
 \bibitem[{Mnih et~al.(2008)Mnih, Szepesv{'{a}}ri, and
   Audibert}]{mnih2008empirical}

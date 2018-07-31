@@ -7,50 +7,51 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: all.bib
+Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "lasecki2013real"
 Warning--I didn't find a database entry for "maas2011learning"
 Warning--I didn't find a database entry for "attribute_classifiers"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty publisher in owen2013monte
-You've used 89 entries,
+You've used 91 entries,
             3571 wiz_defined-function locations,
-            1082 strings with 19395 characters,
-and the built_in function-call counts, 66416 in all, are:
-= -- 5625
-> -- 3374
-< -- 63
-+ -- 1093
-- -- 978
-* -- 4221
-:= -- 9721
-add.period$ -- 355
-call.type$ -- 89
-change.case$ -- 893
-chr.to.int$ -- 91
-cite$ -- 90
-duplicate$ -- 4616
-empty$ -- 4770
-format.name$ -- 1255
-if$ -- 14549
+            1092 strings with 19707 characters,
+and the built_in function-call counts, 67655 in all, are:
+= -- 5737
+> -- 3421
+< -- 65
++ -- 1107
+- -- 990
+* -- 4295
+:= -- 9903
+add.period$ -- 363
+call.type$ -- 91
+change.case$ -- 909
+chr.to.int$ -- 93
+cite$ -- 92
+duplicate$ -- 4703
+empty$ -- 4867
+format.name$ -- 1277
+if$ -- 14822
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 947
-newline$ -- 448
-num.names$ -- 356
-pop$ -- 2373
+missing$ -- 965
+newline$ -- 458
+num.names$ -- 364
+pop$ -- 2416
 preamble$ -- 1
-purify$ -- 680
+purify$ -- 692
 quote$ -- 0
-skip$ -- 3084
+skip$ -- 3149
 stack$ -- 0
-substring$ -- 2252
-swap$ -- 2177
+substring$ -- 2293
+swap$ -- 2216
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 789
+type$ -- 807
 warning$ -- 1
-while$ -- 377
+while$ -- 385
 width$ -- 0
-write$ -- 1112
-(There were 4 warnings)
+write$ -- 1137
+(There were 5 warnings)
