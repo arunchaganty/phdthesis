@@ -6,14 +6,14 @@ In \refchap{price}, we showed that when incompleteness is infinite, such as in t
 Finally, in \refchap{otj}, we showed that even in complete settings such as (sequence) classification, the scarcity of annotated data makes it impossible to accurately evaluate or train systems without human intervention.
 In this chapter, we will synthesize our findings on these different tasks to propose a new evaluation paradigm, on-demand evaluation, that overcomes these obstacles by asking for human feedback on system output.
 
-More broadly, the machine learning community is trying to reconcile serious problems related to generalization even on classification tasks that recently surfaced~\citep{}.
+More broadly, the machine learning community is trying to reconcile serious problems related to generalization even on classification tasks.
 For example, even slight perturbations to the pixels of an image can wildly throw off a state-of-the-art image classification system that scores extremely well on \textit{the test set}~\citep{}.
 In fact, \citet{} report a generalization gap even when the new test data is constructed in an identical (but independently collected) manner to the original training data!
-Clearly, there is a problem in how we have been evaluating our systems and measuring progress thus far:
-  test data that \textit{should} be representative of real-world instances does not seem to be complete.
+Clearly, there is a problem in how we have been evaluating our systems and measuring progress thus far.
+Test data that \textit{should} be representative of real-world instances does not seem to be complete.
 
-In the field of natural language processing (NLP),
-\citet{plank16nonstandard} has begun a discussion how the performance of current NLP systems drops when applied to the real world: 
+In natural language processing (NLP) field,
+  there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citet{plank16nonstandard}: 
 for example, \citet{mcclosky2010any} show a 10--20 point gap between constituency parsing in domain and out of domain and \citet{foster2011news} find a similar gap on POS tagging and dependency parsing.
 Some popular routes to try and address the generalization problem include \textit{domain adaptation} (making the train and test data look more similar) and \textit{transfer learning} (measuring the speed with which a system trained on a task A can learn to perform a task B).
 As \citet{plank16nonstandard} argue, domain adaptation makes the unrealistic assumption that we know what the target domain is;
@@ -46,26 +46,36 @@ Typically, which inputs to use is often well specified by the task.
 \paragraph{Evaluation distribution}
 In the current static test-collection driven evaluation, identifying input examples is often synonymous with picking which examples to annotate and evaluate on.
 Typically the dataset designer (e.g., the LDC in the TAC KBP tasks) identifies examples that are ``interesting'', because they provide important or challenging use cases for the system.
-Often, however, there are several aspects of our sysetms we would like to measure at once, e.g.\ performance on particular types of entities or relations in KBP or performance on certain genres of articles in text summarization.
-Each of these goals would typically correspond to a separate set of evaluation queries. 
+Often, however, there are several aspects of our systems we would like to measure at once, e.g.\ performance on particular types of entities or relations in KBP or performance on certain genres of articles in text summarization.
+Each of these goals would earlier correspond to a separate set of evaluation queries. 
 
-In the on-demand evaluation paradigm, we don't know which entities to query until we actually obtain output from the systems.
-Thus, we must \textit{reify} our evaluation goals and identify specific query distributions that allow us to evaluate these.
-Identifying the right query distribution can require some experimentation, as we document in \refchap{kbpo}.
-However, as a bonus, having specific query distributions allows us to use the same set of samples to answer many different questions using the importance-reweighting method proposed in \refchap{kbpo}. 
-Additionally, having a query distribution allows us to dynamically collect more data to evaluate a particular phenomenon in a system, as opposed to current test collections that may only contain a handful of examples for a particular phenomenon, making it impossible to evaluate its role.
+In the on-demand evaluation paradigm, 
+  we acknowledge that it is sometimes hard to know exactly which examples should be evaluated until we obtain output from systems.
+Thus, we must \textit{reify} what the goals of our evaluation are and identify specific query distributions that formalize them.
+\refchap{kbpo} we saw a couple of examples of these: one query distribution could target performance of the system on particular classes, while another could focus on rare entities.
+Unlike in the earlier mode of creating several separate test collections, in \refchap{kbpo} we show how we can use the same set of annotated examples to evaluate many different query distributions using importance-reweighting.
 
 The key challenge when identifying a query distribution is ensuring that it properly reflects our evaluation goal.
-Given a query distribution, it is usually straightforward to sample from it.
+Identifying the right query distribution does require some experimentation, but also allows us to draw more precise and statistically significant conclusions.
+Given a static query distribution, it is usually straightforward to sample from it.
+That said, it is also possible to dynamically update our query distribution during our evaluation.
 In \refchap{otj} we used the system's confidence scores to dynamically decide what to annotate.
-Unfortunately, it is hard to do so with guarantees because the distribution over samples changes as the model changes. 
+Unfortunately, an open question is what statistical guarantees we can obtain when dynamically identifying samples.
 
-\paragraph{Human intervention}
-Once we have identified some examples to annotate, we must query human annotators for their feedback.
+\paragraph{Human feedback}
+Once we have identified which examples to annotate, we must query human annotators for their feedback.
 The precise interface to do so varies depending on the task and can range from something very simple like a Likert scale survey in \refchap{price} to something significantly more complex like the exhaustive annotation interfaces presented in \refchap{kbpo}.
 
+Enabled by modern crowdsourcing frameworks like AMT, CrowdFlower or Daemo.
+
+Important to phrase the question in the right fashion.
+QA-SRL.
 Another consideration when deciding which annotations to solicit from people is whether the annotations are \textit{interpretable}.
 We have found that asking annotators for explanations not only increases the quality of the annotation, but also makes it interpretable.
+
+Still, hard to avoid errors and spammers.
+Integrating different annotators part of \refchapt{otj}.
+
 
 \paragraph{Statistical estimation}
 Finally, we must aggregate the human annotations to provide a single score. 
@@ -88,13 +98,6 @@ Unfortunately, we do not yet know how to do this with language generation. One a
 
 Another advantage of this approach, is with interpretable feedback from people (who get to view the system output when annotating) is the ability to analyze the errors they make and provide a statistically sound automated error analysis.
 
-
-\section{Challenges}
-
-\paragraph{Input selection}
-\paragraph{Amortization}
-\paragraph{Human annotation}
-\paragraph{Automating error analysis}
 
 \section{Limitations}
 
