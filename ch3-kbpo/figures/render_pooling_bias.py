@@ -9,8 +9,17 @@ import sys
 from collections import namedtuple
 
 import numpy as np
+
+import matplotlib
+matplotlib.use("agg")
 import matplotlib.pyplot as plt
 from matplotlib import rc
+
+LABELS = {
+        "macro_f1": 'Macro $F_1$',
+        "macro_p": "Macro Precision",
+        "macro_r": "Macro Recall",
+        }
 
 def pdf_build(fname, idx):
     extn_idx = fname.rindex(".")
@@ -71,7 +80,7 @@ def do_command(args):
     fig, ax = plt.subplots()
     # Set up plotter.
     #plt.subplot(2,1,1)
-    ax.set_ylabel('Macro $F_1$')
+    ax.set_ylabel(LABELS[args.metric])
     ax.set_xlabel('System')
 
     ax.plot(np.arange(1,len(systems)+1), X, color='k', marker='o', linestyle='-', alpha=0.9, label="Pooled score")

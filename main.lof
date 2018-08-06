@@ -3,30 +3,31 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Complete and incomplete evaluation sets}}{3}{figure.caption.7}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Examples highlighting the limitations of incomplete evaluation sets}}{5}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Constructing test collections}}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Bias and variance when evaluating with test collections}}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Constructing test collections}}{14}{figure.caption.12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Bias and variance when evaluating with test collections}}{15}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example: KBP}}{21}{figure.caption.22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Pooled evaluation}}{23}{figure.caption.23}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Pooling bias in TAC-KBP 2015}}{25}{figure.caption.25}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Annotation interfaces for KBP}}{31}{figure.caption.31}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces An evaluation of the importance-reweighted estimator}}{34}{figure.caption.32}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example: KBP}}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Pooled evaluation}}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pooling bias for \ensuremath {F_1}{} in TAC-KBP 2015}}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pooling bias for precision and recall in TAC-KBP 2015}}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Annotation interfaces for KBP}}{35}{figure.caption.32}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Reduction of variance with the importance-reweighted estimator}}{41}{figure.caption.33}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces An evaluation of the importance-reweighted estimator}}{42}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces System-level vs instance-level correlation on MS MARCO}}{40}{figure.caption.33}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Intuition for control variates}}{46}{figure.caption.36}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Inverse data efficiency with the control variates estimator}}{47}{figure.caption.37}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Annotation interfaces}}{49}{figure.caption.38}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.}}{52}{figure.caption.42}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Confidence intervals as a function of the number of human judgments used when evaluating systems}}{53}{figure.caption.44}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces System-level vs instance-level correlation on MS MARCO}}{46}{figure.caption.35}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Intuition for control variates}}{51}{figure.caption.38}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Inverse data efficiency with the control variates estimator}}{52}{figure.caption.39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the language quality evaluation task on the CNN/Daily Mail dataset.\relax }}{55}{figure.caption.40}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the answer correctness evaluation task on the MS MARCO dataset.\relax }}{56}{figure.caption.41}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.}}{61}{figure.caption.49}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Confidence intervals as a function of the number of human judgments used when evaluating systems}}{62}{figure.caption.51}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Named entity recognition on tweets in on-the-job learning. \relax }}{58}{figure.caption.46}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Incorporating information from responses.}}{60}{figure.caption.47}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Game tree.}}{60}{figure.caption.48}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Queries per example for LENSE on Sentiment.}}{68}{figure.caption.58}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparing \ensuremath {F_1}{} and queries per token on the NER task over time.}}{70}{figure.caption.61}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Named entity recognition on tweets in on-the-job learning. \relax }}{68}{figure.caption.53}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Incorporating information from responses.}}{70}{figure.caption.54}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Game tree.}}{70}{figure.caption.55}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Queries per example for LENSE on Sentiment.}}{78}{figure.caption.65}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparing \ensuremath {F_1}{} and queries per token on the NER task over time.}}{79}{figure.caption.68}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the on-demand evaluation paradigm}}{74}{figure.caption.63}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the on-demand evaluation paradigm}}{84}{figure.caption.70}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the language quality evaluation task on the CNN/Daily Mail dataset.\relax }}{92}{figure.caption.75}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the answer correctness evaluation task on the MS MARCO dataset.\relax }}{93}{figure.caption.76}

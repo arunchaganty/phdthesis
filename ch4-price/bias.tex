@@ -1,14 +1,15 @@
 % NOTE: Figure is here because LaTeX refuses to place is with section 2 on its own.
-\begin{figure}[t]
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/msmarco_bias}
+\begin{figure}[!p]
+  \begin{subfigure}{\textwidth}
+    \includegraphics[width=0.8\textwidth]{figures/msmarco_bias}
     \caption{\label{fig:bias-msmarco-system} System-level correlation on the MS MARCO task}
   \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{figures/msmarco_instance_correlation}
+
+  \begin{subfigure}{\textwidth}
+    \includegraphics[width=0.8\textwidth]{figures/msmarco_instance_correlation}
     \caption{\label{fig:bias-msmarco-instance} Instance-level correlation for the \texttt{fastqa} system}
   \end{subfigure}
+
   \caption[System-level vs instance-level correlation on MS MARCO]{\label{fig:bias-msmarco}
   %We compare system-level and instance-level correlations between the ROUGE-L automatic metric and some human metric.
   (a) At a system-level, automatic metrics (ROUGE-L) and human judgment correlate well, but (b) the instance-level correlation plot

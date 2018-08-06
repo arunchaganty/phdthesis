@@ -1,28 +1,38 @@
-
-\section{Evaluation}
-\label{sec:evaluation}
-
-\begin{figure}[!th]
+\begin{figure}[!h]
   \centering
 
-  \begin{subfigure}{0.49\textwidth}
+  \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-p}
+    \includegraphics[width=0.8\textwidth]{figures/simulation/simulation-p}
     \caption{}
   \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-r}
-    \caption{}
-  \end{subfigure} \\
 
-  \begin{subfigure}{0.49\textwidth}
+  \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/simulation/simulation-n}
+    \includegraphics[width=0.8\textwidth]{figures/simulation/simulation-r}
     \caption{}
   \end{subfigure}
-  \hfill
+
+  \caption[Reduction of variance with the importance-reweighted estimator]{\label{fig:simulation}
+  A comparison of bias for the pooling, simple and joint estimators on the TAC KBP 2015 challenge.
+  Each point in the figure is a mean of 500 repeated trials; dotted lines show the 90\% quartile.
+  %The pooling based method uses between 5,000 and 6,000 labeled instances, while the sampling based methods use 
+  %approximately 150 samples from each system.
+  %Dashed trend lines indicate the mean bias of the estimation method: 
+  %Unbiased estimates lie on the $y = x$ line.
+  Both the simple and joint estimators are unbiased, and the joint estimator is able to significantly reduce variance.
+  }
+\end{figure}
+
+
+\begin{figure}[!h]
+  \centering
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/simulation/simulation-n}
+    \caption{}
+  \end{subfigure}
+
   \begin{subfigure}{0.49\textwidth}
     \centering
     \input{evaluation.table}
@@ -31,26 +41,21 @@
     \caption{\label{fig:evaluation-results}}
   \end{subfigure}
 
-  \caption[An evaluation of the importance-reweighted estimator]{\label{fig:simulation}
-  \textbf{(a, b):}
-  A comparison of bias for the pooling, simple and joint estimators on the TAC KBP 2015 challenge.
-  Each point in the figure is a mean of 500 repeated trials; dotted lines show the 90\% quartile.
-  %The pooling based method uses between 5,000 and 6,000 labeled instances, while the sampling based methods use 
-  %approximately 150 samples from each system.
-  %Dashed trend lines indicate the mean bias of the estimation method: 
-  %Unbiased estimates lie on the $y = x$ line.
-  Both the simple and joint estimators are unbiased, and the joint estimator is able to significantly reduce variance.
-  \textbf{(c):} 
+  \caption[An evaluation of the importance-reweighted estimator]{\label{fig:evaluation}
+  \textbf{(a):} 
   A comparison of the number of samples used to estimate scores under the fixed and adaptive sample selection scheme.
   %In the simulation, the top 40 systems were evaluated in randomized order to achieve a target variance equal to that obtained with 500 samples for a single system.
   Each faint line shows the number of samples used during a single trial, while solid lines show the mean over 100 trials.
   The dashed line shows a square-root relationship between the number of systems evaluated and the number of samples required.
   %\ac{Note: fitting with a cubic gives $x = 0.01 y^3 -0.1y^2 + 1.8 y - 1.1$ with $R=1.0$.}
   Thus joint estimation combined with adaptive sample selection can reduce the number of labeled annotations required by an order of magnitude.
-  \textbf{(d):} 
+  \textbf{(b):} 
 Precision ($P$), recall ($R$) and \fone{} scores from a pilot run of our evaluation service for ensembles of a rule-based system (R), a logistic classifier (L) and a neural network classifier (N) run on the TAC KBP 2016 document corpus. 
   }
 \end{figure}
+
+\section{Evaluation}
+\label{sec:evaluation}
 
 
 Let us now see how well on-demand evaluation works in practice.
@@ -78,7 +83,7 @@ Separately, we evaluate the efficacy of the adaptive sample selection method des
 In each trial of this experiment, we evaluate the top 40 systems in random order.
 As each subsequent system is evaluated, the number of samples to pick from the system is chosen to meet a target variance and added to the current pool of labeled instances.
 To make the experiment more interpretable, we choose the target variance to correspond with the estimated variance of having 500 samples.
-\reffig{simulation} plots the results of the experiment.
+\reffig{evaluation} plots the results of the experiment.
 The number of samples required to estimate systems quickly drops off from the benchmark of 500 samples as the pool of labeled instances covers more systems.
 This experiment shows that on-demand evaluation using joint estimation can scale up to an order of magnitude more submissions  than a simple estimator for the same cost.
 

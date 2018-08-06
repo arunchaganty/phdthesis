@@ -110,7 +110,7 @@ and accuracy.}
 \end{figure}
 
 \begin{table}[t]
-\centering
+  \centering
   \input{table-sentiment}
   \caption[Results on the Sentiment task]{\label{tbl:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.}
 \end{table}
@@ -142,12 +142,13 @@ We suspect this is due to the presence of a dominant class
 effort on.  LENSE outperforms the threshold baseline, supporting the importance
 of Bayesian decision theory.
 
-\begin{figure}[t]
+\begin{figure}[!p]
   \centering
-  \begin{subfigure}[b]{0.49\textwidth}
+  \begin{subfigure}[b]{0.8\textwidth}
   \includegraphics[width=\textwidth]{figures/ner_2_class/f1_plot/f1_vs_time.pdf}
 \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
+
+  \begin{subfigure}[b]{0.8\textwidth}
   \includegraphics[width=\textwidth]{figures/ner_2_class/cost_plot/cost_vs_time.pdf}
   \end{subfigure}
   \caption[Comparing \fone{} and queries per token on the NER task over time.]{\label{fig:ner-f1} Comparing \fone{} and queries per token on the NER task over time. The left graph compares LENSE to online learning (which cannot query humans at test time). This highlights that LENSE maintains high \fone{} scores even with very small training set sizes, by falling back the crowd when it is unsure. The right graph compares query rate over time to 1-vote. This clearly shows that as the model learns, it needs to query the crowd less.}

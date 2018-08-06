@@ -10,10 +10,22 @@
    \anydoc{}        & 2.34\% &  1.93\% & 2.05\% \\ \bottomrule
    \end{tabular}}
   \end{subfigure}
-  \caption[Pooling bias in TAC-KBP 2015]{\label{fig:pooling-bias} Median pooling bias (difference between pooled and unpooled scores) on the top 40 systems of TAC KBP 2015 evaluation using the official and \anydoc{} scores.
+  \caption[Pooling bias for \fone{} in TAC-KBP 2015]{\label{fig:pooling-bias} Median pooling bias (difference between pooled and unpooled scores) on the top 40 systems of TAC KBP 2015 evaluation using the official and \anydoc{} scores.
   The bias is much smaller for the lenient \anydoc{} metric, but even so, it is larger than the largest difference between adjacent systems (1.5\% \fone{}) and typical system improvements (around 1\% \fone{}).
 %  the assumption that pooling bias is insignificant is false.
   }
+\end{figure}
+
+\begin{figure}[!t]
+  \centering
+  \begin{subfigure}{0.8\columnwidth}
+      \includegraphics[width=\textwidth]{figures/pooling_bias/pooling_bias_p}
+  \end{subfigure}
+
+  \begin{subfigure}{0.8\columnwidth}
+      \includegraphics[width=\textwidth]{figures/pooling_bias/pooling_bias_r}
+  \end{subfigure}
+  \caption[Pooling bias for precision and recall in TAC-KBP 2015]{\label{fig:pooling-bias-p-r} Pooling bias broken down by precision and recall.}
 \end{figure}
 
 \section{Measuring pooling bias}
@@ -44,6 +56,7 @@ The pooling bias is then the difference between the true and unpooled scores.
   }\footnote{
   The outlier at rank 36 corresponds to a University of Texas, Austin system that only filtered predictions from other systems and hence has no unique predictions itself.
   }
+\reffig{pooling-bias-p-r} further breaks down the results for precision and recall.
 We observe that even with lenient \anydoc{} heuristic, the median bias (2.05\% \fone{}) is much larger than largest difference between adjacently ranked systems (1.5\% \fone{}).
 This experiment shows that pooling evaluation is significantly and systematically biased against systems that make novel predictions!
 
