@@ -1,4 +1,4 @@
-\begin{thebibliography}{100}
+\begin{thebibliography}{115}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -7,6 +7,11 @@ H.~Adel, B.~Roth, and H.~Sch\"{u}tze. 2016.
   slot filling.
 \newblock In \emph{Human Language Technology and North American Association for
   Computational Linguistics (HLT/NAACL)}.
+
+\bibitem[{von Ahn and Dabbish(2004)}]{ahn2004labeling}
+L.~von Ahn and L.~A. Dabbish. 2004.
+\newblock Labeling images with a computer game.
+\newblock In \emph{Conference on Human Factors in Computing Systems (CHI)}.
 
 \bibitem[{Angeli et~al.(2014)Angeli, Tibshirani, Wu, and
   Manning}]{angeli2014combining}
@@ -47,6 +52,13 @@ R.~Brandow, K.~Mitze, and L.~F. Rau. 1995.
   selection.
 \newblock \emph{Information Processing and Management}, 31:675--685.
 
+\bibitem[{Branson et~al.(2017)Branson, Horn, and Perona}]{branson2017lean}
+S.~Branson, G.~V. Horn, and P.~Perona. 2017.
+\newblock Lean crowdsourcing : Combining humans and machines in an online
+  system.
+\newblock In \emph{Computer Vision and Pattern Recognition (CVPR)}, pages
+  7474--7483.
+
 \bibitem[{Buckley et~al.(2007)Buckley, Dimmick, Soboroff, and
   Voorhees}]{buckley2007bias}
 C.~Buckley, D.~Dimmick, I.~Soboroff, and E.~Voorhees. 2007.
@@ -64,6 +76,17 @@ C.~Buckley and E.~M. Voorhees. 2004.
 R.~L. Burden and J.~D. Faires. 1985.
 \newblock \emph{Numerical Analysis (3rd ed.)}.
 \newblock PWS Publishers.
+
+\bibitem[{Carlini and Wagner(2016)}]{carlini2016defensive}
+N.~Carlini and D.~Wagner. 2016.
+\newblock Defensive distillation is not robust to adversarial examples.
+\newblock \emph{arXiv}.
+
+\bibitem[{Carlini and Wagner(2017)}]{carlini2017adversarial}
+N.~Carlini and D.~Wagner. 2017.
+\newblock Adversarial examples are not easily detected: Bypassing ten detection
+  methods.
+\newblock \emph{arXiv}.
 
 \bibitem[{Casella and Berger(1990)}]{casella1990statistical}
 G.~Casella and R.~L. Berger. 1990.
@@ -99,6 +122,12 @@ J.~Cheng and M.~S. Bernstein. 2015.
 \newblock Flock: Hybrid {Crowd-Machine} learning classifiers.
 \newblock In \emph{Proceedings of the 18th {ACM} Conference on Computer
   Supported Cooperative Work \& Social Computing}, pages 600--611.
+
+\bibitem[{Christiano et~al.(2017)Christiano, Leike, Brown, Martic, Legg, and
+  Amodei}]{christiano2017deep}
+P.~Christiano, J.~Leike, T.~B. Brown, M.~Martic, S.~Legg, and D.~Amodei. 2017.
+\newblock Deep reinforcement learning from human preferences.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)}.
 
 \bibitem[{Chu et~al.(2011)Chu, Zinkevich, Li, Thomas, and
   Tseng}]{chu2011unbiased}
@@ -152,6 +181,12 @@ H.~T. Dang. 2016.
 \newblock Cold start knowledge base population at {TAC} {KBP} 2016.
 \newblock \emph{Text Analytics Conference}.
 
+\bibitem[{Dawid and Skene(1979)}]{dawid1979maximum}
+A.~P. Dawid and A.~M. Skene. 1979.
+\newblock Maximum likelihood estimation of observer error-rates using the {EM}
+  algorithm.
+\newblock \emph{Applied Statistics}, 1:20--28.
+
 \bibitem[{Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
   Fei-Fei}]{deng2009imagenet}
 J.~Deng, W.~Dong, R.~Socher, L.~Li, K.~Li, and L.~Fei-Fei. 2009.
@@ -203,6 +238,23 @@ J.~R. Finkel, T.~Grenager, and C.~Manning. 2005.
 \newblock In \emph{Association for Computational Linguistics (ACL)}, pages
   363--370.
 
+\bibitem[{Foster et~al.(2011)Foster, Cetinoglu, Wagner, Roux, Nivre, Hogan, and
+  VanGenabith}]{foster2011news}
+J.~Foster, O.~Cetinoglu, J.~Wagner, J.~L. Roux, J.~Nivre, D.~Hogan, and
+  J.~VanGenabith. 2011.
+\newblock From news to comment: Resources and benchmarks for parsing the
+  language of {Web} 2.0.
+\newblock In \emph{Association for Computational Linguistics and International
+  Joint Conference on Natural Language Processing (ACL-IJCNLP)}.
+
+\bibitem[{Gaikwad et~al.(2015)Gaikwad, Morina, Nistala, Agarwal, Cossette,
+  Bhanu, Savage, Narwal, Rajpal, Regino et~al.}]{gaikwad2015daemo}
+S.~N. Gaikwad, D.~Morina, R.~Nistala, M.~Agarwal, A.~Cossette, R.~Bhanu,
+  S.~Savage, V.~Narwal, K.~Rajpal, J.~Regino, et~al. 2015.
+\newblock Daemo: A self-governed crowdsourcing marketplace.
+\newblock In \emph{Proceedings of the 28th Annual ACM Symposium on User
+  Interface Software \& Technology}, pages 101--102.
+
 \bibitem[{Gao and Koller(2011)}]{gao2011active}
 T.~Gao and D.~Koller. 2011.
 \newblock Active classification based on value of classifier.
@@ -214,6 +266,13 @@ D.~Golovin, A.~Krause, and D.~Ray. 2010.
 \newblock Near-optimal {B}ayesian active learning with noisy observations.
 \newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
   pages 766--774.
+
+\bibitem[{Goodfellow et~al.(2015)Goodfellow, Shlens, and
+  Szegedy}]{goodfellow2015explaining}
+I.~J. Goodfellow, J.~Shlens, and C.~Szegedy. 2015.
+\newblock Explaining and harnessing adversarial examples.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
 
 \bibitem[{Greensmith et~al.(2004)Greensmith, Bartlett, and
   Baxter}]{greensmith2004variance}
@@ -270,6 +329,11 @@ H.~Ji, R.~Grishman, and H.~{Trang Dang}. 2011.
 \newblock Overview of the {TAC} 2011 knowledge base population track.
 \newblock In \emph{Text Analytics Conference}.
 
+\bibitem[{Jia and Liang(2017)}]{jia2017adversarial}
+R.~Jia and P.~Liang. 2017.
+\newblock Adversarial examples for evaluating reading comprehension systems.
+\newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
 \bibitem[{Jones and Rijsbergen(1975)}]{sparck1975report}
 K.~S. Jones and C.~V. Rijsbergen. 1975.
 \newblock Report on the need for and provision of an ``ideal test collection.
@@ -305,6 +369,13 @@ N.~Kokkalis, T.~K{\"o}hn, C.~Pfeiffer, D.~Chornyi, M.~S. Bernstein, and S.~R.
   crowdsourcing.
 \newblock In \emph{Conference on Computer Supported Cooperative Work}, pages
   1291--1300.
+
+\bibitem[{Krishna et~al.(2016)Krishna, Hata, Chen, Kravitz, Shamma, Fei-Fei,
+  and Bernstein}]{krishna2016embracing}
+R.~Krishna, K.~Hata, S.~Chen, J.~Kravitz, D.~A. Shamma, L.~Fei-Fei, and M.~S.
+  Bernstein. 2016.
+\newblock Embracing error to enable rapid crowdsourcing.
+\newblock In \emph{Conference on Human Factors in Computing Systems (CHI)}.
 
 \bibitem[{Krizhevsky et~al.(2012)Krizhevsky, Sutskever, and
   Hinton}]{krizhevsky2012imagenet}
@@ -355,6 +426,11 @@ T.~Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan, P.~Doll{'a}r,
 \newblock Microsoft {COCO}: Common objects in context.
 \newblock In \emph{European Conference on Computer Vision (ECCV)}, pages
   740--755.
+
+\bibitem[{Ling and Fidler(2017)}]{ling2017teaching}
+H.~Ling and S.~Fidler. 2017.
+\newblock Teaching machines to describe images via natural language feedback.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)}.
 
 \bibitem[{Liu et~al.(2016{\natexlab{a}})Liu, Soderland, Bragg, Lin, Ling, and
   Weld}]{liu2016effective}
@@ -410,6 +486,12 @@ C.~D. Manning, M.~Surdeanu, J.~Bauer, J.~Finkel, S.~J. Bethard, and
   D.~McClosky. 2014.
 \newblock The stanford core{NLP} natural language processing toolkit.
 \newblock In \emph{ACL system demonstrations}.
+
+\bibitem[{McClosky(2010)}]{mcclosky2010any}
+D.~McClosky. 2010.
+\newblock \emph{Any domain parsing: automatic domain adaptation for natural
+  language parsing}.
+\newblock Ph.D. thesis, Brown University.
 
 \bibitem[{Mckeown et~al.(2005)Mckeown, Passonneau, Elson, and
   Hirschberg}]{mckeown2005summaries}
@@ -504,6 +586,14 @@ B.~Plank. 2016.
 \newblock What to do about non-standard (or non-canonical) language in {NLP}.
 \newblock \emph{arXiv}.
 
+\bibitem[{Poesio et~al.(2013)Poesio, Chamberlain, Kruschwitz, Robaldo, and
+  Ducceschi}]{poesio2013phrase}
+M.~Poesio, J.~Chamberlain, U.~Kruschwitz, L.~Robaldo, and L.~Ducceschi. 2013.
+\newblock Phrase {D}etectives: Utilizing collective intelligence for
+  internet-scale language resource creation.
+\newblock In \emph{International Joint Conference on Artificial Intelligence
+  (IJCAI)}.
+
 \bibitem[{Ranganath et~al.(2014)Ranganath, Gerrish, and
   Blei}]{ranganath2014black}
 R.~Ranganath, S.~Gerrish, and D.~Blei. 2014.
@@ -516,6 +606,12 @@ R.~Ranganath, S.~Gerrish, and D.~Blei. 2014.
 L.~Ratinov, D.~Roth, D.~Downey, and M.~Anderson. 2011.
 \newblock Local and global algorithms for disambiguation to {W}ikipedia.
 \newblock In \emph{Association for Computational Linguistics (ACL)}.
+
+\bibitem[{Recht et~al.(2018)Recht, Roelofs, Schmidt, and
+  Shankar}]{recht2018cifar}
+B.~Recht, R.~Roelofs, L.~Schmidt, and V.~Shankar. 2018.
+\newblock Do {CIFAR}-10 classifiers generalize to {CIFAR}-10?
+\newblock \emph{arXiv}.
 
 \bibitem[{Reddy et~al.(2014)Reddy, Lapata, and Steedman}]{reddy2014large}
 S.~Reddy, M.~Lapata, and M.~Steedman. 2014.

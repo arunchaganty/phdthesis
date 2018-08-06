@@ -7,57 +7,47 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: all.bib
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "mcclosky2010any"
-Warning--I didn't find a database entry for "foster2011news"
-Warning--I didn't find a database entry for "dawid1950something"
-Warning--I didn't find a database entry for "passeneau2014benefits"
-Warning--I didn't find a database entry for "espgame"
-Warning--I didn't find a database entry for "davidjurgens"
-Warning--I didn't find a database entry for "phrasedetectives"
-Warning--I didn't find a database entry for "krishna2016embracing"
-Warning--I didn't find a database entry for "christiano2017deep"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty publisher in owen2013monte
-You've used 100 entries,
+You've used 115 entries,
             3571 wiz_defined-function locations,
-            1138 strings with 21087 characters,
-and the built_in function-call counts, 74223 in all, are:
-= -- 6322
-> -- 3699
-< -- 75
-+ -- 1200
-- -- 1068
-* -- 4687
-:= -- 10837
-add.period$ -- 399
-call.type$ -- 100
-change.case$ -- 993
-chr.to.int$ -- 102
-cite$ -- 101
-duplicate$ -- 5164
-empty$ -- 5362
-format.name$ -- 1388
-if$ -- 16291
+            1183 strings with 23324 characters,
+and the built_in function-call counts, 84912 in all, are:
+= -- 7194
+> -- 4306
+< -- 84
++ -- 1392
+- -- 1245
+* -- 5379
+:= -- 12447
+add.period$ -- 459
+call.type$ -- 115
+change.case$ -- 1145
+chr.to.int$ -- 117
+cite$ -- 116
+duplicate$ -- 5907
+empty$ -- 6102
+format.name$ -- 1620
+if$ -- 18596
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 1055
-newline$ -- 503
-num.names$ -- 400
-pop$ -- 2648
+missing$ -- 1212
+newline$ -- 578
+num.names$ -- 460
+pop$ -- 3049
 preamble$ -- 1
-purify$ -- 754
+purify$ -- 872
 quote$ -- 0
-skip$ -- 3482
+skip$ -- 3962
 stack$ -- 0
-substring$ -- 2550
-swap$ -- 2438
-text.length$ -- 37
+substring$ -- 2806
+swap$ -- 2770
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 885
+type$ -- 1020
 warning$ -- 1
-while$ -- 427
+while$ -- 480
 width$ -- 0
-write$ -- 1250
-(There were 11 warnings)
+write$ -- 1434
+(There was 1 warning)

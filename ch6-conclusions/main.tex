@@ -1,27 +1,29 @@
 \chapter[Towards a new paradigm of evaluation]{\label{chap:discussion} Towards a new paradigm of evaluation}
 
-In the course of this thesis, we have presented several examples of an unmet assumption of the current evaluation paradigm: that test collections are \textit{complete}, in that they contain the universe of all possible answers, and accurately represent instances found in practice.
+In the course of this thesis, we have presented several examples of an unmet assumption of the current evaluation paradigm: that test collections are \textit{complete}, in that they contain the universe of all possible answers, and accurately represent the instances found in practice.
 In \refchap{kbpo}, we showed how the finite incompleteness inherent in information extraction tasks, such as knowledge base population, introduces significant biases in our evaluation.
 In \refchap{price}, we showed that when incompleteness is infinite, such as in text generation tasks, bias is pervasive and hard to eliminate.
 Finally, in \refchap{otj}, we showed that even in complete settings such as (sequence) classification, the scarcity of annotated data makes it impossible to accurately evaluate or train systems without human intervention.
 In this chapter, we will synthesize our findings on these different tasks to propose a new evaluation paradigm, on-demand evaluation, that overcomes these obstacles by asking for human feedback on system output.
 
 More broadly, the machine learning community is trying to reconcile serious problems related to generalization even on classification tasks.
-For example, even slight perturbations to the pixels of an image can wildly throw off a state-of-the-art image classification system that scores extremely well on \textit{the test set}~\citep{}.
-In fact, \citet{} report a generalization gap even when the new test data is constructed in an identical (but independently collected) manner to the original training data!
+For example, even slight perturbations to the pixels of an image can wildly throw off a state-of-the-art image classification system that scores extremely well on \textit{the test set}~\citep{goodfellow2015explaining,carlini2016defensive,carlini2017adversarial}.
+In fact, \citet{recht2018cifar} report a generalization gap even when the new test data is constructed in an identical (but independently collected) manner to the original training data!
 Clearly, there is a problem in how we have been evaluating our systems and measuring progress thus far.
 Test data that \textit{should} be representative of real-world instances does not seem to be complete.
 
 In natural language processing (NLP) field,
   there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citet{plank16nonstandard}: 
 for example, \citet{mcclosky2010any} show a 10--20 point gap between constituency parsing in domain and out of domain and \citet{foster2011news} find a similar gap on POS tagging and dependency parsing.
+More recently, \citet{jia2017adversarial} find that even minor edits to the source text can throw off state of the art reading comprehension models.
+
 Some popular routes to try and address the generalization problem include \textit{domain adaptation} (making the train and test data look more similar) and \textit{transfer learning} (measuring the speed with which a system trained on a task A can learn to perform a task B).
 As \citet{plank16nonstandard} argue, domain adaptation makes the unrealistic assumption that we know what the target domain is;
   on the other hand, transfer learning may allow us to developing better learning algorithms, it does little to tell us about the performance of a system on our desired task!
 
-Instead, we propose a new paradigm of on-demand evaluation that tries to evaluate systems on real data by collecting human feedback on system output as necessary.
+Instead, we propose the new paradigm of on-demand evaluation that tries to evaluate systems on real data by collecting human feedback on system output as necessary.
 Much of this chapter is dedicated to synthesizing the material of this thesis to describe a more general evaluation paradigm made possible by recent advances in crowdsourcing.
-Our framework tries to address the aforementioned issues with \textit{evaluation} by making it more dynamic.
+Our framework tries to address the aforementioned problems with evaluation by making it more dynamic.
 We close by discussing some limitations of the paradigm.
 
 \section{The on-demand evaluation paradigm}
@@ -29,7 +31,7 @@ We close by discussing some limitations of the paradigm.
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{figures/overview}
-  \caption[Overview of the on-demand evaluation paradigm]{\label{fig:conclusion:overview}
+  \caption[Overview of the on-demand evaluation paradigm]{\label{fig:conclusions:overview}
   An overview of the on-demand evaluation paradigm. 
   First, we must identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
   Next, we specify which inputs to evaluate using a \textit{query distribution}; the query distribution plays the role of a dataset designer by identifying which system output we would like to prioritize.
@@ -50,10 +52,10 @@ We'll describe the key design decisions and challenges for each of these steps n
 
 \subsection{Input source}
 When identifying input examples, the evaluation designer must pick which documents to query the system on.
-For example, in knowledge base population (\refchap{kbpo}), we used a large corpus of news-wire documents, which are a common set of input for the task.
+For example, in knowledge base population (\refchap{kbpo}), we used a large corpus of news-wire documents, which is reflective of the documents that the system would be used with in practice.
 Alternatively, we could have also included a webpage crawl or documents from social media.
-Another source of inputs could be through actual user data (as we saw in \refchap{otj}).
-Typically, which inputs to use is often well specified by the task.
+Another source of inputs could be actual user data (as we saw in \refchap{otj}).
+Typically, the source of inputs is governed by the task.
 
 \subsection{Query distributions}
 In the current static test-collection driven evaluation, identifying input examples is often synonymous with picking which examples to annotate and evaluate on.
@@ -76,26 +78,28 @@ Unfortunately, an open question is what statistical guarantees we can obtain whe
 
 \subsection{Human annotations}
 Once we have identified which examples to annotate, we must query human annotators for their feedback.
-The ability to get human annotations on demand is the lynchpin of this new paradigm and is enabled by a host of modern crowdsourcing frameworks like Amazon Mechanical Turk, CrowdFlower or Daemo~\cite{}.
+The ability to get human annotations on demand is the lynchpin of this new paradigm and is enabled by a host of modern crowdsourcing frameworks like \href{requester.mturk.com}{Amazon Mechanical Turk}, \href{https://www.figure-eight.com/}{Figure Eight} or \href{https://daemo.org}{Daemo}~\cite{gaikwad2015daemo}.
 These platforms serve as labor marketplaces where it is easy and quick to hire people to answer questions, label images or text, etc.
 
 \paragraph{Annotation interfaces.}
 Having access to human annotators is particularly well suited for our purposes because the underlying difficulty when evaluating tasks such as text summarization, question answering or knowledge base population is human subjectivity.
+Put differently, if our end goal is to provide summarize information \textit{for people}, it is fitting that it be judged by people as well.
 At the same time, it is often non-trivial to properly communicate the subjective evaluation criteria to a non-expert annotator.
-Thus, interface design and instructions are an incredibly important component when crowdsourcing~\citep{}.
+Thus, interface design and instructions are an incredibly important components when crowdsourcing.
 The precise interface varies depending on the task and can range from something very simple like a Likert scale survey in \refchap{price} to something significantly more complex like the exhaustive annotation interfaces presented in \refchap{kbpo}.
 
 Depending on the task, it may also be necessary to reformulate what annotations we obtain.
 In \refchap{price}, we show that asking people to \textit{edit} a system generated summary and measuring the edit distance results in a more objective metric than simply asking for Likert scale judgments.
-When annotating a linguistically nuanced task like semantic role labeling, \citet{} simplified the annotation schema by using specific questions for roles, e.g., asking ``who finished something'' in order to identify the ``agent''.
+When annotating a linguistically nuanced task like semantic role labeling, \citet{he2015question} simplified the annotation schema by using specific questions for roles, e.g., asking ``who finished something'' in order to identify the ``agent''.
 
 \paragraph{Interpretable annotations.}
 Another consideration when deciding which annotations to solicit from crowdworkers is whether or not the annotations are \textit{interpretable}.
 Interpretable annotations like the edits or highlighting justifications we collected in \refchap{price} not only make it easier to identify systematic annotation errors (which can be resolved e.g.\ by iterating on the instructions) and make the task easier to understand for the crowd worker, but also enable finer grained quantitative error analysis.
+As another example, \citet{ling2017teaching} showed how natural language feedback could be used to learn how to caption images better.
 
 \paragraph{Correcting errors in annotations.}
 Despite these different approaches to improving the quality of annotations, it is hard to avoid errors made by confused or malicious workers.
-Explicit models of the workers and their errors, e.g., ones proposed by \citet{dawid1950something}, \citet{passeneau2014benefits} or \citet{}, allow us to aggregate information across multiple workers to correct their errors.
+Explicit models of the workers and their errors, e.g., ones proposed by \citet{dawid1979maximum}, \citet{passonneau2014benefits} or \citet{branson2017lean}, allow us to aggregate information across multiple workers to correct their errors.
 In \refchap{otj}, we showed how we could use a model to dynamically identify when crowdworkers may be confused and used this information to collect additional annotations.
 Such models will be necessary when evaluating complex subjective tasks like text summarization.
 
@@ -155,8 +159,8 @@ In \refchap{otj}, we used ideas from game playing to strategically \textit{trade
 Further improvements require new ideas.
 
 One approach to decrease the costs of annotations is to \textit{gamify} the task to incentivize people to provide labels for their personal enjoyment.
-For example, the ESP game~\citep{espgame} was successfully able to collect thousands of image labels by asking two randomly paired people to try to label the image with the same word.
-Gamification has also been applied to language tasks like word sense disambiguation~\citep{davidjurgens} and coreference resolution~\citep{phrasedetectives}.
+For example, the ESP game~\citep{ahn2004labeling} was successfully able to collect thousands of image labels by asking two randomly paired people to try to label the image with the same word.
+Gamification has also been applied to language tasks like word sense disambiguation~\citep{vannella2014validating} and coreference resolution~\citep{poesio2013phrase}.
 For all it success, gamifying complex annotation tasks can be quite challenging, even more so if annotations are desired immediately.
 
 The latency of acquiring human annotations can often be improved by parallelizing across multiple annotators, optimizing the annotation interface  or batching similar tasks to decrease worker context switching.
