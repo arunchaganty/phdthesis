@@ -10,11 +10,18 @@ Database file #1: all.bib
 Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "mcclosky2010any"
 Warning--I didn't find a database entry for "foster2011news"
+Warning--I didn't find a database entry for "dawid1950something"
+Warning--I didn't find a database entry for "passeneau2014benefits"
+Warning--I didn't find a database entry for "espgame"
+Warning--I didn't find a database entry for "davidjurgens"
+Warning--I didn't find a database entry for "phrasedetectives"
+Warning--I didn't find a database entry for "krishna2016embracing"
+Warning--I didn't find a database entry for "christiano2017deep"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty publisher in owen2013monte
 You've used 100 entries,
             3571 wiz_defined-function locations,
-            1131 strings with 20975 characters,
+            1138 strings with 21087 characters,
 and the built_in function-call counts, 74223 in all, are:
 = -- 6322
 > -- 3699
@@ -53,4 +60,4 @@ warning$ -- 1
 while$ -- 427
 width$ -- 0
 write$ -- 1250
-(There were 4 warnings)
+(There were 11 warnings)

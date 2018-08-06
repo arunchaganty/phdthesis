@@ -36,14 +36,14 @@ Finally, the annotations obtained are combined with existing annotations to eval
 
 We'll describe the key design decisions and challenges for each of these steps next.
 
-\paragraph{Input examples}
+\subsection{Input distribution}
 When identifying input examples, the evaluation designer must pick which documents to query the system on.
 For example, in knowledge base population (\refchap{kbpo}), we used a large corpus of news-wire documents, which are a common set of input for the task.
 Alternatively, we could have also included a webpage crawl or documents from social media.
 Another source of inputs could be through actual user data (as we saw in \refchap{otj}).
 Typically, which inputs to use is often well specified by the task.
 
-\paragraph{Evaluation distribution}
+\subsection{Query distributions}
 In the current static test-collection driven evaluation, identifying input examples is often synonymous with picking which examples to annotate and evaluate on.
 Typically the dataset designer (e.g., the LDC in the TAC KBP tasks) identifies examples that are ``interesting'', because they provide important or challenging use cases for the system.
 Often, however, there are several aspects of our systems we would like to measure at once, e.g.\ performance on particular types of entities or relations in KBP or performance on certain genres of articles in text summarization.
@@ -62,57 +62,117 @@ That said, it is also possible to dynamically update our query distribution duri
 In \refchap{otj} we used the system's confidence scores to dynamically decide what to annotate.
 Unfortunately, an open question is what statistical guarantees we can obtain when dynamically identifying samples.
 
-\paragraph{Human feedback}
+\subsection{Human annotations}
 Once we have identified which examples to annotate, we must query human annotators for their feedback.
-The precise interface to do so varies depending on the task and can range from something very simple like a Likert scale survey in \refchap{price} to something significantly more complex like the exhaustive annotation interfaces presented in \refchap{kbpo}.
+The ability to get human annotations on demand is the lynchpin of this new paradigm and is enabled by a host of modern crowdsourcing frameworks like Amazon Mechanical Turk, CrowdFlower or Daemo~\cite{}.
+These platforms serve as labor marketplaces where it is easy and quick to hire people to answer questions, label images or text, etc.
 
-Enabled by modern crowdsourcing frameworks like AMT, CrowdFlower or Daemo.
+\paragraph{Annotation interfaces.}
+Having access to human annotators is particularly well suited for our purposes because the underlying difficulty when evaluating tasks such as text summarization, question answering or knowledge base population is human subjectivity.
+At the same time, it is often non-trivial to properly communicate the subjective evaluation criteria to a non-expert annotator.
+Thus, interface design and instructions are an incredibly important component when crowdsourcing~\citep{}.
+The precise interface varies depending on the task and can range from something very simple like a Likert scale survey in \refchap{price} to something significantly more complex like the exhaustive annotation interfaces presented in \refchap{kbpo}.
 
-Important to phrase the question in the right fashion.
-QA-SRL.
-Another consideration when deciding which annotations to solicit from people is whether the annotations are \textit{interpretable}.
-We have found that asking annotators for explanations not only increases the quality of the annotation, but also makes it interpretable.
+Depending on the task, it may also be necessary to reformulate what annotations we obtain.
+In \refchap{price}, we show that asking people to \textit{edit} a system generated summary and measuring the edit distance results in a more objective metric than simply asking for Likert scale judgments.
+When annotating a linguistically nuanced task like semantic role labeling, \citet{} simplified the annotation schema by using specific questions for roles, e.g., asking ``who finished something'' in order to identify the ``agent''.
 
-Still, hard to avoid errors and spammers.
-Integrating different annotators part of \refchapt{otj}.
+\paragraph{Interpretable annotations.}
+Another consideration when deciding which annotations to solicit from crowdworkers is whether or not the annotations are \textit{interpretable}.
+Interpretable annotations like the edits or highlighting justifications we collected in \refchap{price} not only make it easier to identify systematic annotation errors (which can be resolved e.g.\ by iterating on the instructions) and make the task easier to understand for the crowd worker, but also enable finer grained quantitative error analysis.
 
+\paragraph{Correcting errors in annotations.}
+Despite these different approaches to improving the quality of annotations, it is hard to avoid errors made by confused or malicious workers.
+Explicit models of the workers and their errors, e.g., ones proposed by \citet{dawid1950something}, \citet{passeneau2014benefits} or \citet{}, allow us to aggregate information across multiple workers to correct their errors.
+In \refchap{otj}, we showed how we could use a model to dynamically identify when crowdworkers may be confused and used this information to collect additional annotations.
+Such models will be necessary when evaluating complex subjective tasks like text summarization.
 
-\paragraph{Statistical estimation}
-Finally, we must aggregate the human annotations to provide a single score. 
-The statistical estimator is at the heart of this paradigm.
-The key contributions of this thesis is to show how we can combine different measures in a sound way.
-One of the most important challenges and contributions is identifying recall.
+\subsection{Statistical estimation}
+Finally, we must aggregate the human annotations to provide a meaningful quantitative score for a system.
+Naively, we can always simply aggregate a suitable metric like precision, accuracy or edit distance using the human annotations, but this will not be economically scalable in the long run.
+Thus, a statistical estimator that allows us to \textit{amortize} costs as we evaluate multiple systems \textit{and multiple evaluation metrics} is crucial to making the on-demand evaluation paradigm practical.
+The key contribution of this thesis is showing that we can amortize costs with the appropriate statistical estimation techniques.
 
-Shown how to do it with overlapping sets.
-Shown how to do it with automatic metrics.
+\paragraph{Precision and recall.}
+In \refchap{kbpo}, we proposed efficient estimators for two widely used metrics, \textit{precision} and \textit{recall}.
+Computing precision relies entirely on the output generated by a single system, but we showed that by using the annotations from other systems we were able to decrease the variance by a factor of four.
 
-Direct extensions are to identity sets, needed by entity linking.
+Accurately measuring and improving on \textit{true recall} is vital to being able to develop systems that identify \textit{new} things.
+Thus far, most evaluations of open-domain tasks like knowledge base population have only reported \textit{pooled recall}, an approximation that relies on the predictions of a static collection of systems.
+We showed that this approach results in a significant and systematic bias that prevents researchers from being able to measure genuine improvements.  
+Instead, we leverage the recall calculated on a small, randomly selected collection of documents from the corpus.
+Using our statistical estimator, we are able to correct the bias of pooled recall computed on a growing set of systems and thus decrease variance by a factor of almost four.
 
-\subparagraph{Amortization}
+In both these cases, we have been able to successfully amortize costs over multiple participating systems.
+The degree of cost saving really depends on the extent of overlap between systems, is best suited for problems with finite incompleteness.
+We believe these techniques should easily transfer to clustering based metrics needed for entity detection and linking and co-reference resolution.
 
-In order for the paradigm to succeed, we need to ensure there is some amortization: are we able to reuse the annotations collected for one system on another?
-Successfully show this to be the case in KBPO\@.
-Unfortunately, we do not yet know how to do this with language generation. One approach may be to collect new references.
+\paragraph{Black-box metrics.}
+In \refchap{price}, we execute the on-demand evaluation paradigm in the setting of \textit{infinite incompleteness}, where no two systems are likely to significantly overlap in their predictions.
+Of course, as a consequence, system answers also do not overlap with the reference answers in test collections.
+The existing solution to this problem is to adopt a \textit{automatic metric} that serves as a similarity function between the system generated answer and reference answer.
+Unfortunately, we show that existing automatic metrics not only correlate poorly with human judgment, but are \textit{biased} in that their correlations differ significantly based on the system.
 
-\subparagraph{Error analysis}
+In our work, we have identified an \textit{optimal} estimator to \textit{debias} these automatic metrics.
+We prove that the poor correlation also fundamentally lower bounds the number of annotations need to correct the bias;
+  in practice, we need almost as many human annotations to correct the bias as to conduct an complete human evaluation!
+Thus, in the setting of infinite incompleteness, we have provided optimal estimation techniques, but still haven't been able to successfully amortize costs.
 
-Another advantage of this approach, is with interpretable feedback from people (who get to view the system output when annotating) is the ability to analyze the errors they make and provide a statistically sound automated error analysis.
+\paragraph{Active learning and dynamic sampling.}
+Hypothetically, we could make annotation more efficient if we could dynamically pick which samples to annotate based on the systems performance on previously collected samples.
+The key challenge in doing so is correcting for the sampling bias that arises as the distribution over what to sample changes every time we perform an annotation.
+Unfortunately, much of the active learning literature focuses only on the generalization performance of a model trained on the samples, and not on unbiased estimation.
+The dynamic annotation scheme we proposed in \refchap{otj} is able to evaluate and error-correct systems \textit{at test time}, but does not have access to a query distribution on which to compute an evaluation score.
+As such, identifying an efficient, unbiased, dynamic annotation scheme is an important open problem for on-demand evaluation.
 
+\paragraph{Quantitative error analysis.}
+Apart from merely obtaining a single quantitative score with which to compare systems, the goal of evaluation is to quantify the limitations of current systems in order to provide direction for future work.
+This is often manifested in authors conducting a qualitative error analysis, wherein a small sample of system output is manually inspected and coded for particular language errors.
+With humans-in-the-loop, it is possible to collect far more data and conduct a more fine-grained error analysis than was previously possible.
+
+However, by using an appropriate statistical estimator, we can also significantly decrease the costs of conduct fine-grained error analysis by efficiently reusing annotations.
+As an example, in \refchap{kbpo} we show how we can accurately analyze the errors made by a knowledge base population system on different relations and entity linking without having to re-annotate any data.
 
 \section{Limitations}
+Having presented an overview of the on-demand evaluation framework, let's now look at some of its limitations.
 
 \paragraph{Cost and latency.}
-Some progress with more efficient amortization.
-Can not work around the fact that querying humans takes time. In OTJ, we have shown that we can reduce the time significantly (trading off on cost) on some examples.
+While utilizing human feedback is currently necessary to evaluate the natural language processing tasks presented here,
+  doing so incurs both costs to pay human annotators and latency.
+In \refchap{otj}, we used ideas from game playing to strategically \textit{trade off} error rates, annotation cost and latency. 
+Further improvements require new ideas.
+
+One approach to decrease the costs of annotations is to \textit{gamify} the task to incentivize people to provide labels for their personal enjoyment.
+For example, the ESP game~\citep{espgame} was successfully able to collect thousands of image labels by asking two randomly paired people to try to label the image with the same word.
+Gamification has also been applied to language tasks like word sense disambiguation~\citep{davidjurgens} and coreference resolution~\citep{phrasedetectives}.
+For all it success, gamifying complex annotation tasks can be quite challenging, even more so if annotations are desired immediately.
+
+The latency of acquiring human annotations can often be improved by parallelizing across multiple annotators, optimizing the annotation interface  or batching similar tasks to decrease worker context switching.
+\citet{krishna2016embracing} combine all these ideas to show how images can be successfully labeled at human response times by tapping into the annotator's reflexes: once aggregated over several annotators, they are able to speed up annotation by a factor of 10 with only a small reduction in speed.
+
+\paragraph{Integration with training.}
+In this thesis, we have seen how we can properly evaluate complex natural language tasks with human feedback.
+Could we use the same human-in-the-loop paradigm to \textit{train} machine-learning based systems for these tasks?
+In \refchap{otj} we showed one approach that was able to use human feedback to efficiently and cost-effectively train relatively simple models.
+However, many modern natural language processing systems have millions of parameters and require tens to hundreds of thousands of labeled examples:
+  the cost and latency of utilizing humans-in-the-loop presents a serious bottleneck during training loop.
+
+One approach to integrate human feedback during training is to learn how to simulate human feedback (i.e.\ learn a ``reward function'').
+For example, \citet{christiano2017deep} collected human preferences on robot trajectories and found that by first learning a model of human feedback, they were able to speed up the training of the robot.
+It is yet to be seen how such ideas can be extended to language tasks.
 
 \paragraph{Dynamic evaluation.}
-Some evaluation settings may need human intervention to help systems to even generate output, e.g.\ chatbots.
-The methods presented here do not extend well in this setting because statistics is hard.
+Finally, the evaluation framework we presented does not yet cover natural language tasks that need human interaction, e.g.\ chatbots.
+Here, the output of the system depends not only on the initial prompt, but also on every intervening response from the human and the system.
+As a result, two chatbot systems answering the same initial prompt may take different trajectories based on who they are interacting with.
+One of the biggest open questions is understanding what we should be evaluating in such settings and how to account for the variability introduced by the intermediate human responses.
 
 \section{Conclusions}
-There is much work ahead to make this a reality.
+In this thesis, we have introduced a new paradigm of evaluation, on-demand evaluation, that enables evaluation on complex subjective  tasks that can not be adequately captured through test collections.
+We exploit advances in crowdsourcing to collect human feedback to evaluate systems as necessary and develop new statistical estimators to make efficient use of the feedback.
+We have executed the on-demand evaluation paradigm on several challenging use cases, from knowledge base population to text summarization.
 
-We believe this thesis has set the key pillars and framework.
-
-Evaluation is important, hope to have contributed.
-
+Still, there is much work ahead to improve the evaluation of natural language processing systems.
+We hope that the discussion in this last chapter has provided some direction on where to go forward.
+However, we must remain humble in recognizing the limitations of any evaluation.
+As the techniques we seek to evaluate evolve, so too must our evaluation methodology.
