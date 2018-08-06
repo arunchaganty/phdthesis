@@ -26,6 +26,18 @@ We close by discussing some limitations of the paradigm.
 
 \section{The on-demand evaluation paradigm}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/overview}
+  \caption[Overview of the on-demand evaluation paradigm]{\label{fig:conclusion:overview}
+  An overview of the on-demand evaluation paradigm. 
+  First, we must identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
+  Next, we specify which inputs to evaluate using a \textit{query distribution}; the query distribution plays the role of a dataset designer by identifying which system output we would like to prioritize.
+  The lynchpin of the paradigm is conducting a \textit{human annotation} as necessary on the system output. 
+  Finally, annotations from different systems are combined using a \textit{statistical estimator} to produce a final evaluation score.
+  }
+\end{figure}
+
 The key idea of the on-demand evaluation paradigm is to bring evaluation as close to our intended use case as possible, and to overcome data incompleteness or sparsity problems by querying human annotators on-demand.
 \reffig{conclusions:overview} presents an overview of the framework: 
 First, the evaluation designer ensures access to a suitable stream of \textit{input examples}
@@ -36,7 +48,7 @@ Finally, the annotations obtained are combined with existing annotations to eval
 
 We'll describe the key design decisions and challenges for each of these steps next.
 
-\subsection{Input distribution}
+\subsection{Input source}
 When identifying input examples, the evaluation designer must pick which documents to query the system on.
 For example, in knowledge base population (\refchap{kbpo}), we used a large corpus of news-wire documents, which are a common set of input for the task.
 Alternatively, we could have also included a webpage crawl or documents from social media.
