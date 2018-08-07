@@ -1,13 +1,21 @@
 \section{\label{sec:kbpo:kbpo} Implementing on-demand evaluation as an online service}
 
+With all the components of the on-demand evaluation paradigm in place, we instantiated the paradigm on knowledge base population as a publicly available evaluation service dubbed KBP Online\footnote{Accessible at \url{https://kbpo.stanford.edu}}.
+In this section, we'll outline the many practical considerations that were required to do so.
 
-
-We implemented the on-demand evaluation framework described here as a publicly available evaluation service dubbed KBP Online\footnote{Accessible at \url{https://kbpo.stanford.edu}}.
+\subsection{Automated crowdsourcing}
 We integrated the crowdsourcing interfaces described in \refsec{application} to dynamically launch crowdsourcing tasks as 
-
 asynchronous turking requests
 
-Implementing query distributions
+\subsection{Identifying the right query distributions}
+As eluded to earlier, an extremely important design decision for our evaluation is determining \textit{which} set of entities and relations to query.
+We looked to the evaluation guidelines of the TAC KBP competition~\citep{ellis2015overview,?} as a well-respected community standard and tried to adapt it to our framework.
+
+\paragraph{The LDC query distribution}
+
+\paragraph{Identifying diverse clustered documents}
+
+\paragraph{Identifying diverse clustered relations}
 
 \begin{figure}
   \centering
@@ -95,6 +103,8 @@ Sampling from systems
 Tradeoffs
 
 Proposed sampling distribution.
+
+\subsection{Other implementation challenges}
 
 Implementation details and challenges
 
