@@ -11,28 +11,29 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Pooling bias for \ensuremath {F_1}{} in TAC-KBP 2015}}{27}{figure.caption.25}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Pooling bias for precision and recall in TAC-KBP 2015}}{28}{figure.caption.26}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Annotation interfaces for KBP}}{35}{figure.caption.32}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces TAC KBP 2016 Query entity distribution}}{38}{figure.caption.33}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces TAC KBP 2015 Query entity distribution}}{38}{figure.caption.33}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Comparison of document sampling distributions}}{39}{figure.caption.35}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison of relation sampling distributions}}{41}{figure.caption.37}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Comparison of relation sampling distributions}}{42}{figure.caption.38}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces KBP Online}}{44}{figure.caption.40}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Reduction of variance with the importance-reweighted estimator}}{49}{figure.caption.41}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces An evaluation of the importance-reweighted estimator}}{50}{figure.caption.42}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison of relation sampling schemes on their entity distributions}}{41}{figure.caption.37}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Comparison of relation sampling schemes on their relation distributions}}{42}{figure.caption.38}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces KBP Online}}{45}{figure.caption.43}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Features of KBP Online}}{46}{figure.caption.44}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Reduction of variance with the importance-reweighted estimator}}{51}{figure.caption.45}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces An evaluation of the importance-reweighted estimator}}{52}{figure.caption.46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces System-level vs instance-level correlation on MS MARCO}}{54}{figure.caption.43}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Intuition for control variates}}{59}{figure.caption.46}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Inverse data efficiency with the control variates estimator}}{60}{figure.caption.47}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the language quality evaluation task on the CNN/Daily Mail dataset.\relax }}{63}{figure.caption.48}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the answer correctness evaluation task on the MS MARCO dataset.\relax }}{64}{figure.caption.49}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.}}{69}{figure.caption.57}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Confidence intervals as a function of the number of human judgments used when evaluating systems}}{70}{figure.caption.59}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces System-level vs instance-level correlation on MS MARCO}}{56}{figure.caption.47}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Intuition for control variates}}{61}{figure.caption.50}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Inverse data efficiency with the control variates estimator}}{62}{figure.caption.51}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the language quality evaluation task on the CNN/Daily Mail dataset.\relax }}{65}{figure.caption.52}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Screenshot of the (a) interface and (b) instructions used by crowdworkers for the answer correctness evaluation task on the MS MARCO dataset.\relax }}{66}{figure.caption.53}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Correlations of different automatic metrics on the MS MARCO and CNN/Daily Mail tasks.}}{71}{figure.caption.61}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Confidence intervals as a function of the number of human judgments used when evaluating systems}}{72}{figure.caption.63}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Named entity recognition on tweets in on-the-job learning. \relax }}{76}{figure.caption.61}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Incorporating information from responses.}}{78}{figure.caption.62}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Game tree.}}{78}{figure.caption.63}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Queries per example for LENSE on Sentiment.}}{86}{figure.caption.73}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparing \ensuremath {F_1}{} and queries per token on the NER task over time.}}{87}{figure.caption.76}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Named entity recognition on tweets in on-the-job learning. \relax }}{78}{figure.caption.65}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Incorporating information from responses.}}{80}{figure.caption.66}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Game tree.}}{80}{figure.caption.67}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Queries per example for LENSE on Sentiment.}}{88}{figure.caption.77}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparing \ensuremath {F_1}{} and queries per token on the NER task over time.}}{89}{figure.caption.80}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the on-demand evaluation paradigm}}{92}{figure.caption.78}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the on-demand evaluation paradigm}}{94}{figure.caption.82}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

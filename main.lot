@@ -2,14 +2,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Examples highlighting where automatic metric and human judgments agree or disagree on MS MARCO.}}{55}{table.caption.44}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Examples highlighting where automatic metric and human judgments agree or disagree on CNN/Daily Mail.}}{56}{table.caption.45}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Key statistics of the data collected}}{62}{table.caption.50}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Examples highlighting where automatic metric and human judgments agree or disagree on MS MARCO.}}{57}{table.caption.48}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Examples highlighting where automatic metric and human judgments agree or disagree on CNN/Daily Mail.}}{58}{table.caption.49}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Key statistics of the data collected}}{64}{table.caption.54}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Datasets used in this chapter and number of examples we evaluate on.\relax }}{84}{table.caption.69}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Results on NER}}{85}{table.caption.71}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Results on Face}}{85}{table.caption.72}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Results on the Sentiment task}}{88}{table.caption.74}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Datasets used in this chapter and number of examples we evaluate on.\relax }}{86}{table.caption.73}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Results on NER}}{87}{table.caption.75}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Results on Face}}{87}{table.caption.76}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Results on the Sentiment task}}{90}{table.caption.78}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
