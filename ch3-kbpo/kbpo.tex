@@ -138,21 +138,27 @@ As a result, we are able to automate a basic error analysis method and make it m
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/interface/leaderboard}
-  \caption[KBP Online]{\label{fig:kbpo:kbpo}}
+  \caption[KBP Online]{\label{fig:kbpo:kbpo}
+  A screenshot of the home page of our evaluation service, KBP Online.
+  Our service takes care of the entire pipeline of sampling relation instances, annotating them and computing a score.
+Once the system is completely evaluated, we show their entry on the home page leaderboard along with an 80\% confidence intervals estimated using bootstrap (not shown here).
+  }
 \end{figure}
 
 \begin{figure}
-  \begin{subfigure}{0.8\textwidth}
-    \includegraphics[width=\textwidth]{figures/interface/explore-data}
-    \caption{Explore annotations}
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/interface/errors}
+    \caption{\label{fig:kbpo:prediction-errors} Annotations of a particular system's predictions}
   \end{subfigure}
 
-  \begin{subfigure}{0.8\textwidth}
-    \includegraphics[width=\textwidth]{figures/interface/errors}
-    \caption{Error analysis}
+  \begin{subfigure}{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/interface/explore-data}
+    \caption{\label{fig:kbpo:explore} Exhaustive annotations on entire documents}
   \end{subfigure}
 
   \caption[Features of KBP Online]{\label{fig:kbpo:kbpo-features}
+  Apart from automating the evaluation of KBP systems, KBP Online also allows users to see (a) annotations of their predictions to identify the errors their systems have made and (b) annotations that were made on entire documents to identify relations that no system has been able to extract yet.
   }
 \end{figure}
 
