@@ -1,4 +1,4 @@
-\begin{thebibliography}{115}
+\begin{thebibliography}{118}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -98,12 +98,20 @@ N.~Cesa-Bianchi and G.~Lugosi. 2006.
 \newblock \emph{Prediction, learning, and games}.
 \newblock Cambridge University Press.
 
-\bibitem[{Chaganty et~al.(2017)Chaganty, Paranjape, Liang, and
+\bibitem[{Chaganty et~al.(2017{\natexlab{a}})Chaganty, Paranjape, Liang, and
   Manning}]{chaganty2017unbiased}
-A.~Chaganty, A.~Paranjape, P.~Liang, and C.~Manning. 2017.
+A.~Chaganty, A.~Paranjape, P.~Liang, and C.~Manning. 2017{\natexlab{a}}.
 \newblock Importance sampling for unbiased on-demand evaluation of knowledge
   base population.
 \newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)}.
+
+\bibitem[{Chaganty et~al.(2017{\natexlab{b}})Chaganty, Paranjape, Bolton, Lamm,
+  Lei, See, Clark, Zhang, Qi, and Manning}]{stanford2017kbp}
+A.~T. Chaganty, A.~Paranjape, J.~Bolton, M.~Lamm, J.~Lei, A.~See, K.~Clark,
+  Y.~Zhang, P.~Qi, and C.~D. Manning. 2017{\natexlab{b}}.
+\newblock Stanford at {TAC} {KBP} 2017: Building a trilingual relational
+  knowledge graph.
+\newblock In \emph{Text Analytics Conference}.
 
 \bibitem[{Chai et~al.(2004)Chai, Deng, Yang, and Ling}]{chai2004test}
 X.~Chai, L.~Deng, Q.~Yang, and C.~X. Ling. 2004.
@@ -212,6 +220,13 @@ P.~Donmez and J.~G. Carbonell. 2008.
 O.~Dusek, J.~Novikova, and V.~Rieser. 2017.
 \newblock Referenceless quality estimation for natural language generation.
 \newblock \emph{arXiv}.
+
+\bibitem[{Ellis et~al.(2015)Ellis, Getman, Simpson, Griffitt, Dang, Grishman,
+  Ji, DePrince, Riese, and Kuster}]{ellis2015tackbp}
+J.~Ellis, J.~Getman, H.~Simpson, K.~Griffitt, H.~T. Dang, R.~Grishman, H.~Ji,
+  C.~DePrince, T.~Riese, and N.~Kuster. 2015.
+\newblock {TAC} {KBP} 2015 slot descriptions.
+\newblock \emph{Linguistic Data Consortium}.
 
 \bibitem[{Ellis et~al.(2012)Ellis, Li, Griffitt, and Strassel}]{ellis2012kbp}
 J.~Ellis, X.~Li, K.~Griffitt, and S.~M. Strassel. 2012.
@@ -486,6 +501,12 @@ C.~D. Manning, M.~Surdeanu, J.~Bauer, J.~Finkel, S.~J. Bethard, and
   D.~McClosky. 2014.
 \newblock The stanford core{NLP} natural language processing toolkit.
 \newblock In \emph{ACL system demonstrations}.
+
+\bibitem[{Mayfield and Finin(2012)}]{mayfield2012evaluating}
+J.~Mayfield and T.~Finin. 2012.
+\newblock Evaluating the quality of a knowledge base populated from text.
+\newblock In \emph{Joint Workshop on Automatic Knowledge Base Construction and
+  Web-scale Knowledge Extraction}.
 
 \bibitem[{McClosky(2010)}]{mcclosky2010any}
 D.~McClosky. 2010.
