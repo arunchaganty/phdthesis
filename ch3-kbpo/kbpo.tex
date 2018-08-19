@@ -1,5 +1,19 @@
 \section{\label{sec:kbpo:kbpo} Implementing on-demand evaluation as an online service}
-We instantiated the paradigm on knowledge base population as a publicly available evaluation service dubbed KBP Online\footnote{Accessible at \url{https://kbpo.stanford.edu}}.
+
+\pl{a lot of this section doesn't seem like it has to do with the online service part,
+but talking about the sampling distribution that even defines what the evaluation metric is;
+I think this needs to be more clearly it's own section labeled 'sampling distribution' or something,
+and made clear that while most of this thesis is focusing on improving the statistical efficiency of estimation,
+this is about what we're estimating.
+}
+
+\pl{also, this discussion is pretty in the weeds of KBP;
+I'd add a paragraph saying how this is a general problem in evaluation - how do
+you balance the head and the tail?  talk more broadly about this;
+for example, search engines might use sets which are stratified by frequency
+}
+
+We instantiated the paradigm on knowledge base population as a publicly available evaluation service dubbed KBP Online\footnote{Accessible at \url{https://kbpo.stanford.edu}}. \pl{footnotes after period}
 In this section, we'll outline the many practical considerations that were required to do so.
 
 \subsection{Identifying the right query distributions}
@@ -22,7 +36,7 @@ The first aspect we looked into was the distribution of entities that were queri
 The KBP evaluation is well known for using query entities that participate in several relations but are still not common enough to have a knowledge base entry on say Wikipedia.
 We wanted to capture this property in our evaluation as well.
 
-To get a better sense of the distribution of entities that were queried, we used the entities (i.e., people and organizations) that were recognized by the Stanford KBP entity linking system~\citet{stanford2017kbp} and plotted a log-log distribution of the number of entities that appear in some number of documents (\reffig{kbpo:distribution}).
+To get a better sense of the distribution of entities that were queried, we used the entities (i.e., people and organizations) that were recognized by the Stanford KBP entity linking system~\citet{stanford2017kbp} \pl{citep} and plotted a log-log distribution of the number of entities that appear in some number of documents (\reffig{kbpo:distribution}).
 As one might expect, the distribution approximately follows a power-law and is extremely long-tailed: there are many entities that appear in just one or two documents. 
 
 We then binned entities into three categories, ``low'' frequency entities that appear in at most 3 documents in the corpus (this is the 50th percentile), ``medium'' frequency entities that appear in between 3 and 154 (90th percentile) documents and finally, ``high'' frequency entities that appear in more than 154 documents.
@@ -52,7 +66,7 @@ We note that the fact that low frequency entities dominate the entity distributi
   We also tried sampling documents based on the frequency of entities they contained (estimated using the Stanford entity linker), but found that it did not significantly reduce the number of low frequency entities.} but we can correct for this when sampling relations.
 
 Instead, we used a two-step sampling procedure.
-First, we would randomly sample documents for 20\% of our exhaustive document collection and then sample the remaining documents proportional to their aggregate TF-IDF scores with the entities identified in the first sample.
+First, we would \pl{remove modal} randomly sample documents for 20\% of our exhaustive document collection and then sample the remaining documents proportional to their aggregate TF-IDF scores with the entities identified in the first sample.
 \reffig{kbpo:exhaustive-entity} shows the distribution of entities that were sampled by this method, using the Stanford entity linking system to identify entities in the first sample.
 The method is able to increase the number of medium frequency entities appearing in multiple documents.
 When implementing this method in practice, we explicitly avoided using the Stanford entity linking system when identifying entities in documents because we were concerned about the bias it would introduce into our recall estimates.
@@ -130,6 +144,7 @@ As a result, we only handle entity linking \textit{within} a document, ensuring 
 We hope to measuring cross-document entity linking in future work.
 
 \paragraph{Factored scores}
+\pl{put period consistently}
 As part of our evaluation, we independently identify the correctness of the relation between the subject and object in the justification, as well as the correctness of the entity links of the subject and object.
 As a result, we are able to compute correctness scores for relation classification, entity linking and the combined task.
 Additionally, we are able to use per-relation and per-entity sampling distributions to report unbiased scores for each relation and entity category.

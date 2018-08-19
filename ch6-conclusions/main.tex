@@ -1,5 +1,6 @@
 \chapter[Towards a new paradigm of evaluation]{\label{chap:discussion} Towards a new paradigm of evaluation}
 
+\pl{need to scope this to hard NLP tasks, which is the overarching motivation}
 In the course of this thesis, we have presented several examples of an unmet assumption of the current evaluation paradigm: that test collections are \textit{complete}, in that they contain the universe of all possible answers, and accurately represent the instances found in practice.
 In \refchap{kbpo}, we showed how the finite incompleteness inherent in information extraction tasks, such as knowledge base population, introduces significant biases in our evaluation.
 In \refchap{price}, we showed that when incompleteness is infinite, such as in text generation tasks, bias is pervasive and hard to eliminate.
@@ -11,9 +12,12 @@ For example, even slight perturbations to the pixels of an image can wildly thro
 In fact, \citet{recht2018cifar} report a generalization gap even when the new test data is constructed in an identical (but independently collected) manner to the original training data!
 Clearly, there is a problem in how we have been evaluating our systems and measuring progress thus far.
 Test data that \textit{should} be representative of real-world instances does not seem to be complete.
+\pl{this is mostly about train-test mis-match, which is a different problem
+than the one you're addressing in this thesis;
+make it clear that there are two issues}
 
-In natural language processing (NLP) field,
-  there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citet{plank16nonstandard}: 
+In \pl{the field of} natural language processing (NLP) field,
+  there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citet{plank16nonstandard} \pl{citep}:
 for example, \citet{mcclosky2010any} show a 10--20 point gap between constituency parsing in domain and out of domain and \citet{foster2011news} find a similar gap on POS tagging and dependency parsing.
 More recently, \citet{jia2017adversarial} find that even minor edits to the source text can throw off state of the art reading comprehension models.
 
@@ -21,7 +25,7 @@ Some popular routes to try and address the generalization problem include \texti
 As \citet{plank16nonstandard} argue, domain adaptation makes the unrealistic assumption that we know what the target domain is;
   on the other hand, transfer learning may allow us to developing better learning algorithms, it does little to tell us about the performance of a system on our desired task!
 
-Instead, we propose the new paradigm of on-demand evaluation that tries to evaluate systems on real data by collecting human feedback on system output as necessary.
+Instead, we propose the new paradigm \pl{are you claiming this is novel?} of on-demand evaluation that tries to evaluate systems on real data by collecting human feedback on system output as necessary.
 Much of this chapter is dedicated to synthesizing the material of this thesis to describe a more general evaluation paradigm made possible by recent advances in crowdsourcing.
 Our framework tries to address the aforementioned problems with evaluation by making it more dynamic.
 We close by discussing some limitations of the paradigm.
@@ -33,24 +37,32 @@ We close by discussing some limitations of the paradigm.
   \includegraphics[width=0.9\textwidth]{figures/overview}
   \caption[Overview of the on-demand evaluation paradigm]{\label{fig:conclusions:overview}
   An overview of the on-demand evaluation paradigm. 
-  First, we must identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
+  First, we must \pl{drop modal} identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
   Next, we specify which inputs to evaluate using a \textit{query distribution}; the query distribution plays the role of a dataset designer by identifying which system output we would like to prioritize.
   The lynchpin of the paradigm is conducting a \textit{human annotation} as necessary on the system output. 
   Finally, annotations from different systems are combined using a \textit{statistical estimator} to produce a final evaluation score.
   }
 \end{figure}
 
+\pl{I think the framing is more like: in this thesis, you've explored on demand evaluation as a way to deal with incompleteness of evaluation for hard tasks;
+however, there's the general problem of evaluation, and on-demand evaluation can also be used to alleviate the issue of train-test mis-match}
+
 The key idea of the on-demand evaluation paradigm is to bring evaluation as close to our intended use case as possible, and to overcome data incompleteness or sparsity problems by querying human annotators on-demand.
 \reffig{conclusions:overview} presents an overview of the framework: 
 First, the evaluation designer ensures access to a suitable stream of \textit{input examples}
 which are then processed by the system being evaluated.
-The evaluation designer then reifies the various goals of evaluation by specifying a \textit{distribution} over system output and input examples.
+The evaluation designer then reifies \pl{not sure this is the correct word usage} the various goals of evaluation by specifying a \textit{distribution} over system output and input examples.
 Next, the evaluation framework identifies which examples require human annotations and queries humans on-demand for these annotations. 
 Finally, the annotations obtained are combined with existing annotations to evaluate the system.
 
 We'll describe the key design decisions and challenges for each of these steps next.
 
 \subsection{Input source}
+\pl{It's not clear how general the task that this paradigm applies to is;
+here we're talking about 'documents' - but those don't map to individual examples in general;
+take dialogue for example
+}
+
 When identifying input examples, the evaluation designer must pick which documents to query the system on.
 For example, in knowledge base population (\refchap{kbpo}), we used a large corpus of news-wire documents, which is reflective of the documents that the system would be used with in practice.
 Alternatively, we could have also included a webpage crawl or documents from social media.
@@ -58,13 +70,18 @@ Another source of inputs could be actual user data (as we saw in \refchap{otj}).
 Typically, the source of inputs is governed by the task.
 
 \subsection{Query distributions}
+
+\pl{I'm not sure in all of this what an 'example' is - input or input/output or input/prediction; make this clearer}
+
 In the current static test-collection driven evaluation, identifying input examples is often synonymous with picking which examples to annotate and evaluate on.
+\pl{isn't this the same for on-demand? you want to pick queries that represent the real world distribution}
 Typically the dataset designer (e.g., the LDC in the TAC KBP tasks) identifies examples that are ``interesting'', because they provide important or challenging use cases for the system.
 Often, however, there are several aspects of our systems we would like to measure at once, e.g.\ performance on particular types of entities or relations in KBP or performance on certain genres of articles in text summarization.
 Each of these goals would earlier correspond to a separate set of evaluation queries. 
 
 In the on-demand evaluation paradigm, 
   we acknowledge that it is sometimes hard to know exactly which examples should be evaluated until we obtain output from systems.
+\pl{it's only the outputs that are unknown then, but the input distribution can be defined ahead of time based on what queries we're interested in, no?}
 Thus, we must \textit{reify} what the goals of our evaluation are and identify specific query distributions that formalize them.
 \refchap{kbpo} we saw a couple of examples of these: one query distribution could target performance of the system on particular classes, while another could focus on rare entities.
 Unlike in the earlier mode of creating several separate test collections, in \refchap{kbpo} we show how we can use the same set of annotated examples to evaluate many different query distributions using importance-reweighting.
@@ -149,6 +166,26 @@ With humans-in-the-loop, it is possible to collect far more data and conduct a m
 However, by using an appropriate statistical estimator, we can also significantly decrease the costs of conduct fine-grained error analysis by efficiently reusing annotations.
 As an example, in \refchap{kbpo} we show how we can accurately analyze the errors made by a knowledge base population system on different relations and entity linking without having to re-annotate any data.
 
+\pl{I found the explanation of this paradigm a bit confusing.
+The way I understand things is:
+(i) you pick an input distribution (both the domain and how much you care about certain entities as in KBP, etc.); this part is static;
+(ii) you collect outputs for these inputs somehow so you can at least train a system (you didn't talk about this, but I guess this is necessary?);
+(iii) you run systems on all the inputs;
+(iv) you adaptively figure out which input/system predictions to ask humans to annotate (is it annotation or evaluation?) and use statistics to produce meaningful numbers (unbiased, low variance, etc.);
+(v) maybe use these annotations back as supervision to systems (you didn't talk about this, but would connect to online learning, which may allow you to connect on-the-job-learning ideas)
+}
+
+\pl{In general, I'm not sure I would tout this whole thing so much as a framework,
+since at least right now, I don't see a single unified story that applies to all NLP tasks;
+I feel like the interesting contributions are in the mechanics how to reduce variance, eliminate bias, etc.
+not really in the structural aspects that a framework typically offers
+}
+
+\pl{also, you should try to really be careful about what the scope of what you're saying is:
+is it AI in general (including vision tasks)? NLP tasks? relation extraction?
+some of the wording really suggests something rather specific, but 'on-demand evaluation' is such a general term...
+}
+
 \section{Limitations}
 Having presented an overview of the on-demand evaluation framework, let's now look at some of its limitations.
 
@@ -176,19 +213,28 @@ However, many modern natural language processing systems have millions of parame
 One approach to integrate human feedback during training is to learn how to simulate human feedback (i.e.\ learn a ``reward function'').
 For example, \citet{christiano2017deep} collected human preferences on robot trajectories and found that by first learning a model of human feedback, they were able to speed up the training of the robot.
 It is yet to be seen how such ideas can be extended to language tasks.
+\pl{oddly specific/recent reference; this is the whole field of inverse RL; there are both classic citations and NLP-relevant ones that'd be better to add}
 
 \paragraph{Dynamic evaluation.}
-Finally, the evaluation framework we presented does not yet cover natural language tasks that need human interaction, e.g.\ chatbots.
+Finally, the evaluation framework we presented does not yet cover natural language tasks that need human interaction, e.g.\ chatbots \pl{use the word 'dialogue system' instead}. \pl{cite dialogue evaluation paper}
 Here, the output of the system depends not only on the initial prompt, but also on every intervening response from the human and the system.
 As a result, two chatbot systems answering the same initial prompt may take different trajectories based on who they are interacting with.
 One of the biggest open questions is understanding what we should be evaluating in such settings and how to account for the variability introduced by the intermediate human responses.
 
 \section{Conclusions}
 In this thesis, we have introduced a new paradigm of evaluation, on-demand evaluation, that enables evaluation on complex subjective  tasks that can not be adequately captured through test collections.
-We exploit advances in crowdsourcing to collect human feedback to evaluate systems as necessary and develop new statistical estimators to make efficient use of the feedback.
+We exploit \pl{don't switch from past to present tense} advances in crowdsourcing to collect human feedback to evaluate systems as necessary and develop new statistical estimators to make efficient use of the feedback.
 We have executed the on-demand evaluation paradigm on several challenging use cases, from knowledge base population to text summarization.
 
 Still, there is much work ahead to improve the evaluation of natural language processing systems.
 We hope that the discussion in this last chapter has provided some direction on where to go forward.
 However, we must remain humble in recognizing the limitations of any evaluation.
 As the techniques we seek to evaluate evolve, so too must our evaluation methodology.
+
+\pl{there are some important questions/topics about evaluation that you should try to answer or at least discuss in this conclusion:
+(i) what's the goal of evaluation? there's the difference between evaluation for leaderboard numbers, evaluation for providing feedback to a human (error analysis), evaluation for providing feedback to a learning algorithm (this is a big one that we've talked about a lot)?
+(ii) what are the prospects for automatic evaluation (BLEU, ROUGE)? be completely practical: are you actually advising people stop doing this or is there a place for it?  what about many forms of evaluation?
+(iii) do you really need evaluation to be unbiased (related to the points above)?
+(iv) how does the bias problem of evalutaion relate to bias in machine learning in genreal?
+(v) how important is the immediacy of getting an evaluation result?
+}
