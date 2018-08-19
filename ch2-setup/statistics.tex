@@ -101,7 +101,7 @@ I'd either make it more precise, or just hide things in $O_p(1/\sqrt{n})$
 
 This biggest takeaway from this formula is that the \textit{reliability} of our estimate of the true performance $\mu$ is a function not only of the number of samples we have $n$, but also the intrinsic variation of the system's performance \pl{emphasize not just system but underlying data-generating distribution}, $\sigma^2_f$.
 When picking a test collection, it is helpful to consider the worse case variance for $\sigma^2_f$; for example, if $f(z)$ is accuracy and only takes the values of $0$ or $1$, the worst case variance is $\frac{1}{4}$.
-As a simple rule of thumb, the number of samples we need to be sure with 95\% confidence ($\delta = 0.05$), is about $\frac{1}{\epsilon}^2$: if we want to the true answer to be be within 1\% of the estimate, we fundamentally need about $10,000$ samples.
+As a simple rule of thumb, the number of samples we need to be sure with 95\% confidence ($\delta = 0.05$), is about $\frac{1}{\epsilon}^2$ \pl{use parentheses around fraction}: if we want to the true answer to be be within 1\% of the estimate, we fundamentally need about $10,000$ samples.
 
 \subparagraph{Comparing estimation procedures}
 The primary way to compare two estimation procedures \pl{replace with 'unbiased estimators'} is to compare their variances: if an estimation procedure is able to combine samples more efficiently than the mean estimator above, we would be able to get equally reliable or precise estimates of performance with fewer samples.
@@ -126,15 +126,17 @@ Now that we've seen the basic definitions of unbiasedness and variance, we will 
   Are there settings in which biased estimation is appropriate? 
 
 \paragraph{Fundamental limitations on the variance of estimators.}
-When comparing two estimation procedures, what we are really comparing is their variances.
+When comparing two estimation procedures \pl{unbiased estimators}, what we are really comparing is their variances.
 Fortunately, there are several important theoretical results that provide guarantees on when a particular estimator is optimal, i.e.\ has the least variance among all other estimators.
 
-The first of these results is the \textit{Rao-Blackwell theorem}, which states that any estimator $g(X)$ that depends on data $X$ is strictly improved by using sufficient statistics $T(X)$: in other words, $g(T(X))$ will always have equal or less variance than $g(X)$.
-Unpacking this statement a bit, given a parameteric distribution $\Pr(x \given \theta)$ that depends on $\theta$, a statistic $t$  computed from the data is \textit{sufficient} if the conditional probability of the data given $t$ does not depend on $\theta$: $\Pr(x \given t, \theta) = \Pr(x \given t)$.
+The first of these results is the \textit{Rao-Blackwell theorem}, which states that any estimator $g(X)$ that depends on data $X$ is strictly improved \pl{varianced reduced} by using sufficient statistics $T(X)$: in other words, $g(T(X))$ will always have equal or less variance than $g(X)$.
+Unpacking this statement a bit, given a parameteric \pl{parametrized} distribution $\Pr(x \given \theta)$ that depends on $\theta$, a statistic $t$  computed from the data is \textit{sufficient} if the conditional probability of the data given $t$ does not depend on $\theta$: $\Pr(x \given t, \theta) = \Pr(x \given t)$.
 Some popular examples include the mean of a normal distribution with known variance for which the sample mean is a sufficient statistic.
 Another way of interpreting sufficiency is that given the sample mean, no more information regarding the normal mean can be obtained from the sample. 
-Rao-Blackwell tells us that the minimum variance estimator for the sample mean must depend only on the sample mean.
+\pl{we're specializing to the mean as opposed to general parameters?}
+Rao-Blackwell tells us that the minimum variance estimator for the sample mean \pl{you're estimating the mean, not sample mean} must depend only on the sample mean.
 If we would like our estimation procedures to have unbiased guarantees, we must rely on sufficient statistics.
+\pl{we were talking about variance, now bias?}
 
 Conveniently, the \textit{Fisher-Neyman factorization theorem} completely characterizes sufficient statistics.
 Given a parametric distribution $\Pr(x \given \theta)$, $T$ is a sufficient statistic if and only if non-negative functions $g$ and $h$ can be found such that $\Pr(x \given \theta) = h(x) g_\theta(T(x))$:
@@ -144,13 +146,15 @@ Next, we have the \textit{Lehmann-Scheff\'{e} theorem}, which states that any es
 Completeness of a statistic is a much stronger condition that requires distinct values of the statistic to correspond to distinct distributions.
 Unfortunately, not all distributions or settings have complete statistics, limiting the applicability of Lehmann-Scheff\'{e} and uniformly minimum variance unbiased (UMVU) estimators.
 
+\pl{unclear how these are relevant to our goal of estimating accuracy; try to connect the dots a bit more}
+
 \paragraph{Measuring multiple objectives through importance sampling.}
 One of the important criteria for unbiasedness we described in the previous subsection was ensuring that the test collection was sampled in an unbiased manner.
 In practice, there are situations in which it is hard to collect a completely random sample or situations in which we would like to use same set of samples to measure multiple objectives, for example the accuracy of a sentiment classification system on a particular subset of documents.
 In these situations, importance sampling can be a useful method to ``adjust'' the samples from one distribution to another.
 
 Let $q(z)$ be the distribution under which samples were drawn, and let $p(z)$ be the distribution under which we would like to evaluate $\E_p[f(z)]$.
-Given a set of samples $Z$ drawn from $q$, an importance sampling estimator \textit{reweighs} each sample from $q$ with the weight $\frac{p(z)}{q(z)}$:
+Given a set of samples $Z$ drawn from $q$, an importance sampling estimator \textit{reweighs} \pl{reweights} each sample from $q$ with the weight $\frac{p(z)}{q(z)}$:
 \begin{align}
   \E_q[\frac{p(z)}{q(z)} f(z)] 
   &= \sum_{z \in \sZ} q(z) \frac{p(z)}{q(z)} f(z) \\
@@ -168,3 +172,4 @@ Indeed, it is well known in the statistics literature that there are biased esti
 One example of this is the James-Stein estimator, a biased estimator of the mean of Gaussian vectors that has uniformly lower mean squared error than the standard unbiased mean estimator.
 Unfortunately, most biased estimators, including the James-Stein estimator, require some prior knowledge of which test distributions are most likely.
 When it is reasonable to do so in the evaluation setting, such biased estimators could be considered.
+\pl{James-Stein doesn't require any knowledge though to dominate the sample mean; how much it helps of course depends on $\theta^*$}
