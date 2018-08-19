@@ -1,7 +1,7 @@
 In natural language tasks such as knowledge base population, text summarization or open-response question answering, a significant challenge is simply evaluating the performance of automated systems because of the large diversity of possible outputs.
 % ^^ Include the fact that the domain has shifted?
-Existing fully-automatic methods for evaluating these systems rely on an incomplete set of annotated references which lead to systematic biases against certain system improvements: in other words, genuinely good ideas are systematically discarded simply because of limitations in our evaluation methodology.
-As a result, human evaluation, which can be prohibitively expensive, has remained the de-facto mode of evaluation for these tasks.
+Existing fully-automatic methods for evaluating these systems rely on an incomplete \pl{italicize important words like 'incomplete'} set of annotated references which lead to systematic biases against certain system improvements: in other words, genuinely good ideas are systematically discarded simply because of limitations in our evaluation methodology.
+As a result, human evaluation, which can be prohibitively expensive, has remained the de-facto \pl{not quite - it's the gold standard, but not everyone does this (as you point out later, people use ROUGE} mode of evaluation for these tasks.
 In this work, we show how one can decrease the costs of incorporating human feedback through the design of appropriate statistical estimators. 
 % JARGON: contrast between tasks which are very straightforwards.
 %
@@ -20,7 +20,8 @@ We derive an unbiased estimator that optimally combines these automatic metrics 
 Our theoretical results allow us to characterize potential cost reductions only in terms of the tasks' subjectivity, measured by inter-annotator variance, and the automatic metrics' quality, measured by correlation with human judgments.
 On two popular natural language generation tasks, question answering and summarization, we empirically show that currently we can achieve at most a 7--13\% reduction in cost on two tasks, exposing fundamental limitations in debiasing current automatic metrics.
 
+\pl{need better transition - we're talking about using humans in evaluation; this is moving to something different}
 Finally, we show how human feedback can be incorporated into systems in real-time to deploy high-accuracy systems starting with zero training examples.
 We build systems that learn ``on-the-job'' by using human feedback to resolve uncertainty until it is confident in its predictions.
-Our key statistical idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
-When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification--- we obtained an order of magnitude reduction in cost compared to full human annotation, while also boosting performance relative to the expert provided labels.
+Our key statistical \pl{what's statistical about this idea?} idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
+When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification---we obtained an order of magnitude reduction in cost compared to full human annotation, while also boosting performance relative to the expert provided labels.
