@@ -14,17 +14,17 @@ In this subsection, we'll look at how we should construct the test collection, a
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{figures/sentiment-choices}
-  \caption[Constructing test collections]{\label{setup:sentiment-choices} When constructing a test collection, for example for sentiment classification, one may trade off collecting fine grained labels for more general ones that may be easier or more objective to collect.}
+  \caption[Constructing test collections]{\label{setup:sentiment-choices} \pl{make figure smaller} When constructing a test collection, for example for sentiment classification, one may trade off collecting fine grained labels for more general ones that may be easier or more objective to collect. \pl{explain emoji}}
 \end{figure}
 
 \paragraph{Test collections.}
 There are many useful ways to define and use a test collection.
-Let us take comparing sentiment classification systems as a simple case study (\reffig{setup:stats-overview}).
+Let us take comparing sentiment classification systems as a simple case study (\reffig{setup:stats-overview} \pl{broken}).
 Sentiment is inherently multi-faceted (one can express happiness, fear, optimism, etc.) and graded (one can be happy, joyful, ecstatic, etc.), but we may choose to focus simply on distinguishing between positive and negative sentiment because they are more objectively identified by people.
 On the other hand, if most systems already distinguish between binary sentiment classes, this evaluation will not be useful in comparing or ranking them.
 An additional benefit of simple binary classification is that the test collection can be used to quantitatively measure the quality of the system in question by comparing the system predictions with expected output (e.g., with accuracy).
 Unfortunately, this assumption does not hold for the tasks that will be discussed in this thesis: working around this assumption is the key technical contribution of this work. 
-However, for the purposes of intuition, we will assume that every output can be perfectly measured using the test collection in this chapter.
+However, for the purposes of intuition, we will assume that every output can be perfectly measured \pl{what does measuring an output mean?} using the test collection in this chapter.
 
 Ideally, one would like the test collection to be representative of the inputs that would be found in real life so that the test scores \textbf{faithfully} reflect the systems true performance.
 At the same time, we'd like the test collection to be sufficiently large so that we can be confident in the \textbf{reliability} of our conclusions.
@@ -50,10 +50,12 @@ When does the evaluation procedure \textit{faithfully} measure what it's suppose
 In this chapter we will assume that given a gold answer $y$ and a system prediction $\yh$, we are can quantitatively measure performance, $f(y, \yh)$.
 One example would be accuracy: $f(y, \yh) = 1$ iff $y = \yh$, and $0$ otherwise.
 For notational convenience, let $Z = \{(x, y, \yh) \given (x, y) \in T\}$ be the set of system predictions on the test collection and let $f(z)$ be shorthand for $f(y, \yh)$.
+\pl{$z$ is not defined; also, $f$ isn't overloaded if $z$ is defined properly; can we make $f$ depend on $x$ too?}
 
 We would like the evaluation procedure to take us from measuring performance on a single example to a more indicative measure of ``average'' performance.
 Ideally, we would like to know how well the system works in the ``real world'', i.e., according to some hypothetical test \textit{distribution} of inputs and its corresponding distribution of system predictions $\sP$.
-Let the average on this test distribution be $\mu \eqdef \E_{\sP}[f(z)] = \sum_{z \in \sP} f(z)$.
+\pl{be more precise what $\sP$ is (the type); in particular, it combines both distribution over $(x,y)$ and $\hat y$; might be good to reify the system $\hat y = S(x)$ or something}
+Let the average on this test distribution be $\mu \eqdef \E_{\sP}[f(z)] = \sum_{z \in \sP} f(z)$ \pl{missing normalization}.
 We can formalize what it means to be faithful using the concept of unbiasedness: does the evaluation procedure, on average, predict the same measure of performance as $\mu$?
 
 Let $\muh(Z)$ be an estimation algorithm that uses this set to predict $\mu$.
@@ -93,13 +95,16 @@ Formally, we have that with probability at least $1 - \delta$,
   &\le 2F(\delta) \frac{\sigma_f}{\sqrt{n}},
 \end{align*}
 where $F(\delta)$ is the Gaussian CDF.\@
+\pl{Hmm...this is not a precise statement because CLT doesn't hold for any finite $n$, but this looks like a finite sample complexity;
+I'd either make it more precise, or just hide things in $O_p(1/\sqrt{n})$
+}
 
-This biggest takeaway from this formula is that the \textit{reliability} of our estimate of the true performance $\mu$ is a function not only of the number of samples we have $n$, but also the intrinsic variation of the system's performance, $\sigma^2_f$.
+This biggest takeaway from this formula is that the \textit{reliability} of our estimate of the true performance $\mu$ is a function not only of the number of samples we have $n$, but also the intrinsic variation of the system's performance \pl{emphasize not just system but underlying data-generating distribution}, $\sigma^2_f$.
 When picking a test collection, it is helpful to consider the worse case variance for $\sigma^2_f$; for example, if $f(z)$ is accuracy and only takes the values of $0$ or $1$, the worst case variance is $\frac{1}{4}$.
 As a simple rule of thumb, the number of samples we need to be sure with 95\% confidence ($\delta = 0.05$), is about $\frac{1}{\epsilon}^2$: if we want to the true answer to be be within 1\% of the estimate, we fundamentally need about $10,000$ samples.
 
 \subparagraph{Comparing estimation procedures}
-The primary way to compare two estimation procedures is to compare their variances: if an estimation procedure is able to combine samples more efficiently than the mean estimator above, we would be able to get equally reliable or precise estimates of performance with fewer samples.
+The primary way to compare two estimation procedures \pl{replace with 'unbiased estimators'} is to compare their variances: if an estimation procedure is able to combine samples more efficiently than the mean estimator above, we would be able to get equally reliable or precise estimates of performance with fewer samples.
 We'll cover when this is possible in the next subsection.
 
 \subparagraph{Practical confidence intervals with the bootstrap}
@@ -111,6 +116,7 @@ The procedure is simple and should be computed whenever performances are reporte
   \item Construct 1000 to 10000 new test collections $Z^{(i)}$ by drawing $n$ samples from $Z$ \textit{with replacement}.
   \item On each of these collections, evaluate $\muh_{i} \eqdef \muh(Z^{(i)})$ and $\delta_i = \muh_i - \muh_0$
   \item Then the 80\% confidence interval for $\mu$ is $[\muh_0 - \delta_{0.1}, \muh_0 - \delta_{0.9}]$, where $\delta_{0.1}$ and $\delta_{0.9}$ are respectively the 90th percentile and 10th percentile samples of $\delta_i$. 
+    \pl{clashing notation in the subscript of $\delta$}
 \end{enumerate}
 
 \subsection{Additional considerations}

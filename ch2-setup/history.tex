@@ -10,7 +10,7 @@ Even as far back as 1956, before the development of many automated natural langu
 \citet{miller1956psychological} is perhaps one of the first such papers to explore what modes of evaluation exist for machine translation, beyond asking humans for subjective input.
 On the automated metric front, the paper introduces lexical overlap based scores that still underpin the most popular evaluation metrics today.
 The authors recognized that the automatic metric were effective ``at the lower end of the scale'', but were unsure if it would remain differentiating between better systems.
-As a result, they also looked at including humans in more objective evaluations, such as computing information gain by asking people to perform the Shannon test after reading the system generated summary, but concluded this might be far too laborious.
+As a result, they also looked at including humans in more objective evaluations, such as computing information gain by asking people to perform the Shannon test after reading the system generated summary \pl{I thought we're talking about MT}, but concluded this might be far too laborious.
 Finally, the authors also proposed using reading comprehension tests as an objective evaluation of whether the summary was able to correctly convey information: an exciting idea that is seeing recent interest, but with the challenge that picking the right questions can also be quite hard.
 
 \subsection{An era of shared tasks.}
@@ -27,7 +27,7 @@ Perhaps the most interesting line of work on evaluation was in the TIPSTER summa
 Later iterations of the summarization task in the Document Understanding Conference (DUC) used more general quality metrics like the quality and coverage of the generated summaries.
 
 At the same time, the machine translation community also developed its own evaluation methodologies through the APRA MT program~\cite{white1994arpa}.
-Initially, systems were compared by asking people to complete a reading comprehension task using human generated and system generated translations: unfortunately the evaluation procedure depended heavily on the quality of the intermediate translations and this approach was abandoned.
+Initially, systems were compared by asking people to complete a reading comprehension task using human generated and system generated translations: unfortunately the evaluation procedure depended heavily on the quality of the intermediate translations \pl{huh? I thought translation was the end goal} and this approach was abandoned.
 Soon after, human panels were used to rate the adequacy and fluency of generated translations.
 
 Unfortunately, the extensive human evaluations made it laborious to compare systems, particularly during development.
@@ -35,13 +35,13 @@ This motivated the development of automatic metrics, starting with BLEU~\citep{p
 The automatic metric was proposed as a way to evaluate systems in the aggregate, with the hope that individual errors made by using a simple lexical overlap would be washed out as many different summaries were combined.
 In the summarization community, ROUGE~\citep{lin2004rouge} was proposed as an efficient way to compute \textit{coverage} of the generated summary.
 When first reported, it was observed that both the BLEU and ROUGE metrics had had high correlation with human ratings when measured at the system level.
-Unfortunately, over time, it was found that these metrics were inadequate when systems began use a more diverse vocabulary~\cite{lavie2009meteor,cohan2016revisiting}.
+Unfortunately, over time, it was found that these metrics were inadequate when systems began use a more diverse vocabulary~\cite{lavie2009meteor,cohan2016revisiting} \pl{citep}.
 
 % 2. adding linguistic information with CiDER, METEOR, etc.
 This prompted development of variants that used additional linguistic information or word frequencies, e.g. METEOR~\citep{lavie2009meteor,denkowski2014meteor} or CiDER~\citep{vedantam2015cider}.
 % russo-lassner 2005
 % TODO: find grammar-based metrics to cite
-Despite these developments, \citet{liu2016evaluate} and \citet{novikova2017why} find that a whole suite of automatic evaluation metrics-- including those mentioned above-- correlate incredibly poorly with human judgment across different datasets and systems, with Pearson's $\rho$ between $0$ and $0.3$.
+Despite these developments, \citet{liu2016evaluate} and \citet{novikova2017why} find that a whole suite of automatic evaluation metrics-- including those mentioned above-- \pl{use --- without space on either side} correlate incredibly poorly with human judgment across different datasets and systems, with Pearson's $\rho$ between $0$ and $0.3$.
 
 % ==NOTE(chaganty): Too much detail, not enough space.
 %% 4. another approach has been use use multiple references
@@ -54,6 +54,6 @@ Unfortunately, there is no clear understanding on how many references are suffic
 %\ac{I'm probably going to omit the above for lack of space.}
 
 % 3. include learning-based approaches for metrics
-Finally, The community has also tried to tuning evaluation metrics to optimize for human correlation~\citep{lavie2009meteor,denkowski2014meteor,lowe2017towards}.
+Finally, The \pl{lowercase} community has also tried to tuning evaluation metrics to optimize for human correlation~\citep{lavie2009meteor,denkowski2014meteor,lowe2017towards}.
 While these approaches do increase the correlation for systems in the tune set, their correlations with new systems can be substantially smaller: \citet{lowe2017towards}, for example, find that correlations for held-out systems have an average Pearson correlation of $0.13$, almost a third of the average correlation of systems that were part of the tune set ($0.37$).
 
