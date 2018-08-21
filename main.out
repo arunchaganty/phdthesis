@@ -28,7 +28,7 @@
 \BOOKMARK [2][-]{subsection.3.6.1}{Identifying the right query distributions}{section.3.6}% 28
 \BOOKMARK [2][-]{subsection.3.6.2}{Computing scores}{section.3.6}% 29
 \BOOKMARK [2][-]{subsection.3.6.3}{Implementation details}{section.3.6}% 30
-\BOOKMARK [1][-]{section.3.7}{Evaluation}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.7}{Experiments}{chapter.3}% 31
 \BOOKMARK [2][-]{subsection.3.7.1}{Bias and variance of the on-demand evaluation.}{section.3.7}% 32
 \BOOKMARK [2][-]{subsection.3.7.2}{Number of samples required by on-demand evaluation}{section.3.7}% 33
 \BOOKMARK [2][-]{subsection.3.7.3}{A mock evaluation for TAC KBP 2016}{section.3.7}% 34
@@ -43,7 +43,7 @@
 \BOOKMARK [2][-]{subsection.4.3.3}{Using the control variates estimator}{section.4.3}% 43
 \BOOKMARK [2][-]{subsection.4.3.4}{Discussion of assumptions}{section.4.3}% 44
 \BOOKMARK [1][-]{section.4.4}{ Tasks and datasets}{chapter.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.1}{Evaluating language quality in automatic summarization.}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.1}{Evaluating language quality in automatic summarization}{section.4.4}% 46
 \BOOKMARK [2][-]{subsection.4.4.2}{Evaluating answer correctness.}{section.4.4}% 47
 \BOOKMARK [1][-]{section.4.5}{Experimental results}{chapter.4}% 48
 \BOOKMARK [1][-]{section.4.6}{ Related work}{chapter.4}% 49

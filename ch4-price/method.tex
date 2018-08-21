@@ -14,8 +14,6 @@ Our goal is to estimate the average across all examples:
 \end{align}
 with as few queries to $Y$ as possible.
 
-\pl{using the $S$ notation is good, try to incorporate this into previous chapters}
-
 Let $g$ be an automatic metric (e.g. ROUGE), which maps $z$ to a real number.
 We assume evaluating $g(z)$ is free.
 The central question is how to use $g$ in conjunction with calls to $Y$ to produce an unbiased estimate $\hat\mu$ (that is, $\E[\hat\mu] = \mu$).
@@ -60,8 +58,7 @@ is
 % This is the typical way of estimating means and we will use it as the baseline in this work.
 %\stm{proposition? reference? obvious? I could use this as a gentle warm-up for the later minimax proof arguments.}
 
-\pl{maybe the annotator variance should be introduced in the background chapter...;
-or if not, at least relate to the previous chapter}
+\pl{maybe the annotator variance should be introduced in the background chapter? or if not, at least relate to the previous chapter}
 
 \subsection{Control variates estimator}
 

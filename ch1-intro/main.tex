@@ -2,7 +2,7 @@
 \chapter{\label{chap:intro} Introduction}
 
 % Motivation.1: information summarization.
-One of the most exciting applications of natural language processing ahead of us is the development of systems that will be able to \textit{summarize information} \pl{this sounds too narrow - perhaps 'helps us digest the huge amount of information out there or something} for us.
+One of the most exciting applications of natural language processing ahead of us is the development of systems that will help us digest the vast amount information being generated around the world.
 For example, we will one day be able to rely on 
 text summarization (TS) systems to condense the most salient information from one or more related articles into as few words as necessary (\reffig{intro:overview}(a)).
 We will be be able to get targeted summaries through open-ended question answering systems (OQA) (\reffig{intro:overview}(b)).
@@ -33,24 +33,27 @@ Finally, knowledge base population (KBP) systems  will be able to read large doc
 \end{figure}
 
 % Motivation.2: A brief history of work in the area
-Indeed, this broad vision of summarization \pl{I wouldn't use 'summarization' for the broader sense because within NLP this is synonymous with text summarization} has been the goal of many natural language processing systems dating as far back as the 1950s~\citep{luhn1958automatic}.
+Indeed, this broad vision of what we call \textit{information summarization} has been the goal of many natural language processing systems dating as far back as the 1950s~\citep{luhn1958automatic}.
 Research has shown that having access to document summaries significantly improves user satisfaction and their ability to complete fact-gathering tasks~\citep{mani1999tipster, mckeown2005summaries}. 
 Building these systems, however, remains a challenge.
-Today, we are seeing a resurgence in interest in automatic summarization systems, with over 150 papers published at top NLP conferences in just the last year (2017--18).
-\pl{you're mixing the broader goal with the task of summarization}
+Today, we are seeing a resurgence in interest in information summarization systems, with over 150 papers published at top NLP conferences in just the last year (2017--18).\footnote{%
+This number was estimated by looking at papers with topics pertaining to information extraction, question answering and text summarization systems.} 
+
 
 % Motivation.3: Measurement is broken
 Despite years of effort, it is unclear whether we are actually making forward progress on these tasks.
-\citet{brandow1995automatic} conducted a large scale human evaluation of different summarization systems and found that the baseline of simply taking the lead-paragraph significantly outperformed automatic systems. 
-Ten years later, \citet{passonneau2005applying} report that half of the systems participating in the DUC-2005 summarization challenge did worse than the baseline.
-Even today, we find that recent ``state-of-the-art'' neural network based summarization systems fare poorly on human evaluations of language quality relative to simpler extractive systems.
+Take the task of text summarization for example:
+\citet{brandow1995automatic} conducted a large scale human evaluation of different text summarization systems and found that the baseline of simply taking the lead-paragraph significantly outperformed automatic systems. 
+Ten years later, \citet{passonneau2005applying} report that half of the systems participating in the DUC-2005 text summarization challenge did worse than the baseline.
+Even today, we find that recent ``state-of-the-art'' neural network based text summarization systems fare poorly on human evaluations of language quality relative to simpler extractive systems.
+The performance of knowledge base population systems as tracked by the TAC KBP challenge has been similarly halting.
 While there are many reasons for this slow progress, we believe that the lack of an effective evaluation methodology remains one of the most important ones.
-\pl{now this is about text summarization specifically, but do you want to talk more broadly?  for example, you could even bring in MT}
+%\pl{now this is about text summarization specifically, but do you want to talk more broadly?  for example, you could even bring in MT}
 
 % Our contribution.
 The ultimate goal of this thesis is to enable the development of better information summarization systems by addressing systemic problems in how we evaluate them.
-In this work, we attribute the inherent \textit{incompleteness} of existing evaluation datasets as the key bottleneck to reliably measuring the performance of summarization \pl{again, which sense? confusing} systems.
-We posit that collecting on-demand \pl{this is not for meaningfulness but for cost, right?} human feedback is fundamental to obtaining meaningful measures of system quality by resolving this incompleteness.
+In this work, we attribute the inherent \textit{incompleteness} of existing evaluation datasets as the key bottleneck to reliably measuring the performance of information summarization systems.
+We posit that collecting on-demand human feedback is necessary to economically obtaining meaningful measures of system quality by resolving this incompleteness.
 Our key technical contribution is applying techniques from statistical estimation to reliably integrate human feedback in a cost-effective manner.
 
 \begin{figure}
@@ -69,19 +72,19 @@ Our key technical contribution is applying techniques from statistical estimatio
   \caption[Complete and incomplete evaluation sets]{\label{fig:intro:evaluation-data} 
   Much of our evaluation methodology relies on an evaluation dataset that contains paired inputs (represented by blue boxes) and outputs (green boxes).
   (a) When the outputs belong to a closed class, e.g.\ in sentiment classification, it is easy to compare the output of a system (orange boxes) with the reference answer and hence evaluate its performance.
-  (b) On the other hand, in the summarization tasks we are interested in, there are many possible correct answers. As a result, a system that produces a response that does not match the reference answer is not necessarily incorrect; we simply don't know how to evaluate it. In this sense, the evaluation data is \textit{incomplete}.
+  (b) On the other hand, in the information summarization tasks we are interested in, there are many possible correct answers. As a result, a system that produces a response that does not match the reference answer is not necessarily incorrect; we simply don't know how to evaluate it. In this sense, the evaluation data is \textit{incomplete}.
   }
 \end{figure}
 \section{The incompleteness of static evaluation sets}
-At its core, the prevalent evaluation methodology today \pl{for what?} relies on a evaluation dataset that contains pairs of query inputs and expected outputs (\reffig{evaluation-data}).
+At its core, the prevalent evaluation methodology for most tasks in natural language processing, including the aforementioned information summarization tasks, relies on a evaluation dataset that contains pairs of query inputs and expected outputs (\reffig{evaluation-data}).
 On classification problems, e.g.\ sentiment classification or topic identification, the output typically belongs to a small closed class (e.g.\ positive, neutral or negative sentiment).
-When a system also predicts an output belonging to this closed class, it is very easy to say \pl{make this more precise} whether or not the system made a mistake.
+When a system also predicts an output belonging to this closed class, we know whether or not it made a mistake by comparing if its prediction is the same as the expected class; 
 Thus, in these settings, we can measure the quality of different systems on the classification task by simply collecting a sufficiently large evaluation dataset.\footnote{%
 Of course, care must be taken to ensure the evaluation dataset collected is reflective of the end-goal for the task.}
 
-Unfortunately, in the summarization \pl{change} tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ in TS and OQA) or an arbitrarily large collection of facts (e.g.\ for KBP).
+Unfortunately, in the information summarization tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ in TS and OQA) or an arbitrarily large collection of facts (e.g.\ for KBP).
 The assumption that there exists a unique knowable correct output simply does not hold.
-In this sense, the dataset \pl{you never said explictly that this is one of many correct answers} is \textit{incomplete}: it does not contain every possible correct answer.
+In this sense, the static evaluation dataset we discussed earlier \textit{can not} contain every possible correct answer and as a result is \textit{incomplete}.
 Let's look at some examples of how incompleteness manifests in practice and what its consequences on evaluation could be.
 
 \begin{figure}
@@ -127,14 +130,11 @@ More subtly, we show that this evaluation is biased towards easier questions wit
   model improvements that improve answers for harder questions will be ignored by the evaluation.
 
 %\paragraph{Text summarization.}
-Finally, consider the evaluation of text summarization \pl{systems}: a system\pl{-}generated summary will never exactly match the one in the evaluation dataset.
+Finally, consider the evaluation of text summarization systems: a system-generated summary will never exactly match the one in the evaluation dataset.
 A common practice in the community is to use a word-overlap based similarity score such as BLEU~\citep{papineni02bleu} or ROUGE~\citep{lin2004rouge}\@.
 Unfortunately, these automatic metrics have been shown to correlate extremely poorly with human judgment~\citep{novikova2017why}.
 \reffig{intro:example-summarization} shows an example of a published system that learns to game this metric by appending seemingly random words at the end of a summary.
-
-\pl{Biggest comment: 'summarization' is used kind of used in two ways, and the text kind of vaciliates between text summarization and the larger goal;
-I think you should focus on the larger goal because the thesis is about more than just text summarization
-}
+% \pl{Biggest comment: 'summarization' is used kind of used in two ways, and the text kind of vaciliates between text summarization and the larger goal; I think you should focus on the larger goal because the thesis is about more than just text summarization }
 
 \section{Addressing incompleteness with human feedback}
 We've just seen how the incompleteness of our evaluation sets can introduce bias.
@@ -142,11 +142,11 @@ How fundamental is incompleteness?
 Broadly, we consider two ends of the spectrum: when the incompleteness is large but ``finite'' and when the incompleteness is truly ``infinite''.
 
 In the finite setting, it is possible, though perhaps not economical, to exhaustively annotate the output space.
-Consider knowledge base population as an example: here it is possible to minimize the impact of incompleteness by exhaustively annotating a sufficiently large document collection, an effort that we estimate would cost at least \$1 million \pl{doesn't make sense since 1 million is precise you haven't said anything about how large the dataset is, etc.}.
+Consider knowledge base population as an example: here it is possible to minimize the impact of incompleteness by exhaustively annotating a sufficiently large document collection of about 100,000 documents, an effort that we estimate would cost at least \$1 million.
 Of course, any adjustment in the task definition (e.g.\ the relation schema) would require a fresh batch of annotations.
 In this sense, handling finite incompleteness can be viewed as a prudent cost-saving measure.
-On the other hand, the number of correct wordings for an answer in text summarization or open-ended question answering are nearly endless; we doubt that any amount of money would be sufficient to ameliorate the problem here \pl{huh? you mean in the static setting}.
-We consider the incompleteness ins such settings to be infinite. 
+On the other hand, the number of correct wordings for an answer in text summarization or open-ended question answering are nearly endless; we doubt that any size of static datasets would be sufficient to ameliorate the problem here.
+We consider the incompleteness in such settings to be infinite. 
 
 The crux of the problem is estimating the impact of instances that are unknown to the automatic evaluation that relies on a static dataset.
 We exploit the fact that the answers to these instances are obvious to humans and propose asking people for feedback \textit{on-demand} using advances in crowdsourcing.
@@ -162,12 +162,12 @@ Second, it provides \textit{qualitative} guidance to help us identify opportunit
 \section{Integrating human feedback with statistical estimators}
 While human evaluation is often regarded as a gold standard for evaluation, it is also considered to be too expensive to be used as when iterating on models.
 The key question this thesis tries to answer then is: can we reduce the cost of human annotation in evaluation while maintaining its fidelity?
-Our core contribution is in addressing the problem of incompleteness for two extremes: problems where incompleteness is large but finite (KBP), and problems where incompleteness is truly infinite (TS and OQA \pl{I wouldn't use acronyms for these tasks - makes it harder to read out of context}).
-In both settings, we hold \textit{unbiased} estimation as our bar: the methods we describe are guaranteed to produce the same results in expectation as would human evaluation \pl{awkward}.
+Our core contribution is in addressing the problem of incompleteness for two extremes: problems where incompleteness is large but finite (KBP), and problems where incompleteness is truly infinite (text summarization and open-response question answering).
+In both settings, we hold \textit{unbiased} estimation as our bar: the methods we describe are guaranteed to produce the same results that an exhaustive human evaluation would have.
 
 \paragraph{Amortizing costs when incompleteness is finite.}
 In settings where incompleteness is finite, it is likely that two different systems produce an overlapping set of outputs, suggesting that we may can leverage human annotations obtained for one system to evaluate another.
-The key challenge is guarding against representation \pl{new/non-standard, so say 'what we call representation bias'} bias: we don't want to skew the evaluation towards a particular class of systems simply because our evaluation data came from these systems.
+The key challenge is guarding against what we call representation bias: we don't want to skew the evaluation towards a particular class of systems simply because our evaluation data came from these systems.
 We tackle this problem in \refchap{kbpo} using a novel importance-reweighted estimator. We apply the estimator to evaluate KBP systems and show that we are able to reduce the cost of obtaining human annotations by a factor of 4.
 
 \paragraph{Finding limitations when incompleteness is infinite.}
@@ -197,6 +197,6 @@ In \refchap{price}, we move over to study infinite incompleteness using open que
 We'll see how automatic metrics can be optimally combined with human feedback to reduce the costs of human evaluation.
 Unfortunately, we'll show that in practice cost savings are modest: 
 However, our optimality result lets us step back and observe that our empirical results actually highlight fundamental limitations in using automatic metrics for unbiased evaluation. 
-In \refchap{otj}, we change gears and look at how we can use evaluation \pl{human labeling, right?} while learning: we propose a new learning paradigm, ``on-the-job learning'', that allows the model to query for human feedback when it is not confident in its predictions.
+In \refchap{otj}, we change gears and look at how we can use human feedback while learning: we propose a new learning paradigm, ``on-the-job learning'', that allows the model to query for human feedback when it is not confident in its predictions.
 Finally, in \refchap{discussion}, we conclude this thesis with a discussion on the further uses of human feedback in building natural language systems.
 Our discussion touches upon possible opportunities to improve upon human evaluation as a methodology for natural language generation tasks and how human feedback provides us with a more holistic view of evaluation.

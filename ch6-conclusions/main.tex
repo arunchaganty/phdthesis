@@ -1,7 +1,6 @@
 \chapter[Towards a new paradigm of evaluation]{\label{chap:discussion} Towards a new paradigm of evaluation}
 
-\pl{need to scope this to hard NLP tasks, which is the overarching motivation}
-In the course of this thesis, we have presented several examples of an unmet assumption of the current evaluation paradigm: that test collections are \textit{complete}, in that they contain the universe of all possible answers, and accurately represent the instances found in practice.
+In the course of this thesis, we have presented several examples of an unmet assumption of the current evaluation paradigm for challenging information summarization tasks: that test collections are \textit{complete}, in that they contain the universe of all possible answers, and accurately represent the instances found in practice.
 In \refchap{kbpo}, we showed how the finite incompleteness inherent in information extraction tasks, such as knowledge base population, introduces significant biases in our evaluation.
 In \refchap{price}, we showed that when incompleteness is infinite, such as in text generation tasks, bias is pervasive and hard to eliminate.
 Finally, in \refchap{otj}, we showed that even in complete settings such as (sequence) classification, the scarcity of annotated data makes it impossible to accurately evaluate or train systems without human intervention.
@@ -16,8 +15,8 @@ Test data that \textit{should} be representative of real-world instances does no
 than the one you're addressing in this thesis;
 make it clear that there are two issues}
 
-In \pl{the field of} natural language processing (NLP) field,
-  there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citet{plank16nonstandard} \pl{citep}:
+In the field of natural language processing (NLP) field,
+  there is a renewed discussion of how the performance of current NLP systems drops when applied to the real world~\citep{plank16nonstandard}:
 for example, \citet{mcclosky2010any} show a 10--20 point gap between constituency parsing in domain and out of domain and \citet{foster2011news} find a similar gap on POS tagging and dependency parsing.
 More recently, \citet{jia2017adversarial} find that even minor edits to the source text can throw off state of the art reading comprehension models.
 
@@ -37,7 +36,7 @@ We close by discussing some limitations of the paradigm.
   \includegraphics[width=0.9\textwidth]{figures/overview}
   \caption[Overview of the on-demand evaluation paradigm]{\label{fig:conclusions:overview}
   An overview of the on-demand evaluation paradigm. 
-  First, we must \pl{drop modal} identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
+  First, we identify a \textit{source of inputs} (e.g.\ documents) or a distribution over the same that are provided to the system.
   Next, we specify which inputs to evaluate using a \textit{query distribution}; the query distribution plays the role of a dataset designer by identifying which system output we would like to prioritize.
   The lynchpin of the paradigm is conducting a \textit{human annotation} as necessary on the system output. 
   Finally, annotations from different systems are combined using a \textit{statistical estimator} to produce a final evaluation score.
@@ -51,7 +50,7 @@ The key idea of the on-demand evaluation paradigm is to bring evaluation as clos
 \reffig{conclusions:overview} presents an overview of the framework: 
 First, the evaluation designer ensures access to a suitable stream of \textit{input examples}
 which are then processed by the system being evaluated.
-The evaluation designer then reifies \pl{not sure this is the correct word usage} the various goals of evaluation by specifying a \textit{distribution} over system output and input examples.
+The evaluation designer then explicitly formulates the various goals of evaluation by specifying a \textit{distribution} over system output and input examples.
 Next, the evaluation framework identifies which examples require human annotations and queries humans on-demand for these annotations. 
 Finally, the annotations obtained are combined with existing annotations to evaluate the system.
 
@@ -216,14 +215,14 @@ It is yet to be seen how such ideas can be extended to language tasks.
 \pl{oddly specific/recent reference; this is the whole field of inverse RL; there are both classic citations and NLP-relevant ones that'd be better to add}
 
 \paragraph{Dynamic evaluation.}
-Finally, the evaluation framework we presented does not yet cover natural language tasks that need human interaction, e.g.\ chatbots \pl{use the word 'dialogue system' instead}. \pl{cite dialogue evaluation paper}
+Finally, the evaluation framework we presented does not yet cover natural language tasks that need human interaction, e.g.\ dialogue systems \pl{cite dialogue evaluation paper}.
 Here, the output of the system depends not only on the initial prompt, but also on every intervening response from the human and the system.
 As a result, two chatbot systems answering the same initial prompt may take different trajectories based on who they are interacting with.
 One of the biggest open questions is understanding what we should be evaluating in such settings and how to account for the variability introduced by the intermediate human responses.
 
 \section{Conclusions}
 In this thesis, we have introduced a new paradigm of evaluation, on-demand evaluation, that enables evaluation on complex subjective  tasks that can not be adequately captured through test collections.
-We exploit \pl{don't switch from past to present tense} advances in crowdsourcing to collect human feedback to evaluate systems as necessary and develop new statistical estimators to make efficient use of the feedback.
+We exploited advances in crowdsourcing to collect human feedback to evaluate systems as necessary and develop new statistical estimators to make efficient use of the feedback.
 We have executed the on-demand evaluation paradigm on several challenging use cases, from knowledge base population to text summarization.
 
 Still, there is much work ahead to improve the evaluation of natural language processing systems.
