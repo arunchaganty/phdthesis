@@ -3,7 +3,7 @@
 \section{Theoretical proofs for the sampling procedures}
 \label{sec:sampling}
 
-Let's refresh notation from \refsec{method}.
+Let's refresh notation from \refsec{kbpo:method}.
 
 Let $\sX$ be a universe of possible outputs (e.g.\ relation instances),
   $\sY \subseteq \sX$ be an unknown subset of this universe corresponding to the correct elements in $\sX$ and
@@ -20,11 +20,11 @@ We would like to evaluate precision, $\pi_i$, and recall, $\recall_i$:
   \recall_i &\eqdef \E_{x \sim \sY}[g_i(x)],
 \end{align*}
 
-In this section, we'll provide proofs that show that the joint estimators proposed in \refsec{method} are indeed unbiased, and we will characterize their variance.
+In this section, we'll provide proofs that show that the joint estimators proposed in \refsec{kbpo:method} are indeed unbiased, and we will characterize their variance.
 
 \subsection{Estimating precision}
 
-In \refsec{method}, we proposed the following estimator for $\pi_i$:
+In \refsec{kbpo:method}, we proposed the following estimator for $\pi_i$:
 \begin{align*}
   \pih_i &\eqdef \sum_{j=1}^m \frac{w_{ij}}{n_j} \sum_{x \in \Xh_j} \frac{p_i(x) f(x)}{q_i(x)},
 \end{align*}
@@ -71,7 +71,7 @@ where $q_i(x) = \sum_{j=1}^m w_{ij} p_j(x)$ and $w_{ij} \ge 0$ are mixture param
 
 \subsection{Estimating recall}
 
-In \refsec{method}, we used the fact that the recall of system $i$, $\recall_i$, can be expressed as the recall of $i$ within the pool, $\nu_i$ and the recall of the pool itself $\theta$: $\recall_i = \theta \nu_i$:  
+In \refsec{kbpo:method}, we used the fact that the recall of system $i$, $\recall_i$, can be expressed as the recall of $i$ within the pool, $\nu_i$ and the recall of the pool itself $\theta$: $\recall_i = \theta \nu_i$:  
 \begin{align*}
   \nu_i &= \E_{x \sim \sY \given Y}[g_i(x)] &
   \theta &= \E_{x \sim \sY}[g(x)],
@@ -176,7 +176,7 @@ Finally, we turn to studying $\recallh$:
 \subsection{Picking optimal number of samples for a new system}
 \label{sec:optimal-samples}
 
-In \refsec{joint}, we outlined a method to pick the optimal number of samples to draw and evaluate for a new system:
+In \refsec{kbpo:joint}, we outlined a method to pick the optimal number of samples to draw and evaluate for a new system:
   we pick the minimum number of samples $n_m$ required to evaluate system $m$ within a target variance using a conservative estimate of the variance of $\pih_m^{\text{(joint)}}$.
   In particular, we use the following estimate for variance using the result from \refthm{pih}:
 \begin{align*} 

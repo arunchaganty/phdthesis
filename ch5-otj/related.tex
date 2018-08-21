@@ -8,19 +8,19 @@ In this section, we review prior work and situate our own work within the litera
 %We also contrast our system with the popular active learning and active classification literature.
 
 \paragraph{Active learning and classification.}
-Active learning\footnote{We refer the readers to~\cite{settles2010active} for a survey of active learning methods and variants.} is a popular approach to minimize the labeled data required to train a classifier. 
-Several authors in the active learning community have considered using crowd workers as a noisy oracle~\cite{yan2011active,vijayanarasimhan2014large}.
+Active learning\footnote{We refer the readers to~\citet{settles2010active} for a survey of active learning methods and variants.} is a popular approach to minimize the labeled data required to train a classifier. 
+Several authors in the active learning community have considered using crowd workers as a noisy oracle~\citep{yan2011active,vijayanarasimhan2014large}.
 However, active learning optimizes over the choice of a subset of a pool of unlabeled that minimizes the risk of the classifier obtained by training on that subset. 
 In contrast, on-the-job learning does not get to observe unlabeled data, is allowed to query at test time and must minimize the risk of that example (while trading off cost and latency).
 
-Closely related is active classification~\cite{greiner2002learning,chai2004test,esmeir2007anytime} which asks what is the {\em most informative feature\/} to measure at test time.
+Closely related is active classification~\citep{greiner2002learning,chai2004test,esmeir2007anytime} which asks what is the {\em most informative feature\/} to measure at test time.
 One could view our measurements as high-informative features, however our work differs in two respects: we never get to actually observe the true labels and our system is evaluated on regret as opposed to classifier risk.
 Existing active classification algorithms rely on having a fully labeled dataset which is used to learn when certain features should be queried.
 
 %Settles et al.~\cite{settles2008analysis} compare different utility choices when querying for complete labels for a CRF sequence model.
 There is little existing work on querying a subset of the labels within a single structured output problem.
-Angeli et al.~\cite{angeli2014combining} identify instances to label within a cluster of examples in a distantly supervised setting. While this choice was a subset of the labels in the graphical model, interactions between other labels in cluster were not considered.
-Liang et al.~\cite{liang09measurements} introduced the measurement framework and studied the problem of active selection of measurements in the active learning setting. 
+\citet{angeli2014combining} identify instances to label within a cluster of examples in a distantly supervised setting. While this choice was a subset of the labels in the graphical model, interactions between other labels in cluster were not considered.
+\citet{liang09measurements} introduced the measurement framework and studied the problem of active selection of measurements in the active learning setting. 
 %However, the measurements considered were aggregated across the dataset (e.g.\ the expected proportion of a label), rather than label measurements within an instance.
 
 %We refer the reader to \cite{settles2010active} for a survey of active learning and its variants.
@@ -48,12 +48,12 @@ Liang et al.~\cite{liang09measurements} introduced the measurement framework and
 
 \paragraph{Collective intelligence systems.}
 Using crowd workers to assist labeling tasks is an area of active research within the HCI community.
-\textit{Flock}~\cite{cheng2015flock} first crowdsources the identification of features for an image classification task, and then asks the crowd to annotate examples.
+\textit{Flock}~\citep{cheng2015flock} first crowdsources the identification of features for an image classification task, and then asks the crowd to annotate examples.
 The system learns to classify images using a decision tree based on the features identified by the crowd.
 As a consequence, the system always relies on humans to provide features and there is no transfer of knowledge from humans to a machine learning model as in on-the-job training.
-In another line of work, \textit{TurKontrol}~\cite{dai2010decision} models individual crowd worker reliability to optimize the number of human votes needed to achieve confident consensus using a POMDP\@.
+In another line of work, \textit{TurKontrol}~\citep{dai2010decision} models individual crowd worker reliability to optimize the number of human votes needed to achieve confident consensus using a POMDP\@.
 %We also model the reliability of workers though using an unsupervised model, similar to \findcite{crowd em}.
-Finally, recent work has studied how to support real-time behavior with crowd workers~\cite{bernstein2011crowds,lasecki2013realtime} by hiring workers ``on retainer''.
+Finally, recent work has studied how to support real-time behavior with crowd workers~\citep{bernstein2011crowds,lasecki2013realtime} by hiring workers ``on retainer''.
 We use the same retainer model to maintain a pool of real-time crowd workers with low response times.
 
 % Using crowds to power decision making is not a new idea. Systems in this space that support real-time behavior include \textit{Adrenaline}~\cite{bernstein2011crowds} and \textit{Legion AR}~\cite{lasecki2013real}, which both use a system where crowds are recruited ``on-retainer'' in order to be available at a moments notice.

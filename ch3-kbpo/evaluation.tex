@@ -13,7 +13,7 @@
     \caption{}
   \end{subfigure}
 
-  \caption[Reduction of variance with the importance-reweighted estimator]{\label{fig:simulation}
+  \caption[Reduction of variance with the importance-reweighted estimator]{\label{fig:kbpo:simulation}
   A comparison of bias for the pooling, simple and joint estimators on the TAC KBP 2015 challenge.
   Each point in the figure is a mean of 500 repeated trials; dotted lines show the 90\% quartile.
   %The pooling based method uses between 5,000 and 6,000 labeled instances, while the sampling based methods use 
@@ -38,10 +38,10 @@
     \input{evaluation.table}
     %\includegraphics[width=\columnwidth]{figures/kbp2016/kbp2016_f1}
     \vfill
-    \caption{\label{fig:evaluation-results}}
+    \caption{\label{fig:kbpo:evaluation-results}}
   \end{subfigure}
 
-  \caption[An evaluation of the importance-reweighted estimator]{\label{fig:evaluation}
+  \caption[An evaluation of the importance-reweighted estimator]{\label{fig:kbpo:evaluation}
   \textbf{(a):} 
   A comparison of the number of samples used to estimate scores under the fixed and adaptive sample selection scheme.
   %In the simulation, the top 40 systems were evaluated in randomized order to achieve a target variance equal to that obtained with 500 samples for a single system.
@@ -55,10 +55,10 @@ Precision ($P$), recall ($R$) and \fone{} scores from a pilot run of our evaluat
 \end{figure}
 
 \section{Experiments}
-\label{sec:evaluation}
+\label{sec:kbpo:evaluation}
 
 Let us now see how well on-demand evaluation works in practice.
-We begin by empirically studying the bias and variance of the joint estimator proposed in \refsec{method} and find it is able to correct for pooling bias while significantly reducing variance in comparison with the simple estimator.
+We begin by empirically studying the bias and variance of the joint estimator proposed in \refsec{kbpo:method} and find it is able to correct for pooling bias while significantly reducing variance in comparison with the simple estimator.
 We then demonstrate that on-demand evaluation can serve as a practical replacement for the TAC KBP evaluations by piloting a new evaluation service we have developed to evaluate three distinct systems on TAC KBP 2016 document corpus.
 %We find that we are able to obtain results of  quality in a cost effective manner.
 
@@ -72,17 +72,17 @@ On average, the pooled evaluation dataset contains between 5,000 and 6,000 label
 Next, we evaluated sets of 9 randomly chosen teams with our proposed simple and joint estimators using a total of 5,000 samples:
 about 150 of these samples are drawn from $\sY$, i.e.\ the full TAC KBP 2015 evaluation data, and 150 samples from each of the systems being evaluated.
 
-We repeat the above simulated experiment 500 times and compare the estimated precision and recall with their true values (\reffig{simulation}).
+We repeat the above simulated experiment 500 times and compare the estimated precision and recall with their true values (\reffig{kbpo:simulation}).
 The simulations once again highlights that the pooled methodology is biased, while the simple and joint estimators are not.
 Furthermore, the joint estimators significantly reduce variance relative to the simple estimators:
 the median 90\% confidence intervals reduce from 0.14 to 0.06 precision and from 0.14 to 0.08 for recall.
 
 \subsection{Number of samples required by on-demand evaluation}
-Separately, we evaluate the efficacy of the adaptive sample selection method described in \refsec{joint} through another simulated experiment.
+Separately, we evaluate the efficacy of the adaptive sample selection method described in \refsec{kbpo:joint} through another simulated experiment.
 In each trial of this experiment, we evaluate the top 40 systems in random order.
 As each subsequent system is evaluated, the number of samples to pick from the system is chosen to meet a target variance and added to the current pool of labeled instances.
 To make the experiment more interpretable, we choose the target variance to correspond with the estimated variance of having 500 samples.
-\reffig{evaluation} plots the results of the experiment.
+\reffig{kbpo:evaluation} plots the results of the experiment.
 The number of samples required to estimate systems quickly drops off from the benchmark of 500 samples as the pool of labeled instances covers more systems.
 This experiment shows that on-demand evaluation using joint estimation can scale up to an order of magnitude more submissions  than a simple estimator for the same cost.
 
@@ -96,7 +96,7 @@ In total, 100 documents were exhaustively annotated for about \$2,000 and 500 in
 Evaluating all three system only took about 2 hours. 
 
 %In total, 100 documents were exhaustively annotated for about \$2,000, and 1,000 instances from each system were labeled for about \$300 each, with 500 sampled to estimate macro-averaged relation scores and 500 sampled to estimate macro-averaged entity scores.
-\reffig{evaluation-results} reports scores obtained through on-demand evaluation of these systems as well as their corresponding official TAC evaluation scores.
+\reffig{kbpo:evaluation-results} reports scores obtained through on-demand evaluation of these systems as well as their corresponding official TAC evaluation scores.
 While the relative ordering of systems between the two evaluations is the same, we note that precision and recall as measured through on-demand evaluation are respectively higher and lower than the official scores.
 This is to be expected because on-demand evaluation measures precision using each systems output as opposed to an externally defined set of evaluation entities.
 Likewise, recall is measured using exhaustive annotations of relations within the corpus instead of annotations from pooled output in the official evaluation.  

@@ -10,7 +10,7 @@
    \anydoc{}        & 2.34\% &  1.93\% & 2.05\% \\ \bottomrule
    \end{tabular}}
   \end{subfigure}
-  \caption[Pooling bias for \fone{} in TAC-KBP 2015]{\label{fig:pooling-bias} Median pooling bias (difference between pooled and unpooled scores) on the top 40 systems of TAC KBP 2015 evaluation using the official and \anydoc{} scores.
+  \caption[Pooling bias for \fone{} in TAC-KBP 2015]{\label{fig:kbpo:pooling-bias} Median pooling bias (difference between pooled and unpooled scores) on the top 40 systems of TAC KBP 2015 evaluation using the official and \anydoc{} scores.
   The bias is much smaller for the lenient \anydoc{} metric, but even so, it is larger than the largest difference between adjacent systems (1.5\% \fone{}) and typical system improvements (around 1\% \fone{}).
 %  the assumption that pooling bias is insignificant is false.
   }
@@ -25,7 +25,7 @@
   \begin{subfigure}{0.8\columnwidth}
       \includegraphics[width=\textwidth]{figures/pooling_bias/pooling_bias_r}
   \end{subfigure}
-  \caption[Pooling bias for precision and recall in TAC-KBP 2015]{\label{fig:pooling-bias-p-r} Pooling bias broken down by precision and recall.}
+  \caption[Pooling bias for precision and recall in TAC-KBP 2015]{\label{fig:kbpo:pooling-bias-p-r} Pooling bias broken down by precision and recall.}
 \end{figure}
 
 \section{Measuring pooling bias}
@@ -33,7 +33,7 @@
 %(1 pages)
 
 % Primer
-The example in \reffig{pooling} makes it apparent that pooling-based evaluation can introduce a systematic bias against unpooled systems.
+The example in \reffig{kbpo:pooling} makes it apparent that pooling-based evaluation can introduce a systematic bias against unpooled systems.
 However, it has been assumed that the bias is insignificant in practice given the large number of systems pooled in the TAC KBP evaluation.
 We will now show that the assumption is not valid using data from the TAC KBP 2015 evaluation.\footnote{%
 Our results are not qualitatively different on data from previous years of the shared task.}
@@ -51,12 +51,12 @@ we simulate the condition of a team not being part of the pooling process by rem
 The pooling bias is then the difference between the true and unpooled scores.
 
 \paragraph{Results.}
-\reffig{pooling-bias} shows the results of measuring pooling bias on the TAC KBP 2015 evaluation on the \fone{} metric using the official and \anydoc{} scores.\footnote{%
+\reffig{kbpo:pooling-bias} shows the results of measuring pooling bias on the TAC KBP 2015 evaluation on the \fone{} metric using the official and \anydoc{} scores.\footnote{%
   We note that \anydoc{} scores are on average 0.88\%\fone{} larger than the official scores. 
   }\footnote{
   The outlier at rank 36 corresponds to a University of Texas, Austin system that only filtered predictions from other systems and hence has no unique predictions itself.
   }
-\reffig{pooling-bias-p-r} further breaks down the results for precision and recall.
+\reffig{kbpo:pooling-bias-p-r} further breaks down the results for precision and recall.
 We observe that even with lenient \anydoc{} heuristic, the median bias (2.05\% \fone{}) is much larger than largest difference between adjacently ranked systems (1.5\% \fone{}).
 This experiment shows that pooling evaluation is significantly and systematically biased against systems that make novel predictions!
 

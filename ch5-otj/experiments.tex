@@ -37,19 +37,19 @@ We evaluated the following four methods on each dataset:
     We only consider the four tags corresponding to persons, locations, organizations or none\tablefootnote{
     The original also includes a fifth tag for miscellaneous, however the definition for miscellaneos is complex, making it very difficult for non-expert crowd workers to provide accurate labels.}.
     &
-    We used standard features~\cite{finkel2005incorporating}: the current word, current lemma, previous and next lemmas, lemmas in a window of size three to the left and right, word shape and word prefix and suffixes, as well as word embeddings. \\
+    We used standard features~\citep{finkel2005incorporating}: the current word, current lemma, previous and next lemmas, lemmas in a window of size three to the left and right, word shape and word prefix and suffixes, as well as word embeddings. \\
   {\bf Sentiment (1800)} & 
-    We evaluate on a subset of the IMDB sentiment dataset \cite{maas2011imdb} that consists of 2000 polar movie reviews; the goal is binary classification of documents into classes $\textsc{pos}$ and $\textsc{neg}$. 
+    We evaluate on a subset of the IMDB sentiment dataset \citep{maas2011imdb} that consists of 2000 polar movie reviews; the goal is binary classification of documents into classes $\textsc{pos}$ and $\textsc{neg}$. 
     &
-    We used two feature sets, the first (\textsc{unigrams}) containing only word unigrams, and the second (\textsc{rnn}) that also contains sentence vector embeddings from~\cite{socher2013recursive}.
+    We used two feature sets, the first (\textsc{unigrams}) containing only word unigrams, and the second (\textsc{rnn}) that also contains sentence vector embeddings from~\citet{socher2013recursive}.
     \\
   {\bf Face (1784)} & 
-  We evaluate on a celebrity face classification task \cite{kumar2009attribute}. Each image must be labeled as one of the following four choices: Andersen Cooper, Daniel Craig, Scarlet Johansson or Miley Cyrus.
+  We evaluate on a celebrity face classification task \citep{kumar2009attribute}. Each image must be labeled as one of the following four choices: Andersen Cooper, Daniel Craig, Scarlet Johansson or Miley Cyrus.
     &
-    We used the last layer of a 11-layer AlexNet~\cite{krizhevsky2012imagenet} trained on ImageNet as input feature embeddings, though we leave back-propagating into the net to future work.
+    We used the last layer of a 11-layer AlexNet~\citep{krizhevsky2012imagenet} trained on ImageNet as input feature embeddings, though we leave back-propagating into the net to future work.
 \end{tabular}
   \caption{Datasets used in this chapter and number of examples we evaluate on.}
-\label{tbl:dataset}
+\label{tab:dataset}
 \end{table}
 
 
@@ -57,7 +57,7 @@ We evaluated the following four methods on each dataset:
 % We do not update parameters for the delay and response models online.
 
 \paragraph{Implementation and crowdsourcing setup.}
-We implemented the retainer model of~\cite{bernstein2011crowds} on Amazon Mechanical Turk to create a ``pool'' of crowd workers that could respond to queries in real-time.
+We implemented the retainer model of~\citet{bernstein2011crowds} on Amazon Mechanical Turk to create a ``pool'' of crowd workers that could respond to queries in real-time.
 The workers were given a short tutorial on each task before joining the pool to minimize systematic errors caused by misunderstanding the task.
 We paid workers \$1.00 to join the retainer pool and an additional \$0.01 per query (for NER, since response times were much faster, we paid \$0.005 per query).
 Worker response times were generally in the range of 0.5--2 seconds for NER, 10--15 seconds for Sentiment, and 1--4 seconds for Faces.
@@ -81,7 +81,7 @@ During simulation we sample the worker responses and delays without replacement 
     \textbf{LENSE} & \textbf{267 ms} & \textbf{0.45} & 95.2 & 89.7 & \textbf{81.7} & \textbf{88.8}  \\
     \bottomrule
 \end{tabular}
-\caption[Results on NER]{\label{tbl:results-ner} Results on the NER task comparing latencies, queries per token (Qs/tok)
+\caption[Results on NER]{\label{tab:results-ner} Results on the NER task comparing latencies, queries per token (Qs/tok)
 and \fone{}.}
 \end{table}
 
@@ -99,7 +99,7 @@ and \fone{}.}
     \textbf{LENSE} & 1590 ms & 2.37 & 99.2 \\   %\hline
     \bottomrule
 \end{tabular}
-\caption[Results on Face]{\label{tbl:results-face} Results on the Face task comparing latencies, queries per token (Qs/tok)
+\caption[Results on Face]{\label{tab:results-face} Results on the Face task comparing latencies, queries per token (Qs/tok)
 and accuracy.}
 \end{table}
 
@@ -112,7 +112,7 @@ and accuracy.}
 \begin{table}[t]
   \centering
   \input{table-sentiment}
-  \caption[Results on the Sentiment task]{\label{tbl:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.
+  \caption[Results on the Sentiment task]{\label{tab:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.
   }
 \end{table}
 

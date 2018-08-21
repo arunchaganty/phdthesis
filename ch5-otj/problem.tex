@@ -31,7 +31,7 @@ we make zero or more queries $q_1, q_2, \dots$ on the crowd to obtain labels
 for any positions in $\bx$.
 The responses $r_1, r_2, \dots$ come back asynchronously,
 which are incorporated into our current prediction model $p_\theta$.
-\reffig{game-tree}~(left) shows one possible outcome:
+\reffig{tree} shows one possible outcome:
 We query positions $q_1 = 2$ (\nl{George}) and $q_2=3$ (\nl{str.}).
 The first query returns $r_1 = \scloc$,
 upon which we make another query on the the same position $q_3 = 3$ (\nl{George}),
