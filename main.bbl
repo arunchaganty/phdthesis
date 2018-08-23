@@ -1,4 +1,4 @@
-\begin{thebibliography}{118}
+\begin{thebibliography}{116}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -51,13 +51,6 @@ R.~Brandow, K.~Mitze, and L.~F. Rau. 1995.
 \newblock Automatic condensation of electronic publications by sentence
   selection.
 \newblock \emph{Information Processing and Management}, 31:675--685.
-
-\bibitem[{Branson et~al.(2017)Branson, Horn, and Perona}]{branson2017lean}
-S.~Branson, G.~V. Horn, and P.~Perona. 2017.
-\newblock Lean crowdsourcing : Combining humans and machines in an online
-  system.
-\newblock In \emph{Computer Vision and Pattern Recognition (CVPR)}, pages
-  7474--7483.
 
 \bibitem[{Buckley et~al.(2007)Buckley, Dimmick, Soboroff, and
   Voorhees}]{buckley2007bias}
@@ -131,12 +124,6 @@ J.~Cheng and M.~S. Bernstein. 2015.
 \newblock In \emph{Proceedings of the 18th {ACM} Conference on Computer
   Supported Cooperative Work \& Social Computing}, pages 600--611.
 
-\bibitem[{Christiano et~al.(2017)Christiano, Leike, Brown, Martic, Legg, and
-  Amodei}]{christiano2017deep}
-P.~Christiano, J.~Leike, T.~B. Brown, M.~Martic, S.~Legg, and D.~Amodei. 2017.
-\newblock Deep reinforcement learning from human preferences.
-\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)}.
-
 \bibitem[{Chu et~al.(2011)Chu, Zinkevich, Li, Thomas, and
   Tseng}]{chu2011unbiased}
 W.~Chu, M.~Zinkevich, L.~Li, A.~Thomas, and B.~Tseng. 2011.
@@ -188,12 +175,6 @@ H.~T. Dang. 2006.
 H.~T. Dang. 2016.
 \newblock Cold start knowledge base population at {TAC} {KBP} 2016.
 \newblock \emph{Text Analytics Conference}.
-
-\bibitem[{Dawid and Skene(1979)}]{dawid1979maximum}
-A.~P. Dawid and A.~M. Skene. 1979.
-\newblock Maximum likelihood estimation of observer error-rates using the {EM}
-  algorithm.
-\newblock \emph{Applied Statistics}, 1:20--28.
 
 \bibitem[{Deng et~al.(2009)Deng, Dong, Socher, Li, Li, and
   Fei-Fei}]{deng2009imagenet}
@@ -262,14 +243,6 @@ J.~Foster, O.~Cetinoglu, J.~Wagner, J.~L. Roux, J.~Nivre, D.~Hogan, and
 \newblock In \emph{Association for Computational Linguistics and International
   Joint Conference on Natural Language Processing (ACL-IJCNLP)}.
 
-\bibitem[{Gaikwad et~al.(2015)Gaikwad, Morina, Nistala, Agarwal, Cossette,
-  Bhanu, Savage, Narwal, Rajpal, Regino et~al.}]{gaikwad2015daemo}
-S.~N. Gaikwad, D.~Morina, R.~Nistala, M.~Agarwal, A.~Cossette, R.~Bhanu,
-  S.~Savage, V.~Narwal, K.~Rajpal, J.~Regino, et~al. 2015.
-\newblock Daemo: A self-governed crowdsourcing marketplace.
-\newblock In \emph{Proceedings of the 28th Annual ACM Symposium on User
-  Interface Software \& Technology}, pages 101--102.
-
 \bibitem[{Gao and Koller(2011)}]{gao2011active}
 T.~Gao and D.~Koller. 2011.
 \newblock Active classification based on value of classifier.
@@ -300,6 +273,13 @@ E.~Greensmith, P.~L. Bartlett, and J.~Baxter. 2004.
 R.~Greiner, A.~J. Grove, and D.~Roth. 2002.
 \newblock Learning cost-sensitive active classifiers.
 \newblock \emph{Artificial Intelligence}, 139(2):137--174.
+
+\bibitem[{Gururangan et~al.(2018)Gururangan, Swayamdipta, Levy, Schwartz,
+  Bowman, and Smith}]{gururangan2018annotation}
+S.~Gururangan, S.~Swayamdipta, O.~Levy, R.~Schwartz, S.~R. Bowman, and N.~A.
+  Smith. 2018.
+\newblock Annotation artifacts in natural language inference data.
+\newblock \emph{arXiv preprint arXiv:1803.02324}.
 
 \bibitem[{Halteren and Teufel(2003)}]{vanhalteren2003factoid}
 H.~V. Halteren and S.~Teufel. 2003.
@@ -441,11 +421,6 @@ T.~Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan, P.~Doll{'a}r,
 \newblock Microsoft {COCO}: Common objects in context.
 \newblock In \emph{European Conference on Computer Vision (ECCV)}, pages
   740--755.
-
-\bibitem[{Ling and Fidler(2017)}]{ling2017teaching}
-H.~Ling and S.~Fidler. 2017.
-\newblock Teaching machines to describe images via natural language feedback.
-\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)}.
 
 \bibitem[{Liu et~al.(2016{\natexlab{a}})Liu, Soderland, Bragg, Lin, Ling, and
   Weld}]{liu2016effective}
@@ -602,6 +577,11 @@ E.~Pavlick, H.~Ji, X.~Pan, and C.~Callison-Burch. 2016.
 \newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)},
   pages 1018--1024.
 
+\bibitem[{Plank(2011)}]{plank2011domain}
+B.~Plank. 2011.
+\newblock \emph{Domain adaptation for parsing}.
+\newblock Ph.D. thesis, University of Groningen.
+
 \bibitem[{Plank(2016)}]{plank16nonstandard}
 B.~Plank. 2016.
 \newblock What to do about non-standard (or non-canonical) language in {NLP}.
@@ -716,6 +696,11 @@ R.~Vedantam, C.~L. Zitnick, and D.~Parikh. 2015.
 W.~E. Webber. 2010.
 \newblock \emph{Measurement in Information Retrieval Evaluation}.
 \newblock Ph.D. thesis, University of Melbourne.
+
+\bibitem[{Weiss et~al.(2016)Weiss, Khoshgoftaar, and Wang}]{weiss2016survey}
+K.~Weiss, T.~M. Khoshgoftaar, and D.~Wang. 2016.
+\newblock A survey of transfer learning.
+\newblock \emph{Journal of Big Data}, 3.
 
 \bibitem[{Weissenborn et~al.(2017)Weissenborn, Wiese, and
   Seiffe}]{weissenborn2017fastqa}
