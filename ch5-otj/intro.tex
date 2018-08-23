@@ -12,7 +12,7 @@ In many situations, one wishes to build a new system --- e.g., to do Twitter inf
 opinion --- but one simply lacks the resources to follow either the pure ML or pure crowdsourcing road.
 
 % Our proposal: on the job training setting, related work
-In this chapter, we propose a framework called \emph{on-the-job learning} (formalizing and extending ideas first implemented in \citep{lasecki2013realtime}),
+In this chapter, we propose a framework called \emph{on-the-job learning} (formalizing and extending ideas first implemented in \citet{lasecki2013realtime}),
 in which we produce high quality results from the start without requiring a trained model.
 When a new input arrives,
 the system can choose to asynchronously query the crowd on \emph{parts} of the input it is
@@ -48,5 +48,5 @@ progressive widening to reason about continuous time \citep{coulom2007computing}
 We implemented and evaluated our system on three different tasks: named-entity
 recognition, sentiment classification, and image classification.
 On the NER task we obtained more than an order of magnitude reduction in cost compared to full human annotation, while boosting performance relative to the expert provided labels. We also achieve a 8\% F1 improvement over having a single human label the whole set, and a 28\% F1 improvement over online learning.
-An open-source implementation of our system, dubbed LENSE for ``Learning from Expensive Noisy Slow Experts'' is available at
-\href{http://www.github.com/keenon/lense}{http://www.github.com/keenon/lense}.
+An open-source implementation of our system, dubbed LENSE for ``Learning from Expensive Noisy Slow Experts'' is publicly available.\footnote{%
+\href{http://www.github.com/keenon/lense}{http://www.github.com/keenon/lense}}

@@ -1,15 +1,22 @@
-Having seen the power of introducing human annotations to properly evaluate systems in the last two chapters, we now explore ways in which we can use human evaluation to make systems better.
-\pl{this is kind of a superficial connection between the previous chapters and this one;
-I was thinking something along the lines of when you're tackling really complex tasks such as summarization,
-the difficulty of evaluation goes hand in hand with the difficulty of the task itself,
-and in such cases, how are you going to deploy something good?
-then you have to admit that you're doing NER as a proof of concept,
-not beceause it's so interesting as a task
-}
-In this chapter, our goal is to deploy a high-accuracy system starting with zero training examples.
-We consider an ``on-the-job'' setting, where as inputs arrive, we use real-time crowdsourcing to resolve uncertainty where needed and output our prediction when confident. As the model improves over time, the reliance on crowdsourcing queries
-decreases. We cast our setting as a stochastic game based on Bayesian decision
-theory, which allows us to balance latency, cost, and accuracy objectives in a principled way. Computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search. We tested our approach on three
-datasets---named-entity recognition, sentiment classification, and image classification. On the NER task we obtained more than an order of magnitude reduction in cost compared to full
-human annotation, while boosting performance relative to the expert provided labels. We also achieve a $8\%$ \fone{} improvement over having a single
-human label the whole set, and a $28\%$ \fone{} improvement over online learning.
+Having seen the power of introducing human annotations to properly evaluate systems in the last two chapters, we now explore ways in which we can use human feedback to address \textit{incompleteness in the training data}.
+The crux of the problem is that our training data, particularly when it is small, is often unable to adequately provide the model enough information to generalize to new types of unseen test instances. 
+At the same time, it is hard to know apriori exactly which examples are necessary to add to the training data to improve the system's performance.
+
+In this chapter, we propose a new learning paradigm, ``on-the-job'' learning, which uses the system to identify input that it is uncertain about \textit{at test-time} and request for on-demand human feedback to address its uncertainty.
+In this manner, the model indirectly identifies incompleteness in the training data through examples in the test data that it is uncertain about.
+It then resolves the incompleteness by collecting annotations on those examples.
+The net effect is a system that can maintain high accuracy irrespective of how much training data it has. 
+However, when doing so in practice, there are additional constraints, annotation cost and response latency, that apply.
+Our key idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
+We test our approach on three different tasks, named-entity recognition, sentiment classification and image classification, and show that we are able to reduce annotation costs by an order of magnitude relative to full human annotation by using on-the-job learning without any loss in accuracy.
+
+% Having seen the power of introducing human annotations to properly evaluate systems in the last two chapters, we now explore ways in which we can use human feedback to address incompleteness in the training data.
+% Recall that incompleteness 
+% \pl{this is kind of a superficial connection between the previous chapters and this one; I was thinking something along the lines of when you're tackling really complex tasks such as summarization, the difficulty of evaluation goes hand in hand with the difficulty of the task itself, and in such cases, how are you going to deploy something good?  then you have to admit that you're doing NER as a proof of concept, not beceause it's so interesting as a task }
+% In this chapter, our goal is to deploy a high-accuracy system starting with zero training examples.
+% We consider an ``on-the-job'' setting, where as inputs arrive, we use real-time crowdsourcing to resolve uncertainty where needed and output our prediction when confident. As the model improves over time, the reliance on crowdsourcing queries
+% decreases. We cast our setting as a stochastic game based on Bayesian decision
+% theory, which allows us to balance latency, cost, and accuracy objectives in a principled way. Computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search. We tested our approach on three
+% datasets---named-entity recognition, sentiment classification, and image classification. On the NER task we obtained more than an order of magnitude reduction in cost compared to full
+% human annotation, while boosting performance relative to the expert provided labels. We also achieve a $8\%$ \fone{} improvement over having a single
+% human label the whole set, and a $28\%$ \fone{} improvement over online learning.

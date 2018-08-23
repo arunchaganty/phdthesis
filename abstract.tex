@@ -8,19 +8,19 @@ In this work, we show how one can decrease the costs of incorporating human feed
 % Some tasks are very clear cut: classification, parsing, question answering.
 % others we really don't know what we're doing.
 
-First, we consider the ``finite incompleteness'' setting where the output space is too large to exhaustively annotate, but we may still expect significant overlap between the output of different systems. 
+First, we consider the \textit{``finite incompleteness''} setting where the output space is too large to exhaustively annotate, but we may still expect significant overlap between the output of different systems. 
 Naively combining annotations from different systems leads to a representation bias.
-Here, we show that cost of obtaining human feedback can be significantly amortized by using a novel importance-reweighted estimator.  
-We apply this estimator to design a new evaluation methodology for knowledge base population and show that cost of evaluating precision and recall within this framework can be reduced by a factor of 4.
+Here, we show that the cost of obtaining human feedback can be significantly amortized by using a novel importance-reweighted estimator.  
+We apply this estimator to design a new evaluation methodology for knowledge base population and empirically show that the cost of evaluating precision and recall within this framework can be reduced by a factor of 4.
 
-Next, we consider the ``infinite incompleteness'' setting wherein few, if any, systems ever produce identical output.
+Next, we consider the \textit{``infinite incompleteness''} setting wherein few, if any, systems ever produce identical output.
 Traditionally, the community has relied on similarity-based automatic metrics such as BLEU or ROUGE to compare the outputs produced by different systems.
-Unfortunately, these metrics have been shown to poorly correlate with human judgment and thus introduce bias in evaluation.
+Unfortunately, these metrics have been shown to correlate poorly with human judgment and thus introduce bias in evaluation.
 We derive an unbiased estimator that optimally combines these automatic metrics with human feedback.
 Our theoretical results allow us to characterize potential cost reductions only in terms of the tasks' subjectivity, measured by inter-annotator variance, and the automatic metrics' quality, measured by correlation with human judgments.
-On two popular natural language generation tasks, question answering and summarization, we empirically show that currently we can achieve at most a 7--13\% reduction in cost on two tasks, exposing fundamental limitations in debiasing current automatic metrics.
+On two popular natural language generation tasks, question answering and summarization, we empirically show that currently we can achieve at most a 7--13\% reduction in cost on two tasks, exposing fundamental limitations in \hyphenation{de-biasing} current automatic metrics.
 
-Finally, we look more broadly at how on-demand human feedback can be applied outside of evaluation and show how they can be incorporated into systems in real-time to deploy high-accuracy systems starting with zero training examples.
-We build systems that learn ``on-the-job'' by using human feedback to resolve uncertainty until it is confident in its predictions.
+Finally, we turn our attention to \textit{incompleteness in the training data}, particularly in low-resource settings.
+Here, we train a system ``on-the-job'' by requesting for human feedback in real-time to economically fill in holes in the \textit{training data} and thus resolve uncertainty in the model.
 Our key idea here is to cast the problem as a stochastic game based on Bayesian decision theory, which allows us to balance latency, cost, and accuracy objectives in a principled way.
-When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification---we obtained an order of magnitude reduction in cost compared to full human annotation, while also boosting performance relative to the expert provided labels.
+When tested on three classification tasks---named-entity recognition, sentiment classification, and image classification---we obtained an order of magnitude reduction in cost compared to full human annotation even when starting from zero training examples, while also boosting performance relative to a classical supervised model on the expert-provided labels.

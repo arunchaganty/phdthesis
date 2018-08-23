@@ -2,7 +2,7 @@
 \chapter{\label{chap:intro} Introduction}
 
 % Motivation.1: information summarization.
-One of the most exciting applications of natural language processing ahead of us is the development of systems that will help us digest the vast amount information being generated around the world.
+One of the most exciting applications of natural language processing ahead of us is the development of systems that will help us digest the vast amount of information being generated around the world.
 For example, we will one day be able to rely on 
 text summarization (TS) systems to condense the most salient information from one or more related articles into as few words as necessary (\reffig{intro:overview}(a)).
 We will be be able to get targeted summaries through open-ended question answering systems (OQA) (\reffig{intro:overview}(b)).
@@ -177,15 +177,14 @@ In \refchap{price}, we derive an optimal estimator to combine such a similarity 
 Our theoretical analysis allows us to characterize when it is possible to reduce human annotation costs while guaranteeing unbiasedness.
 We show that for both text summarization and open-ended question answering current cost savings are modest, about 10--15\%, owing to both the poor quality of existing automatic metrics and the inherent annotator variance for these subjective tasks.
 
-\paragraph{Beyond evaluation.}
-Thus far, we have focused on the use of human feedback during evaluation and not on how that evaluation can be used to improve the original system.
-We turn to this problem in the \refchap{otj}, where we show how human feedback can be effectively integrated \textit{at test-time} to continuously improve on the performance of the original system.
-We call this setting  ``on-the-job learning'' because our model learns as inputs arrive: we use real-time crowdsourcing to resolve uncertainty where needed and output our prediction once the model is confident.
-The human feedback is used to train the model and as the model improves over time, the reliance on crowdsourcing queries decreases. 
+\paragraph{Filling in holes in the training data with on-the-job learning.}
+Thus far, we have focused on the problem of incompleteness during evaluation, but it is often the case that \textit{the training data that systems use is also incomplete}, particularly when it is small.
+We turn to this problem in \refchap{otj}, where we use the system itself \textit{at test-time} to identify when it is uncertain about an example and then collect human feedback to fill in the holes in its training data.
+We call this setting  ``on-the-job learning'' because our model learns as inputs arrive:
+the human feedback is used to train the model and as the model improves over time, the reliance on crowdsourcing queries decreases. 
 We cast the problem as a stochastic game and use Bayesian decision theory to balance latency, cost, and accuracy objectives in a principled way. 
 Unfortunately, computing the optimal policy is intractable, so we develop an approximation based on Monte Carlo Tree Search.
-We tested our approach on three datasets---named-entity recognition, sentiment classification, and image classification.
-On the NER task we obtained more than an order of magnitude reduction in cost compared to full human annotation, while boosting performance relative to the expert provided labels.
+We tested our approach on three datasets---named-entity recognition, sentiment classification, and image classification---and show that on-the-job learning can reduce the cost of deploying a high-accuracy system by an order of magnitude when compared to full human annotation even when starting from zero training examples.
 
 \section{Thesis outline}
 The rest of the thesis is structured as follows:
@@ -197,6 +196,6 @@ In \refchap{price}, we move over to study infinite incompleteness using open que
 We'll see how automatic metrics can be optimally combined with human feedback to reduce the costs of human evaluation.
 Unfortunately, we'll show that in practice cost savings are modest: 
 However, our optimality result lets us step back and observe that our empirical results actually highlight fundamental limitations in using automatic metrics for unbiased evaluation. 
-In \refchap{otj}, we change gears and look at how we can use human feedback while learning: we propose a new learning paradigm, ``on-the-job learning'', that allows the model to query for human feedback when it is not confident in its predictions.
+In \refchap{otj}, we step back and look at how incompleteness can be addressed while training a system: we propose a new learning paradigm, ``on-the-job learning'', that allows the model to query for human feedback when it is not confident in its predictions and thus fill in gaps in its training data.
 Finally, in \refchap{discussion}, we conclude this thesis with a discussion on the further uses of human feedback in building natural language systems.
 Our discussion touches upon possible opportunities to improve upon human evaluation as a methodology for natural language generation tasks and how human feedback provides us with a more holistic view of evaluation.
