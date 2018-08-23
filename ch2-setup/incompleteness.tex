@@ -1,0 +1,32 @@
+\section{\label{sec:setup:incompleteness} Finite and infinite incompleteness}
+
+The common theme of this thesis is addressing \textit{incompleteness} in training and evaluation datasets with on-demand human feedback. 
+In this section, we will expand on the intuition we presented in \refchap{intro} to provide a more formal description of what incompleteness is.
+
+Intuitively, incompleteness arises because the data we are able to observe (the test collection)  does not capture phenomena in the data we wish to evaluate (the system's predictions).
+Formally,
+  let $\sX$ be our universe of objects (e.g.\ relational triples in KBP, answers to questions or summaries of articles),
+  let $X \subset \sX$ be the observable data
+  and let $Y \subset \sX$ be the target data that we wish to evaluate.
+Our goal is to measure some aggregate property $f$ (e.g.\
+accuracy, precision, etc.) of $Y$, $\mu_f = \E_{p(Y)}[f(y)] \eqdef \sum_{y \in Y} p(y) f(y)$, where $p(y)$ is a given distribution or measure over $y \in Y$.
+However, because we can only evaluate $f$ on $X$ (the observable set) the value of $f$ on the subset $Y \setminus X$ is indeterminable.
+As a result, we say that $X$ is \textbf{incomplete} when measuring $f$ on $Y$ if $Y$ is not contained in its support, i.e., $Y \not\subseteq X$.\footnote{%
+An equivalent, more rigorous, definition of incompleteness can be given in terms of measure theory: we say that $X$ is \textit{incomplete} when measuring $f$ on $p(Y)$ if $p(Y \setminus X) > 0$.
+}
+
+\paragraph{Finite incompleteness.}
+We say that $X$ is finitely incomplete when measuring $f$ on $Y$ if the cardinality of the universe, $|\sX|$, is finite.
+As an example, consider the setting of KBP:\@
+Here, $\sX$ consists of relation triples defined by spans in the document corpus, $X$ is a static test collection, $Y$ is a system's predictions that we are trying to evaluate and $f$ is precision or recall.
+While there can be a very large number of such triples, the number is finite because the document collection is finite.
+With problems of finite incompleteness, it is fundamentally possible to annotate all of $\sX$ and thus ensure that $Y \subseteq X = \sX$.
+
+\paragraph{Infinite incompleteness.}
+Likewise, we say that $X$ is infinitely incomplete when measuring $f$ on $Y$ if the cardinality of the universe, $|\sX|$, is infinite.
+As an example, consider the setting of text summarization where $\sX$ consists of all possible text strings which is infinite, $X$ is the set of reference summaries, $Y$ is the set of system-generated summaries and $f$ is the quality of the summary.
+
+\paragraph{Addressing incompleteness with on-demand annotation.}
+The main solution for incompleteness we present in this thesis is on-demand human annotation.
+Following the formal description above, on-demand annotation ``cheats'' by annotating elements of $\sX$ as required, effectively making all of $\sX$ observable and thus stepping around the problem of incompleteness.
+The main issue then is to reduce the costs of measuring $\mu_f$, and this will be the objective of the technical solutions we present through the rest of this thesis.
