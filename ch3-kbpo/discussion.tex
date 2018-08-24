@@ -64,6 +64,7 @@ allows researchers to exploit such datasets and while still being able to accura
 %We believe the sampling ideas presented in this work could be adapted,
 %will still be relevant in such a setting,
 %but the challenge to tackle is in being able to reuse assessments obtained on one summary for another.
-
-\pl{would be good to pop back up and say how the learnings from this section benefit NLP in general,
-thereby connecting it with the broader thesis}
+While our observations regarding bias were specifically instantiated and empirically measured for knowledge base population, they apply to any scenario exhibiting finite incompleteness, e.g.\ information retrieval, event extraction or extractive question answering (different from the open-response question answering we discussed in \refchap{intro}).
+Our solution applies wherever precision or recall are being measured across multiple systems and can be easily extended to estimate any other metric that is averaged over instances in the data.
+However, the extent to which we are able to reduce the variance of estimation, and thereby cost, depends on the overlap between the predictions of two systems: in practice, we expect the overlap to be fairly high in scenarios exhibiting finite incompleteness.
+Put together, in this chapter we have shown that we can indeed reduce the costs of unbiased evaluation in finite incompleteness settings with importance-reweighted estimators.

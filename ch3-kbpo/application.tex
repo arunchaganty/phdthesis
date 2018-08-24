@@ -18,28 +18,86 @@ Both the official TAC-KBP evaluation and the on-demand evaluation we propose use
 %\ac{@PL:\@ This paragraph goes into details, but I felt that it was useful to illustrate how we tailored a distribution to meet our evaluation goals.}
 Identifying a reasonable distribution $p_i$ is an important implementation decision that depends on what one wishes to evaluate.
 Our goal for the on-demand evaluation service we have implemented is to ensure that KBP systems are fairly evaluated on diverse subjects and predicates, while at the same time, ensuring that entities with multiple relations are represented to measure completeness of knowledge base entries.
-As a result, we propose a distribution that is inversely proportional to the frequency of the subject and predicate and is proportional to the number of unique relations identified for an entity (to measure knowledge base completeness).
-%See \refapp{implementation} in the supplementary material for an analysis of this distribution and a study of other potential choices.
+The dual objectives of balancing the head and tail of the distribution apply broadly other tasks as well, such as information retrieval.
 
-%Recall that a KBP system predicts a set of relation instances of the form (\entity{subject}, \relation{predicate}, \entity{object}, \textsc{provenance}).
-%Simply choosing $p_i$ to be the uniform distribution over this set causes our evaluation metrics to be be dominated by a few common predicates (e.g.\ professional titles) or subject entities (e.g.\ ``United States of America'').
-%Instead, we propose the following distribution which we reasonably approximates our goals:\footnote{
-%See \refapp{implementation} for an analysis of this distribution and a study of other potential choices.} 
-%\begin{align*}
-%  p_i(x) &\eqdef \frac{\operatorname{\#uniq-relns}_i(x)}{\operatorname{\#pred-insts}_i(x) \operatorname{\#subj-insts}_i(x)},
-%\end{align*}
-%where $\operatorname{\#uniq-relns}_i(x)$ measures the number of unique relations (\entity{subject}, \relation{predicate}, \entity{object} triples) with the same \entity{subject} as $x$ in the system's output $X_i$, 
-%$\operatorname{\#pred-insts}_i(x)$ measures the number of instances with the same \relation{predicate} as $x$ in $X_i$ and 
-%$\operatorname{\#subj-insts}_i(x)$ measures the number of instances with the same \relation{subject} as $x$ in $X_i$.
+To pick the specific distributions to use in our work,
+we looked to the evaluation guidelines of the TAC KBP competition developed by the Linguistic Development Consortium (LDC)~\citep{ellis2015tackbp,mayfield2012evaluating} as a well-respected community standard and tried to adapt it to our framework.
 
-%%The choice of distribution over this set determines how much we put weight on rare predicates and subject entities in our evaluation metric. % in our precision score. % PL: for recall 
-%We therefore propose two instance distributions that evaluate precision and recall scores macro-averaged over predicates and subject entities, respectively:
-%\begin{align*}
-%  p_i^\text{(pred)}(x) &\eqdef \frac{1}{\operatorname{\#preds}(X_i)} \frac{1}{\operatorname{\#insts}(X_i, \relation{pred}(x))} \\
-%  p_i^\text{(subj)}(x) &\eqdef \frac{1}{\operatorname{\#subjs}(X_i)} \frac{1}{\operatorname{\#insts}(X_i, \relation{subj}(x))}
-%\end{align*}
-%where $\operatorname{\#preds}$, $\operatorname{\#nsubjs}$ specifies the number of predicates, subject entities in $X_i$ respectively and $\operatorname{\#insts}$ the number of instances with the given predicate or subject entity.
-%See \refapp{implementation} for more details.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/analysis/distribution}
+  \caption[TAC KBP 2015 Query entity distribution]{\label{fig:kbpo:distribution}
+    The solid line plots a histogram of how many documents a particular entity appeared in the TAC KBP 2016 corpus.
+    The distribution is approximately a power-law distribution.
+    Overlayed is a histogram of the frequency of the actual query entities used in the TAC KBP 2015 evaluation, binned by their frequency. We consider entities that appear in 3 or less unique documents (the 50th percentile) to be ``low'' frequency entities, those that appear more than 154 unique document (90th percentile) to be ``high'' frequency entities and those that appear in between to be ``medium'' frequency entities.
+    The TAC KBP evaluation prefers medium frequency and low frequency entities.
+  }
+\end{figure}
+
+\paragraph{The LDC query distribution and metrics.}
+The first aspect we looked into was the distribution of entities that were queried in the official evaluations. 
+The KBP evaluation is well known for using query entities that participate in several relations but are still not common enough to have a knowledge base entry on say Wikipedia.
+We wanted to capture this property in our evaluation as well.
+
+To get a better sense of the distribution of entities that were queried, we used the entities (i.e., people and organizations) that were recognized by the Stanford KBP entity linking system~\citep{stanford2017kbp} and plotted a log-log distribution of the number of entities that appear in some number of documents (\reffig{kbpo:distribution}).
+As one might expect, the distribution approximately follows a power-law and is extremely long-tailed: there are many entities that appear in just one or two documents. 
+
+We then binned entities into three categories, ``low'' frequency entities that appear in at most 3 documents in the corpus (this is the 50th percentile), ``medium'' frequency entities that appear in between 3 and 154 (90th percentile) documents and finally, ``high'' frequency entities that appear in more than 154 documents.
+The proportion of query entities in these three bins has been overlayed on top of the distribution in \reffig{kbpo:distribution}.
+We see that a majority of the entities queried are medium frequency, followed by low frequency entities and a handful of high frequency entities.
+We would like to ensure that our sampling distributions adequately capture these medium frequency entities. 
+
+ \begin{figure}
+   \centering
+   \begin{subfigure}{0.7\textwidth}
+     \includegraphics[width=\textwidth]{figures/analysis/selective_supervised_entity}
+     \caption{\label{fig:kbpo:selective-supervised-entity} Distribution over entity classes}
+   \end{subfigure}
+ 
+   \begin{subfigure}{0.7\textwidth}
+     \includegraphics[width=\textwidth]{figures/analysis/selective_supervised_clusters}
+     \caption{\label{fig:kbpo:selective-supervised-clusters} Distribution over entity clusters}
+   \end{subfigure}
+ 
+   \caption[Comparison of relation sampling schemes on their entity distributions]{\label{fig:kbpo:selective-supervised}
+   We compared the types of entities that different relation instance sampling schemes preferred when we sampled 1,000 instances using them.
+   Plots are averaged over 100 draws.
+   (a) In terms of low, medium and high frequency entities, both $p^{\text{(subj)}}$ and $p^{\text{(subj-reln)}}$ sample fewer high frequency entities which are otherwise over represented.
+   (b) In terms of how many entities were sampled with more than one relation (a cluster) were sampled, $p^{\text{(subj-reln)}}$ is still able to capture a comparable number of these unlike $p^{\text{(reln)}}$.
+   }
+ \end{figure}
+ 
+ \begin{figure}
+   \centering
+   \includegraphics[width=0.9\textheight, angle=-90]{figures/analysis/selective_supervised_relations}
+   \caption[Comparison of relation sampling schemes on their relation distributions]{\label{fig:kbpo:selective-supervised-relation}
+   We compared the types of relations that different relation instance sampling schemes preferred when we sampled 1,000 instances using them.
+   Plots are averaged over 100 draws.
+   Both $p^{\text{(inst)}}$ and $p^{\text{(subj)}}$ do not draw any instances for particular relations, e.g.\ \texttt{org:shareholders}, while
+   $p^{\text{(rel)}}$ and $p^{\text{(subj-rel)}}$ adequately represent each relation.
+   }
+ \end{figure}
+ 
+ \paragraph{Identifying diverse clustered relations.}
+ Finally, we wanted to ensure that the entities we sampled from systems were well distributed both over medium frequency entities and over relations.
+ Unsurprisingly, the naive approach of uniformly sampling relations outputted by systems, is dominated by  high frequency entities (\reffig{kbpo:selective-supervised-entity}) on a few common relations (e.g., \texttt{per:title}; see \reffig{kbpo:selective-supervised-relation}).
+ 
+ Our first attempt at rectifying the problem was to use two distributions that sampled relations inversely proportional to the frequency of their subject entity and relation label respectively:
+ \begin{align*}
+   p^{\text{(subj)}}(x) &\propto \frac{1}{|\texttt{subj}(x)|} &
+   p^{\text{(rel)}}(x) &\propto \frac{1}{|\texttt{rel}(x)|}
+ \end{align*}
+ These distributions solved the two problems individually, but could not be combined because they differed in their support.
+ There was an additional problem: we hardly ever selected two relations from the same entity, as shown in \reffig{kbpo:selective-supervised-clusters}.
+ We wanted to maintain this property to be able to test the entity linking component of systems.
+ 
+ Our final proposed distribution rectified this by combining $p^{\text{(subj)}}(x)$ and $p^{\text{(rel)}}(x)$ and including a factor for the number of \textit{other} relations the subject entity had.
+ \begin{align*}
+   p^{\text{(subj-rel)}}(x) &\propto \frac{|\texttt{subj-relns}(x)|}{|\texttt{subj}(x)| |\texttt{rel}(x)|},
+ \end{align*}
+ \reffig{kbpo:selective-supervised-entity} shows how this new distribution has both a better representation of medium frequency entities and is well balanced across all the relations.
+ \reffig{kbpo:selective-supervised-clusters} also shows that it is able to represent clusters of relations with the same entity.
+
 \begin{figure}[!th]
   \centering
   \begin{subfigure}{\textwidth}
@@ -71,10 +129,38 @@ and measured a substantial inter-annotator agreement with a Fleiss' kappa of 0.6
 Consequently, we take a majority vote over 3 workers in subsequent experiments.
 %leading to a total cost of \$0.15 per relation instance.
 
-%\pl{what does it mean to annotate a relation - get all the relation instances for that relation or just one?}.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/analysis/exhaustive_entity_cross}
+  \caption[Comparison of document sampling distributions]{\label{fig:kbpo:exhaustive-entity}
+  In order to properly test the entity linker when measuring recall, an important feature of KBP systems, we must identify documents for exhaustive annotation that contain some entity clusters.
+  A sample of 200 documents uniformly picked from the document collection only exhibits clusters for high frequency entities.
+  Our TF-IDF sampling scheme increases the frequency with which medium and low frequency entities appear across multiple documents in the sample.
+  }
+\end{figure}
+
 \subsection{Sampling true instances}
 Sampling from the set of true instances $\sY$ is difficult because we can't even enumerate the elements of $\sY$.
-As a proxy, we assume that relations are identically distributed across documents and have crowdworkers annotate a random subset of documents for relations using an interface we developed (\reffig{kbpo:entity-interface}).
+As a proxy, we assume that relations are identically distributed across documents and have crowdworkers annotate a random subset of documents for relations.
+
+Here too, we wanted to come up with a good distribution with which to query documents to exhaustively annotate.
+ It is not enough for us to ensure the documents contain a good distribution of medium frequency entities: we must also ensure that these entities appear in multiple documents to fairly test systems' entity linking components.
+ 
+ First, we tried using documents that were sampled uniformly from the corpus.
+ As \reffig{kbpo:exhaustive-entity} shows, 
+ a randomly sampled document contains a good range of low, medium and high frequency entities, but almost none of these entities are shared across the documents of the collection.
+ We note that the fact that low frequency entities dominate the entity distribution is to be expected because they constitute the majority of entities in any given document,\footnote{%
+   We also tried sampling documents based on the frequency of entities they contained (estimated using the Stanford entity linker), but found that it did not significantly reduce the number of low frequency entities.} but we can correct for this when sampling relations.
+ 
+ Instead, we used a two-step sampling procedure.
+ First, we randomly sample documents for 20\% of our exhaustive document collection and then sample the remaining documents proportional to their aggregate TF-IDF scores with the entities identified in the first sample.
+ \reffig{kbpo:exhaustive-entity} shows the distribution of entities that were sampled by this method, using the Stanford entity linking system to identify entities in the first sample.
+ The method is able to increase the number of medium frequency entities appearing in multiple documents.
+ When implementing this method in practice, we explicitly avoided using the Stanford entity linking system when identifying entities in documents because we were concerned about the bias it would introduce into our recall estimates.
+ Instead, we identified the entities in the first sample using crowdsourcing with our exhaustive annotation interface.
+
+\subsection{Labeling true instances}
+Once a random subset of documents was selected, we asked crowdworkers to identify relations using an interface we developed (\reffig{kbpo:entity-interface}).
 Crowdworkers begin by identifying every mention span in a document.
   For each mention, they are asked to identify its type, canonical mention within the document
   and associated Wikipedia page if possible.
