@@ -7,11 +7,12 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: all.bib
+Warning--I didn't find a database entry for "pierce1969whither"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty publisher in owen2013monte
 You've used 116 entries,
             3571 wiz_defined-function locations,
-            1183 strings with 23481 characters,
+            1184 strings with 23498 characters,
 and the built_in function-call counts, 85200 in all, are:
 = -- 7182
 > -- 4384
@@ -50,4 +51,4 @@ warning$ -- 1
 while$ -- 475
 width$ -- 0
 write$ -- 1445
-(There was 1 warning)
+(There were 2 warnings)

@@ -63,7 +63,7 @@ We paid workers \$1.00 to join the retainer pool and an additional \$0.01 per qu
 Worker response times were generally in the range of 0.5--2 seconds for NER, 10--15 seconds for Sentiment, and 1--4 seconds for Faces.
 
 When running experiments, we found that the results varied based on the current worker quality. %, fluctuating on the NER task between 87 and 96 F1, depending on workers.
-To control for variance in worker quality across our evaluations of the different methods, we collected 5 worker responses and their delays on each label ahead of time\footnote{These datasets are available in the code repository for this paper}.
+To control for variance in worker quality across our evaluations of the different methods, we collected 5 worker responses and their delays on each label ahead of time\footnote{These datasets are available in the code repository for this chapter}.
 During simulation we sample the worker responses and delays without replacement from this frozen pool of worker responses.
 
 \begin{table}[t]
@@ -185,7 +185,7 @@ On the other hand, using richer features (\textsc{rnn}) the model is able to lea
 Note that even when the model capacity is limited, LENSE is able to guarantee a consistent, high level of performance.
 
 \paragraph{Reproducibility.}
-All code, data, and experiments for this paper are available on CodaLab at
+All code, data, and experiments for this chapter are available on CodaLab at
 {\small \url{https://www.codalab.org/worksheets/0x2ae89944846444539c2d08a0b7ff3f6f/}}.
 
 % -- CUT

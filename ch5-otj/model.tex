@@ -146,18 +146,18 @@ we define a distribution over the output $\by$, responses $\br = (r_1, \dots, r_
 and response times $\bt = (t_1, \dots, t_k)$ as follows:
 \begin{align}
   \label{eqn:dynamics}
-%p(\by, \br, \bt \mid \bx, \bq) \eqdef \p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid \bx, \by, q_i) \ptime(t_i \mid \bx, \by, q_i, s_i).
-p(\by, \br, \bt \given \bx, \bq, \bs) \eqdef \p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid y_{q_i}) \ptime(t_i \mid s_i).
+%p(\by, \br, \bt \mid \bx, \bq) \eqdef p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid \bx, \by, q_i) \ptime(t_i \mid \bx, \by, q_i, s_i).
+p(\by, \br, \bt \given \bx, \bq, \bs) \eqdef p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid y_{q_i}) \ptime(t_i \mid s_i).
 \end{align}
 The three components are as follows:
-$\p(\by \given \bx)$ is the \emph{prediction model} (e.g.\ a standard linear-chain CRF);
+$p(\by \given \bx)$ is the \emph{prediction model} (e.g.\ a standard linear-chain CRF);
 $\presp(r \given y_q)$ is the \emph{response model} which describes the
 distribution of the crowd's response $r$ for a given a query $q$ when the true
 answer is $y_q$;
 and $\ptime(t_i \mid s_i)$ specifies the latency of query $q_i$.
 %\footnote{Of course, $\ptime$ and $\presp$ can easily be extended to depend arbitrarily on the input $\bx$.} 
 %If the crowd workers were infallible we could define $\presp(r \given y_q)$ to
-The CRF model $\p(\by \given \bx)$ is learned based on all actual responses
+The CRF model $p(\by \given \bx)$ is learned based on all actual responses
 (not simulated ones) using AdaGrad.
 To model annotation errors, we set $\presp(r \given y_q)
 = 0.7$ iff $r = y_q$,\footnote{We found the humans we hired were roughly 70\%

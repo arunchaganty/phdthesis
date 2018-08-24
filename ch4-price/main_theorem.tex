@@ -1,6 +1,6 @@
 \subsection{Main Theorem}
 
-In this section, we prove the main theorem (\refthm{main}) in the paper about the minimax optimal variance for an unbiased estimator. \refthm{main} will follow from the two following lemmas (Lemmas~\ref{lem:variance_calc} and~\ref{lem:mvue}). First, we show in \reflem{variance_calc} that for all distributions with fixed $\sigma^2_f$, $\sigma^2_a$ and $\rho$, the variance of $\mucontrol$ is constant and equal to: $\frac{1}{n}(\sigma_f^2(1-\rho^2)+\sigma_a^2)$.
+In this section, we prove the main theorem (\refthm{main}) in the \refchap{price} about the minimax optimal variance for an unbiased estimator. \refthm{main} will follow from the two following lemmas (Lemmas~\ref{lem:variance_calc} and~\ref{lem:mvue}). First, we show in \reflem{variance_calc} that for all distributions with fixed $\sigma^2_f$, $\sigma^2_a$ and $\rho$, the variance of $\mucontrol$ is constant and equal to: $\frac{1}{n}(\sigma_f^2(1-\rho^2)+\sigma_a^2)$.
 Then we give an explicit distribution, a Gaussian distribution, where \emph{any} estimator yields at least this variance using the theory of sufficient statistics.
 Together, these show that the max variance of any estimator is at least the max variance of $\mucontrol$.
 
@@ -11,10 +11,6 @@ As a reminder, the estimator is
 \end{align}
 
 where $\alpha = \Cov(f(z),g(z))$.
-
-%\pl{drop the random variable from the subscript of $\mathbb E$ (e.g., $\mathbb E_{z^{(i)}})$; I don't think this is mathematically correct} %I dislike 
-
-%\pl{give a high-level description of the proof strategy; would be good to have a proof sketch in the paper}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}

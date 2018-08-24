@@ -180,11 +180,72 @@ With 3 workers per document, we paid about \$15 per document on average.
 Each document contained an average 9.2 relations, resulting in a cost of about \$1.61 per relation instance.
 We note that this is about ten times as much as labeling a relation instance.
 
-%We defer details regarding how documents themselves should be weighted to capture diverse entities that span documents to \refapp{implementation}.
-%We provide details regarding our sampling scheme and its distribution over entities in \refapp{implementation} of the supplementary material.
-%When considering uniformly sampled documents, we found that a majority of the relations extracted correspond to very rare entities and result in very few entities with more than one relation (\reffig{entity-distribution}).
-%In contrast, the TAC KBP query are almost evenly split between rare and semi-frequent entities.
-%As a heuristic, we adopt the following two-stage sampling procedure:
-%First, 20\% of our exhaustive document collection is sampled uniformly and annotated.
-%We then uniformly sample the entities annotated to create a collection of ``evaluation entities''.
-%Finally, we construct the remaining 80\% of our document collection by searching for documents that contain the evaluation entities according to an exact string match. This process results in far more entities of medium frequency.
+\subsection{Computing scores}
+The official TAC KBP evaluation computes macro precision, recall and \fone{} using the average taken over all entities.
+In the evaluation, systems are asked to present exactly one justification or provenance for every relation that is ultimately labeled by expert annotators.  
+A relation is only judged correct if the entities in the relation are both correctly linked and entailed by the provided justification.
+This specification presents a few problems and opportunities for our evaluation protocol that we discuss in this subsection. 
+
+\paragraph{Utilizing multiple justifications for a relation.}
+We would like systems to report multiple justifications for a particular relation to ensure that we can maximally reuse our annotations.
+In principle, we only care if any of the reported justifications are correct.
+However, we chose to measure the average correctness of all the justifications provided for two reasons:
+  (a) first, we think that looking at average correctness gives a better indicator of system quality and 
+  (b) it is hard to adapt a sampling based approach, which implicitly computes an average, to compute the ``maximum'' accuracy across all the justifications without having to annotate all the justifications.
+
+\paragraph{Handling entity linking.}
+When annotating a relation predicted by a system, we ask annotators to (a) ensure that the subject is correctly linked to a canonical entity within the document and (b) to attempt to link the entity to a Wikipedia page (as a globally canonical entity).
+However, KBP systems often use their own entity linking scheme that does not correspond to the ones in Wikipedia.
+As a result, we only handle entity linking \textit{within} a document, ensuring that the canonical entity span reported by the system corresponds to the one indicated by the annotators.
+We hope to measuring cross-document entity linking in future work.
+
+\paragraph{Factored scores.}
+As part of our evaluation, we independently identify the correctness of the relation between the subject and object in the justification, as well as the correctness of the entity links of the subject and object.
+As a result, we are able to compute correctness scores for relation classification, entity linking and the combined task.
+Additionally, we are able to use per-relation and per-entity sampling distributions to report unbiased scores for each relation and entity category.
+As a result, we are able to automate a basic error analysis method and make it more statistically sound.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/interface/leaderboard}
+  \caption[KBP Online]{\label{fig:kbpo:kbpo}
+  A screenshot of the home page of our evaluation service, KBP Online.
+  Our service takes care of the entire pipeline of sampling relation instances, annotating them and computing a score.
+Once the system is completely evaluated, we show their entry on the home page leaderboard along with an 80\% confidence intervals estimated using bootstrap (not shown here).
+  }
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/interface/errors}
+    \caption{\label{fig:kbpo:prediction-errors} Annotations of a particular system's predictions}
+  \end{subfigure}
+
+  \begin{subfigure}{0.7\textwidth}
+    \includegraphics[width=\textwidth]{figures/interface/explore-data}
+    \caption{\label{fig:kbpo:explore} Exhaustive annotations on entire documents}
+  \end{subfigure}
+
+  \caption[Features of KBP Online]{\label{fig:kbpo:kbpo-features}
+  Apart from automating the evaluation of KBP systems, KBP Online also allows users to see (a) annotations of their predictions to identify the errors their systems have made and (b) annotations that were made on entire documents to identify relations that no system has been able to extract yet.
+  }
+\end{figure}
+
+\subsection{Other implementation details}
+We implemented the online service using the Django web framework with Postgres as our relational database.
+For performance reasons, we computed sampling distributions and evaluation scores entirely within the database.
+We used the service to host the crowdsourcing interfaces described in \refsec{kbpo:application} and dynamically generated Human Intelligence Tasks (HITs) on Amazon Mechanical Turk from our server.
+Maintaining exactly which relations were sampled and with what probability is important for our importance-reweighted estimator, and we stored these details in our database.
+A large amount of effort went into automating the background tasks that collected annotations from Amazon Mechanical Turk, aggregated them and updating the scores.
+
+In terms of an interface to users, they simply need to upload a single file in the official TAC KBP format containing their predicted knowledge base.
+Our service entirely takes care of computing the required statistics and sampling from the systems.
+At present, we collect about 500 samples for every system, which corresponds to an 80\% confidence interval of $\pm 3\%$.
+Once the system is completely evaluated, we show the entry on the home page leaderboard (\reffig{kbpo:kbpo}) along with an 80\% confidence intervals estimated using bootstrap (not shown here).
+
+Additionally, we allow users to drill down into annotations we collected on documents and on a system's predictions (\reffig{kbpo:kbpo-features}).
+These annotations help users identify the errors systems are making as well as identify relations that no system is currently able to extract.
+We hope to include a feature that also provides a quantitative summary of the models performance on different relations and break down errors between relation classification and entity linking.
+We hope that these features will help push the state of the art of knowledge base population forward.
+

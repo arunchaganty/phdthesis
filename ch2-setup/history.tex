@@ -4,23 +4,43 @@ Defining an evaluation methodology provides a necessary framework for systematic
 Unsurprisingly, this has led to an ongoing debate in the field of artificial intelligence on how to balance philosophical ideals, like genuine language understanding, with pragmatism, like having a single quantitative indicator.
 In this section, we revisit some of these discussions within the natural language processing field to provide some context for how the future of evaluation should look like.
 
-\subsection{Early ideas.}
+\subsection{Early ideas}
 
 Even as far back as 1956, before the development of many automated natural language processing systems, the future evaluation of these techniques was discussed.
 \citet{miller1956psychological} is perhaps one of the first such papers to explore what modes of evaluation exist for machine translation, beyond asking humans for subjective input.
 On the automated metric front, the paper introduces lexical overlap based scores that still underpin the most popular evaluation metrics today.
-The authors recognized that the automatic metric were effective ``at the lower end of the scale'', but were unsure if it would remain differentiating between better systems.
+The authors recognized that automatic metrics were effective ``at the lower end of the scale'', but were unsure if it would remain differentiating between better systems.
 As a result, they also looked at including humans in more objective evaluations, such as computing information gain by asking people to perform the Shannon test after reading the system generated translation, but concluded this might be far too laborious.
 Finally, the authors also proposed using reading comprehension tests as an objective evaluation of whether the summary was able to correctly convey information: an exciting idea that is seeing recent interest, but with the challenge that picking the right questions can also be quite hard.
 
-\subsection{An era of shared tasks.}
+\subsection{An era of shared tasks}
 
-Fast forwarding through 40 years, a number of high-profile shared tasks were set up by the National Institute for Standards and Technology (NIST) in the 1990s for a variety of natural language understanding tasks through the TIPSTER program.
+In the 30 years that followed, the research community did not share a common evaluation methodology that allowed methods to be objectively compared with each other.
+The following two quotes from a now-infamous 1969 letter by John Pierce~\citep{pierce1969whither} summarized the sordid state of progress in the automated speech recognition community:\footnote{%
+The following quotes were sourced from \href{Mark Liberman's presentation at the CATS reproducibility workshop}{https://pdfs.semanticscholar.org/presentation/b719/c67e53c008c68e8978c2e97643cf131bb61c.pdf}.
+}
+
+\begin{quote}
+  The typical recognizer \dots builds or programs \textit{an elaborate system that either does very little or flops in an obscure way}. A lot of money and time are spent. \textbf{No simple, clear, sure knowledge is gained}. The work has been an experience, not an experiment.
+\end{quote}
+\begin{quote}
+We are safe in asserting that speech recognition is attractive to money. The attraction is perhaps similar to the attraction of schemes for turning water into gasoline, extracting gold from the sea, curing cancer, or going to the moon. 
+One doesn't attract thoughtlessly given dollars by means of schemes for cutting the cost of soap by 10\%.
+To sell suckers, one uses deceit and offers glamor. [\dots] \textbf{It is clear that glamor and any deceit in the field of speech recognition blind the takers of funds as much as they blind the givers of funds}. Thus, we may pity workers whom we cannot respect.
+\end{quote}
+
+Following the condemning report, funding for human language technologies dried up for almost 20 years.
+It was not until 1985 when the DARPA program, lead by Charles Wayne, was able to resume funding for automatic speech recognition by devising the shared task format: systems would be compared using objective metrics on a shared dataset run by a neutral agent, National Institute for Standards and Technology (NIST) and would have to reveal their methods to other participants.
+The goal of this format was to both guard against the glamor and deceit that had so plagued the field and to ensure that ``simple, clear, sure knowledge'' was gained.
+Needless to say, the format worked and has been successfully applied to a number of other tasks in the 1990s through the TIPSTER program.
 For example, the Text REtrieval Conference (TREC) was set up in 1992 to evaluate information retrieval systems and the Message Understanding Conference (MUC) was set up in the same period to evaluate information extraction systems.
-Later, the SUMMAC extended the set of tasks to summarization.
+Later, the SUMMAC program extended the set of tasks to summarization.
+It is hard to understate the enormous impact such shared tasks, and the rigor they brought to evaluation, had on the field.
 
-Early on, a central question was how to evaluate these systems.
-While the MUC tasks had more objective evaluation criteria like precision and recall, there has been a long debate about evaluation TREC.\@
+A more detailed discussion of the impact of shared evaluation methodologies is outside the scope of this thesis.
+Rather, we will focus on how these programs designed their respective evaluation methodologies.
+While the MUC tasks preferred setting up fully supervised tasks with simple objective evaluation criteria like precision and recall, these methods are harder to apply in information retrieval where it is not feasible to fully label the entire document corpus.
+As a result, there has been a long running debate about evaluation at TREC.\@
 \citet{webber2010measurement} provides an excellent summary of this work.
 Perhaps the most interesting line of work on evaluation was in the TIPSTER summarization program~\citep{mani1999tipster}:
   systems were compared on an end-task based metric of how much they could speed up decision-making for analysts.
@@ -35,7 +55,7 @@ This motivated the development of automatic metrics, starting with BLEU~\citep{p
 The automatic metric was proposed as a way to evaluate systems in the aggregate, with the hope that individual errors made by using a simple lexical overlap would be washed out as many different summaries were combined.
 In the summarization community, ROUGE~\citep{lin2004rouge} was proposed as an efficient way to compute \textit{coverage} of the generated summary.
 When first reported, it was observed that both the BLEU and ROUGE metrics had had high correlation with human ratings when measured at the system level.
-Unfortunately, over time, it was found that these metrics were inadequate when systems began use a more diverse vocabulary~\citep{lavie2009meteor,cohan2016revisiting}
+Unfortunately, over time, it was found that these metrics were inadequate when systems began to use a more diverse vocabulary~\citep{lavie2009meteor,cohan2016revisiting}
 
 % 2. adding linguistic information with CiDER, METEOR, etc.
 This prompted development of variants that used additional linguistic information or word frequencies, e.g. METEOR~\citep{lavie2009meteor,denkowski2014meteor} or CiDER~\citep{vedantam2015cider}.
