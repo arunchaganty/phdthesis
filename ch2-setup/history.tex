@@ -16,8 +16,8 @@ Finally, the authors also proposed using reading comprehension tests as an objec
 \subsection{An era of shared tasks}
 
 In the 30 years that followed, the research community did not share a common evaluation methodology that allowed methods to be objectively compared with each other.
-The following two quotes from a now-infamous 1969 letter by John Pierce~\citep{pierce1969whither} summarized the sordid state of progress in the automated speech recognition community:\footnote{%
-The following quotes were sourced from \href{Mark Liberman's presentation at the CATS reproducibility workshop}{https://pdfs.semanticscholar.org/presentation/b719/c67e53c008c68e8978c2e97643cf131bb61c.pdf}.
+The following two quotes from a now-infamous letter by John Pierce~\citep{pierce1970whither}, titled ``Whither Speech Recognition?'', summarized the sordid state of progress in the automated speech recognition community:\footnote{%
+The following quotes were sourced from \href{https://pdfs.semanticscholar.org/presentation/b719/c67e53c008c68e8978c2e97643cf131bb61c.pdf}{Mark Liberman's presentation at the CATS reproducibility workshop}.
 }
 
 \begin{quote}
@@ -26,12 +26,12 @@ The following quotes were sourced from \href{Mark Liberman's presentation at the
 \begin{quote}
 We are safe in asserting that speech recognition is attractive to money. The attraction is perhaps similar to the attraction of schemes for turning water into gasoline, extracting gold from the sea, curing cancer, or going to the moon. 
 One doesn't attract thoughtlessly given dollars by means of schemes for cutting the cost of soap by 10\%.
-To sell suckers, one uses deceit and offers glamor. [\dots] \textbf{It is clear that glamor and any deceit in the field of speech recognition blind the takers of funds as much as they blind the givers of funds}. Thus, we may pity workers whom we cannot respect.
+To sell suckers, one uses deceit and offers glamour. [\dots] \textbf{It is clear that glamour and any deceit in the field of speech recognition blind the takers of funds as much as they blind the givers of funds}. Thus, we may pity workers whom we cannot respect.
 \end{quote}
 
 Following the condemning report, funding for human language technologies dried up for almost 20 years.
 It was not until 1985 when the DARPA program, lead by Charles Wayne, was able to resume funding for automatic speech recognition by devising the shared task format: systems would be compared using objective metrics on a shared dataset run by a neutral agent, National Institute for Standards and Technology (NIST) and would have to reveal their methods to other participants.
-The goal of this format was to both guard against the glamor and deceit that had so plagued the field and to ensure that ``simple, clear, sure knowledge'' was gained.
+The goal of this format was to both guard against the glamour and deceit that had so plagued the field and to ensure that ``simple, clear, sure knowledge'' was gained.
 Needless to say, the format worked and has been successfully applied to a number of other tasks in the 1990s through the TIPSTER program.
 For example, the Text REtrieval Conference (TREC) was set up in 1992 to evaluate information retrieval systems and the Message Understanding Conference (MUC) was set up in the same period to evaluate information extraction systems.
 Later, the SUMMAC program extended the set of tasks to summarization.
@@ -68,7 +68,7 @@ Despite these developments, \citet{liu2016evaluate} and \citet{novikova2017why} 
 Another approach has been to use multiple references, which tends to improve correlation with humans.
 Indeed, \citet{toutanova2016dataset} report that multiple reference variants of metrics significantly score higher than others, though this can also be low.
 Unfortunately, there is no clear understanding on how many references are sufficient: 
-  \citet{culy2003limits} report needing atleast 4 reference translations to effectively employ BLEU to a given correlation.
+  \citet{culy2003limits} report needing at least 4 reference translations to effectively employ BLEU to a given correlation.
   \citet{lavie2009meteor} find that more references helped correlation for METEOR but only marginally.
 \citet{vanhalteren2003factoid} required up to 40--50 reference factoid summaries for stable consensus.
 %\ac{I'm probably going to omit the above for lack of space.}

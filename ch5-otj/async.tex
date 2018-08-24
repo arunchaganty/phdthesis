@@ -373,7 +373,7 @@ and $C(\sigma)$ be all successor states that the algorithm has sampled.
 %\end{align}
 %where we have extended the domain of $q_m$ to include the symbol $\emptyset$ that denotes {\em not\/} making a query, and returning the current prediction.
 %
-%We can not yet optimize \refeqn{one-step-q} because we do not observe $\by\oft t$ or $\tau\oft t$ ahead of time.
+%We cannot yet optimize \refeqn{one-step-q} because we do not observe $\by\oft t$ or $\tau\oft t$ ahead of time.
 %Instead, we propose to optimize the expected loss under our model, {\em given the responses $\bz$ received when making the decision}.
 %For example, if we choose $q_m$ before receiving responses from the previous queries $q_{1:m-1}$ we can optimize the following expression:
 %\begin{align}

@@ -202,7 +202,7 @@ Here, the risk function instead of being squared loss, is $\ell(\frac{\delta - \
 \end{lemma}
 
 \begin{lemma}[Non-independence]
-  If $U$ and $V$ are indicator matrices then ${(I + k UU^\top + l VV^\top)}^{-1}$ can not be written as linear sequence $\sum_{k,l} f_i(k,l) g_i(U, V)$.
+  If $U$ and $V$ are indicator matrices then ${(I + k UU^\top + l VV^\top)}^{-1}$ cannot be written as linear sequence $\sum_{k,l} f_i(k,l) g_i(U, V)$.
 \end{lemma}
 \begin{proof}
   Let $k' = \frac{k}{k+1}$.
@@ -212,7 +212,7 @@ Here, the risk function instead of being squared loss, is $\ell(\frac{\delta - \
     &= I - k' U U^\top - (V - k' U W) (\frac{1}{l} I + I - k' W^\top W)^{-1} (V - k' U W)^\top \\ 
     &= I - k' U U^\top - l' (V - k' U W) (I - l' k' W^\top W)^{-1} (V - k' U W)^\top.
   \end{align*}
-  Unfortunately $W^\top W$ can not be further simplified. The best we can do is to write out a Taylor expansion:
+  Unfortunately $W^\top W$ cannot be further simplified. The best we can do is to write out a Taylor expansion:
   \[
   (I - l' k' W^\top W)^{-1} = 
   I + l' k' W^\top W + (l' k')^2 (W^\top W)^2 + \ldots.

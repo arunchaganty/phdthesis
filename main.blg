@@ -7,48 +7,47 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: all.bib
-Warning--I didn't find a database entry for "pierce1969whither"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty publisher in owen2013monte
-You've used 116 entries,
+You've used 117 entries,
             3571 wiz_defined-function locations,
-            1184 strings with 23498 characters,
-and the built_in function-call counts, 85200 in all, are:
-= -- 7182
-> -- 4384
-< -- 84
-+ -- 1420
-- -- 1269
-* -- 5415
-:= -- 12540
-add.period$ -- 463
-call.type$ -- 116
-change.case$ -- 1154
-chr.to.int$ -- 119
-cite$ -- 117
-duplicate$ -- 5919
-empty$ -- 6093
-format.name$ -- 1643
-if$ -- 18623
+            1190 strings with 23597 characters,
+and the built_in function-call counts, 85796 in all, are:
+= -- 7240
+> -- 4397
+< -- 85
++ -- 1424
+- -- 1272
+* -- 5446
+:= -- 12630
+add.period$ -- 467
+call.type$ -- 117
+change.case$ -- 1160
+chr.to.int$ -- 120
+cite$ -- 118
+duplicate$ -- 5957
+empty$ -- 6146
+format.name$ -- 1647
+if$ -- 18757
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 1217
-newline$ -- 583
-num.names$ -- 464
-pop$ -- 3063
+missing$ -- 1225
+newline$ -- 588
+num.names$ -- 468
+pop$ -- 3076
 preamble$ -- 1
-purify$ -- 885
+purify$ -- 890
 quote$ -- 0
-skip$ -- 3963
+skip$ -- 3997
 stack$ -- 0
-substring$ -- 2730
-swap$ -- 2761
+substring$ -- 2772
+swap$ -- 2777
 text.length$ -- 37
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1029
+type$ -- 1038
 warning$ -- 1
-while$ -- 475
+while$ -- 480
 width$ -- 0
-write$ -- 1445
-(There were 2 warnings)
+write$ -- 1458
+(There was 1 warning)

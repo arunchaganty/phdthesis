@@ -15,7 +15,7 @@ We evaluated the following four methods on each dataset:
   \item {\bf Online learning}:
     Uses a classifier that trains on the gold output for all examples seen so
     far and then returns the MLE as a prediction.
-    This is the best possible offline system: it sees perfect information about all the data seen so far, but can not query the crowd while making a prediction.
+    This is the best possible offline system: it sees perfect information about all the data seen so far, but cannot query the crowd while making a prediction.
   \item {\bf Threshold baseline}: Uses the following heuristic:
     For each label, $y_i$, we ask for $m$ queries such that $(1 - \p(y_i\given \bx))\times 0.3^m \ge 0.98$. % \footnote{We found $0.88$ to give the best results on our datasets.}
     Instead of computing the expected marginals over the responses to queries in flight,

@@ -82,7 +82,7 @@ Then, define $q_i$ as sampling a $j$ and drawing $x \sim p_j$;
 formally $q_i(x) = \sum_{j=1}^m w_{ij} p_j(x)$.
 
 We note that $q_i(x)$ not only significantly differs between systems, but also changes as new systems are added to the evaluation pool.
-Unfortunately, the standard importance sampling procedure requires us to draw and use samples from each distribution $q_i(x)$ independently and thus can not effectively reuse samples drawn from different distributions.
+Unfortunately, the standard importance sampling procedure requires us to draw and use samples from each distribution $q_i(x)$ independently and thus cannot effectively reuse samples drawn from different distributions.
 To this end, we introduce a practical refinement to the importance sampling procedure:
 we independently draw $n_j$ samples according to $p_j(x)$ from each of the $m$ systems independently 
 and then numerically integrate over these samples using the weights $w_{ij}$ to ``mix'' them appropriately to produce and unbiased estimate of $\pi_i$ while reducing variance.

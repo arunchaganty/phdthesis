@@ -4,8 +4,8 @@
 % Motivation.1: information summarization.
 One of the most exciting applications of natural language processing (NLP) ahead of us is the development of systems that will help us digest the vast amount of information being generated around the world.
 For example, we will one day be able to rely on 
-text summarization (TS) systems to condense the most salient information from one or more related articles into as few words as necessary (\reffig{intro:overview}(a)).
-We will be be able to get targeted summaries through open-ended question answering systems (OQA) (\reffig{intro:overview}(b)).
+text summarization systems to condense the most salient information from one or more related articles into as few words as necessary (\reffig{intro:overview}(a)).
+We will be be able to get targeted summaries through open-ended question answering systems (\reffig{intro:overview}(b)).
 Finally, knowledge base population (KBP) systems  will be able to read large document troves (or the Internet) and present succinct, structured, summaries about the people and organizations mentioned within (\reffig{intro:overview}(c)).
 
 \begin{figure}[!p]
@@ -82,9 +82,9 @@ When a system also predicts an output belonging to this closed class, we know wh
 Thus, in these settings, we can measure the quality of different systems on the classification task by simply collecting a sufficiently large evaluation dataset.\footnote{%
 Of course, care must be taken to ensure the evaluation dataset collected is reflective of the end-goal for the task.}
 
-Unfortunately, in the information summarization tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ in TS and OQA) or an arbitrarily large collection of facts (e.g.\ for KBP).
+Unfortunately, in the information summarization tasks we've seen above, the desired output is not simply a class label but rather an arbitrary piece of text (e.g.\ in text summarization and open-response question answering) or an arbitrarily large collection of facts (e.g.\ for KBP).
 The assumption that there exists a unique knowable correct output simply does not hold.
-In this sense, the static evaluation dataset we discussed earlier \textit{can not} contain every possible correct answer and as a result is \textit{incomplete}.
+In this sense, the static evaluation dataset we discussed earlier \textit{cannot} contain every possible correct answer and as a result is \textit{incomplete}.
 Let's look at some examples of how incompleteness manifests in practice and what its consequences on evaluation could be.
 
 \begin{figure}

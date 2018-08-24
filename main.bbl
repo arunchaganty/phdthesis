@@ -1,4 +1,4 @@
-\begin{thebibliography}{116}
+\begin{thebibliography}{117}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -576,6 +576,11 @@ E.~Pavlick, H.~Ji, X.~Pan, and C.~Callison-Burch. 2016.
 \newblock The gun violence database: A new task and data set for {NLP}.
 \newblock In \emph{Empirical Methods in Natural Language Processing (EMNLP)},
   pages 1018--1024.
+
+\bibitem[{Pierce(1970)}]{pierce1970whither}
+J.~R. Pierce. 1970.
+\newblock Whither speech recognition?
+\newblock \emph{Journal of the Acoustical Society of America}, 47:1616--1617.
 
 \bibitem[{Plank(2011)}]{plank2011domain}
 B.~Plank. 2011.

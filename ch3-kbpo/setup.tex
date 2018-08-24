@@ -7,7 +7,7 @@
   \caption[Pooled evaluation]{\label{fig:kbpo:pooling}
   In pooled evaluation, an evaluation dataset is constructed by labeling relation instances collected from the pooled systems (A and B) and from a team of human annotators (Humans).
  % Arrows indicate which systems extract which relation instances.
-  However, when a new system (C) is evaluated on this dataset, some of its predictions ($i_6$) are missing and can not be fairly evaluated.
+  However, when a new system (C) is evaluated on this dataset, some of its predictions ($i_6$) are missing and cannot be fairly evaluated.
   Here, the precision and recall for C should be $\frac{3}{3}$ and $\frac{3}{4}$ respectively, but its evaluation scores are estimated to be $\frac{2}{3}$ and $\frac{2}{3}$.
   The discrepancy between these two scores is called \textit{pooling bias}.
   }
@@ -59,7 +59,7 @@ Under this metric, predicting the relation (\entity{Carrie Fisher}, \relation{ch
 %\paragraph{Pooling bias.}
 %As part of the competition, every relation predicted for the evaluation entities by the participating systems is labeled by annotators.
 %However, when this dataset is used during system development, a new system (e.g.\ system C) may predict relational tuples that are not part of the dataset (e.g.\ $t_6$).
-%These tuples can not be assessed without labeling the predictions and are considered to be wrong by default.
+%These tuples cannot be assessed without labeling the predictions and are considered to be wrong by default.
 %As a result, system C would be evaluated to have a precision and recall of $\frac{2}{3}$ and $\frac{2}{3}$.
 %On the other hand, if system C had participated in the pooling process, and $t_6$ were indeed correct, system C get higher precision and recall scores of $\frac{3}{3}$ and $\frac{3}{4}$ and would rank higher than system A.\footnote{Note that the recall scores of system A and B would also decrease because a new true relation had been found.}
 %The discrepancy between the scores of a system because it did not participate in the pooling process is called pooling bias.
