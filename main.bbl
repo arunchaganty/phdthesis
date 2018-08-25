@@ -1,4 +1,4 @@
-\begin{thebibliography}{117}
+\begin{thebibliography}{122}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Adel et~al.(2016)Adel, Roth, and Sch\"{u}tze}]{adel2016comparing}
@@ -130,6 +130,17 @@ W.~Chu, M.~Zinkevich, L.~Li, A.~Thomas, and B.~Tseng. 2011.
 \newblock Unbiased online active learning in data streams.
 \newblock In \emph{International Conference on Knowledge Discovery and Data
   Mining (KDD)}, pages 195--203.
+
+\bibitem[{Cleverdon(1962)}]{cleverdon1962report}
+C.~W. Cleverdon. 1962.
+\newblock Report on the testing and analysis of an investigation into the
+  comparative efficiency of indexing systems.
+\newblock In \emph{{ASLIB}}.
+
+\bibitem[{Cleverdon(1967)}]{cleverdon1967cranfield}
+C.~W. Cleverdon. 1967.
+\newblock The cranfield tests on index language devices.
+\newblock In \emph{{ASLIB}}.
 
 \bibitem[{Cohan and Goharian(2016)}]{cohan2016revisiting}
 A.~Cohan and N.~Goharian. 2016.
@@ -294,6 +305,11 @@ S.~Han, J.~Bang, S.~Ryu, and G.~G. Lee. 2015.
   dialog listening agents.
 \newblock \emph{16th Annual Meeting of the Special Interest Group on Discourse
   and Dialogue}, pages 129--133.
+
+\bibitem[{Harman(1992)}]{harman1992overview}
+D.~K. Harman. 1992.
+\newblock Overview of the first {TREC} text retrieval conference.
+\newblock In \emph{Text Retrieval Conference}.
 
 \bibitem[{Harman(1993)}]{harman1993trec}
 D.~K. Harman. 1993.
@@ -637,6 +653,11 @@ T.~Sakai and N.~Kando. 2008.
 \newblock In \emph{ACM Special Interest Group on Information Retreival
   (SIGIR)}, pages 447--470.
 
+\bibitem[{Salton and Lesk(1965)}]{salton1965smart}
+G.~Salton and M.~E. Lesk. 1965.
+\newblock The {SMART} automatic document retrieval systems—an illustration.
+\newblock \emph{Communications of the ACM}, 8(6):391--398.
+
 \bibitem[{Sculley(2007)}]{sculley2007online}
 D.~Sculley. 2007.
 \newblock Online active learning methods for fast label-efficient spam
@@ -696,6 +717,12 @@ R.~Vedantam, C.~L. Zitnick, and D.~Parikh. 2015.
 \newblock {CIDEr}: Consensus-based image description evaluation.
 \newblock In \emph{Computer Vision and Pattern Recognition (CVPR)}, pages
   4566--4575.
+
+\bibitem[{Voorhees(2007)}]{voorhees2007trec}
+E.~M. Voorhees. 2007.
+\newblock Trec: Continuing information retrieval's tradition of
+  experimentation.
+\newblock \emph{Communications of the ACM}, 50(11):51--54.
 
 \bibitem[{Webber(2010)}]{webber2010measurement}
 W.~E. Webber. 2010.
