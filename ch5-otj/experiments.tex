@@ -1,11 +1,11 @@
 \section{Experiments}
-\label{sec:experiments}
+\label{sec:otj:experiments}
 
 % === Other stuff.
 
 In this section, we empirically evaluate our approach on three tasks. 
 While the on-the-job setting we propose is targeted at scenarios where there is
-no data to begin with, we use existing labeled datasets (\reftab{dataset}) to have a gold standard.
+no data to begin with, we use existing labeled datasets (\reftab{otj:dataset}) to have a gold standard.
 %empirically evaluate the performance of our system relative to baselines.
 
 \paragraph{Baselines.}
@@ -25,7 +25,7 @@ We evaluated the following four methods on each dataset:
     flight) is crossed. Predictions are made using MLE on the model given
     responses.
     The baseline does not reason about time and makes all its queries at the very beginning.
-  \item {\bf LENSE:} Our full system as described in \refsec{model}.
+  \item {\bf LENSE:} Our full system as described in \refsec{otj:model}.
 \end{enumerate}
 
 % === Figures
@@ -49,7 +49,7 @@ We evaluated the following four methods on each dataset:
     We used the last layer of a 11-layer AlexNet~\citep{krizhevsky2012imagenet} trained on ImageNet as input feature embeddings, though we leave back-propagating into the net to future work.
 \end{tabular}
   \caption{Datasets used in this chapter and number of examples we evaluate on.}
-\label{tab:dataset}
+\label{tab:otj:dataset}
 \end{table}
 
 
@@ -81,7 +81,7 @@ During simulation we sample the worker responses and delays without replacement 
     \textbf{LENSE} & \textbf{267 ms} & \textbf{0.45} & 95.2 & 89.7 & \textbf{81.7} & \textbf{88.8}  \\
     \bottomrule
 \end{tabular}
-\caption[Results on NER]{\label{tab:results-ner} Results on the NER task comparing latencies, queries per token (Qs/tok)
+\caption[Results on NER]{\label{tab:otj:results-ner} Results on the NER task comparing latencies, queries per token (Qs/tok)
 and \fone{}.}
 \end{table}
 
@@ -99,20 +99,20 @@ and \fone{}.}
     \textbf{LENSE} & 1590 ms & 2.37 & 99.2 \\   %\hline
     \bottomrule
 \end{tabular}
-\caption[Results on Face]{\label{tab:results-face} Results on the Face task comparing latencies, queries per token (Qs/tok)
+\caption[Results on Face]{\label{tab:otj:results-face} Results on the Face task comparing latencies, queries per token (Qs/tok)
 and accuracy.}
 \end{table}
 
 \begin{figure}[t]
 \centering
   \includegraphics[width=0.6\textwidth]{figures/sentiment_cost_per_token_vs_time/cost_per_token_vs_time.pdf}
-  \caption[Queries per example for LENSE on Sentiment.]{\label{fig:sentiment-tradeoff}Queries per example for LENSE on Sentiment. With simple \textsc{unigram} features, the model quickly learns it does not have the capacity to answer confidently and must query the crowd. With more complex \textsc{rnn} features, the model learns to be more confident and queries the crowd less over time.}
+  \caption[Queries per example for LENSE on Sentiment.]{\label{fig:otj:sentiment-tradeoff}Queries per example for LENSE on Sentiment. With simple \textsc{unigram} features, the model quickly learns it does not have the capacity to answer confidently and must query the crowd. With more complex \textsc{rnn} features, the model learns to be more confident and queries the crowd less over time.}
 \end{figure}
 
 \begin{table}[t]
   \centering
   \input{table-sentiment}
-  \caption[Results on the Sentiment task]{\label{tab:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.
+  \caption[Results on the Sentiment task]{\label{tab:otj:sentiment-results}Results on the Sentiment task comparing latency, queries per example and accuracy.
   }
 \end{table}
 
@@ -130,7 +130,7 @@ and accuracy.}
 %Filtering workers while running, or inferring separate error models for each worker, would clearly deliver substantial gains in reliability over a system that assumes uniform quality. We leave this to future work.
 
 \paragraph{Summary of results.}
-\reftab{results-ner}, \reftab{results-face} and \reftab{sentiment-results} summarize the performance of the methods on the three tasks.
+\reftab{otj:results-ner}, \reftab{otj:results-face} and \reftab{otj:sentiment-results} summarize the performance of the methods on the three tasks.
 On all three datasets, we found that on-the-job learning outperforms machine and human-only comparisons on both quality and cost. 
 On NER, we achieve an \fone{} of $88.4\%$ at more than an order of magnitude
 reduction on the cost of achieving comporable quality result using the 5-vote
@@ -152,12 +152,12 @@ of Bayesian decision theory.
   \begin{subfigure}[b]{0.8\textwidth}
   \includegraphics[width=\textwidth]{figures/ner_2_class/cost_plot/cost_vs_time.pdf}
   \end{subfigure}
-  \caption[Comparing \fone{} and queries per token on the NER task over time.]{\label{fig:ner-f1} Comparing \fone{} and queries per token on the NER task over time. The left graph compares LENSE to online learning (which cannot query humans at test time). This highlights that LENSE maintains high \fone{} scores even with very small training set sizes, by falling back the crowd when it is unsure. The right graph compares query rate over time to 1-vote. This clearly shows that as the model learns, it needs to query the crowd less.}
+  \caption[Comparing \fone{} and queries per token on the NER task over time.]{\label{fig:otj:ner-f1} Comparing \fone{} and queries per token on the NER task over time. The left graph compares LENSE to online learning (which cannot query humans at test time). This highlights that LENSE maintains high \fone{} scores even with very small training set sizes, by falling back the crowd when it is unsure. The right graph compares query rate over time to 1-vote. This clearly shows that as the model learns, it needs to query the crowd less.}
 
 \end{figure}
 
 %\paragraph{Does the model respect accuracy preferences?} 
-\reffig{ner-f1} tracks the performance and cost of LENSE over time on the NER task.
+\reffig{otj:ner-f1} tracks the performance and cost of LENSE over time on the NER task.
 LENSE is not only able  to consistently outperform other baselines, but the cost of the system steadily reduces over time.
 On the NER task, we find that LENSE is able to trade off time to produce more
 accurate results than the 1-vote baseline with fewer queries by waiting for
@@ -177,7 +177,7 @@ responses before making another query.
 %\paragraph{In the limit, would LENSE still need crowd supervision?}
 While on-the-job learning allows us to deploy quickly and ensure good results, we would like to eventually operate without crowd supervision.
 %In order to do so, we must ensure that our model has the capacity to keep learning from the crowd.
-\reffig{sentiment-tradeoff}, we show the number of queries per example on Sentiment with two different features sets, \textsc{unigrams} and \textsc{rnn} (as described in \reftab{dataset}).
+\reffig{otj:sentiment-tradeoff}, we show the number of queries per example on Sentiment with two different features sets, \textsc{unigrams} and \textsc{rnn} (as described in \reftab{otj:dataset}).
 With simpler features (\textsc{unigrams}),
 the model saturates early and we will continue to need to query to the crowd to achieve our accuracy target (as specified by the loss function).
 On the other hand, using richer features (\textsc{rnn}) the model is able to learn from the crowd and the amount of supervision needed reduces over time.
@@ -187,32 +187,4 @@ Note that even when the model capacity is limited, LENSE is able to guarantee a 
 \paragraph{Reproducibility.}
 All code, data, and experiments for this chapter are available on CodaLab at
 {\small \url{https://www.codalab.org/worksheets/0x2ae89944846444539c2d08a0b7ff3f6f/}}.
-
-% -- CUT
-%\paragraph{When does LENSE query?}
-%During the initial stages of learning for the NER task, LENSE made multiple queries on all tokens.
-%After a few examples, though, LENSE focused its queries on unseen entity tokens.
-%Consider the following example taken from our run logs: \textit{``U.S.\ says still committed to Cuba migration pacts''}.
-%%For example, after seeing \ac{600} examples, 
-%The model has already seen {\it U.S.\/} and predicts that it is a \scloc{} with 97\% probability.
-%On the other hand, having never seen the token {\it Cuba\/} before, the model starts with a belief that {\it Cuba\/} is 59\% \scper, 37\% \scloc{} and 3\% \scnone.
-%It immediately fires off two queries about {\it Cuba\/} and waits 4 seconds for both responses to return \scloc{}.
-%The model now believes that {\it Cuba\/} is \scloc{} with 95\% probability and returns its prediction.
-%This demonstrates that using the model allows LENSE to focus supervision to where it is needed.
-
-
-% \paragraph{Are we learning a good model?}
-% We receive very noisy and sparse supervision.
-% Despite this, to reduce the costs in the future, our system must learn to generalize well.
-% We refer to \reffig{ner-dev-f1}.
-% We note that although our model is receiving supervisition signal at roughly 1/15 the rate of a fully observed online learning scenario\footnote{this calculation assumes ``fully observed'' is approximated by 3 human labels per example}, we track roughly parallel to the fully supervised line.
-
-% Held out figure for space concerns.
-%\begin{figure}[t]
-%  \begin{centering}
-%  \includegraphics[width=1.0\textwidth]{figures/ner_2_class/machine_f1_plot/machine_f1_vs_time.pdf}
-%  \end{centering}
-%  \caption{A figure showing the relationship between the classifier we train, and one trained on gold labeled data. Evaluation is on a held out dev set. Note that our classifier learns more slowly because we are handing it a noisy approximation to train on, but the classifier narrows the gap as it gets more data.}
-%\label{fig:ner-dev-f1}
-%\end{figure}
 

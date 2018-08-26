@@ -2,15 +2,15 @@
 \begin{figure}[!p]
   \begin{subfigure}{\textwidth}
     \includegraphics[width=0.8\textwidth]{figures/msmarco_bias}
-    \caption{\label{fig:bias-msmarco-system} System-level correlation on the MS MARCO task}
+    \caption{\label{fig:price:bias-msmarco-system} System-level correlation on the MS MARCO task}
   \end{subfigure}
 
   \begin{subfigure}{\textwidth}
     \includegraphics[width=0.8\textwidth]{figures/msmarco_instance_correlation}
-    \caption{\label{fig:bias-msmarco-instance} Instance-level correlation for the \texttt{fastqa} system}
+    \caption{\label{fig:price:bias-msmarco-instance} Instance-level correlation for the \texttt{fastqa} system}
   \end{subfigure}
 
-  \caption[System-level vs instance-level correlation on MS MARCO]{\label{fig:bias-msmarco}
+  \caption[System-level vs instance-level correlation on MS MARCO]{\label{fig:price:bias-msmarco}
   %We compare system-level and instance-level correlations between the ROUGE-L automatic metric and some human metric.
   (a) At a system-level, automatic metrics (ROUGE-L) and human judgment correlate well, but (b) the instance-level correlation plot
   (where each point is a system prediction) shows that the instance-level correlation is quite low ($\rho = 0.31$).
@@ -24,7 +24,7 @@
 \end{figure}
 
 
-\section{\label{sec:bias} Bias in automatic evaluation}
+\section{\label{sec:price:bias} Bias in automatic evaluation}
 
 % What does bias mean in natural language evaluation.
 %The central theme of this paper is to bring to the fore a discussion of how we evaluate our generation systems.
@@ -48,7 +48,7 @@
 \begin{table}[!p]
   \centering
   \input{examples-1.table}
-  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on MS MARCO.]{\label{tab:examples-msmarco}
+  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on MS MARCO.]{\label{tab:price:examples-msmarco}
     Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree on the MS MARCO task.
     Human annotators rated answer correctness (\texttt{AnyCorrect}) and the automatic metric used is ROUGE-L (higher is better).
     A majority of responses from systems were actually correct but poorly scored according to ROUGE-L.
@@ -58,7 +58,7 @@
 \begin{table}[!p]
   \centering
   \input{examples-2.table}
-  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on CNN/Daily Mail.]{\label{tab:examples-cdm}
+  \caption[Examples highlighting where automatic metric and human judgments agree or disagree on CNN/Daily Mail.]{\label{tab:price:examples-cdm}
     Examples highlighting the different modes in which the automatic metric and human judgments may agree or disagree on the CNN/Daily Mail task.
     Human judgment scores used are post-edit distance (\texttt{Edit}) (lower is better) and the automatic metric used is sentence vector similarity with the reference (higher is better).
     A significant number of examples which are scored highly by VecSim are poorly rated by humans, and likewise many examples scored poorly by VecSim are highly rated by humans.
@@ -76,15 +76,15 @@ What, then, are the implications of having a low instance-level correlation?
 As a case study, consider the task of open-response question answering:
   here, a system receives a human-generated question and must \textit{generate} an answer from some given context, e.g.\ a document or several webpages.
   We collected the responses of several systems on the MS MARCOv1 dataset~\citep{nguyen2016ms} and crowdsourced human evaluations of the system output
-  (see \refsec{tasks} for details).
+  (see \refsec{price:tasks} for details).
 %ROUGE-L and human judgment appear to be well correlated at the system-level (\reffig{bias-msmarco-system}) \stm{isn't this a bs claim since we really only have two systems? depend on references?},
 %is high\footnote{%
   %The correlation measured between systems in \reffig{bias-system-msmarco} is $\rho = 0.99$, the correlation is computed with two pairs of similar systems and hence this correlation is not a fair estimate.} 
 
-The instance-level correlation (\reffig{bias-msmarco-instance}) is only $\rho = 0.31$.
+The instance-level correlation (\reffig{price:bias-msmarco-instance}) is only $\rho = 0.31$.
 A closer look at the instance-level correlation reveals that
 while ROUGE is able to correctly assign low scores to bad examples (lower left),
-it is bad at judging good examples and often assigns them low ROUGE scores (lower right)---see \reftab{examples-msmarco} and \reftab{examples-cdm} for examples.
+it is bad at judging good examples and often assigns them low ROUGE scores (lower right)---see \reftab{price:examples-msmarco} and \reftab{price:examples-cdm} for examples.
 This observation agrees with a finding reported in \citet{novikova2017why} that automatic metrics correlate better with human judgments on bad examples than average or good examples. 
 
 % PL: breaks the flow, so cut
@@ -93,7 +93,7 @@ This observation agrees with a finding reported in \citet{novikova2017why} that 
 %to better capture linguistic variation they still have low correlation.
 
 % Improve ROUGE, no human quality; improve human quality
-Thus, as \reffig{bias-msmarco}(a) shows, we can improve low-scoring ROUGE examples without improving their human judgment ($\vartriangle$) and vice versa ($\triangleright$).
+Thus, as \reffig{price:bias-msmarco}(a) shows, we can improve low-scoring ROUGE examples without improving their human judgment ($\vartriangle$) and vice versa ($\triangleright$).
 Indeed, \citet{conroy2008mind} report that summarization systems were optimized for ROUGE during the DUC challenge~\citep{dang2006overview}
 until they were indistinguishable from the ROUGE scores of human-generated summaries, but the systems had hardly improved on human evaluation.
 % PL: save space % we're under now and I think this is an important point

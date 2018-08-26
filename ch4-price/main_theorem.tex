@@ -1,6 +1,6 @@
 \subsection{Main Theorem}
 
-In this section, we prove the main theorem (\refthm{main}) in the \refchap{price} about the minimax optimal variance for an unbiased estimator. \refthm{main} will follow from the two following lemmas (Lemmas~\ref{lem:variance_calc} and~\ref{lem:mvue}). First, we show in \reflem{variance_calc} that for all distributions with fixed $\sigma^2_f$, $\sigma^2_a$ and $\rho$, the variance of $\mucontrol$ is constant and equal to: $\frac{1}{n}(\sigma_f^2(1-\rho^2)+\sigma_a^2)$.
+In this section, we prove the main theorem (\refthm{price:main}) in the \refchap{price} about the minimax optimal variance for an unbiased estimator. \refthm{price:main} will follow from the two following lemmas (Lemmas~\ref{lem:variance_calc} and~\ref{lem:mvue}). First, we show in \reflem{variance_calc} that for all distributions with fixed $\sigma^2_f$, $\sigma^2_a$ and $\rho$, the variance of $\mucontrol$ is constant and equal to: $\frac{1}{n}(\sigma_f^2(1-\rho^2)+\sigma_a^2)$.
 Then we give an explicit distribution, a Gaussian distribution, where \emph{any} estimator yields at least this variance using the theory of sufficient statistics.
 Together, these show that the max variance of any estimator is at least the max variance of $\mucontrol$.
 
@@ -176,7 +176,7 @@ Thus, by the Lehmann-Scheffe theorem, $\mucontrol$ is the minimal variance unbia
 
 \end{proof}
 
-\begin{thm} [\ref{thm:main}]
+\begin{thm} [\ref{thm:price:main}]
 Among all unbiased
   estimators that are functions of $y^{(i)}$ and $g(z^{(i)})$, and for all distributions with a given $\sigma^2_f$, $\sigma^2_a$, and $\alpha$,
 \begin{align}

@@ -1,5 +1,5 @@
 \section{Statistical estimation for unbiased evaluation}
-\label{sec:method}
+\label{sec:price:method}
 
 We will now formalize the problem of combining human evaluation with an automatic metric.
 Let $\sX$ be a set of inputs (e.g., articles),
@@ -66,7 +66,7 @@ is
 Now let us see how an automatic metric $g$ can reduce variance.
 If there is no annotator variance ($\sigma^2_a = 0$) so that $Y(z) = f(z)$,
 we should expect the variance of $f(z)-g(z)$ to be lower than the variance of
-$f(z)$, assuming $g$ is correlated with $f$---see \reffig{variance_reduction} for an illustration.
+$f(z)$, assuming $g$ is correlated with $f$---see \reffig{price:variance_reduction} for an illustration.
 
 The actual control variates estimator needs to
 handle noisy $Y(z)$ (i.e.\ $\sigma^2_a > 0$) and
@@ -95,7 +95,7 @@ is the correlation between $f(z)$ and $g(z)$ (recall that $g$ has unit variance)
 \begin{figure}
 \centering
   \includegraphics[width=0.8\columnwidth]{figures/variance_reduction_extreme}
-  \caption[Intuition for control variates]{\label{fig:variance_reduction}
+  \caption[Intuition for control variates]{\label{fig:price:variance_reduction}
   The samples from $f(z)$ have a higher variance than the samples
   from $f(z)-g(z)$ but the same mean. This is the key idea behind using control variates to reduce variance.}
 \end{figure}
@@ -105,7 +105,7 @@ We can show that among all distributions with
 fixed $\sigma^2_f$, $\sigma^2_a$, and $\alpha$ (equivalently $\rho$), this estimator is minimax optimal, i.e.\ it has the least variance among all unbiased estimators:
 
 \begin{theorem}
-\label{thm:main}
+\label{thm:price:main}
 Among all unbiased
   estimators that are functions of $y^{(i)}$ and $g(z^{(i)})$, and for all distributions with a given $\sigma^2_f$, $\sigma^2_a$, and $\alpha$,
 \begin{align}
@@ -130,13 +130,13 @@ where $\gamma \eqdef \sigma^2_a / \sigma^2_f$ is the normalized annotator varian
 Data efficiency is the key quantity in this chapter:
   it is the multiplicative reduction in the number of samples required
   when using the control variates estimator $\mucontrol$ versus the sample mean $\musimple$.
-Figure~\ref{fig:savings} shows the inverse data efficiency contours as a function of the correlation $\rho$
+\reffig{price:savings} shows the inverse data efficiency contours as a function of the correlation $\rho$
 and $\gamma$.
 
 \begin{figure}
 \centering
   \includegraphics[width=0.8\columnwidth]{figures/savings}
-  \caption[Inverse data efficiency with the control variates estimator]  {\label{fig:savings} Inverse data efficiency for various values of
+  \caption[Inverse data efficiency with the control variates estimator]  {\label{fig:price:savings} Inverse data efficiency for various values of
   $\gamma$ and $\rho$.  We need both low $\gamma$ and high $\rho$ to obtain
   significant gains.
   %Note that we do not even get a data efficiency of $2$ for
@@ -170,26 +170,26 @@ constant additive shift and just estimating the shift would incur a variance of 
 
 \subsection{Using the control variates estimator}
 The control variates estimator can be easily integrated into an existing evaluation:
-we run human evaluation on a random sample of system outputs, automatic evaluation on all the system outputs, and plug in these results into \refalg{estimate}.
+we run human evaluation on a random sample of system outputs, automatic evaluation on all the system outputs, and plug in these results into \refalg{price:estimate}.
 
 It is vital that we are able to evaluate the automatic metric on a significantly larger set of examples than those with human evaluations to reliably normalize $g(z)$:
 without these additional examples, it be can shown that the optimal minimax estimator for $\mu$ is simply the naive estimate $\musimple$.
 Intuitively, this is because estimating the mean of $g(z)$ incurs an equally large variance as estimating $\mu$.
 In other words, $g(z)$ is only useful if we have additional information about $g$ beyond the samples $\{z^{(i)}\}$.
 
-\refalg{estimate} shows the estimator.
+\refalg{price:estimate} shows the estimator.
 In practice, we do not know $\alpha = \Cov(f(z),g(z))$, so we use a plug-in estimate $\hat{\alpha}$ in line 3 to compute the estimate $\widetilde{\mu}$ in line 4.
 We note that estimating $\alpha$ from data does introduce a $O(1/n)$ bias,
 but when compared to the standard deviation which decays as $\Theta(1/\sqrt{n})$, this bias quickly goes to $0$.
 %Similarly, the variance is sub-optimal by a factor of only $1 + O(1/n)$.
 
 \begin{proposition}
-\label{prop:added_bias}
-The estimator $\widetilde{\mu}$ in \refalg{estimate} has $O(1/n)$ bias.
+\label{prop:price:added_bias}
+The estimator $\widetilde{\mu}$ in \refalg{price:estimate} has $O(1/n)$ bias.
 \end{proposition}
 
 \begin{algorithm}
-      \caption{\label{alg:estimate}Control variates estimator}
+      \caption{\label{alg:price:estimate}Control variates estimator}
       \begin{algorithmic}[1]
    \State{} {\bfseries Input:} $n$ human evaluations $y^{(i)}$ on system outputs $z^{(i)}$, \textit{normalized} automatic metric $g$ 
    \State{} $\overline{y} = \frac{1}{n} \sum_i y^{(i)}$
@@ -199,7 +199,7 @@ The estimator $\widetilde{\mu}$ in \refalg{estimate} has $O(1/n)$ bias.
 \end{algorithmic}
 \end{algorithm}
 
-An additional question that arises when applying \refalg{estimate} is figuring out how many samples $n$ to use.
+An additional question that arises when applying \refalg{price:estimate} is figuring out how many samples $n$ to use.
 Given a target variance, the number of samples can be estimated using \refeqn{varcontrol} with conservative estimates of $\sigma^2_f$, $\sigma^2_a$ and $\rho$.
 Alternatively, our estimator can be combined with a dynamic stopping rule~\citep{mnih2008empirical} to stop data collection once we reach a target confidence interval.
 

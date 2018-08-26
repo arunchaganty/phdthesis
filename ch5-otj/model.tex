@@ -1,23 +1,22 @@
 \section{Model}
-\vspace{-1em}
-\label{sec:model}
+\label{sec:otj:model}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{figures/behavior.pdf}
-  \caption[Incorporating information from responses.]{\label{fig:behavior}
+  \caption[Incorporating information from responses.]{\label{fig:otj:behavior}
   Example behavior while running structure prediction on the tweet ``Soup on George str.''
   The bar graphs represent the marginals over the labels for each token (indicated by the first character) at different points in time. 
   The two timelines show how the system updates its confidence over labels based on the crowd's responses.
   The system continues to issue queries until it has sufficient confidence on its labels. 
-  See the paragraph on behavior in \refsec{model} for more information.
+  See the paragraph on behavior in \refsec{otj:model} for more information.
   }
 \end{figure}
 
 \begin{figure}
   \centering
       \includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{figures/mcts_simple.pdf}\\[1.7ex]
-      \caption[Game tree.]{\label{fig:tree}
+      \caption[Game tree.]{\label{fig:otj:tree}
       Example behavior while running structure prediction on the tweet ``Soup on George str.''
       A partial game tree constructed by the system when deciding which action to take in the state $\sigma = (1, (3), (0), (\emptyset), (\emptyset))$, i.e.\ the query $q_1 = 3$ has already been issued and the system must decide whether to issue another query or wait for a response to $q_1$.
       }
@@ -59,7 +58,7 @@ In the rest of this section, we describe the details of the game tree, our choic
 %The key challenge is to determine which actions the system should take to maximize its expected utility at the end of the game.
 
 \paragraph{Game tree.}
-Let us now formalize the game tree in terms of its states, actions, transitions and rewards; see \reffig{tree} for an example. 
+Let us now formalize the game tree in terms of its states, actions, transitions and rewards; see \reffig{otj:tree} for an example. 
 The \emph{game state} $\sigma = (\now, \bq, \bs, \br, \bt)$
 consists of the current time $\now$, the actions $\bq = (q_1, \ldots, q_{k-1})$ that have been issued at times $\bs = (s_1, \ldots, s_{k-1})$ and
 the responses $\br = (r_1, \ldots, r_{k-1})$ that have been received at times $\bt = (t_1, \ldots, t_{k-1})$.
@@ -93,7 +92,7 @@ The first is the accuracy of the MAP estimate according to the model's best gues
 The second is the cost of making queries: a (monetary) cost $\weightmoney$ per query made and penalty of $\weighttime$ per unit of time taken.
 Formally, we define the utility to be:
 \begin{align}
-  \label{eqn:utility}
+  \label{eqn:otj:utility}
   U(\sigma) &\eqdef \text{ExpAcc}(p(\by \given \bx, \bq, \bs, \br, \bt)) - (n_\text{Q} \weightmoney + \now \weighttime), \\
   \text{ExpAcc}(p) &= \E_{p(\by)}[\text{Accuracy}(\arg\max_{\by'} p(\by'))],
 \end{align}
@@ -101,7 +100,7 @@ where $n_\text{Q} = |\{j \given q_j \in \{1, \ldots, n\}|$ is the number of quer
 $p(\by \given \bx, \bq, \bs, \br, \bt)$ is a prediction model that incorporates the crowd's responses.
 
 The utility of wait and return actions is computed by taking expectations over subsequent trajectories in the game tree. 
-This is intractable to compute exactly, so we propose an approximate algorithm in \refsec{game-playing}.
+This is intractable to compute exactly, so we propose an approximate algorithm in \refsec{otj:game-playing}.
 
 %\refeqn{utility} is related to \refeqn{value} by considering the utility at the time of the last request, $\tmax = \max\{t_1, \ldots, t_k\}$: $U(\bq, \bs, \br) = \E_{\bt}[U_{\tmax}(\bq, \bs, \br, \bt)]$.
 %In practice, we actually consider the utility at the earlier of $\tmax$ and a specified time limit to respond, $\deadline$.
@@ -145,7 +144,7 @@ Given input $\bx$ and queries $\bq = (q_1, \dots, q_k)$ issued at times $\bs = (
 we define a distribution over the output $\by$, responses $\br = (r_1, \dots, r_k)$
 and response times $\bt = (t_1, \dots, t_k)$ as follows:
 \begin{align}
-  \label{eqn:dynamics}
+  \label{eqn:otj:dynamics}
 %p(\by, \br, \bt \mid \bx, \bq) \eqdef p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid \bx, \by, q_i) \ptime(t_i \mid \bx, \by, q_i, s_i).
 p(\by, \br, \bt \given \bx, \bq, \bs) \eqdef p(\by \given \bx) \prod_{i=1}^k \presp(r_i \mid y_{q_i}) \ptime(t_i \mid s_i).
 \end{align}
@@ -167,7 +166,7 @@ uniformly.
 % Finally, $\ptime(t \given s)$ is the \emph{time delay model}, which governs how long a given query $q$ will take. While, in reality, $t$ depends on many factors including the input, in the interest of simplicity we assume $t - s$ to be drawn from a gamma distribution with globally fixed parameters.We also define the \emph{response at time $\tau$}, $r[\tau]$, to be $r$ if $\tau > t$ and $\emptyset$ otherwise.
 %
 % Doing things with the model
-Given this full model, we can compute $p(r' \mid \bx, \br, q)$ simply by marginalizing out $\by$ and $\bt$ from \refeqn{dynamics}.
+Given this full model, we can compute $p(r' \mid \bx, \br, q)$ simply by marginalizing out $\by$ and $\bt$ from \refeqn{otj:dynamics}.
 When conditioning on $\br$, we ignore responses that have not yet been received (i.e.\ when $r_j = \emptyset$ for some $j$).
 %Given this full model, we can compute $p(\br \mid \bx, \bq)$ simply by marginalizing out $\by$ and $\bt$ from \refeqn{dynamics}.
 %We can also compute the distribution over responses at a particular time $\tau$, $p(\br[\tau] \given \bx, \bq)$, where $\br[\tau] = (r_1[\tau], \ldots, r_k[\tau])$.
@@ -178,7 +177,7 @@ When conditioning on $\br$, we ignore responses that have not yet been received 
 % Behavior!
 \paragraph{Behavior.}
 Let's look at typical behavior that we expect the model and utility to capture.
-\reffig{behavior} shows how the marginals over the labels change as the crowd provides responses for our running example, i.e.\ named entity recognition for the sentence ``Soup on George str.''.
+\reffig{otj:behavior} shows how the marginals over the labels change as the crowd provides responses for our running example, i.e.\ named entity recognition for the sentence ``Soup on George str.''.
 In the both timelines, the system issues queries on ``Soup'' and ``George'' because it is not confident about its predictions for these tokens.
 In the first timeline, the crowd correctly responds that ``Soup'' is a resource and that ``George'' is a location.
 Integrating these responses, the system is also more confident about its prediction on ``str.'', and turns in the correct sequence of labels.
