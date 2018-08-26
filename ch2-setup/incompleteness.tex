@@ -5,29 +5,41 @@ In this section, we will expand on the intuition we presented in \refchap{intro}
 
 Intuitively, incompleteness arises because the data we are able to observe (the test collection)  does not capture phenomena in the data we wish to evaluate (the system's predictions).
 Formally,
-  let $\sX$ be our universe of objects (e.g.\ relational triples in KBP, answers to questions or summaries of articles),
-  let $X \subset \sX$ be the observable data
-  and let $Y \subset \sX$ be the target data that we wish to evaluate.
+  for an input $X$ (e.g.\ a document corpus, a question-context pair, or article),
+  let $\sR_X$ be the universe of possible responses (e.g.\ relational triples in KBP, answers to a question or summaries of an article) for $X$,
+  let $S_X \subset \sR_X$ be the observable data
+  and let $T_X \subset \sR_X$ be the target data that we wish to evaluate.
 Our goal is to measure some aggregate property $f$ (e.g.\
-accuracy, precision, etc.) of $Y$, $\mu_f = \E_{p(Y)}[f(y)] \eqdef \sum_{y \in Y} p(y) f(y)$, where $p(y)$ is a given distribution or measure over $y \in Y$.
-However, because we can only evaluate $f$ on $X$ (the observable set) the value of $f$ on the subset $Y \setminus X$ is indeterminable.
-As a result, we say that $X$ is \textbf{incomplete} when measuring $f$ on $Y$ if $Y$ is not contained in its support, i.e., $Y \not\subseteq X$.\footnote{%
-An equivalent, more rigorous, definition of incompleteness can be given in terms of measure theory: we say that $X$ is \textit{incomplete} when measuring $f$ on $p(Y)$ if $p(Y \setminus X) > 0$.
+accuracy, precision, etc.) of $T_X$, $\mu_f \eqdef \E_{p(T_X)}[f(t)] = \sum_{t \in T_X} p(t) f(t)$, where $p(t)$ is a given distribution or measure over $t \in T_X$.
+However, because we can only evaluate $f$ on $S_X$ (the observable set) the value of $f$ on the subset $T_X \setminus S_X$ is indeterminable.
+As a result, we say that $S_X$ is \textbf{incomplete} when measuring $f$ on $T_X$ if $T_X$ is not contained in its support, i.e., $T_X \not\subseteq S_X$.\footnote{%
+An equivalent, more rigorous, definition of incompleteness can be given in terms of measure theory: we say that $S_X$ is \textit{incomplete} when measuring $f$ on $p(T_X)$ if $p(T_X \setminus S_X) > 0$.
 }
-While the definition of incomplete really pertains to the test collection $X$, metric $f$ and evaluation set $Y$, in the rest of this thesis, we will say that a \textit{task exhibits incompleteness} if its standard test collection is incomplete when measuring the task metric for an arbitrary system.
+Further, we say that a \textit{task exhibits incompleteness} if for any input $X$ in the standard test collection, $S_X$ is incomplete when measuring the task metric for an arbitrary system $T_X$.
 
 \paragraph{Finite incompleteness.}
-We say that $X$ is finitely incomplete when measuring $f$ on $Y$ if the cardinality of the universe, $|\sX|$, is finite.
+We say that $S_X$ is finitely incomplete when measuring $f$ on $T_X$ if the cardinality of the universe, $|\sR_X|$, is finite.
 As an example, consider the setting of KBP:\@
-Here, $\sX$ consists of relation triples defined by spans in the document corpus, $X$ is a static test collection, $Y$ is a system's predictions that we are trying to evaluate and $f$ is precision or recall.
-While there can be a very large number of such triples, the number is finite because the document collection is finite.
-With problems of finite incompleteness, it is fundamentally possible to annotate all of $\sX$ and thus ensure that $Y \subseteq X = \sX$.
+Here, $\sR_X$ consists of relation triples defined by spans in the document corpus $X$, $S_X$ is a fixed subset of $\sR_X$ that forms the evaluation data, $T_X$ is the system's predictions that we are trying to evaluate and $f$ is precision or recall.
+While there can be a very large number of such triples, $|\sR_X|$ is still finite.
+With problems of finite incompleteness, it is fundamentally possible to annotate all of $\sR_X$ and thus ensure that $T_X \subseteq S_X = \sR_X$.
 
 \paragraph{Infinite incompleteness.}
-Likewise, we say that $X$ is infinitely incomplete when measuring $f$ on $Y$ if the cardinality of the universe, $|\sX|$, is infinite.
-As an example, consider the setting of text summarization where $\sX$ consists of all possible text strings which is infinite, $X$ is the set of reference summaries, $Y$ is the set of system-generated summaries and $f$ is the quality of the summary.
+Likewise, we say that $S_X$ is infinitely incomplete when measuring $f$ on $T_X$ if the cardinality of the universe, $|\sR_X|$, is infinite.
+As an example, consider the setting of text summarization where $\sR_X$ consists of all possible text strings which is infinite, $S_X$ is the set of reference summaries for the input $X$, $T_X$ is the set of system-generated summaries and $f$ is the quality of the summary.
+Because $\sR_X$ is infinite, it is simply not possible to ensure that $T_X \subseteq S_X$ without further assumptions on the system's predictions, $T_X$.
 
 \paragraph{Addressing incompleteness with on-demand annotation.}
 The main solution for incompleteness we present in this thesis is on-demand human annotation.
-Following the formal description above, on-demand annotation ``cheats'' by annotating elements of $\sX$ as required, effectively making all of $\sX$ observable and thus stepping around the problem of incompleteness.
+Following the formal description above, on-demand annotation ``cheats'' by annotating elements of $\sR_X$ as required, effectively making all of $\sR_X$ observable and thus stepping around the problem of incompleteness.
 The main issue then is to reduce the costs of measuring $\mu_f$, and this will be the objective of the technical solutions we present through the rest of this thesis.
+
+% \paragraph{Connection to bandits and partial monitoring games.}
+% The problem with incompleteness is estimating quantities under partial feedback.
+% A closely related problem of making optimal decisions under partial feedback has been extensively studied in the theoretical machine learning community through the framework of bandit feedback or, more broadly, partial monitoring games~\citep{bartok2014partial} and it is worth contrasting the two here.  
+% In both settings, we only know the true value or loss for a subset of responses (similar to $S_X$ above), but must in some sense evaluate the value for another response $T_X$.
+% However, in partial monitoring games, our goal is only to minimize the total loss or regret accumulated, and not actually measure the quantity.
+% 
+% The goal in the bandits setting is to minimize regret, whereas our objective is to actually measure performance. 
+% Furthermore, we often get feedback about the action taken, (though not always necessary with partial feedback games), not in our setting.
+% 
