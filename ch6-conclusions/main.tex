@@ -70,18 +70,9 @@ We provide one possible solution in \refchap{otj} by using on-demand human annot
 % As a result, two dialogue agents answering the same initial prompt may take different trajectories based on who they are interacting with.
 % One of the biggest open questions is understanding what we should be evaluating in such settings and how to account for the variability introduced by the intermediate human responses.
 
-\section{How should we evaluate evaluation?}
-% (i) what's the goal of evaluation? there's the difference between evaluation for leaderboard numbers, evaluation for providing feedback to a human (error analysis), evaluation for providing feedback to a learning algorithm (this is a big one that we've talked about a lot)?
-Before we conclude, let's take a step back to ask what the goals of evaluation are.
-There is no doubt that having a robust, quantitative evaluation provides a clear direction for members in the research community to improve their systems and thus do science.
-At the same time, we must be wary of oversimplifying what it means to solve a problem into a single number:
-all too often these numbers hinge on over-fitting to dataset specific artifacts~\citep{gururangan2018annotation}.
-While no evaluation is perfect, it is our opinion that we should strive for evaluation that provides us with \textit{actionable insights} that allow us to \textit{improve our systems}.
-We hope that our work in \refchap{kbpo} provides a positive example of how annotation feedback can be used not only to provide a number to benchmark systems with, but also to provide error analysis and reveal new opportunities for research.
+\subsection{Overcoming the limitations of unbiasedness}
 
 % (v) how important is the immediacy of getting an evaluation result?
-
-
 % (iii) do you really need evaluation to be unbiased (related to the points above)?
 % (iv) how does the bias problem of evalutaion relate to bias in machine learning in genreal?
 Next, we would like to revisit the importance of \textit{unbiasedness} in evaluation.
@@ -91,7 +82,27 @@ It is likely that we will have to introduce appropriate inductive bias to make t
 Unlike the systematic biases in the evaluation methodology we began with, carefully introducing inductive bias relies on assumptions that we can check and ensure are (mostly) met by the systems we evaluate.
 % (ii) what are the prospects for automatic evaluation (BLEU, ROUGE)? be completely practical: are you actually advising people stop doing this or is there a place for it?  what about many forms of evaluation?
 In contrast, we showed in \refchap{price} that automatic evaluation methods such as BLEU or ROUGE correlate so poorly with human judgment that they are not only weak indicators of performance, but are also easily gamed.
-We strongly advise researchers to ensure that the automatic metrics used correlate with human judgment \textit{for the systems being evaluated} before using them.
+We strongly advise researchers to prefer standardized human evaluations or to ensure that the automatic metrics used correlate with human judgment \textit{for the systems being evaluated} before using them.
+
+\section{How should we evaluate evaluation?}
+% (i) what's the goal of evaluation? there's the difference between evaluation for leaderboard numbers, evaluation for providing feedback to a human (error analysis), evaluation for providing feedback to a learning algorithm (this is a big one that we've talked about a lot)?
+Before we conclude, let's take a step back to ask what the goals of evaluation are.
+There is no doubt that having a robust, quantitative evaluation provides a clear direction for members in the research community to improve their systems and thus do science.
+At the same time, we must be wary of oversimplifying what it means to solve a problem into a single number:
+all too often these numbers hinge on over-fitting to dataset-specific artifacts~\citep{gururangan2018annotation} or biased evaluation metrics~\citep{chaganty2017unbiased}.
+When our evaluation methodology is biased or does not correlate with human judgment, we run the same risks that the natural language processing community faced in the mid 1960s: 
+to paraphrase John Pierce, \textit{we may end up building elaborate systems that either do very little or flop in an obscure ways. A lot of money and time will have been spent, but no simple, clear, sure knowledge would have been gained.}
+
+We argue that there are two equally important objectives for evaluation: first, to benchmark systems and ensure ``simple, clear, sure knowledge'' is gained, we must have a \textit{fair} quantitative measure of performance.
+Such a measure need not be perfectly correlated with human judgment, as long as it is not biased towards particular systems at the cost of others.
+Ideally, the measure should be easy, quick and cheap to obtain so that researchers can iterate on systems or even integrate the metric into their training objectives.
+In this work, we have shown that existing automatic metrics do not meet these criteria for complex tasks such as question answering or text summarization: though we have provided some solutions, there is much work yet to be done to reduce costs and latencies.
+
+The second objective for evaluation is to provide the researcher with \textit{actionable insights} that allow her/him to improve the system and to verify that the model does not ``flop in obscure ways'':
+  in addition to having interpretable models, we need to have \textit{interpretable evaluation}.
+Some of the ways we can provide the researcher feedback is to better categorize and quantify the errors made by systems.
+We believe that human feedback plays a critical role here, but so do statistical estimators that help measure the impact of various types of errors.
+The work in this thesis has made progress on both of these fronts, showing how we can collect fine-grained feedback for relation extraction, entity linking, question answering and text summarization, and how this feedback can be quantified with unbiased estimates of their proportions.
 
 In closing, we hope that this thesis has contributed to improving the state of evaluation in natural language processing.
 Still, there is much work ahead to improve the evaluation of natural language processing systems:
